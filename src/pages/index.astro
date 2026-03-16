@@ -1,0 +1,662 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+    title="Ortodonta Lubin - dr n. med. Kornelia Rumin | ORTHOMEDICA"
+    description="Ortodonta w Lubinie – dr n. med. Kornelia Rumin. Usługi ortodontyczne: Invisalign, aparaty stałe, ortodoncja dziecięca."
+>
+    <!-- Tu zrzucamy specyficzne tagi SEO dla tej strony (Schema.org) -->
+    <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "MedicalBusiness",
+          "name": "ORTHOMEDICA - dr n. med. Kornelia Rumin",
+          "image": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=1200",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ul. Pawia 67",
+            "addressLocality": "Lubin",
+            "postalCode": "59-300",
+            "addressCountry": "PL"
+          },
+          "telephone": "+48789012345",
+          "email": "rejestracja@orthomedica-lubin.pl",
+          "url": "https://orthomedica-lubin.pl",
+          "priceRange": "PLN",
+          "openingHoursSpecification": [
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "18:00" }
+          ],
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "142", "bestRating": "5" }
+        },
+        {
+          "@type": "Physician",
+          "name": "dr n. med. Kornelia Rumin",
+          "jobTitle": "Lekarz ortodonta",
+          "worksFor": { "@type": "MedicalBusiness", "name": "ORTHOMEDICA" }
+        }
+      ]
+    })} />
+
+    <Header />
+    
+    <main id="main-content">
+        <!-- H1 HERO -->
+        <section id="home" class="min-h-screen hero-bg flex items-center relative overflow-hidden pt-24">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-4xl">
+                    <span class="text-gold font-bold tracking-[0.5em] text-[10px] md:text-xs uppercase mb-6 block drop-shadow-md">Ekspert ortodoncji | Lubin i okolice</span>
+                    <h1 class="text-5xl md:text-7xl lg:text-8xl serif mb-6 leading-tight text-white drop-shadow-xl">Ortodonta Lubin<br><span class="text-gold italic drop-shadow-md">dr Kornelia Rumin</span></h1>
+                    <p class="text-lg md:text-2xl font-light mb-10 text-white/95 max-w-2xl leading-relaxed drop-shadow-md">
+                        Piękny uśmiech to inwestycja na całe życie. Nowoczesne metody leczenia wad zgryzu, w tym niewidoczne nakładki Invisalign, dopasowane do Twoich potrzeb.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                        <a href="#kontakt" class="btn-gold px-10 py-5 rounded-full font-bold text-sm uppercase tracking-[0.2em] shadow-xl flex items-center justify-center gap-3 group">
+                            Umów wizytę
+                            <i data-lucide="calendar" class="w-4 h-4 transition-transform group-hover:scale-110"></i>
+                        </a>
+                        <a href="#oferta" class="bg-white/10 backdrop-blur-sm text-white border border-white/30 px-10 py-5 rounded-full font-bold text-sm uppercase tracking-[0.2em] hover:bg-white hover:text-navy transition-all flex items-center justify-center text-center">
+                            Poznaj metody
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Trust Signals Overlapping Hero -->
+            <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-[#0a192f] to-transparent pt-32 pb-6 hidden md:block">
+                <div class="container mx-auto px-6">
+                    <div class="grid grid-cols-3 gap-8 border-t border-white/20 pt-6">
+                        <div class="text-white">
+                            <p class="text-3xl font-bold text-gold mb-1">12+</p>
+                            <p class="text-xs uppercase tracking-widest opacity-80">Lat doświadczenia</p>
+                        </div>
+                        <div class="text-white border-l border-white/20 pl-8">
+                            <p class="text-3xl font-bold text-gold mb-1">2500+</p>
+                            <p class="text-xs uppercase tracking-widest opacity-80">Pięknych uśmiechów</p>
+                        </div>
+                        <div class="text-white border-l border-white/20 pl-8">
+                            <p class="text-3xl font-bold text-gold mb-1">Certyfikat</p>
+                            <p class="text-xs uppercase tracking-widest opacity-80">Invisalign Expert</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Signals Mobile -->
+        <section class="bg-navy py-10 md:hidden">
+            <div class="container mx-auto px-6 flex justify-around text-center">
+                <div>
+                    <p class="text-2xl font-bold text-gold mb-1">12+</p>
+                    <p class="text-[10px] uppercase tracking-widest text-white/80">Lat praktyki</p>
+                </div>
+                <div>
+                    <p class="text-2xl font-bold text-gold mb-1">2500+</p>
+                    <p class="text-[10px] uppercase tracking-widest text-white/80">Pacjentów</p>
+                </div>
+                <div>
+                    <p class="text-2xl font-bold text-gold mb-1">4.9</p>
+                    <p class="text-[10px] uppercase tracking-widest text-white/80">Opinie Google</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- O mnie -->
+        <section id="o-mnie" class="py-24 md:py-32 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                    <div class="relative order-2 lg:order-1">
+                        <div class="absolute -top-6 -left-6 md:-top-10 md:-left-10 w-48 h-48 md:w-64 md:h-64 bg-gold/10 rounded-full -z-0"></div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 border-2 border-gold/30 rounded-full -z-0"></div>
+                        <img id="doctor-img" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800" alt="dr n. med. Kornelia Rumin" loading="lazy" class="doctor-photo rounded-3xl shadow-2xl relative z-10 w-full object-cover aspect-[4/5] md:aspect-[3/4]">
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <h2 class="cinzel text-[10px] md:text-xs text-gold font-bold tracking-[0.5em] mb-4 uppercase italic">Pasja i Doświadczenie</h2>
+                        <h3 class="text-3xl md:text-4xl lg:text-5xl serif mb-6 md:mb-8 text-navy">dr n. med. Kornelia Rumin</h3>
+                        <article class="prose prose-lg text-gray-600 font-light mb-8">
+                            <p class="mb-4">Jako lekarz ortodonta z wieloletnim stażem, łączę wiedzę medyczną z nowoczesnymi technologiami. Moim celem nie jest tylko "prostowanie zębów", ale harmonijna przebudowa uśmiechu i profilu twarzy pacjenta.</p>
+                            <p>W naszej nowoczesnej klinice w sercu Zagłębia Miedziowego przyjmuję pacjentów z Lubina, Polkowic, Legnicy i okolic. Wykorzystuję skanery wewnątrzustne 3D, co eliminuje konieczność pobierania nieprzyjemnych wycisków.</p>
+                        </article>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                            <div class="flex items-start gap-4 p-4 rounded-2xl bg-gray-50 border border-gray-100">
+                                <i data-lucide="award" class="text-gold mt-1 shrink-0"></i>
+                                <div>
+                                    <h4 class="font-bold text-navy mb-1 uppercase text-[11px] tracking-wider">Ekspert Invisalign</h4>
+                                    <p class="text-xs text-gray-500">Certyfikowany lekarz systemu przeźroczystych nakładek.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 p-4 rounded-2xl bg-gray-50 border border-gray-100">
+                                <i data-lucide="scan-line" class="text-gold mt-1 shrink-0"></i>
+                                <div>
+                                    <h4 class="font-bold text-navy mb-1 uppercase text-[11px] tracking-wider">Skaner 3D iTero</h4>
+                                    <p class="text-xs text-gray-500">Cyfrowe wyciski, pełen komfort, natychmiastowa symulacja uśmiechu.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Klinika / Wnętrza -->
+        <section id="klinika" class="py-24 bg-navy text-white relative border-t border-white/10">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-gold font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Nasza przestrzeń</span>
+                    <h2 class="cinzel text-3xl md:text-4xl mb-4">Nowoczesna Klinika</h2>
+                    <p class="text-white/70 font-light text-sm max-w-2xl mx-auto">Zaprojektowana z myślą o Twoim komforcie i poczuciu bezpieczeństwa. Wyposażona w sprzęt diagnostyczny światowej klasy, eliminujący stres i ból.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                    <div class="overflow-hidden rounded-2xl group col-span-2 row-span-2 relative bg-navy-light">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800" alt="Przestronna recepcja kliniki" loading="lazy" class="w-full h-full min-h-[300px] object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute bottom-4 left-4 bg-navy/80 backdrop-blur px-4 py-2 rounded-lg text-[10px] uppercase tracking-widest font-bold border border-white/10">Strefa relaksu</div>
+                    </div>
+                    <div class="overflow-hidden rounded-2xl group relative bg-navy-light">
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=400" alt="Skaner 3D" loading="lazy" class="w-full h-48 md:h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute bottom-4 left-4 bg-navy/80 backdrop-blur px-3 py-1.5 rounded-lg text-[9px] uppercase tracking-widest font-bold border border-white/10">Diagnostyka 3D</div>
+                    </div>
+                    <div class="overflow-hidden rounded-2xl group relative bg-navy-light">
+                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=400" alt="Nowoczesny fotel" loading="lazy" class="w-full h-48 md:h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute bottom-4 left-4 bg-navy/80 backdrop-blur px-3 py-1.5 rounded-lg text-[9px] uppercase tracking-widest font-bold border border-white/10">Gabinety</div>
+                    </div>
+                    <div class="overflow-hidden rounded-2xl group col-span-2 relative bg-navy-light">
+                        <img src="https://images.unsplash.com/photo-1598045618451-f762dd762f01?auto=format&fit=crop&q=80&w=800" alt="Zespół kliniki" loading="lazy" class="w-full h-48 md:h-64 object-cover transition-transform duration-700 group-hover:scale-105 object-top">
+                        <div class="absolute bottom-4 left-4 bg-navy/80 backdrop-blur px-4 py-2 rounded-lg text-[10px] uppercase tracking-widest font-bold border border-white/10">Opieka asystentek</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Oferta -->
+        <section id="oferta" class="py-24 md:py-32 bg-gray-50 relative">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+                    <span class="text-gold font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Co oferujemy</span>
+                    <h2 class="cinzel text-3xl md:text-4xl text-navy mb-6">Zakres leczenia ortodontycznego</h2>
+                    <p class="text-gray-600 font-light">Rozwiązujemy problemy ze zgryzem, stosując sprawdzone metody dopasowane do Twojego wieku i stylu życia.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+                    <!-- Card 1 -->
+                    <article class="bg-white p-8 md:p-12 rounded-[2rem] shadow-sm border border-gray-100 group hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 service-card">
+                        <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center text-gold mb-8 service-icon transition-transform"><i data-lucide="sparkles" class="w-8 h-8"></i></div>
+                        <h3 class="cinzel text-xl md:text-2xl mb-4 text-navy">Nakładki Invisalign</h3>
+                        <p class="text-gray-500 text-sm font-light leading-relaxed mb-8">Niewidoczne, wygodne nakładki prostujące zęby. Popularna wśród dorosłych i młodzieży ze względu na dyskrecję i brak ograniczeń w jedzeniu.</p>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="bg-white p-8 md:p-12 rounded-[2rem] shadow-sm border border-gray-100 group hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 service-card">
+                        <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center text-gold mb-8 service-icon transition-transform"><i data-lucide="baby" class="w-8 h-8"></i></div>
+                        <h3 class="cinzel text-xl md:text-2xl mb-4 text-navy">Ortodoncja Dziecięca</h3>
+                        <p class="text-gray-500 text-sm font-light leading-relaxed mb-8">Leczenie przechwytujące dla dzieci. Stosujemy aparaty ruchome i aparaty do rozbudowy podniebienia, aby zapewnić miejsce dla zębów stałych.</p>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="bg-white p-8 md:p-12 rounded-[2rem] shadow-sm border border-gray-100 group hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 service-card">
+                        <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center text-gold mb-8 service-icon transition-transform"><i data-lucide="smile" class="w-8 h-8"></i></div>
+                        <h3 class="cinzel text-xl md:text-2xl mb-4 text-navy">Aparaty Stałe</h3>
+                        <p class="text-gray-500 text-sm font-light leading-relaxed mb-8">Klasyczne zamki metalowe oraz estetyczne zamki porcelanowe i szafirowe. Sprawdzone, skuteczne metody radzenia sobie z różnymi wadami zgryzu.</p>
+                    </article>
+                </div>
+                <div class="mt-16 text-center">
+                    <a href="#kontakt" class="btn-gold px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider inline-flex items-center gap-2">
+                        Umów konsultację
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proces / Pierwsza Wizyta -->
+        <section id="pierwsza-wizyta" class="py-24 bg-navy text-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-gold font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Krok po kroku</span>
+                    <h2 class="cinzel text-3xl md:text-4xl mb-4">Jak wygląda leczenie?</h2>
+                    <p class="text-white/70 font-light">Przejrzysty proces. Od diagnozy po wymarzony uśmiech.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="text-center relative">
+                        <div class="w-20 h-20 mx-auto bg-white/5 border border-white/10 rounded-full flex items-center justify-center mb-6 relative z-10"><span class="cinzel text-3xl text-gold font-bold">1</span></div>
+                        <div class="hidden md:block absolute top-10 left-[60%] w-[80%] border-t border-dashed border-white/20"></div>
+                        <h4 class="font-bold uppercase tracking-widest text-xs mb-3">Konsultacja</h4>
+                        <p class="text-sm text-white/60 font-light">Wywiad, badanie zgryzu i omówienie Twoich oczekiwań.</p>
+                    </div>
+                    <div class="text-center relative">
+                        <div class="w-20 h-20 mx-auto bg-white/5 border border-white/10 rounded-full flex items-center justify-center mb-6 relative z-10"><span class="cinzel text-3xl text-gold font-bold">2</span></div>
+                        <div class="hidden md:block absolute top-10 left-[60%] w-[80%] border-t border-dashed border-white/20"></div>
+                        <h4 class="font-bold uppercase tracking-widest text-xs mb-3">Diagnostyka 3D</h4>
+                        <p class="text-sm text-white/60 font-light">Cyfrowy skan iTero, zdjęcia RTG oraz fotografie twarzy.</p>
+                    </div>
+                    <div class="text-center relative">
+                        <div class="w-20 h-20 mx-auto bg-white/5 border border-white/10 rounded-full flex items-center justify-center mb-6 relative z-10"><span class="cinzel text-3xl text-gold font-bold">3</span></div>
+                        <div class="hidden md:block absolute top-10 left-[60%] w-[80%] border-t border-dashed border-white/20"></div>
+                        <h4 class="font-bold uppercase tracking-widest text-xs mb-3">Plan Leczenia</h4>
+                        <p class="text-sm text-white/60 font-light">Omówienie symulacji wyników, kosztorysu i harmonogramu.</p>
+                    </div>
+                    <div class="text-center relative">
+                        <div class="w-20 h-20 mx-auto bg-white/5 border border-white/10 rounded-full flex items-center justify-center mb-6 relative z-10"><span class="cinzel text-3xl text-gold font-bold">4</span></div>
+                        <h4 class="font-bold uppercase tracking-widest text-xs mb-3">Start</h4>
+                        <p class="text-sm text-white/60 font-light">Założenie aparatu lub wydanie pierwszych nakładek.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-16 text-center">
+                    <a href="#kontakt" class="inline-block bg-gold hover:bg-white hover:text-navy text-white border border-gold px-8 py-4 rounded-full font-bold text-xs uppercase tracking-[0.2em] transition-all">Zrób pierwszy krok</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metamorfozy -->
+        <section id="metamorfozy" class="py-24 md:py-32 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                    <div class="max-w-xl">
+                        <span class="text-gold font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Galeria uśmiechów</span>
+                        <h2 class="cinzel text-3xl md:text-4xl text-navy">Metamorfozy pacjentów</h2>
+                    </div>
+                    <p class="text-gray-500 font-light italic text-sm md:text-right max-w-sm">Przesuń suwak, aby zobaczyć autentyczne efekty leczenia w naszej klinice.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-10">
+                    <!-- Przykład 1 -->
+                    <div class="group overflow-hidden rounded-[2rem] bg-gray-50 border border-gray-100 shadow-sm transition-all flex flex-col hover:shadow-xl">
+                        <div class="relative w-full h-64 md:h-80 ba-container cursor-ew-resize select-none overflow-hidden rounded-t-[2rem]">
+                            <div class="absolute inset-0 z-10 pointer-events-none">
+                                <span class="absolute top-4 right-4 bg-gold text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">Po</span>
+                                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=600" alt="Po leczeniu" loading="lazy" class="w-full h-full object-cover block">
+                            </div>
+                            <div class="ba-before absolute inset-0 z-20 pointer-events-none" style="clip-path: inset(0 50% 0 0);">
+                                <span class="absolute top-4 left-4 bg-navy/80 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm">Przed</span>
+                                <img src="https://images.unsplash.com/photo-1598045618451-f762dd762f01?auto=format&fit=crop&q=80&w=600" alt="Przed leczeniem" loading="lazy" class="w-full h-full object-cover block filter grayscale opacity-90">
+                                <div class="absolute top-0 right-0 w-0.5 h-full bg-gold"></div>
+                            </div>
+                            <div class="ba-slider-handle absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-white border-2 border-gold rounded-full flex items-center justify-center shadow-xl pointer-events-none transition-transform duration-200">
+                                <i data-lucide="arrows-right-left" class="w-4 h-4 text-gold"></i>
+                            </div>
+                        </div>
+                        <div class="p-8 grow bg-white">
+                            <h4 class="cinzel text-lg md:text-xl mb-3 text-navy">Korekta głębokiego zgryzu i stłoczeń</h4>
+                            <div class="flex gap-4 mb-2">
+                                <span class="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-gold bg-gold/10 px-2 py-1 rounded"><i data-lucide="tag" class="w-3 h-3"></i> Invisalign</span>
+                            </div>
+                            <p class="text-sm text-gray-500 font-light">Czas leczenia: 14 miesięcy.</p>
+                        </div>
+                    </div>
+
+                    <!-- Przykład 2 -->
+                    <div class="group overflow-hidden rounded-[2rem] bg-gray-50 border border-gray-100 shadow-sm transition-all flex flex-col hover:shadow-xl">
+                        <div class="relative w-full h-64 md:h-80 ba-container cursor-ew-resize select-none overflow-hidden rounded-t-[2rem]">
+                            <div class="absolute inset-0 z-10 pointer-events-none">
+                                <span class="absolute top-4 right-4 bg-gold text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">Po</span>
+                                <img src="https://images.unsplash.com/photo-1522845015757-50bce044e5da?auto=format&fit=crop&q=80&w=600" alt="Po leczeniu" loading="lazy" class="w-full h-full object-cover block">
+                            </div>
+                            <div class="ba-before absolute inset-0 z-20 pointer-events-none" style="clip-path: inset(0 50% 0 0);">
+                                <span class="absolute top-4 left-4 bg-navy/80 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm">Przed</span>
+                                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=600" alt="Przed leczeniem" loading="lazy" class="w-full h-full object-cover block filter grayscale opacity-90">
+                                <div class="absolute top-0 right-0 w-0.5 h-full bg-gold"></div>
+                            </div>
+                            <div class="ba-slider-handle absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-white border-2 border-gold rounded-full flex items-center justify-center shadow-xl pointer-events-none transition-transform duration-200">
+                                <i data-lucide="arrows-right-left" class="w-4 h-4 text-gold"></i>
+                            </div>
+                        </div>
+                        <div class="p-8 grow bg-white">
+                            <h4 class="cinzel text-lg md:text-xl mb-3 text-navy">Zamknięcie diastemy i wyrównanie</h4>
+                            <div class="flex gap-4 mb-2">
+                                <span class="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-navy bg-navy/10 px-2 py-1 rounded"><i data-lucide="tag" class="w-3 h-3"></i> Aparat Stały</span>
+                            </div>
+                            <p class="text-sm text-gray-500 font-light">Czas leczenia: 18 miesięcy.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-16 text-center max-w-2xl mx-auto">
+                    <p class="text-navy font-light text-lg mb-6">Pozwól nam zadbać o Twój uśmiech.</p>
+                    <a href="#kontakt" class="btn-gold px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider inline-flex items-center gap-2">
+                        Zrób pierwszy krok
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof / Opinie -->
+        <section id="opinie" class="py-24 bg-gray-50 border-y border-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <div class="flex justify-center gap-1 text-gold mb-4">
+                        <i data-lucide="star" class="fill-current w-6 h-6"></i><i data-lucide="star" class="fill-current w-6 h-6"></i><i data-lucide="star" class="fill-current w-6 h-6"></i><i data-lucide="star" class="fill-current w-6 h-6"></i><i data-lucide="star" class="fill-current w-6 h-6"></i>
+                    </div>
+                    <h2 class="cinzel text-3xl md:text-4xl text-navy mb-4">Opinie naszych pacjentów</h2>
+                    <p class="text-gray-500 font-light text-sm">Średnia ocen 4.9/5 z ponad 140 opinii w Google.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <article class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 relative">
+                        <i data-lucide="quote" class="absolute top-6 right-6 w-10 h-10 text-gray-100"></i>
+                        <p class="text-sm text-gray-600 font-light leading-relaxed mb-6">"Pani Doktor to świetny specjalista. Przyszłam z trudną wadą zgryzu. Dzięki nakładkom Invisalign obeszło się bez ekstrakcji. Polecam."</p>
+                        <p class="font-bold text-navy text-sm uppercase tracking-wider">Agnieszka M.</p>
+                    </article>
+                    <article class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 relative">
+                        <i data-lucide="quote" class="absolute top-6 right-6 w-10 h-10 text-gray-100"></i>
+                        <p class="text-sm text-gray-600 font-light leading-relaxed mb-6">"Leczymy tu córkę (aparat ruchomy). Rewelacyjne podejście do dzieci, wszystko jest jasno tłumaczone rodzicom. Bardzo nowoczesny gabinet, zero stresu przed wizytami."</p>
+                        <p class="font-bold text-navy text-sm uppercase tracking-wider">Tomasz W.</p>
+                    </article>
+                    <article class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 relative hidden md:block">
+                        <i data-lucide="quote" class="absolute top-6 right-6 w-10 h-10 text-gray-100"></i>
+                        <p class="text-sm text-gray-600 font-light leading-relaxed mb-6">"Zdecydowałem się na nakładki, bo dużo pracuję z klientami. Totalnie niewidoczne, zdejmuję do jedzenia. Cały proces skanowania to kosmos w porównaniu do masy, którą pamiętam z dzieciństwa."</p>
+                        <p class="font-bold text-navy text-sm uppercase tracking-wider">Michał K.</p>
+                    </article>
+                </div>
+                <div class="mt-12 text-center">
+                    <a href="#kontakt" class="inline-flex items-center gap-2 bg-navy hover:bg-navy-light text-white px-8 py-4 rounded-full font-bold text-xs uppercase tracking-wider transition-colors">
+                        Zapisz się na konsultację
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Block: Lokalne zasięgi -->
+        <aside class="py-16 bg-white border-b border-gray-100">
+            <div class="container mx-auto px-6 text-center max-w-4xl">
+                <h3 class="text-xs uppercase font-bold tracking-[0.3em] text-gray-400 mb-6 flex items-center justify-center gap-2">
+                    <i data-lucide="map" class="w-4 h-4 text-gold"></i>
+                    Pacjenci z Dolnego Śląska
+                </h3>
+                <p class="text-sm text-gray-500 font-light leading-relaxed">
+                    Nasz gabinet ortodontyczny mieści się w <strong class="text-navy">Lubinie</strong>, jednak dzięki dogodnej lokalizacji i dostępowi do trasy S3, obsługujemy pacjentów z całego regionu Zagłębia Miedziowego. Dojazd z <strong class="text-navy">Polkowic</strong> zajmuje zaledwie 15 minut. Zapraszamy również pacjentów z <strong class="text-navy">Legnicy</strong>, <strong class="text-navy">Głogowa</strong>, Ścinawy i Chocianowa.
+                </p>
+            </div>
+        </aside>
+
+        <!-- Cennik -->
+        <section id="cennik" class="py-24 md:py-32 bg-gray-50">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="text-center mb-12">
+                    <span class="text-gold font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Transparentne ceny</span>
+                    <h2 class="cinzel text-3xl md:text-4xl text-navy mb-4">Cennik</h2>
+                    <p class="text-gray-500 font-light">Orientacyjne widełki cenowe. Dokładny koszt ustalamy indywidualnie na konsultacji po badaniu.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                        <h3 class="font-bold text-navy mb-2">Aparaty metalowe</h3>
+                        <p class="text-gold text-xl font-bold">od 2 500 zł</p>
+                        <p class="text-sm text-gray-500 mt-1">za jeden łuk</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                        <h3 class="font-bold text-navy mb-2">Nakładki Invisalign</h3>
+                        <p class="text-gold text-xl font-bold">9 000 – 18 000 zł</p>
+                        <p class="text-sm text-gray-500 mt-1">całe leczenie, w zależności od pakietu</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                        <h3 class="font-bold text-navy mb-2">Konsultacja i skan 3D</h3>
+                        <p class="text-gold text-xl font-bold">Bezpłatnie</p>
+                        <p class="text-sm text-gray-500 mt-1">symulacja wyników na miejscu</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="#kontakt" class="btn-gold px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider">Umów konsultację</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ (Rozbudowane) -->
+        <section id="faq" class="py-24 md:py-32 bg-gray-50">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="text-center mb-16">
+                    <h2 class="cinzel text-3xl md:text-4xl text-navy mb-4">Często zadawane pytania (FAQ)</h2>
+                    <p class="text-gray-500 font-light">Masz wątpliwości? Przeczytaj odpowiedzi na pytania, które pacjenci zadają nam często.</p>
+                </div>
+                
+                <div class="space-y-4">
+                    <details class="group p-6 bg-white rounded-2xl border border-gray-100 open:border-gold transition-all cursor-pointer shadow-sm hover:shadow-md">
+                        <summary class="flex justify-between items-center font-bold text-navy md:text-sm text-xs tracking-wide list-none outline-none">
+                            Czy założenie aparatu ortodontycznego boli?
+                            <i data-lucide="plus" class="text-gold w-5 h-5 group-open:rotate-45 transition-transform shrink-0"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-gray-500 font-light leading-relaxed border-t border-gray-50 pt-4">
+                            Sam zabieg montażu zamków ortodontycznych (przyklejenia ich do zębów) jest całkowicie bezbolesny i bezinwazyjny. Przez pierwsze kilka dni po założeniu aparatu lub po wymianie łuków na wizycie kontrolnej, może występować uczucie tkliwości i nadwrażliwości na nagryzanie. Jest to normalna reakcja organizmu na siły przesuwające zęby.
+                        </p>
+                    </details>
+                    
+                    <details class="group p-6 bg-white rounded-2xl border border-gray-100 open:border-gold transition-all cursor-pointer shadow-sm hover:shadow-md">
+                        <summary class="flex justify-between items-center font-bold text-navy md:text-sm text-xs tracking-wide list-none outline-none">
+                            Ile kosztuje leczenie ortodontyczne w Lubinie?
+                            <i data-lucide="plus" class="text-gold w-5 h-5 group-open:rotate-45 transition-transform shrink-0"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-gray-500 font-light leading-relaxed border-t border-gray-50 pt-4">
+                            Koszt jest ustalany indywidualnie w zależności od wady i metody. Ceny tradycyjnych aparatów metalowych zaczynają się u nas od ok. 2500 zł za jeden łuk. W przypadku systemu nakładek (Invisalign), po wykonaniu bezpłatnego symulacyjnego skanu 3D, przedstawiamy pełen, gwarantowany kosztorys obejmujący całe leczenie (zazwyczaj przedział 9 000 - 18 000 zł w zależności od pakietu).
+                        </p>
+                    </details>
+
+                    <details class="group p-6 bg-white rounded-2xl border border-gray-100 open:border-gold transition-all cursor-pointer shadow-sm hover:shadow-md">
+                        <summary class="flex justify-between items-center font-bold text-navy md:text-sm text-xs tracking-wide list-none outline-none">
+                            Jak długo trwa leczenie aparatem stałym?
+                            <i data-lucide="plus" class="text-gold w-5 h-5 group-open:rotate-45 transition-transform shrink-0"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-gray-500 font-light leading-relaxed border-t border-gray-50 pt-4">
+                            Przeciętny czas leczenia wady zgryzu aparatem stałym wynosi od 18 do 24 miesięcy. Drobne korekty kosmetyczne nakładkami potrafią zająć zaledwie 6-9 miesięcy. Kluczowa jest systematyczność zgłaszania się na wizyty kontrolne.
+                        </p>
+                    </details>
+
+                    <details class="group p-6 bg-white rounded-2xl border border-gray-100 open:border-gold transition-all cursor-pointer shadow-sm hover:shadow-md">
+                        <summary class="flex justify-between items-center font-bold text-navy md:text-sm text-xs tracking-wide list-none outline-none">
+                            Kiedy po raz pierwszy zapisać dziecko do ortodonty?
+                            <i data-lucide="plus" class="text-gold w-5 h-5 group-open:rotate-45 transition-transform shrink-0"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-gray-500 font-light leading-relaxed border-t border-gray-50 pt-4">
+                            Zgodnie z wytycznymi towarzystw ortodontycznych, pierwsze badanie powinno odbyć się w wieku około 7 lat (podczas wyrzynania pierwszych zębów stałych). Pozwala to wykryć wczesne wady kostne, które łatwo skorygować w fazie wzrostu dziecka za pomocą aparatów ruchomych, co często pozwala uniknąć skomplikowanego leczenia w przyszłości.
+                        </p>
+                    </details>
+                    
+                    <details class="group p-6 bg-white rounded-2xl border border-gray-100 open:border-gold transition-all cursor-pointer shadow-sm hover:shadow-md">
+                        <summary class="flex justify-between items-center font-bold text-navy md:text-sm text-xs tracking-wide list-none outline-none">
+                            Czy przed założeniem aparatu trzeba wyleczyć wszystkie zęby?
+                            <i data-lucide="plus" class="text-gold w-5 h-5 group-open:rotate-45 transition-transform shrink-0"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-gray-500 font-light leading-relaxed border-t border-gray-50 pt-4">
+                            Tak. Stan zębów i przyzębia musi być idealny przed rozpoczęciem jakiegokolwiek leczenia ortodontycznego. Wszystkie ubytki próchnicze muszą być zablombowane, a zęby oczyszczone z kamienia nazębnego i osadów (piaskowanie i skaling).
+                        </p>
+                    </details>
+                </div>
+                <div class="mt-12 text-center">
+                    <a href="#kontakt" class="inline-flex items-center gap-2 border-2 border-gold text-gold hover:bg-gold hover:text-white px-8 py-4 rounded-full font-bold text-xs uppercase tracking-wider transition-colors">
+                        Umów się na konsultację
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+       
+        <!-- Kontakt & Formularz -->
+        <section id="kontakt" class="py-24 md:py-32 bg-white relative">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 lg:gap-20">
+                    
+                    <!-- Info i Formularz -->
+                    <div>
+                        <span class="text-gold font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Zrób pierwszy krok</span>
+                        <h2 class="cinzel text-3xl md:text-4xl mb-10 text-navy">Umów konsultację</h2>
+                        
+                        <!-- Przyciski akcji -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                            <a href="tel:+48789012345" class="bg-navy hover:bg-navy-light text-white px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition-colors shadow-lg">
+                                <i data-lucide="phone-call" class="w-5 h-5 text-gold"></i>
+                                +48 789 012 345
+                            </a>
+                            <a href="https://wa.me/48789012345" target="_blank" rel="noopener" class="bg-[#25D366] hover:bg-[#20bd5a] text-white px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition-colors shadow-lg">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.564-10.563 5.826 0 10.564 4.738 10.564 10.563 0 5.827-4.739 10.565-10.564 10.565z"/></svg>
+                                Napisz WhatsApp
+                            </a>
+                        </div>
+
+                        <!-- Dane adresowe -->
+                        <div class="space-y-6 mb-12 bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-100">
+                            <div class="flex gap-4 items-start">
+                                <i data-lucide="map-pin" class="text-gold shrink-0 mt-1"></i>
+                                <div>
+                                    <p class="font-bold text-navy text-sm mb-1">ORTHOMEDICA - dr Kornelia Rumin</p>
+                                    <p class="text-sm text-gray-500">ul. Pawia 67<br>59-300 Lubin</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4 items-start">
+                                <i data-lucide="clock" class="text-gold shrink-0 mt-1"></i>
+                                <div>
+                                    <p class="text-sm text-gray-500">Pn - Pt: 09:00 - 18:00<br>Sobota: Nieczynne</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4 items-start">
+                                <i data-lucide="mail" class="text-gold shrink-0 mt-1"></i>
+                                <div>
+                                    <a href="mailto:rejestracja@orthomedica-lubin.pl" class="text-sm text-navy hover:text-gold font-bold transition-colors focus-visible:outline-none">rejestracja@orthomedica-lubin.pl</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Formularz online -->
+                        <h3 class="font-bold text-navy mb-4">Lub wyślij zapytanie online:</h3>
+                        <form id="contactForm" class="space-y-4" novalidate>
+                            <!-- Anti-spam Honeypot -->
+                            <div class="hidden" aria-hidden="true">
+                                <label for="bot_check">Nie wypełniaj tego pola</label>
+                                <input type="text" name="bot_check" id="bot_check" tabindex="-1">
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-[10px] font-bold uppercase tracking-wider text-navy/70 mb-2 pl-2" for="name">Imię i nazwisko</label>
+                                    <input type="text" id="name" required placeholder="np. Jan Kowalski" class="input-field text-sm" pattern=".{3,}">
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] font-bold uppercase tracking-wider text-navy/70 mb-2 pl-2" for="phone">Nr telefonu</label>
+                                    <input type="tel" id="phone" required placeholder="np. 500 600 700" class="input-field text-sm" pattern="[0-9\s\-\+]{9,}">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold uppercase tracking-wider text-navy/70 mb-2 pl-2" for="subject">Cel wizyty</label>
+                                <select id="subject" required class="input-field text-sm text-navy font-medium">
+                                    <option value="" disabled selected>Wybierz cel wizyty...</option>
+                                    <option value="konsultacja">Pierwsza konsultacja</option>
+                                    <option value="invisalign">Konsultacja Invisalign</option>
+                                    <option value="dziecko">Wizyta z dzieckiem</option>
+                                    <option value="inne">Inne zapytanie</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Komunikaty zwrotne formularza -->
+                            <div id="formFeedback" class="hidden p-4 rounded-xl text-xs font-bold border mt-2 transition-all"></div>
+
+                            <button type="submit" class="w-full btn-gold py-4 rounded-xl font-bold uppercase tracking-wider text-sm mt-2 focus:outline-none focus-visible:ring-4 focus-visible:ring-gold/30">Wyślij wiadomość</button>
+                            <p class="text-[9px] text-gray-400 text-center mt-2">Wysyłając zapytanie akceptujesz politykę prywatności. Zabezpieczono przed spamem.</p>
+                        </form>
+                    </div>
+
+                    <!-- GDPR Compliant Map (Lazy loaded) -->
+                    <div class="h-full min-h-[400px] lg:min-h-full bg-gray-100 rounded-[2rem] overflow-hidden shadow-inner relative flex flex-col items-center justify-center border-4 border-gray-50" id="map-container">
+                        <i data-lucide="map" class="w-16 h-16 text-gray-300 mb-4"></i>
+                        <p class="text-sm text-gray-500 font-bold mb-4 px-6 text-center">Ze względu na ochronę Twoich danych (RODO), Mapa Google jest domyślnie ukryta.</p>
+                        <button id="load-map-btn" class="bg-navy text-white px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-gold transition-colors">
+                            Załaduj mapę i pokaż trasę
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+
+    <!-- Dodatkowe skrypty dla Strony Głównej -->
+    <script is:inline>
+        // Doctor photo observer
+        const observerOptions = { root: null, threshold: 0.5 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, observerOptions);
+
+        const doctorImg = document.getElementById('doctor-img');
+        if (doctorImg) observer.observe(doctorImg);
+
+        // Before/After Slider logic
+        const sliders = document.querySelectorAll('.ba-container');
+        sliders.forEach(slider => {
+            let isDown = false;
+            const beforeLayer = slider.querySelector('.ba-before');
+            const handle = slider.querySelector('.ba-slider-handle');
+
+            const moveSlider = (e) => {
+                if (!isDown) return;
+                const rect = slider.getBoundingClientRect();
+                let x = (e.clientX !== undefined ? e.clientX : e.touches[0].clientX) - rect.left;
+                x = Math.max(0, Math.min(x, rect.width));
+                const percent = (x / rect.width) * 100;
+                beforeLayer.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+                handle.style.left = `${percent}%`;
+            };
+
+            const startSlide = (e) => {
+                isDown = true;
+                handle.style.transform = 'translate(-50%, -50%) scale(0.9)';
+                moveSlider(e);
+            };
+
+            const endSlide = () => {
+                isDown = false;
+                handle.style.transform = 'translate(-50%, -50%) scale(1)';
+            };
+
+            slider.addEventListener('mousedown', startSlide);
+            slider.addEventListener('touchstart', startSlide, {passive: true});
+            
+            window.addEventListener('mouseup', endSlide);
+            window.addEventListener('touchend', endSlide);
+            
+            window.addEventListener('mousemove', (e) => { if(isDown) moveSlider(e); });
+            window.addEventListener('touchmove', (e) => { if(isDown) moveSlider(e); }, {passive: true});
+        });
+
+        // Map lazy load logic
+        const loadMapBtn = document.getElementById('load-map-btn');
+        const mapContainer = document.getElementById('map-container');
+        const MAP_IFRAME_HTML = `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2489.349635741639!2d16.2007481!3d51.3907722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470f1359c63c5d6f%3A0xc3c9f8016594270b!2sPawia%2067%2C%2059-300%20Lubin!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl" class="w-full h-full border-0 absolute inset-0 rounded-[2rem]" allowfullscreen="" loading="lazy"></iframe>`;
+
+        function loadGoogleMap() {
+            if(mapContainer && !mapContainer.querySelector('iframe')) {
+                mapContainer.innerHTML = MAP_IFRAME_HTML;
+            }
+        }
+        window.loadGoogleMap = loadGoogleMap; // Upublicznij dla funkcji w stopce
+
+        if(loadMapBtn) {
+            loadMapBtn.addEventListener('click', () => {
+                localStorage.setItem('cookiesAccepted', 'true');
+                const cb = document.getElementById('cookie-banner');
+                if(cb) cb.classList.add('hidden-banner');
+                loadGoogleMap();
+            });
+        }
+
+        const mapObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && localStorage.getItem('cookiesAccepted')) {
+                    loadGoogleMap();
+                    mapObserver.disconnect();
+                }
+            });
+        });
+        if (mapContainer) mapObserver.observe(mapContainer);
+    </script>
+</Layout>
