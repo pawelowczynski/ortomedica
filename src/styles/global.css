@@ -1,2 +1,2 @@
 @import "tailwindcss";
-@config "../../../tailwind.config.mjs";
+@config "../../tailwind.config.mjs"; /* Upewnij się, że ta ścieżka poprawnie wskazuje na Twój plik configu! */
