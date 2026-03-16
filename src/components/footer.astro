@@ -51,9 +51,12 @@ const currentYear = new Date().getFullYear();
         </div>
     </div>
 
-    <script>
+ <script>
+        // 1. IMPORTUJEMY LUCIDE
+        import { createIcons } from 'lucide';
+
         // Inicjalizacja ikon Lucide
-        lucide.createIcons();
+        createIcons();
 
         // 1. Zmiana wyglądu nawigacji przy scrollowaniu
         const nav = document.getElementById('main-nav');
@@ -82,21 +85,26 @@ const currentYear = new Date().getFullYear();
                 mobileMenu.classList.add('visible');
                 // Change icon to X (używamy Lucide do podmiany)
                 menuBtn.innerHTML = '<i data-lucide="x" class="w-8 h-8"></i>';
-                lucide.createIcons();
+                createIcons(); // <--- Zmiana tutaj
             } else {
                 mobileMenu.classList.remove('visible');
                 mobileMenu.classList.add('hidden');
                 menuBtn.innerHTML = '<i data-lucide="menu" class="w-8 h-8"></i>';
-                lucide.createIcons();
+                createIcons(); // <--- Zmiana tutaj
             }
         }
 
-        menuBtn.addEventListener('click', toggleMenu);
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if(isMenuOpen) toggleMenu();
+        if (menuBtn) {
+            menuBtn.addEventListener('click', toggleMenu);
+        }
+        
+        if (mobileLinks) {
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if(isMenuOpen) toggleMenu();
+                });
             });
-        });
+        }
 
         // 3. Efekt nasycenia kolorem zdjęcia lekarza (Intersection Observer)
         const observerOptions = { root: null, threshold: 0.5 };
@@ -123,7 +131,7 @@ const currentYear = new Date().getFullYear();
             if (!localStorage.getItem('cookiesAccepted')) {
                 // Pokaż banner po 1 sekundzie
                 setTimeout(() => {
-                    cookieBanner.classList.remove('hidden-banner');
+                    if(cookieBanner) cookieBanner.classList.remove('hidden-banner');
                 }, 1000);
             } else {
                 // Jeśli zaakceptowano wcześniej, od razu możemy załadować mapę jeśli użytkownik dopscrolluje
@@ -133,7 +141,7 @@ const currentYear = new Date().getFullYear();
 
         function acceptCookies() {
             localStorage.setItem('cookiesAccepted', 'true');
-            cookieBanner.classList.add('hidden-banner');
+            if(cookieBanner) cookieBanner.classList.add('hidden-banner');
             loadGoogleMap();
         }
 
@@ -166,8 +174,9 @@ const currentYear = new Date().getFullYear();
             if (mapContainer) mapObserver.observe(mapContainer);
         }
 
-        // Start Cookie check
+        // Uruchomienie sprawdzania ciasteczek
         checkCookies();
+  
 
         // 5. Interaktywny Suwak Metamorfoz (Before/After)
         const sliders = document.querySelectorAll('.ba-container');
