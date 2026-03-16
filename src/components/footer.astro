@@ -242,14 +242,14 @@ const currentYear = new Date().getFullYear();
                 const botCheck = document.getElementById('bot_check').value;
                 if(botCheck) {
                     console.warn("Wykryto bota.");
-                    return; // Fail silently
+                    return; 
                 }
 
                 // Native HTML5 validation check
                 if (!contactForm.checkValidity()) {
                     formFeedback.innerHTML = "<i data-lucide='alert-circle' class='inline w-4 h-4 mr-1 mb-0.5'></i> Proszę poprawnie wypełnić wymagane pola (np. nr telefonu min. 9 cyfr).";
                     formFeedback.classList.add('block', 'bg-red-50', 'text-red-600', 'border-red-200');
-                    createIcons(); // <--- POPRAWIONE TUTAJ
+                    createIcons({ icons }); // <--- POPRAWKA 1
                     return;
                 }
 
@@ -263,7 +263,7 @@ const currentYear = new Date().getFullYear();
                 setTimeout(() => {
                     formFeedback.innerHTML = "<i data-lucide='check-circle' class='inline w-4 h-4 mr-1 mb-0.5'></i> Wiadomość została wysłana! Odezwiemy się niezwłocznie.";
                     formFeedback.classList.add('block', 'bg-green-50', 'text-green-600', 'border-green-200');
-                    createIcons(); // <--- POPRAWIONE TUTAJ
+                    createIcons({ icons }); // <--- POPRAWKA 2
                     contactForm.reset();
                     
                     btn.textContent = originalText;
