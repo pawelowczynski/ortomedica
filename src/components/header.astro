@@ -1,9 +1,8 @@
 <script>
-    import { createIcons } from 'lucide';
+ import { createIcons, icons } from 'lucide';
 
-    // Inicjalizacja ikon od razu przy załadowaniu pliku
-    createIcons();
-
+// Inicjalizacja ikon
+createIcons({ icons });
     const nav = document.getElementById('main-nav');
     
     // Sprawdzamy, czy 'nav' istnieje, by uniknąć błędów na podstronach bez nav
