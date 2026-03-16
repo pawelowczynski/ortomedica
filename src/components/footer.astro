@@ -58,20 +58,21 @@ const currentYear = new Date().getFullYear();
         // Inicjalizacja ikon Lucide
         createIcons({ icons });
 
-        // 1. Zmiana wyglądu nawigacji przy scrollowaniu
+ // 1. Zmiana wyglądu nawigacji przy scrollowaniu
         const nav = document.getElementById('main-nav');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-                nav.classList.remove('text-white', 'py-5');
-                nav.classList.add('py-3');
-            } else {
-                nav.classList.remove('scrolled');
-                nav.classList.add('text-white', 'py-5');
-                nav.classList.remove('py-3');
-            }
-        });
-
+        if (nav) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                    nav.classList.remove('text-white', 'py-5');
+                    nav.classList.add('py-3');
+                } else {
+                    nav.classList.remove('scrolled');
+                    nav.classList.add('text-white', 'py-5');
+                    nav.classList.remove('py-3');
+                }
+            });
+        }
         // 2. Mobile Menu Toggle
         const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
