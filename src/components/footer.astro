@@ -229,7 +229,7 @@ const currentYear = new Date().getFullYear();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // 7. Walidacja formularza kontaktowego i Anti-spam Honeypot
+      // 7. Walidacja formularza kontaktowego i Anti-spam Honeypot
         const contactForm = document.getElementById('contactForm');
         const formFeedback = document.getElementById('formFeedback');
 
@@ -249,7 +249,7 @@ const currentYear = new Date().getFullYear();
                 if (!contactForm.checkValidity()) {
                     formFeedback.innerHTML = "<i data-lucide='alert-circle' class='inline w-4 h-4 mr-1 mb-0.5'></i> Proszę poprawnie wypełnić wymagane pola (np. nr telefonu min. 9 cyfr).";
                     formFeedback.classList.add('block', 'bg-red-50', 'text-red-600', 'border-red-200');
-                    lucide.createIcons();
+                    createIcons(); // <--- POPRAWIONE TUTAJ
                     return;
                 }
 
@@ -263,7 +263,7 @@ const currentYear = new Date().getFullYear();
                 setTimeout(() => {
                     formFeedback.innerHTML = "<i data-lucide='check-circle' class='inline w-4 h-4 mr-1 mb-0.5'></i> Wiadomość została wysłana! Odezwiemy się niezwłocznie.";
                     formFeedback.classList.add('block', 'bg-green-50', 'text-green-600', 'border-green-200');
-                    lucide.createIcons();
+                    createIcons(); // <--- POPRAWIONE TUTAJ
                     contactForm.reset();
                     
                     btn.textContent = originalText;
