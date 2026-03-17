@@ -1,0 +1,197 @@
+---
+import Layout from '../../layouts/layout.astro';
+import Header from '../../components/header.astro';
+import Footer from '../../components/footer.astro';
+import type { MarkdownInstance } from 'astro';
+
+type BlogFrontmatter = {
+  title: string;
+  description: string;
+  date: string;
+  author?: string;
+  tags?: string[];
+  heroImage?: string;
+  canonical?: string;
+};
+
+type BlogPost = MarkdownInstance<BlogFrontmatter>;
+
+const { slug } = Astro.params;
+// @ts-ignore Astro.glob is provided by Astro at build time
+const posts = (await (Astro as any).glob<BlogFrontmatter>('../../content/blog/*.md')) as BlogPost[];
+
+const currentPost = posts.find((post: BlogPost) => post.file.endsWith(`${slug}.md`));
+
+if (!currentPost) {
+  throw new Error(`Nie znaleziono wpisu o slug=${slug}`);
+}
+
+const { Content } = await currentPost;
+const { title, description, date, author, tags = [], heroImage, canonical } = currentPost.frontmatter;
+
+const formattedDate = new Date(date).toLocaleDateString('pl-PL', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const relatedPosts = posts
+  .filter((post: BlogPost) => post.file !== currentPost.file)
+  .slice(0, 3)
+  .map((post: BlogPost) => {
+    const s = post.file.split('/').pop()?.replace('.md', '') ?? '';
+    return {
+      slug: s,
+      title: post.frontmatter.title,
+    };
+  });
+
+const url = canonical ?? `https://orthomedica-lubin.pl/blog/${slug}`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  'headline': title,
+  'description': description,
+  'author': {
+    '@type': 'Person',
+    'name': author,
+  },
+  'datePublished': date,
+  'image': heroImage,
+  'mainEntityOfPage': {
+    '@type': 'WebPage',
+    '@id': url,
+  },
+  'publisher': {
+    '@type': 'Organization',
+    'name': 'ORTHOMEDICA',
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    {
+      '@type': 'ListItem',
+      'position': 1,
+      'name': 'Strona główna',
+      'item': 'https://orthomedica-lubin.pl/',
+    },
+    {
+      '@type': 'ListItem',
+      'position': 2,
+      'name': 'Blog',
+      'item': 'https://orthomedica-lubin.pl/blog',
+    },
+    {
+      '@type': 'ListItem',
+      'position': 3,
+      'name': title,
+      'item': url,
+    },
+  ],
+};
+---
+
+<Layout
+  title={`${title} | Blog ORTHOMEDICA`}
+  description={description}
+  canonical={url}
+  image={heroImage}
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <Header />
+
+  <main class="pt-28 md:pt-32 pb-20 bg-white">
+    <section class="py-10 md:py-14">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <nav class="text-[11px] uppercase tracking-[0.35em] text-gray-400 mb-6 flex flex-wrap gap-2">
+          <a href="/" class="hover:text-gold transition-colors">Strona główna</a>
+          <span>/</span>
+          <a href="/blog" class="hover:text-gold transition-colors">Blog</a>
+          <span>/</span>
+          <span class="text-gray-500">{title}</span>
+        </nav>
+
+        <article>
+          <header class="mb-8">
+            <p class="cinzel text-[11px] md:text-xs text-gold font-bold tracking-[0.5em] mb-3 uppercase italic">
+              Blog ORTHOMEDICA
+            </p>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl serif text-navy mb-4">
+              {title}
+            </h1>
+            <div class="flex flex-wrap items-center gap-3 text-[12px] text-gray-500 mb-6">
+              <span>{formattedDate}</span>
+              {author && (
+                <>
+                  <span class="w-1 h-1 rounded-full bg-gray-300" />
+                  <span>{author}</span>
+                </>
+              )}
+              {tags.length > 0 && (
+                <>
+                  <span class="w-1 h-1 rounded-full bg-gray-300" />
+                  <div class="flex flex-wrap gap-2">
+                    {tags.map((tag: string) => (
+                      <span class="px-3 py-1 rounded-full bg-gray-100 text-[11px] uppercase tracking-[0.2em] text-gray-600">
+                        {tag.replace(/-/g, ' ')}
+                      </span>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+
+            {heroImage && (
+              <div class="mb-8 rounded-3xl overflow-hidden shadow-xl">
+                <img
+                  src={heroImage}
+                  alt={title}
+                  loading="lazy"
+                  class="w-full h-64 md:h-80 object-cover"
+                />
+              </div>
+            )}
+          </header>
+
+          <div class="prose prose-sm md:prose-base lg:prose-lg max-w-none prose-headings:font-normal prose-headings:serif prose-a:text-gold prose-a:no-underline hover:prose-a:underline prose-strong:text-navy prose-p:text-gray-700 prose-li:text-gray-700">
+            <Content />
+          </div>
+        </article>
+
+        {relatedPosts.length > 0 && (
+          <section class="mt-12 pt-10 border-t border-gray-100">
+            <h2 class="text-xl md:text-2xl serif text-navy mb-4">
+              Przeczytaj także
+            </h2>
+            <ul class="grid md:grid-cols-2 gap-4">
+              {relatedPosts.map((post) => (
+                <li>
+                  <a
+                    href={`/blog/${post.slug}`}
+                    class="block p-4 rounded-2xl bg-gray-50 hover:bg-gray-100 transition-colors"
+                  >
+                    <p class="text-sm font-semibold text-navy mb-1">
+                      {post.title}
+                    </p>
+                    <span class="text-[11px] uppercase tracking-[0.25em] text-gray-500">
+                      Czytaj artykuł
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
