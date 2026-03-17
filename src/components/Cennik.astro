@@ -274,14 +274,13 @@ const defaultTabId =
                 {
                   tab.groups.map((group, index) => (
                     <section
-                      class="cennik-accordion bg-white rounded-2xl border border-gray-100 overflow-hidden opacity-0 translate-y-3"
+                      class="cennik-accordion bg-white rounded-2xl border border-gray-100 opacity-0 translate-y-3"
                       data-accordion
-                      data-open={index === 0 ? 'true' : 'false'}
                     >
                       <button
                         type="button"
                         class="w-full flex items-center justify-between px-5 md:px-6 py-4 md:py-5 text-left"
-                        aria-expanded={index === 0 ? 'true' : 'false'}
+                        aria-expanded="true"
                       >
                         <span class="text-sm md:text-base font-semibold text-navy">
                           {group.groupName}
@@ -431,33 +430,7 @@ const defaultTabId =
       });
     }
 
-    // Accordion (grupy w kategoriach)
-    accordions.forEach((acc) => {
-      const button = acc.querySelector('button');
-      const body = acc.querySelector('[data-accordion-body]');
-      if (!button || !body) return;
-
-      if (acc.dataset.open === 'true') {
-        body.style.maxHeight = body.scrollHeight + 'px';
-      } else {
-        body.style.maxHeight = '0px';
-      }
-
-      button.addEventListener('click', () => {
-        const isOpen = acc.dataset.open === 'true';
-        acc.dataset.open = isOpen ? 'false' : 'true';
-        button.setAttribute('aria-expanded', !isOpen);
-        const icon = acc.querySelector('.cennik-accordion-icon');
-        if (icon) {
-          icon.textContent = !isOpen ? '−' : '+';
-        }
-        if (!isOpen) {
-          body.style.maxHeight = body.scrollHeight + 'px';
-        } else {
-          body.style.maxHeight = '0px';
-        }
-      });
-    });
+    // Accordion (grupy w kategoriach) – stale rozwinięte, bez interakcji
 
     // Subtabs for orthodontics
     const subtabRoots = root.querySelectorAll('[data-subtabs-root]');
@@ -560,7 +533,7 @@ const defaultTabId =
   .cennik-subtabs-scroll {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 0.4rem;
   }
 
@@ -652,8 +625,8 @@ const defaultTabId =
   }
 
   .cennik-accordion-body {
-    overflow: hidden;
-    transition: max-height 220ms ease-out;
+    overflow: visible;
+    max-height: none;
   }
 
   .cennik-accordion-icon {
@@ -687,6 +660,13 @@ const defaultTabId =
     .cennik-tabs-scroll {
       justify-content: center;
       flex-wrap: wrap;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .cennik-tab {
+      flex: 0 1 calc(25% - 0.75rem);
+      justify-content: center;
     }
   }
 
