@@ -120,10 +120,12 @@ import Cennik from '../components/Cennik.astro';
                     </p>
                 </div>
 
-                <!-- Kornelia wyróżniona -->
-                <div class="max-w-3xl mx-auto mb-12">
-                    <article class="bg-gray-50 rounded-3xl shadow-sm border border-gray-100 overflow-hidden flex flex-col md:flex-row">
-                        <img src="https://www.orthoclinic.com.pl/images/o-nas/nasz-zespol/kornelia-rumin-big.jpg" alt="Dr n. med. Kornelia Rumin" loading="lazy" class="w-full md:w-72 aspect-[4/5] md:aspect-[3/4] object-cover object-center">
+                <!-- Kornelia wyróżniona (lekko większa karta) -->
+                <div class="max-w-4xl mx-auto mb-10">
+                    <article class="bg-gray-50 rounded-3xl shadow-sm border border-gray-100 overflow-hidden flex flex-col md:flex-row md:items-stretch">
+                        <div class="md:w-1/3">
+                            <img src="https://www.orthoclinic.com.pl/images/o-nas/nasz-zespol/kornelia-rumin-big.jpg" alt="Dr n. med. Kornelia Rumin" loading="lazy" class="w-full h-full aspect-[4/5] md:aspect-[3/4] object-cover object-center">
+                        </div>
                         <div class="p-6 md:p-8 flex flex-col flex-1">
                             <h3 class="cinzel text-xl md:text-2xl text-navy mb-1">Dr n. med. Kornelia Rumin</h3>
                             <p class="text-xs uppercase tracking-[0.2em] text-gold mb-3">Specjalista ortodonta</p>
@@ -138,11 +140,13 @@ import Cennik from '../components/Cennik.astro';
                     </article>
                 </div>
 
-                <!-- Lekarze -->
-                <div class="grid gap-8 md:grid-cols-2 mb-12">
+                <!-- Lekarze (karty o zbliżonej wielkości) -->
+                <div class="grid gap-6 md:gap-8 md:grid-cols-2 mb-12 max-w-5xl mx-auto">
                     <!-- Lek. dent. Aleksandra Czerkawska -->
-                    <article class="bg-gray-50 rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col">
-                        <img src="/lek-aleksandra-czerkawska.png" alt="Lek. dent. Aleksandra Czerkawska" loading="lazy" class="w-full aspect-[4/3] md:aspect-[3/4] object-cover object-center">
+                    <article class="bg-gray-50 rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col md:flex-row md:items-stretch">
+                        <div class="md:w-2/5">
+                            <img src="/lek-aleksandra-czerkawska.png" alt="Lek. dent. Aleksandra Czerkawska" loading="lazy" class="w-full h-full aspect-[4/5] md:aspect-[3/4] object-cover object-center">
+                        </div>
                         <div class="p-6 flex flex-col flex-1">
                             <h3 class="cinzel text-lg md:text-xl text-navy mb-1">Lek. dent. Aleksandra Czerkawska</h3>
                             <p class="text-xs uppercase tracking-[0.2em] text-gold mb-3">Stomatologia zachowawcza</p>
@@ -157,8 +161,10 @@ import Cennik from '../components/Cennik.astro';
                     </article>
 
                     <!-- Lek. dent. Kamil Wojciechowski -->
-                    <article class="bg-gray-50 rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col">
-                        <img src="/lek-kamil-wojciechowski.png" alt="Lek. dent. Kamil Wojciechowski" loading="lazy" class="w-full aspect-[4/3] md:aspect-[3/4] object-cover object-center">
+                    <article class="bg-gray-50 rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col md:flex-row md:items-stretch">
+                        <div class="md:w-2/5">
+                            <img src="/lek-kamil-wojciechowski.png" alt="Lek. dent. Kamil Wojciechowski" loading="lazy" class="w-full h-full aspect-[4/5] md:aspect-[3/4] object-cover object-center">
+                        </div>
                         <div class="p-6 flex flex-col flex-1">
                             <h3 class="cinzel text-lg md:text-xl text-navy mb-1">Lek. dent. Kamil Wojciechowski</h3>
                             <p class="text-xs uppercase tracking-[0.2em] text-gold mb-3">Endodoncja i chirurgia</p>
