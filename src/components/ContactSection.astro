@@ -1,0 +1,167 @@
+---
+---
+
+<section id="kontakt" class="py-24 md:py-32 bg-white relative">
+  <div class="container mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-16 lg:gap-20">
+      <!-- Info i Formularz -->
+      <div>
+        <span class="text-gold font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Zrób pierwszy krok</span>
+        <h2 class="cinzel text-3xl md:text-4xl mb-10 text-navy">Umów konsultację</h2>
+
+        <!-- Przyciski akcji -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+          <a
+            href="tel:+48694731124"
+            class="bg-navy hover:bg-navy-light text-white px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition-colors shadow-lg"
+          >
+            <i data-lucide="phone-call" class="w-5 h-5 text-gold"></i>
+            +48 694 731 124
+          </a>
+          <a
+            href="https://wa.me/48789012345"
+            target="_blank"
+            rel="noopener"
+            class="bg-[#25D366] hover:bg-[#20bd5a] text-white px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition-colors shadow-lg"
+          >
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.564-10.563 5.826 0 10.564 4.738 10.564 10.563 0 5.827-4.739 10.565-10.564 10.565z"
+              />
+            </svg>
+            Napisz WhatsApp
+          </a>
+        </div>
+
+        <!-- Dane adresowe -->
+        <div class="space-y-6 mb-12 bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-100">
+          <div class="flex gap-4 items-start">
+            <i data-lucide="map-pin" class="text-gold shrink-0 mt-1"></i>
+            <div>
+              <p class="font-bold text-navy text-sm mb-1">ORTHOMEDICA - dr Kornelia Rumin</p>
+              <p class="text-sm text-gray-500">
+                ul. Pawia 67
+                <br />
+                59-300 Lubin
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <i data-lucide="clock" class="text-gold shrink-0 mt-1"></i>
+            <div>
+              <p class="text-sm text-gray-500">
+                Pn - Pt: 09:00 - 18:00
+                <br />
+                Sobota: Nieczynne
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <i data-lucide="mail" class="text-gold shrink-0 mt-1"></i>
+            <div>
+              <a
+                href="mailto:rejestracja@orthomedica-lubin.pl"
+                class="text-sm text-navy hover:text-gold font-bold transition-colors focus-visible:outline-none"
+              >
+                rejestracja@orthomedica-lubin.pl
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formularz online -->
+        <h3 class="font-bold text-navy mb-4">Lub wyślij zapytanie online:</h3>
+        <form id="contactForm" class="space-y-4" novalidate>
+          <!-- Anti-spam Honeypot -->
+          <div class="hidden" aria-hidden="true">
+            <label for="bot_check">Nie wypełniaj tego pola</label>
+            <input type="text" name="bot_check" id="bot_check" tabindex="-1" />
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label
+                class="block text-[10px] font-bold uppercase tracking-wider text-navy/70 mb-2 pl-2"
+                for="name"
+              >
+                Imię i nazwisko
+              </label>
+              <input
+                type="text"
+                id="name"
+                required
+                placeholder="np. Jan Kowalski"
+                class="input-field text-sm"
+                pattern=".{3,}"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-[10px] font-bold uppercase tracking-wider text-navy/70 mb-2 pl-2"
+                for="phone"
+              >
+                Nr telefonu
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                required
+                placeholder="np. 500 600 700"
+                class="input-field text-sm"
+                pattern="[0-9\\s\\-\\+]{9,}"
+              />
+            </div>
+          </div>
+          <div>
+            <label
+              class="block text-[10px] font-bold uppercase tracking-wider text-navy/70 mb-2 pl-2"
+              for="subject"
+            >
+              Cel wizyty
+            </label>
+            <select id="subject" required class="input-field text-sm text-navy font-medium">
+              <option value="" disabled selected>
+                Wybierz cel wizyty...
+              </option>
+              <option value="konsultacja">Pierwsza konsultacja</option>
+              <option value="invisalign">Konsultacja Invisalign</option>
+              <option value="dziecko">Wizyta z dzieckiem</option>
+              <option value="inne">Inne zapytanie</option>
+            </select>
+          </div>
+
+          <!-- Komunikaty zwrotne formularza -->
+          <div id="formFeedback" class="hidden p-4 rounded-xl text-xs font-bold border mt-2 transition-all"></div>
+
+          <button
+            type="submit"
+            class="w-full btn-gold py-4 rounded-xl font-bold uppercase tracking-wider text-sm mt-2 focus:outline-none focus-visible:ring-4 focus-visible:ring-gold/30"
+          >
+            Wyślij wiadomość
+          </button>
+          <p class="text-[9px] text-gray-400 text-center mt-2">
+            Wysyłając zapytanie akceptujesz politykę prywatności. Zabezpieczono przed spamem.
+          </p>
+        </form>
+      </div>
+
+      <!-- GDPR Compliant Map (Lazy loaded) -->
+      <div
+        class="h-full min-h-[400px] lg:min-h-full bg-gray-100 rounded-[2rem] overflow-hidden shadow-inner relative flex flex-col items-center justify-center border-4 border-gray-50"
+        id="map-container"
+      >
+        <i data-lucide="map" class="w-16 h-16 text-gray-300 mb-4"></i>
+        <p class="text-sm text-gray-500 font-bold mb-4 px-6 text-center">
+          Ze względu na ochronę Twoich danych (RODO), Mapa Google jest domyślnie ukryta.
+        </p>
+        <button
+          id="load-map-btn"
+          class="bg-navy text-white px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-gold transition-colors"
+        >
+          Załaduj mapę i pokaż trasę
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
