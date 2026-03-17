@@ -5,6 +5,14 @@ const defaultTabId =
   cennikTabs.find((tab) => tab.featured) !== undefined
     ? cennikTabs.find((tab) => tab.featured).id
     : cennikTabs[0].id;
+
+const orthodonticOrder = [
+  'ort-nakladki',
+  'ort-aparat-staly',
+  'ort-dzieci',
+  'ort-diagnostyka',
+  'ort-retencja',
+];
 ---
 
 <section
@@ -26,8 +34,8 @@ const defaultTabId =
         Cennik
       </h2>
       <p class="text-gray-500 font-light text-sm md:text-base text-center max-w-2xl mx-auto">
-        Widełki cenowe mają charakter orientacyjny. Ostateczny koszt leczenia
-        ustalamy po konsultacji i analizie diagnostycznej.
+        Widełki cenowe są orientacyjne. Wiążący kosztorys wystawiamy bezpłatnie po
+        konsultacji i diagnostyce — bez żadnych zobowiązań.
       </p>
     </header>
 
@@ -79,121 +87,154 @@ const defaultTabId =
               </p>
             </div>
 
-            <!-- Ortodoncja z podkategoriami -->
+            {/* Ortodoncja jako sekcje, bez wewnętrznych zakładek */}
             {
-              tab.type === 'orthodontics' && tab.subTabs && (
-                <div class="space-y-6">
-                  <div
-                    class="cennik-subtabs-wrapper"
-                    data-subtabs-root={tab.id}
-                  >
-                    <div class="cennik-subtabs-scroll">
-                      {
-                        tab.subTabs.map((sub, subIndex) => (
-                          <button
-                            type="button"
-                            class={`cennik-subtab ${
-                              subIndex === 0 ? 'is-active' : ''
-                            }`}
-                            data-subtab-id={sub.id}
-                          >
-                            <span class="cennik-subtab-label">
+              tab.type === 'orthodontics' &&
+                tab.subTabs && (
+                  <div class="space-y-10">
+                    {
+                      orthodonticOrder.map((subId) => {
+                        const sub = tab.subTabs?.find((s) => s.id === subId);
+                        if (!sub) return null;
+
+                        return (
+                          <section>
+                            <h3 class="cinzel text-lg md:text-xl text-navy mb-2">
                               {sub.label}
-                            </span>
-                          </button>
-                        ))
-                      }
-                    </div>
-                  </div>
+                            </h3>
+                            {sub.intro && (
+                              <p class="text-xs md:text-sm text-gray-600 font-light max-w-3xl mb-4">
+                                {sub.intro}
+                              </p>
+                            )}
 
-                  {
-                    tab.subTabs.map((sub, subIndex) => (
-                      <div
-                        class={`cennik-subpanel ${
-                          subIndex === 0 ? 'is-active' : 'is-hidden'
-                        }`}
-                        data-subpanel-id={sub.id}
-                      >
-                        <div class="mb-4 md:mb-6">
-                          <p class="text-xs md:text-sm text-gray-600 font-light max-w-3xl">
-                            {sub.intro}
-                          </p>
-                        </div>
-
-                        {sub.type === 'cards' && (
-                          <div class="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
-                            {
-                              sub.items.map((item, index) => (
-                                <article
-                                  class={`price-card bg-white rounded-2xl border border-gray-100 p-5 md:p-6 flex flex-col justify-between opacity-0 translate-y-3`}
-                                  data-card
-                                  style={`transition-delay: ${
-                                    220 + index * 60
-                                  }ms;`}
-                                >
-                                  <div>
-                                    {item.tag && (
-                                      <div class="mb-3">
-                                        <span
-                                          class={`inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wide ${
-                                            item.tag === 'Najpopularniejszy'
-                                              ? 'bg-gold text-white'
-                                              : 'bg-amber-100 text-amber-800'
-                                          }`}
-                                        >
-                                          {item.tag}
-                                        </span>
+                            {sub.type === 'cards' && (
+                              <div class="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
+                                {
+                                  sub.items.map((item, index) => (
+                                    <article
+                                      class="price-card bg-white rounded-2xl border border-gray-100 p-5 md:p-6 flex flex-col justify-between opacity-0 translate-y-3"
+                                      data-card
+                                      style={`transition-delay: ${
+                                        220 + index * 60
+                                      }ms;`}
+                                    >
+                                      <div>
+                                        {item.tag && (
+                                          <div class="mb-3">
+                                            <span
+                                              class={`inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wide ${
+                                                item.tag === 'Najpopularniejszy'
+                                                  ? 'bg-gold text-white'
+                                                  : 'bg-amber-100 text-amber-800'
+                                              }`}
+                                            >
+                                              {item.tag}
+                                            </span>
+                                          </div>
+                                        )}
+                                        <h3 class="text-sm md:text-base font-semibold text-navy mb-1">
+                                          {item.name}
+                                        </h3>
+                                        {item.desc && (
+                                          <p class="text-xs md:text-[13px] text-gray-500 mb-3">
+                                            {item.desc}
+                                          </p>
+                                        )}
                                       </div>
-                                    )}
-                                    <h3 class="text-sm md:text-base font-semibold text-navy mb-1">
-                                      {item.name}
-                                    </h3>
-                                    {item.desc && (
-                                      <p class="text-xs md:text-[13px] text-gray-500 mb-3">
-                                        {item.desc}
-                                      </p>
-                                    )}
-                                  </div>
-                                  <div class="mt-2 pt-2 border-t border-gray-100 flex flex-col">
-                                    <span class="text-base md:text-lg font-semibold text-gold leading-tight">
-                                      {item.price}
-                                    </span>
-                                    {item.unit && (
-                                      <span class="text-[11px] text-gray-500 mt-0.5">
-                                        {item.unit}
-                                      </span>
-                                    )}
-                                  </div>
-                                </article>
-                              ))
-                            }
-                          </div>
-                        )}
+                                      <div class="mt-2 pt-2 border-t border-gray-100 flex flex-col">
+                                        <span class="text-base md:text-lg font-semibold text-gold leading-tight">
+                                          {item.price}
+                                        </span>
+                                        {item.unit && (
+                                          <span class="text-[11px] text-gray-500 mt-0.5">
+                                            {item.unit}
+                                          </span>
+                                        )}
+                                        {item.note && (
+                                          <span class="mt-1 text-[11px] text-gray-400 leading-relaxed">
+                                            {item.note}
+                                          </span>
+                                        )}
+                                      </div>
+                                    </article>
+                                  ))
+                                }
+                              </div>
+                            )}
 
-                        {sub.infoBox && (
-                          <div class="mt-6 md:mt-8">
-                            <div class="cennik-infobox opacity-0 translate-y-3">
-                              <div class="flex items-start gap-3">
-                                <div class="mt-0.5 text-gold text-base" aria-hidden="true">
-                                  💡
-                                </div>
-                                <div>
-                                  <h3 class="text-sm font-semibold text-navy mb-1">
-                                    {sub.infoBox.title}
-                                  </h3>
-                                  <p class="text-xs md:text-[13px] text-gray-500 leading-relaxed">
-                                    {sub.infoBox.content}
-                                  </p>
+                            {sub.infoBox && (
+                              <div class="mt-6 md:mt-8">
+                                <div class="cennik-infobox opacity-0 translate-y-3">
+                                  <div class="flex items-start gap-3">
+                                    <div class="mt-0.5 text-gold text-base" aria-hidden="true">
+                                      💡
+                                    </div>
+                                    <div>
+                                      <h3 class="text-sm font-semibold text-navy mb-1">
+                                        {sub.infoBox.title}
+                                      </h3>
+                                      <p class="text-xs md:text-[13px] text-gray-500 leading-relaxed">
+                                        {sub.infoBox.content}
+                                      </p>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    ))
-                  }
-                </div>
-              )
+                            )}
+
+                            {sub.id === 'ort-nakladki' && (
+                              <>
+                                <blockquote class="mt-6 md:mt-8 border border-gray-100 rounded-2xl px-4 py-4 md:px-5 md:py-5 bg-white/60">
+                                  <p class="text-xs md:text-[13px] text-gray-600 italic leading-relaxed mb-3">
+                                    "Zdecydowałem się na nakładki, bo dużo pracuję z klientami. Praktycznie niewidoczne, zdejmuję do jedzenia. Cały proces skanowania to kosmos w porównaniu do masy, którą pamiętam z dzieciństwa."
+                                  </p>
+                                  <footer class="flex items-center gap-3 text-[11px] text-gray-500">
+                                    <span class="text-amber-500 tracking-[0.2em] text-[10px]">
+                                      ★★★★★
+                                    </span>
+                                    <span class="font-semibold text-gray-700">
+                                      Michał K.
+                                    </span>
+                                    <span class="text-gray-400 text-[10px] uppercase tracking-[0.18em]">
+                                      Google
+                                    </span>
+                                  </footer>
+                                </blockquote>
+
+                                <div class="mt-6 md:mt-8 flex flex-col md:flex-row md:items-center gap-3 md:gap-4">
+                                  <a
+                                    href="#kontakt"
+                                    class="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-gold text-white text-[11px] md:text-xs font-semibold tracking-[0.18em] uppercase shadow-md hover:bg-amber-500 transition-colors"
+                                  >
+                                    Umów bezpłatną konsultację →
+                                  </a>
+                                  <span class="text-[11px] text-gray-500">
+                                    lub pobierz pełny cennik PDF poniżej
+                                  </span>
+                                </div>
+                              </>
+                            )}
+
+                            {sub.id === 'ort-aparat-staly' && (
+                              <div class="mt-6 md:mt-8 flex flex-col md:flex-row md:items-center gap-3 md:gap-4">
+                                <a
+                                  href="#kontakt"
+                                  class="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-gold text-white text-[11px] md:text-xs font-semibold tracking-[0.18em] uppercase shadow-md hover:bg-amber-500 transition-colors"
+                                >
+                                  Umów konsultację →
+                                </a>
+                                <span class="text-[11px] text-gray-500">
+                                  Pełny plan kosztów przygotujemy na pierwszej wizycie.
+                                </span>
+                              </div>
+                            )}
+                          </section>
+                        );
+                      })
+                    }
+                  </div>
+                )
             }
 
             <!-- Standardowe karty (pozostałe kategorie) -->
@@ -241,6 +282,11 @@ const defaultTabId =
                               {item.unit}
                             </span>
                           )}
+                          {item.note && (
+                            <span class="mt-1 text-[11px] text-gray-400 leading-relaxed">
+                              {item.note}
+                            </span>
+                          )}
                         </div>
                       </article>
                     ))
@@ -270,50 +316,33 @@ const defaultTabId =
             )}
 
             {tab.type === 'groups' && tab.groups && (
-              <div class="space-y-4">
+              <div class="space-y-6">
                 {
-                  tab.groups.map((group, index) => (
-                    <section
-                      class="cennik-accordion bg-white rounded-2xl border border-gray-100 opacity-0 translate-y-3"
-                      data-accordion
-                    >
-                      <button
-                        type="button"
-                        class="w-full flex items-center justify-between px-5 md:px-6 py-4 md:py-5 text-left"
-                        aria-expanded="true"
-                      >
-                        <span class="text-sm md:text-base font-semibold text-navy">
-                          {group.groupName}
-                        </span>
-                        <span
-                          class="cennik-accordion-icon text-gold"
-                          aria-hidden="true"
-                        >
-                          +
-                        </span>
-                      </button>
-                      <div class="cennik-accordion-body" data-accordion-body>
-                        <ul class="divide-y divide-gray-100">
-                          {
-                            group.items.map((item) => (
-                              <li class="flex items-center justify-between gap-4 px-5 md:px-6 py-3">
-                                <span class="text-xs md:text-[13px] text-gray-600">
-                                  {item.name}
-                                </span>
-                                <span
-                                  class={`text-xs md:text-sm font-semibold ${
-                                    item.price === 'wycena indywidualna'
-                                      ? 'text-gray-400 italic'
-                                      : 'text-gold'
-                                  }`}
-                                >
-                                  {item.price}
-                                </span>
-                              </li>
-                            ))
-                          }
-                        </ul>
-                      </div>
+                  tab.groups.map((group) => (
+                    <section class="bg-white rounded-2xl border border-gray-100 opacity-0 translate-y-3 px-5 md:px-6 py-4 md:py-5">
+                      <h3 class="text-sm md:text-base font-semibold text-navy mb-3">
+                        {group.groupName}
+                      </h3>
+                      <ul class="divide-y divide-gray-100">
+                        {
+                          group.items.map((item) => (
+                            <li class="flex items-center justify-between gap-4 py-2.5">
+                              <span class="text-xs md:text-[13px] text-gray-600">
+                                {item.name}
+                              </span>
+                              <span
+                                class={`text-xs md:text-sm font-semibold ${
+                                  item.price === 'wycena indywidualna'
+                                    ? 'text-gray-400 italic'
+                                    : 'text-gold'
+                                }`}
+                              >
+                                {item.price}
+                              </span>
+                            </li>
+                          ))
+                        }
+                      </ul>
                     </section>
                   ))
                 }

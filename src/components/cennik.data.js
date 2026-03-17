@@ -133,7 +133,7 @@ export const cennikTabs = [
         infoBox: {
           title: 'Przykładowy całkowity koszt leczenia',
           content:
-            'Aparat metalowy na oba łuki (18 miesięcy, wizyty co ~7 tygodni) to ok. 6 000 zł za aparaty + ~10 wizyt × 350 zł. Dokładny plan kosztów otrzymasz na konsultacji.',
+            'Aparat metalowy na oba łuki (18 miesięcy, wizyty co ~7 tygodni) to ok. 6 000 zł za aparaty + ~10 wizyt × 350 zł. Aparat ceramiczny na oba łuki to zazwyczaj 8 000–9 000 zł + wizyty kontrolne. Dokładny plan kosztów otrzymasz na konsultacji.',
         },
       },
       {
@@ -153,9 +153,11 @@ export const cennikTabs = [
           {
             name: 'Invisalign Comprehensive',
             desc: 'Większość dorosłych przypadków wad zgryzu — najpopularniejszy wybór',
-            price: '12 000 – 18 000 zł',
-            unit: 'całe leczenie',
+            price: 'ok. 14 000 zł',
+            unit: 'typowy przypadek dorosłego',
             tag: 'Najpopularniejszy',
+            note:
+              'Zakres 12 000–18 000 zł zależy od stopnia skomplikowania — ustalamy po diagnostyce.',
           },
           {
             name: 'Once Aligner',
@@ -173,9 +175,9 @@ export const cennikTabs = [
           },
           {
             name: 'Wizualizacja ClinCheck (plan 3D)',
-            desc: 'Symulacja efektów przed startem — wliczana w koszt leczenia Invisalign',
-            price: '600 zł',
-            unit: 'jednorazowo',
+            desc: 'Symulacja efektów — wliczona w cenę każdego pakietu Invisalign',
+            price: '0 zł',
+            unit: 'w pakiecie Invisalign',
             tag: null,
           },
         ],
@@ -223,7 +225,7 @@ export const cennikTabs = [
   },
   {
     id: 'zachowawcza',
-    label: 'Stomatologia zachowawcza',
+    label: 'Stomatologia',
     icon: '◇',
     type: 'groups',
     intro:
@@ -359,7 +361,7 @@ export const cennikTabs = [
   },
   {
     id: 'obrazowe',
-    label: 'Badania obrazowe',
+    label: 'Diagnostyka obrazowa',
     icon: '⊙',
     type: 'cards',
     intro:
