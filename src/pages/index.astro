@@ -110,7 +110,7 @@ import Cennik from '../components/Cennik.astro';
         </section>
 
         <!-- Oferta -->
-        <section id="oferta" class="py-24 md:py-32 bg-gray-50 relative">
+        <section id="oferta" class="py-24 md:py-32 bg-[#f8f7f4] relative">
             <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20">
                     <span class="text-gold font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Co oferujemy</span>
@@ -120,26 +120,26 @@ import Cennik from '../components/Cennik.astro';
                     </p>
                 </div>
 
-                <!-- FEATURED: Nakładki Invisalign -->
-                <a href="/zabiegi/invisalign-lubin" class="block bg-white rounded-3xl border border-gray-100 shadow-sm px-6 py-6 md:px-10 md:py-8 mb-10 md:mb-12 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                <!-- FEATURED: Aparat stały metalowy -->
+                <a href="/zabiegi/aparat-staly-metalowy" class="block bg-white rounded-3xl border border-gray-100 shadow-sm px-6 py-6 md:px-10 md:py-8 mb-10 md:mb-12 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
                     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-10">
                         <div class="flex-1 min-w-0">
                             <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold mb-3">
-                                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-                                Najpopularniejszy wybór
+                                <i data-lucide="settings" class="w-3.5 h-3.5"></i>
+                                Sprawdzone leczenie stałe
                             </span>
-                            <h3 class="cinzel text-2xl md:text-3xl text-navy mb-3">Nakładki Invisalign</h3>
+                            <h3 class="cinzel text-2xl md:text-3xl text-navy mb-3">Aparat stały metalowy</h3>
                             <p class="text-sm md:text-[15px] text-gray-600 font-light leading-relaxed max-w-xl">
-                                Niewidoczne, zdejmowane nakładki prostujące zęby — popularne wśród dorosłych i młodzieży ze względu na dyskrecję. Certyfikowany Invisalign Expert w Lubinie.
+                                Klasyczne zamki metalowe, skuteczne w leczeniu większości wad zgryzu u dorosłych i młodzieży. Stabilna metoda, którą można dopasować do Twoich potrzeb i planu leczenia.
                             </p>
                             <span class="inline-flex items-center gap-2 text-sm font-semibold text-gold mt-4">
                                 Poznaj szczegóły
                                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </span>
                         </div>
-                        <div class="md:text-right md:pl-4 flex-shrink-0">
-                            <p class="cinzel text-2xl md:text-3xl text-navy font-semibold whitespace-nowrap">9 000 – 18 000 zł</p>
-                            <p class="text-[11px] uppercase tracking-[0.18em] text-gray-500 mt-1">pełne leczenie</p>
+                        <div class="md:text-right md:pl-4 flex-shrink-0 text-left text-sm text-gray-500">
+                            <p class="uppercase tracking-[0.16em] text-[11px] text-gray-400 mb-1">Dla kogo</p>
+                            <p>Leczenie stałe dla młodzieży i dorosłych przy typowych i złożonych wadach zgryzu.</p>
                         </div>
                     </div>
                 </a>
@@ -148,16 +148,37 @@ import Cennik from '../components/Cennik.astro';
                 <nav aria-label="Zabiegi ortodontyczne">
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
                         <!-- Aparat stały metalowy -->
-                        <a href="/zabiegi/aparat-staly-metalowy" class="group bg-white rounded-2xl border border-gray-100 p-5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200 flex flex-col">
-                            <div class="w-10 h-10 rounded-xl bg-gold/10 text-gold flex items-center justify-center mb-4">
-                                <i data-lucide="settings" class="w-5 h-5"></i>
+                        <a href="/zabiegi/invisalign-lubin" class="group bg-white rounded-2xl border border-gray-100 p-5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200 flex flex-col">
+                            <div class="w-10 h-10 rounded-xl bg-gold/10 text-gold flex items-center justify-center mr-3">
+                                <i data-lucide="sparkles" class="w-5 h-5"></i>
                             </div>
-                            <h4 class="text-sm font-semibold text-navy mb-1">Aparat stały metalowy</h4>
+                            <div class="flex items-center justify-between gap-3 mb-1">
+                                <h4 class="text-sm font-semibold text-navy flex-1">Nakładki Invisalign</h4>
+                            </div>
+                            <p class="text-[13px] text-gray-500 font-light mb-3 flex-1">
+                                Niewidoczne nakładki dla dorosłych i młodzieży.
+                            </p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <span class="text-[12px] font-semibold text-gold">Poznaj szczegóły</span>
+                                <span class="w-7 h-7 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:text-navy group-hover:bg-gold/10 transition-colors">
+                                    <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                                </span>
+                            </div>
+                        </a>
+
+                        <!-- Aparat stały metalowy -->
+                        <a href="/zabiegi/aparat-staly-metalowy" class="group bg-white rounded-2xl border border-gray-100 p-5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200 flex flex-col">
+                            <div class="flex items-center gap-3 mb-1">
+                                <div class="w-10 h-10 rounded-xl bg-gold/10 text-gold flex items-center justify-center">
+                                    <i data-lucide="settings" class="w-5 h-5"></i>
+                                </div>
+                                <h4 class="text-sm font-semibold text-navy flex-1">Aparat stały metalowy</h4>
+                            </div>
                             <p class="text-[13px] text-gray-500 font-light mb-3 flex-1">
                                 Klasyczne zamki, skuteczne przy każdej wadzie zgryzu.
                             </p>
                             <div class="flex items-center justify-between mt-auto">
-                                <span class="text-[11px] text-gray-500">od 2 500 zł / łuk</span>
+                                <span class="text-[12px] font-semibold text-gold">Poznaj szczegóły</span>
                                 <span class="w-7 h-7 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:text-navy group-hover:bg-gold/10 transition-colors">
                                     <i data-lucide="arrow-right" class="w-3 h-3"></i>
                                 </span>
@@ -166,15 +187,17 @@ import Cennik from '../components/Cennik.astro';
 
                         <!-- Aparat stały ceramiczny -->
                         <a href="/zabiegi/aparat-staly-ceramiczny" class="group bg-white rounded-2xl border border-gray-100 p-5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200 flex flex-col">
-                            <div class="w-10 h-10 rounded-xl bg-gold/10 text-gold flex items-center justify-center mb-4">
-                                <i data-lucide="sparkles" class="w-5 h-5"></i>
+                            <div class="flex items-center gap-3 mb-1">
+                                <div class="w-10 h-10 rounded-xl bg-gold/10 text-gold flex items-center justify-center">
+                                    <i data-lucide="sparkles" class="w-5 h-5"></i>
+                                </div>
+                                <h4 class="text-sm font-semibold text-navy flex-1">Aparat stały ceramiczny</h4>
                             </div>
-                            <h4 class="text-sm font-semibold text-navy mb-1">Aparat stały ceramiczny</h4>
                             <p class="text-[13px] text-gray-500 font-light mb-3 flex-1">
                                 Estetyczne zamki porcelanowe lub szafirowe.
                             </p>
                             <div class="flex items-center justify-between mt-auto">
-                                <span class="text-[11px] text-gray-500">od 3 000 zł / łuk</span>
+                                <span class="text-[12px] font-semibold text-gold">Poznaj szczegóły</span>
                                 <span class="w-7 h-7 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:text-navy group-hover:bg-gold/10 transition-colors">
                                     <i data-lucide="arrow-right" class="w-3 h-3"></i>
                                 </span>
@@ -183,15 +206,17 @@ import Cennik from '../components/Cennik.astro';
 
                         <!-- Ortodoncja dziecięca -->
                         <a href="/zabiegi/ortodoncja-dziecieca" class="group bg-white rounded-2xl border border-gray-100 p-5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200 flex flex-col">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4">
-                                <i data-lucide="baby" class="w-5 h-5"></i>
+                            <div class="flex items-center gap-3 mb-1">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                                    <i data-lucide="baby" class="w-5 h-5"></i>
+                                </div>
+                                <h4 class="text-sm font-semibold text-navy flex-1">Ortodoncja dziecięca</h4>
                             </div>
-                            <h4 class="text-sm font-semibold text-navy mb-1">Ortodoncja dziecięca</h4>
                             <p class="text-[13px] text-gray-500 font-light mb-3 flex-1">
                                 Leczenie przechwytujące od 7. roku życia.
                             </p>
                             <div class="flex items-center justify-between mt-auto">
-                                <span class="text-[11px] text-gray-500">wycena indywidualna</span>
+                                <span class="text-[12px] font-semibold text-gold">Poznaj szczegóły</span>
                                 <span class="w-7 h-7 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:text-navy group-hover:bg-gold/10 transition-colors">
                                     <i data-lucide="arrow-right" class="w-3 h-3"></i>
                                 </span>
@@ -200,15 +225,17 @@ import Cennik from '../components/Cennik.astro';
 
                         <!-- Skan 3D iTero -->
                         <a href="/zabiegi/skan-3d-itero" class="group bg-emerald-50/60 rounded-2xl border border-emerald-100 p-5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200 flex flex-col">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center mb-4">
-                                <i data-lucide="scan-line" class="w-5 h-5"></i>
+                            <div class="flex items-center gap-3 mb-1">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center">
+                                    <i data-lucide="scan-line" class="w-5 h-5"></i>
+                                </div>
+                                <h4 class="text-sm font-semibold text-navy flex-1">Skan 3D iTero</h4>
                             </div>
-                            <h4 class="text-sm font-semibold text-navy mb-1">Skan 3D iTero</h4>
                             <p class="text-[13px] text-gray-600 font-light mb-3 flex-1">
                                 Cyfrowy wycisk i symulacja uśmiechu na miejscu.
                             </p>
                             <div class="flex items-center justify-between mt-auto">
-                                <span class="text-[11px] font-semibold text-emerald-700">Bezpłatnie</span>
+                                <span class="text-[12px] font-semibold text-gold">Poznaj szczegóły</span>
                                 <span class="w-7 h-7 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 group-hover:bg-emerald-200 transition-colors">
                                     <i data-lucide="arrow-right" class="w-3 h-3"></i>
                                 </span>
@@ -217,15 +244,17 @@ import Cennik from '../components/Cennik.astro';
 
                         <!-- Leczenie wad zgryzu -->
                         <a href="/zabiegi/leczenie-wad-zgryzu" class="group bg-white rounded-2xl border border-gray-100 p-5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200 flex flex-col">
-                            <div class="w-10 h-10 rounded-xl bg-navy/5 text-navy flex items-center justify-center mb-4">
-                                <i data-lucide="activity" class="w-5 h-5"></i>
+                            <div class="flex items-center gap-3 mb-1">
+                                <div class="w-10 h-10 rounded-xl bg-navy/5 text-navy flex items-center justify-center">
+                                    <i data-lucide="activity" class="w-5 h-5"></i>
+                                </div>
+                                <h4 class="text-sm font-semibold text-navy flex-1">Leczenie wad zgryzu</h4>
                             </div>
-                            <h4 class="text-sm font-semibold text-navy mb-1">Leczenie wad zgryzu</h4>
                             <p class="text-[13px] text-gray-500 font-light mb-3 flex-1">
                                 Zgryz otwarty, głęboki, krzyżowy, stłoczenia.
                             </p>
                             <div class="flex items-center justify-between mt-auto">
-                                <span class="text-[11px] text-gray-500">wycena indywidualna</span>
+                                <span class="text-[12px] font-semibold text-gold">Poznaj szczegóły</span>
                                 <span class="w-7 h-7 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:text-navy group-hover:bg-gold/10 transition-colors">
                                     <i data-lucide="arrow-right" class="w-3 h-3"></i>
                                 </span>
@@ -234,15 +263,17 @@ import Cennik from '../components/Cennik.astro';
 
                         <!-- Retencja -->
                         <a href="/zabiegi/retencja-ortodontyczna" class="group bg-white rounded-2xl border border-gray-100 p-5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200 flex flex-col">
-                            <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center mb-4">
-                                <i data-lucide="shield-check" class="w-5 h-5"></i>
+                            <div class="flex items-center gap-3 mb-1">
+                                <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center">
+                                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+                                </div>
+                                <h4 class="text-sm font-semibold text-navy flex-1">Retencja po leczeniu</h4>
                             </div>
-                            <h4 class="text-sm font-semibold text-navy mb-1">Retencja po leczeniu</h4>
                             <p class="text-[13px] text-gray-500 font-light mb-3 flex-1">
                                 Aparaty retencyjne stałe i zdejmowane.
                             </p>
                             <div class="flex items-center justify-between mt-auto">
-                                <span class="text-[11px] text-gray-500">wycena indywidualna</span>
+                                <span class="text-[12px] font-semibold text-gold">Poznaj szczegóły</span>
                                 <span class="w-7 h-7 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:text-navy group-hover:bg-gold/10 transition-colors">
                                     <i data-lucide="arrow-right" class="w-3 h-3"></i>
                                 </span>
@@ -251,15 +282,17 @@ import Cennik from '../components/Cennik.astro';
 
                         <!-- Aparat ruchomy -->
                         <a href="/zabiegi/aparat-ruchomy" class="group bg-white rounded-2xl border border-gray-100 p-5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200 flex flex-col">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4">
-                                <i data-lucide="toy-brick" class="w-5 h-5"></i>
+                            <div class="flex items-center gap-3 mb-1">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                                    <i data-lucide="toy-brick" class="w-5 h-5"></i>
+                                </div>
+                                <h4 class="text-sm font-semibold text-navy flex-1">Aparat ruchomy</h4>
                             </div>
-                            <h4 class="text-sm font-semibold text-navy mb-1">Aparat ruchomy</h4>
                             <p class="text-[13px] text-gray-500 font-light mb-3 flex-1">
                                 Zdejmowany aparat dla dzieci w fazie wzrostu.
                             </p>
                             <div class="flex items-center justify-between mt-auto">
-                                <span class="text-[11px] text-gray-500">wycena indywidualna</span>
+                                <span class="text-[12px] font-semibold text-gold">Poznaj szczegóły</span>
                                 <span class="w-7 h-7 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:text-navy group-hover:bg-gold/10 transition-colors">
                                     <i data-lucide="arrow-right" class="w-3 h-3"></i>
                                 </span>
@@ -268,15 +301,17 @@ import Cennik from '../components/Cennik.astro';
 
                         <!-- Konsultacja -->
                         <a href="/zabiegi/konsultacja-ortodontyczna" class="group bg-emerald-50/60 rounded-2xl border border-emerald-100 p-5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200 flex flex-col">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center mb-4">
-                                <i data-lucide="calendar-clock" class="w-5 h-5"></i>
+                            <div class="flex items-center gap-3 mb-1">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center">
+                                    <i data-lucide="calendar-clock" class="w-5 h-5"></i>
+                                </div>
+                                <h4 class="text-sm font-semibold text-navy flex-1">Konsultacja ortodontyczna</h4>
                             </div>
-                            <h4 class="text-sm font-semibold text-navy mb-1">Konsultacja ortodontyczna</h4>
                             <p class="text-[13px] text-gray-600 font-light mb-3 flex-1">
                                 Pierwsze badanie, wywiad i plan leczenia.
                             </p>
                             <div class="flex items-center justify-between mt-auto">
-                                <span class="text-[11px] font-semibold text-emerald-700">Bezpłatnie</span>
+                                <span class="text-[12px] font-semibold text-gold">Poznaj szczegóły</span>
                                 <span class="w-7 h-7 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 group-hover:bg-emerald-200 transition-colors">
                                     <i data-lucide="arrow-right" class="w-3 h-3"></i>
                                 </span>
@@ -337,7 +372,7 @@ import Cennik from '../components/Cennik.astro';
         </section>
 
         <!-- Metamorfozy -->
-        <section id="metamorfozy" class="py-24 md:py-32 bg-white">
+        <section id="metamorfozy" class="py-24 md:py-32 bg-[#f8f7f4]">
             <div class="container mx-auto px-6">
                 <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <div class="max-w-xl">
@@ -409,7 +444,7 @@ import Cennik from '../components/Cennik.astro';
         </section>
 
         <!-- Zespół lekarzy -->
-        <section id="o-mnie" class="py-24 md:py-28 bg-white border-b border-gray-100">
+        <section id="o-mnie" class="py-24 md:py-28 bg-[#f8f7f4] border-b border-gray-100">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-12">
                     <span class="text-gold font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Zespół</span>
@@ -586,7 +621,7 @@ import Cennik from '../components/Cennik.astro';
         </section>
 
         <!-- SEO Block: Lokalne zasięgi -->
-        <aside class="py-16 bg-white border-b border-gray-100">
+        <aside class="py-16 bg-[#f8f7f4] border-b border-gray-100">
             <div class="container mx-auto px-6 text-center max-w-4xl">
                 <h3 class="text-xs uppercase font-bold tracking-[0.3em] text-gray-400 mb-6 flex items-center justify-center gap-2">
                     <i data-lucide="map" class="w-4 h-4 text-gold"></i>
