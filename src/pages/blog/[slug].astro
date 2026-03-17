@@ -16,6 +16,18 @@ type BlogFrontmatter = {
 
 type BlogPost = MarkdownInstance<BlogFrontmatter>;
 
+export async function getStaticPaths() {
+  // @ts-ignore Astro.glob is provided by Astro at build time
+  const posts = (await (Astro as any).glob<BlogFrontmatter>('../../content/blog/*.md')) as BlogPost[];
+
+  return posts.map((post: BlogPost) => {
+    const slug = post.file.split('/').pop()?.replace('.md', '') ?? '';
+    return {
+      params: { slug },
+    };
+  });
+}
+
 const { slug } = Astro.params;
 // @ts-ignore Astro.glob is provided by Astro at build time
 const posts = (await (Astro as any).glob<BlogFrontmatter>('../../content/blog/*.md')) as BlogPost[];
