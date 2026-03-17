@@ -5,6 +5,94 @@ import Footer from '../components/footer.astro';
 ---
 
 <Layout
+  title="Lek. dent. Kamil Wojciechowski – Endodoncja i chirurgia Lubin | ORTHOMEDICA"
+  description="Profil lek. dent. Kamila Wojciechowskiego, lekarza zajmującego się endodoncją i chirurgią stomatologiczną w ORTHOMEDICA w Lubinie."
+  canonical="https://orthomedica-lubin.pl/lek-dent-kamil-wojciechowski"
+>
+  <Header />
+
+  <main class="pt-28 md:pt-32 pb-20 bg-white">
+    <section class="py-12 md:py-16">
+      <div class="container mx-auto px-6">
+        <nav class="text-xs md:text-sm text-gray-400 mb-6" aria-label="Okruszki nawigacyjne">
+          <ol class="flex flex-wrap items-center gap-1 md:gap-2">
+            <li><a href="/" class="hover:text-gold">Strona główna</a></li>
+            <li class="text-gray-300">/</li>
+            <li><span class="text-gray-400">Lekarze</span></li>
+            <li class="text-gray-300">/</li>
+            <li><span class="text-navy">Lek. dent. Kamil Wojciechowski</span></li>
+          </ol>
+        </nav>
+
+        <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+          <div class="relative order-2 lg:order-1">
+            <div class="absolute -top-6 -left-6 md:-top-10 md:-left-10 w-40 h-40 md:w-56 md:h-56 bg-gold/10 rounded-full -z-0"></div>
+            <div class="absolute -bottom-6 -right-6 w-28 h-28 border-2 border-gold/30 rounded-full -z-0"></div>
+            <img
+              src="/lek-kamil-wojciechowski.png"
+              alt="Lek. dent. Kamil Wojciechowski"
+              loading="lazy"
+              class="rounded-3xl shadow-2xl relative z-10 w-full object-cover aspect-[4/5] md:aspect-[3/4]"
+            />
+          </div>
+
+          <div class="order-1 lg:order-2">
+            <h1 class="cinzel text-xs md:text-sm text-gold font-bold tracking-[0.5em] mb-4 uppercase italic">
+              Profil lekarza
+            </h1>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl serif mb-6 md:mb-8 text-navy">
+              Lek. dent. Kamil Wojciechowski
+            </h2>
+
+            <article class="prose prose-lg text-gray-600 font-light mb-8 max-w-xl">
+              <p class="mb-4">
+                Lek. dent. Kamil Wojciechowski w ORTHOMEDICA zajmuje się leczeniem kanałowym zębów (endodoncją)
+                oraz zabiegami chirurgicznymi w obrębie jamy ustnej. Dzięki jego pracy możliwe jest uratowanie
+                zębów, które w innym przypadku musiałyby zostać usunięte.
+              </p>
+
+              <h3 class="text-xl md:text-2xl serif text-navy mt-8 mb-3">Endodoncja mikroskopowa</h3>
+              <p class="mb-4">
+                Leczenie kanałowe prowadzi z użyciem powiększenia optycznego, co pozwala na precyzyjne oczyszczenie
+                i wypełnienie kanałów korzeniowych. Jest to kluczowe zwłaszcza u pacjentów przygotowywanych do
+                leczenia ortodontycznego, gdzie każdy ząb w łuku ma znaczenie.
+              </p>
+
+              <h3 class="text-xl md:text-2xl serif text-navy mt-8 mb-3">Zabiegi chirurgiczne</h3>
+              <p class="mb-4">
+                Wykonuje m.in. ekstrakcje zębów zatrzymanych, korektę wędzidełek oraz drobne zabiegi chirurgiczne
+                towarzyszące leczeniu ortodontycznemu. Pracuje w znieczuleniu miejscowym, dbając o maksymalny komfort
+                pacjenta.
+              </p>
+
+              <h3 class="text-xl md:text-2xl serif text-navy mt-8 mb-3">Współpraca z zespołem</h3>
+              <p class="mb-0">
+                Leczenie kanałowe i zabiegi chirurgiczne są często niezbędnym etapem przed rozpoczęciem lub w trakcie
+                leczenia ortodontycznego. Lek. dent. Wojciechowski ściśle współpracuje z dr Kornelią Rumin oraz
+                pozostałymi członkami zespołu, aby zapewnić pełną, skoordynowaną opiekę.
+              </p>
+            </article>
+
+            <a href="/#kontakt" class="btn-gold inline-flex items-center gap-2 px-8 py-3 rounded-full text-xs font-bold uppercase tracking-[0.2em]">
+              Umów wizytę u lekarza
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+---
+import Layout from '../layouts/layout.astro';
+import Header from '../components/header.astro';
+import Footer from '../components/footer.astro';
+---
+
+<Layout
   title="Lek. dent. Kamil Wojciechowski | ORTHOMEDICA Lubin"
   description="Profil lekarza: lek. dent. Kamil Wojciechowski — endodoncja i chirurgia stomatologiczna w klinice ORTHOMEDICA w Lubinie."
   canonical="https://orthomedica-lubin.pl/lek-dent-kamil-wojciechowski"
