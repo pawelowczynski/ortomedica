@@ -9,6 +9,26 @@ import Footer from '../../components/footer.astro';
   description="Skan 3D iTero w Lubinie — cyfrowe wyciski, dokładna diagnostyka i symulacja uśmiechu przed leczeniem ortodontycznym. ORTHOMEDICA."
   canonical="https://orthomedica-lubin.pl/zabiegi/skan-3d-itero"
 >
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    "name": "Skan 3D iTero",
+    "url": "https://orthomedica-lubin.pl/zabiegi/skan-3d-itero",
+    "bodyLocation": "Jama ustna",
+    "procedureType": "NonSurgical",
+    "provider": {
+      "@type": "Dentist",
+      "name": "ORTHOMEDICA — dr n. med. Kornelia Rumin",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ul. Pawia 67",
+        "addressLocality": "Lubin",
+        "postalCode": "59-300",
+        "addressCountry": "PL"
+      },
+      "telephone": "+48694731124"
+    }
+  })} />
   <Header />
 
   <main class="pt-28 md:pt-32 pb-20 bg-white">

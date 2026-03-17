@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/layout.astro';
+import Header from '../components/header.astro';
+import Footer from '../components/footer.astro';
+---
+
+<Layout
+  title="Regulamin serwisu – ORTHOMEDICA Lubin"
+  description="Regulamin korzystania ze strony orthomedica-lubin.pl oraz zasad rezerwacji wizyt w gabinecie ORTHOMEDICA w Lubinie."
+  canonical="https://orthomedica-lubin.pl/regulamin"
+>
+  <Header />
+
+  <main class="pt-28 md:pt-32 pb-20 bg-white">
+    <section class="py-10 md:py-14">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <h1 class="cinzel text-2xl md:3xl lg:text-4xl text-navy mb-6">
+          Regulamin serwisu internetowego
+        </h1>
+        <p class="text-[15px] text-gray-600 font-light mb-6">
+          Niniejszy Regulamin określa zasady korzystania ze strony internetowej
+          <span class="font-semibold text-navy">orthomedica-lubin.pl</span>, prowadzonej przez ORTHOMEDICA – dr n. med. Kornelia Rumin
+          z siedzibą w Lubinie przy ul. Pawia 67.
+        </p>
+
+        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">1. Postanowienia ogólne</h2>
+        <ul class="list-disc pl-5 space-y-2 text-[15px] text-gray-600 font-light mb-4">
+          <li>Serwis ma charakter informacyjny i nie zastępuje porad medycznych udzielanych podczas wizyty w gabinecie.</li>
+          <li>Administratorem serwisu jest ORTHOMEDICA – dr n. med. Kornelia Rumin.</li>
+          <li>Użytkownik korzystający z serwisu zobowiązany jest do korzystania z niego zgodnie z obowiązującym prawem i dobrymi obyczajami.</li>
+        </ul>
+
+        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">2. Rezerwacja wizyt i kontakt</h2>
+        <p class="text-[15px] text-gray-600 font-light mb-4">
+          Za pośrednictwem serwisu użytkownik może skontaktować się z gabinetem (formularz kontaktowy, numery telefonów,
+          WhatsApp) w celu umówienia wizyty lub zadania pytań dotyczących oferty.
+        </p>
+        <ul class="list-disc pl-5 space-y-2 text-[15px] text-gray-600 font-light mb-4">
+          <li>Rezerwacja terminu wizyty staje się wiążąca po jej potwierdzeniu przez rejestrację gabinetu (telefonicznie, SMS lub e-mail).</li>
+          <li>Gabinet zastrzega sobie możliwość zmiany terminu wizyty z ważnych przyczyn organizacyjnych, po uprzednim kontakcie z pacjentem.</li>
+          <li>W przypadku rezygnacji z wizyty pacjent proszony jest o możliwie wczesne poinformowanie rejestracji.</li>
+        </ul>
+
+        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">3. Odpowiedzialność</h2>
+        <p class="text-[15px] text-gray-600 font-light mb-4">
+          Informacje zamieszczone w serwisie mają charakter ogólny i nie stanowią indywidualnej diagnozy ani planu
+          leczenia. Ostateczne decyzje terapeutyczne podejmowane są po badaniu pacjenta w gabinecie.
+        </p>
+        <ul class="list-disc pl-5 space-y-2 text-[15px] text-gray-600 font-light mb-4">
+          <li>Administrator dokłada starań, aby informacje w serwisie były aktualne i rzetelne.</li>
+          <li>Administrator nie ponosi odpowiedzialności za skutki wykorzystania informacji ze strony bez konsultacji z lekarzem.</li>
+          <li>Administrator nie odpowiada za przerwy w dostępności serwisu wynikające z prac technicznych lub przyczyn niezależnych.</li>
+        </ul>
+
+        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">4. Prawa autorskie</h2>
+        <p class="text-[15px] text-gray-600 font-light mb-4">
+          Treści zamieszczone w serwisie (teksty, grafiki, zdjęcia, układ strony) stanowią własność Administratora
+          lub są wykorzystywane na podstawie odpowiednich licencji. Zabrania się ich kopiowania i rozpowszechniania
+          bez zgody Administratora, za wyjątkiem dozwolonego użytku przewidzianego przepisami prawa.
+        </p>
+
+        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">5. Dane osobowe i pliki cookie</h2>
+        <p class="text-[15px] text-gray-600 font-light mb-4">
+          Zasady przetwarzania danych osobowych użytkowników serwisu oraz stosowania plików cookie opisane są w
+          odrębnej <a href="/polityka-prywatnosci" class="text-navy hover:text-gold font-semibold">Polityce prywatności</a>.
+        </p>
+
+        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">6. Zmiany Regulaminu</h2>
+        <p class="text-[15px] text-gray-600 font-light">
+          Administrator zastrzega sobie prawo do wprowadzania zmian w niniejszym Regulaminie w przypadku rozwoju serwisu
+          lub zmiany przepisów prawa. Aktualna wersja Regulaminu jest dostępna na stronie
+          <span class="font-semibold text-navy">orthomedica-lubin.pl/regulamin</span>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
