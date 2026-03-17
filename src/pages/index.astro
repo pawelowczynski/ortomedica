@@ -109,146 +109,6 @@ import Cennik from '../components/Cennik.astro';
             </div>
         </section>
 
-        <!-- Zespół lekarzy -->
-        <section id="o-mnie" class="py-24 md:py-28 bg-white border-b border-gray-100">
-            <div class="container mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto mb-12">
-                    <span class="text-gold font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Zespół</span>
-                    <h2 class="cinzel text-3xl md:text-4xl text-navy mb-4">Lekarze ORTHOMEDICA</h2>
-                    <p class="text-gray-500 font-light text-sm md:text-base">
-                        Leczenie ortodontyczne i stomatologiczne prowadzi zespół lekarzy, którzy łączą doświadczenie kliniczne z indywidualnym podejściem do pacjenta.
-                    </p>
-                </div>
-
-                <!-- Kornelia wyróżniona (lekko większa karta) -->
-                <div class="max-w-4xl mx-auto mb-10">
-                    <article class="bg-gray-50 rounded-3xl shadow-sm border border-gray-100 overflow-hidden flex flex-col md:flex-row md:items-stretch">
-                        <div class="md:w-1/3">
-                            <img src="https://www.orthoclinic.com.pl/images/o-nas/nasz-zespol/kornelia-rumin-big.jpg" alt="Dr n. med. Kornelia Rumin" loading="lazy" class="w-full h-full aspect-[4/5] md:aspect-[3/4] object-cover object-center">
-                        </div>
-                        <div class="p-6 md:p-8 flex flex-col flex-1">
-                            <h3 class="cinzel text-xl md:text-2xl text-navy mb-1">Dr n. med. Kornelia Rumin</h3>
-                            <p class="text-xs uppercase tracking-[0.2em] text-gold mb-3">Specjalista ortodonta</p>
-                            <p class="text-sm text-gray-600 font-light mb-4 flex-1">
-                                Główna lekarka odpowiedzialna za plan leczenia w Orthomedica. Łączy doświadczenie naukowe z praktyką kliniczną, prowadząc kompleksowe leczenie ortodontyczne dzieci i dorosłych.
-                            </p>
-                            <a href="/dr-kornelia-rumin" class="inline-flex items-center gap-2 text-sm font-semibold text-gold hover:text-navy transition-colors mt-auto">
-                                Poznaj profil lekarza
-                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                            </a>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Lekarze (karty o zbliżonej wielkości) -->
-                <div class="grid gap-6 md:gap-8 md:grid-cols-2 mb-12 max-w-5xl mx-auto">
-                    <!-- Lek. dent. Aleksandra Czerkawska -->
-                    <article class="bg-gray-50 rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col md:flex-row md:items-stretch">
-                        <div class="md:w-2/5">
-                            <img src="/lek-aleksandra-czerkawska.png" alt="Lek. dent. Aleksandra Czerkawska" loading="lazy" class="w-full h-full aspect-[4/5] md:aspect-[3/4] object-cover object-center">
-                        </div>
-                        <div class="p-6 flex flex-col flex-1">
-                            <h3 class="cinzel text-lg md:text-xl text-navy mb-1">Lek. dent. Aleksandra Czerkawska</h3>
-                            <p class="text-xs uppercase tracking-[0.2em] text-gold mb-3">Stomatologia zachowawcza</p>
-                            <p class="text-sm text-gray-600 font-light mb-4 flex-1">
-                                Dba o zdrowe, zadbane zęby przed, w trakcie i po leczeniu ortodontycznym — od profilaktyki po nowoczesne wypełnienia.
-                            </p>
-                            <a href="/lek-dent-aleksandra-czerkawska" class="inline-flex items-center gap-2 text-sm font-semibold text-gold hover:text-navy transition-colors mt-auto">
-                                Poznaj profil lekarza
-                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Lek. dent. Kamil Wojciechowski -->
-                    <article class="bg-gray-50 rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col md:flex-row md:items-stretch">
-                        <div class="md:w-2/5">
-                            <img src="/lek-kamil-wojciechowski.png" alt="Lek. dent. Kamil Wojciechowski" loading="lazy" class="w-full h-full aspect-[4/5] md:aspect-[3/4] object-cover object-center">
-                        </div>
-                        <div class="p-6 flex flex-col flex-1">
-                            <h3 class="cinzel text-lg md:text-xl text-navy mb-1">Lek. dent. Kamil Wojciechowski</h3>
-                            <p class="text-xs uppercase tracking-[0.2em] text-gold mb-3">Endodoncja i chirurgia</p>
-                            <p class="text-sm text-gray-600 font-light mb-4 flex-1">
-                                Specjalizuje się w leczeniu kanałowym i zabiegach chirurgicznych, które przygotowują zęby do dalszego leczenia ortodontycznego.
-                            </p>
-                            <a href="/lek-dent-kamil-wojciechowski" class="inline-flex items-center gap-2 text-sm font-semibold text-gold hover:text-navy transition-colors mt-auto">
-                                Poznaj profil lekarza
-                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                            </a>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Zespół administracyjny / wsparcie -->
-                <div class="mt-6 md:mt-4">
-                    <div class="text-center mb-6">
-                        <h3 class="cinzel text-lg md:text-xl text-navy mb-2">Zespół recepcji i wsparcia pacjenta</h3>
-                        <p class="text-gray-500 font-light text-sm">
-                            Pierwszy kontakt z kliniką i opiekę organizacyjną nad wizytami zapewniają osoby, które znają naszych pacjentów z imienia.
-                        </p>
-                    </div>
-                    <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-                        <article class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col items-center text-center p-4">
-                            <img src="/renata-rumin.png" alt="Renata Rumin" loading="lazy" class="w-28 h-28 rounded-full object-cover mb-3">
-                            <h4 class="font-semibold text-navy text-sm mb-1">Renata Rumin</h4>
-                            <p class="text-[11px] uppercase tracking-[0.18em] text-gold mb-2">Recepcja / Koordynacja</p>
-                            <p class="text-xs text-gray-500">
-                                Pomaga zaplanować wizyty i czuwa nad harmonogramem leczenia.
-                            </p>
-                        </article>
-                        <article class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col items-center text-center p-4">
-                            <img src="/sylwia-szych.png" alt="Sylwia Szych" loading="lazy" class="w-28 h-28 rounded-full object-cover mb-3">
-                            <h4 class="font-semibold text-navy text-sm mb-1">Sylwia Szych</h4>
-                            <p class="text-[11px] uppercase tracking-[0.18em] text-gold mb-2">Asystentka</p>
-                            <p class="text-xs text-gray-500">
-                                Wspiera lekarzy przy fotelu i dba o komfort wizyty.
-                            </p>
-                        </article>
-                        <article class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col items-center text-center p-4">
-                            <div class="w-28 h-28 rounded-full bg-gray-100 flex items-center justify-center mb-3">
-                                <span class="text-xs text-gray-400 uppercase tracking-[0.18em] leading-tight">ORTHO<br />TEAM</span>
-                            </div>
-                            <h4 class="font-semibold text-navy text-sm mb-1">Zespół wspierający</h4>
-                            <p class="text-[11px] uppercase tracking-[0.18em] text-gold mb-2">Rejestracja i asysty</p>
-                            <p class="text-xs text-gray-500">
-                                Pozostali członkowie zespołu, którzy współtworzą atmosferę kliniki.
-                            </p>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Klinika / Wnętrza -->
-        <section id="klinika" class="py-24 bg-navy text-white relative border-t border-white/10">
-            <div class="container mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-gold font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Nasza przestrzeń</span>
-                    <h2 class="cinzel text-3xl md:text-4xl mb-4">Nowoczesna Klinika</h2>
-                    <p class="text-white/70 font-light text-sm max-w-2xl mx-auto">Zaprojektowana z myślą o Twoim komforcie i poczuciu bezpieczeństwa. Wyposażona w sprzęt diagnostyczny światowej klasy, eliminujący stres i ból.</p>
-                </div>
-                
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                    <div class="overflow-hidden rounded-2xl group col-span-2 row-span-2 relative bg-navy-light">
-                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800" alt="Przestronna recepcja kliniki" loading="lazy" class="w-full h-full min-h-[300px] object-cover transition-transform duration-700 group-hover:scale-105">
-                        <div class="absolute bottom-4 left-4 bg-navy/80 backdrop-blur px-4 py-2 rounded-lg text-[10px] uppercase tracking-widest font-bold border border-white/10">Strefa relaksu</div>
-                    </div>
-                    <div class="overflow-hidden rounded-2xl group relative bg-navy-light">
-                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=400" alt="Skaner 3D" loading="lazy" class="w-full h-48 md:h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                        <div class="absolute bottom-4 left-4 bg-navy/80 backdrop-blur px-3 py-1.5 rounded-lg text-[9px] uppercase tracking-widest font-bold border border-white/10">Diagnostyka 3D</div>
-                    </div>
-                    <div class="overflow-hidden rounded-2xl group relative bg-navy-light">
-                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=400" alt="Nowoczesny fotel" loading="lazy" class="w-full h-48 md:h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                        <div class="absolute bottom-4 left-4 bg-navy/80 backdrop-blur px-3 py-1.5 rounded-lg text-[9px] uppercase tracking-widest font-bold border border-white/10">Gabinety</div>
-                    </div>
-                    <div class="overflow-hidden rounded-2xl group col-span-2 relative bg-navy-light">
-                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800" alt="Zespół kliniki" loading="lazy" class="w-full h-48 md:h-64 object-cover transition-transform duration-700 group-hover:scale-105 object-top">
-                        <div class="absolute bottom-4 left-4 bg-navy/80 backdrop-blur px-4 py-2 rounded-lg text-[10px] uppercase tracking-widest font-bold border border-white/10">Opieka asystentek</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Oferta -->
         <section id="oferta" class="py-24 md:py-32 bg-gray-50 relative">
             <div class="container mx-auto px-6 relative z-10">
@@ -403,6 +263,116 @@ import Cennik from '../components/Cennik.astro';
             </div>
         </section>
 
+        <!-- Zespół lekarzy -->
+        <section id="o-mnie" class="py-24 md:py-28 bg-white border-b border-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-gold font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Zespół</span>
+                    <h2 class="cinzel text-3xl md:text-4xl text-navy mb-4">Lekarze ORTHOMEDICA</h2>
+                    <p class="text-gray-500 font-light text-sm md:text-base">
+                        Leczenie ortodontyczne i stomatologiczne prowadzi zespół lekarzy, którzy łączą doświadczenie kliniczne z indywidualnym podejściem do pacjenta.
+                    </p>
+                </div>
+
+                <!-- Kornelia wyróżniona (lekko większa karta) -->
+                <div class="max-w-4xl mx-auto mb-10">
+                    <article class="bg-gray-50 rounded-3xl shadow-sm border border-gray-100 overflow-hidden flex flex-col md:flex-row md:items-stretch">
+                        <div class="md:w-1/3">
+                            <img src="https://www.orthoclinic.com.pl/images/o-nas/nasz-zespol/kornelia-rumin-big.jpg" alt="Dr n. med. Kornelia Rumin" loading="lazy" class="w-full h-full aspect-[4/5] md:aspect-[3/4] object-cover object-center">
+                        </div>
+                        <div class="p-6 md:p-8 flex flex-col flex-1">
+                            <h3 class="cinzel text-xl md:text-2xl text-navy mb-1">Dr n. med. Kornelia Rumin</h3>
+                            <p class="text-xs uppercase tracking-[0.2em] text-gold mb-3">Specjalista ortodonta</p>
+                            <p class="text-sm text-gray-600 font-light mb-4 flex-1">
+                                Główna lekarka odpowiedzialna za plan leczenia w Orthomedica. Łączy doświadczenie naukowe z praktyką kliniczną, prowadząc kompleksowe leczenie ortodontyczne dzieci i dorosłych.
+                            </p>
+                            <a href="/dr-kornelia-rumin" class="inline-flex items-center gap-2 text-sm font-semibold text-gold hover:text-navy transition-colors mt-auto">
+                                Poznaj profil lekarza
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Lekarze (karty o zbliżonej wielkości) -->
+                <div class="grid gap-6 md:gap-8 md:grid-cols-2 mb-12 max-w-5xl mx-auto">
+                    <!-- Lek. dent. Aleksandra Czerkawska -->
+                    <article class="bg-gray-50 rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col md:flex-row md:items-stretch">
+                        <div class="md:w-2/5">
+                            <img src="/lek-aleksandra-czerkawska.png" alt="Lek. dent. Aleksandra Czerkawska" loading="lazy" class="w-full h-full aspect-[4/5] md:aspect-[3/4] object-cover object-center">
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <h3 class="cinzel text-lg md:text-xl text-navy mb-1">Lek. dent. Aleksandra Czerkawska</h3>
+                            <p class="text-xs uppercase tracking-[0.2em] text-gold mb-3">Stomatologia zachowawcza</p>
+                            <p class="text-sm text-gray-600 font-light mb-4 flex-1">
+                                Dba o zdrowe, zadbane zęby przed, w trakcie i po leczeniu ortodontycznym — od profilaktyki po nowoczesne wypełnienia.
+                            </p>
+                            <a href="/lek-dent-aleksandra-czerkawska" class="inline-flex items-center gap-2 text-sm font-semibold text-gold hover:text-navy transition-colors mt-auto">
+                                Poznaj profil lekarza
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Lek. dent. Kamil Wojciechowski -->
+                    <article class="bg-gray-50 rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col md:flex-row md:items-stretch">
+                        <div class="md:w-2/5">
+                            <img src="/lek-kamil-wojciechowski.png" alt="Lek. dent. Kamil Wojciechowski" loading="lazy" class="w-full h-full aspect-[4/5] md:aspect-[3/4] object-cover object-center">
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <h3 class="cinzel text-lg md:text-xl text-navy mb-1">Lek. dent. Kamil Wojciechowski</h3>
+                            <p class="text-xs uppercase tracking-[0.2em] text-gold mb-3">Endodoncja i chirurgia</p>
+                            <p class="text-sm text-gray-600 font-light mb-4 flex-1">
+                                Specjalizuje się w leczeniu kanałowym i zabiegach chirurgicznych, które przygotowują zęby do dalszego leczenia ortodontycznego.
+                            </p>
+                            <a href="/lek-dent-kamil-wojciechowski" class="inline-flex items-center gap-2 text-sm font-semibold text-gold hover:text-navy transition-colors mt-auto">
+                                Poznaj profil lekarza
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Zespół administracyjny / wsparcie -->
+                <div class="mt-6 md:mt-4">
+                    <div class="text-center mb-6">
+                        <h3 class="cinzel text-lg md:text-xl text-navy mb-2">Zespół recepcji i wsparcia pacjenta</h3>
+                        <p class="text-gray-500 font-light text-sm">
+                            Pierwszy kontakt z kliniką i opiekę organizacyjną nad wizytami zapewniają osoby, które znają naszych pacjentów z imienia.
+                        </p>
+                    </div>
+                    <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+                        <article class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col items-center text-center p-4">
+                            <img src="/renata-rumin.png" alt="Renata Rumin" loading="lazy" class="w-28 h-28 rounded-full object-cover mb-3">
+                            <h4 class="font-semibold text-navy text-sm mb-1">Renata Rumin</h4>
+                            <p class="text-[11px] uppercase tracking-[0.18em] text-gold mb-2">Recepcja / Koordynacja</p>
+                            <p class="text-xs text-gray-500">
+                                Pomaga zaplanować wizyty i czuwa nad harmonogramem leczenia.
+                            </p>
+                        </article>
+                        <article class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col items-center text-center p-4">
+                            <img src="/sylwia-szych.png" alt="Sylwia Szych" loading="lazy" class="w-28 h-28 rounded-full object-cover mb-3">
+                            <h4 class="font-semibold text-navy text-sm mb-1">Sylwia Szych</h4>
+                            <p class="text-[11px] uppercase tracking-[0.18em] text-gold mb-2">Asystentka</p>
+                            <p class="text-xs text-gray-500">
+                                Wspiera lekarzy przy fotelu i dba o komfort wizyty.
+                            </p>
+                        </article>
+                        <article class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col items-center text-center p-4">
+                            <div class="w-28 h-28 rounded-full bg-gray-100 flex items-center justify-center mb-3">
+                                <span class="text-xs text-gray-400 uppercase tracking-[0.18em] leading-tight">ORTHO<br />TEAM</span>
+                            </div>
+                            <h4 class="font-semibold text-navy text-sm mb-1">Zespół wspierający</h4>
+                            <p class="text-[11px] uppercase tracking-[0.18em] text-gold mb-2">Rejestracja i asysty</p>
+                            <p class="text-xs text-gray-500">
+                                Pozostali członkowie zespołu, którzy współtworzą atmosferę kliniki.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Social Proof / Opinie -->
         <section id="opinie" class="py-24 bg-gray-50 border-y border-gray-100">
             <div class="container mx-auto px-6">
@@ -436,6 +406,36 @@ import Cennik from '../components/Cennik.astro';
                         Zapisz się na konsultację
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Klinika / Wnętrza -->
+        <section id="klinika" class="py-24 bg-navy text-white relative border-t border-white/10">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-gold font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Nasza przestrzeń</span>
+                    <h2 class="cinzel text-3xl md:text-4xl mb-4">Nowoczesna Klinika</h2>
+                    <p class="text-white/70 font-light text-sm max-w-2xl mx-auto">Zaprojektowana z myślą o Twoim komforcie i poczuciu bezpieczeństwa. Wyposażona w sprzęt diagnostyczny światowej klasy, eliminujący stres i ból.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                    <div class="overflow-hidden rounded-2xl group col-span-2 row-span-2 relative bg-navy-light">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800" alt="Przestronna recepcja kliniki" loading="lazy" class="w-full h-full min-h-[300px] object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute bottom-4 left-4 bg-navy/80 backdrop-blur px-4 py-2 rounded-lg text-[10px] uppercase tracking-widest font-bold border border-white/10">Strefa relaksu</div>
+                    </div>
+                    <div class="overflow-hidden rounded-2xl group relative bg-navy-light">
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=400" alt="Skaner 3D" loading="lazy" class="w-full h-48 md:h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute bottom-4 left-4 bg-navy/80 backdrop-blur px-3 py-1.5 rounded-lg text-[9px] uppercase tracking-widest font-bold border border-white/10">Diagnostyka 3D</div>
+                    </div>
+                    <div class="overflow-hidden rounded-2xl group relative bg-navy-light">
+                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=400" alt="Nowoczesny fotel" loading="lazy" class="w-full h-48 md:h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute bottom-4 left-4 bg-navy/80 backdrop-blur px-3 py-1.5 rounded-lg text-[9px] uppercase tracking-widest font-bold border border-white/10">Gabinety</div>
+                    </div>
+                    <div class="overflow-hidden rounded-2xl group col-span-2 relative bg-navy-light">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800" alt="Zespół kliniki" loading="lazy" class="w-full h-48 md:h-64 object-cover transition-transform duration-700 group-hover:scale-105 object-top">
+                        <div class="absolute bottom-4 left-4 bg-navy/80 backdrop-blur px-4 py-2 rounded-lg text-[10px] uppercase tracking-widest font-bold border border-white/10">Opieka asystentek</div>
+                    </div>
                 </div>
             </div>
         </section>
