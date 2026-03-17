@@ -17,10 +17,13 @@ type BlogFrontmatter = {
 
 type BlogPost = MarkdownInstance<BlogFrontmatter>;
 
-// @ts-ignore Astro.glob is provided by Astro at build time
-const posts = await (Astro as any).glob<BlogFrontmatter>('../../content/blog/*.md');
+const posts = Object.values(
+  import.meta.glob<MarkdownInstance<BlogFrontmatter>>('../../content/blog/*.md', {
+    eager: true,
+  }),
+) as BlogPost[];
 
-const sortedPosts = (posts as BlogPost[])
+const sortedPosts = posts
   .map((post) => ({
     ...post,
     frontmatter: {
