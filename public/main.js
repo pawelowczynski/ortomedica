@@ -7,8 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. Nav scroll behavior
   const nav = document.getElementById('main-nav');
   if (nav) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
+    const updateNav = () => {
+      const isHome =
+        window.location.pathname === '/' ||
+        window.location.pathname === '/index' ||
+        window.location.pathname === '/index.html';
+      const shouldBeScrolled = window.scrollY > 50 || !isHome;
+
+      if (shouldBeScrolled) {
         nav.classList.add('scrolled');
         nav.classList.remove('text-white', 'py-5');
         nav.classList.add('py-3');
@@ -17,7 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
         nav.classList.add('text-white', 'py-5');
         nav.classList.remove('py-3');
       }
-    });
+    };
+
+    // Ustaw odpowiedni stan od razu po załadowaniu strony
+    updateNav();
+    window.addEventListener('scroll', updateNav);
   }
 
   // 3. Mobile menu
