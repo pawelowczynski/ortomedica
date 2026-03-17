@@ -2,6 +2,7 @@
 import Layout from '../layouts/layout.astro';
 import Header from '../components/header.astro';
 import Footer from '../components/footer.astro';
+import Cennik from '../components/Cennik.astro';
 ---
 
 <Layout 
@@ -94,7 +95,7 @@ import Footer from '../components/footer.astro';
         <section class="bg-navy py-10 md:hidden">
             <div class="container mx-auto px-6 flex justify-around text-center">
                 <div>
-                    <p class="text-2xl font-bold text-gold mb-1">12+</p>
+                    <p class="text-2xl font-bold text-gold mb-1">15+</p>
                     <p class="text-[10px] uppercase tracking-widest text-white/80">Lat praktyki</p>
                 </div>
                 <div>
@@ -410,36 +411,7 @@ import Footer from '../components/footer.astro';
             </div>
         </aside>
 
-        <!-- Cennik -->
-        <section id="cennik" class="py-24 md:py-32 bg-gray-50">
-            <div class="container mx-auto px-6 max-w-4xl">
-                <div class="text-center mb-12">
-                    <span class="text-gold font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Transparentne ceny</span>
-                    <h2 class="cinzel text-3xl md:text-4xl text-navy mb-4">Cennik</h2>
-                    <p class="text-gray-500 font-light">Orientacyjne widełki cenowe. Dokładny koszt ustalamy indywidualnie na konsultacji po badaniu.</p>
-                </div>
-                <div class="grid md:grid-cols-3 gap-6 mb-12">
-                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                        <h3 class="font-bold text-navy mb-2">Aparaty metalowe</h3>
-                        <p class="text-gold text-xl font-bold">od 2 500 zł</p>
-                        <p class="text-sm text-gray-500 mt-1">za jeden łuk</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                        <h3 class="font-bold text-navy mb-2">Nakładki Invisalign</h3>
-                        <p class="text-gold text-xl font-bold">9 000 – 18 000 zł</p>
-                        <p class="text-sm text-gray-500 mt-1">całe leczenie, w zależności od pakietu</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                        <h3 class="font-bold text-navy mb-2">Konsultacja i skan 3D</h3>
-                        <p class="text-gold text-xl font-bold">Bezpłatnie</p>
-                        <p class="text-sm text-gray-500 mt-1">symulacja wyników na miejscu</p>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <a href="#kontakt" class="btn-gold px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider">Umów konsultację</a>
-                </div>
-            </div>
-        </section>
+        <Cennik />
 
         <!-- FAQ (Rozbudowane) -->
         <section id="faq" class="py-24 md:py-32 bg-gray-50">
@@ -522,9 +494,9 @@ import Footer from '../components/footer.astro';
                         
                         <!-- Przyciski akcji -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-                            <a href="tel:+48789012345" class="bg-navy hover:bg-navy-light text-white px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition-colors shadow-lg">
+                            <a href="tel:+48694731124" class="bg-navy hover:bg-navy-light text-white px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition-colors shadow-lg">
                                 <i data-lucide="phone-call" class="w-5 h-5 text-gold"></i>
-                                +48 789 012 345
+                                +48 694 731 124
                             </a>
                             <a href="https://wa.me/48789012345" target="_blank" rel="noopener" class="bg-[#25D366] hover:bg-[#20bd5a] text-white px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition-colors shadow-lg">
                                 <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.564-10.563 5.826 0 10.564 4.738 10.564 10.563 0 5.827-4.739 10.565-10.564 10.565z"/></svg>
