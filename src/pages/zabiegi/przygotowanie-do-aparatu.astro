@@ -1,0 +1,146 @@
+---
+import Layout from '../../layouts/layout.astro';
+import Header from '../../components/header.astro';
+import Footer from '../../components/footer.astro';
+
+const canonical = 'https://orthomedica-lubin.pl/zabiegi/przygotowanie-do-aparatu';
+---
+
+<Layout
+  title="Przygotowanie do aparatu ortodontycznego — higiena, skan, RTG | ORTHOMEDICA Lubin"
+  description="Co przed założeniem aparatu: higiena jamy ustnej, ewentualne ćwiczenia, skan 3D i zdjęcia rentgenowskie. ORTHOMEDICA Lubin."
+  canonical={canonical}
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": "Przygotowanie do aparatu",
+    "url": canonical,
+    "provider": {
+      "@type": "Dentist",
+      "name": "ORTHOMEDICA — dr n. med. Kornelia Rumin",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ul. Pawia 67",
+        "addressLocality": "Lubin",
+        "postalCode": "59-300",
+        "addressCountry": "PL"
+      },
+      "telephone": "+48694731124"
+    }
+  })} />
+  <Header />
+
+  <main class="pt-28 md:pt-32 pb-20 bg-white">
+    <nav class="text-xs md:text-sm text-gray-400 mb-6 md:mb-8" aria-label="Okruszki nawigacyjne">
+      <div class="container mx-auto px-6">
+        <ol class="flex flex-wrap items-center gap-1 md:gap-2">
+          <li><a href="/" class="hover:text-gold">Strona główna</a></li>
+          <li class="text-gray-300">/</li>
+          <li><span class="text-gray-400">Zabiegi</span></li>
+          <li class="text-gray-300">/</li>
+          <li><span class="text-navy">Przygotowanie do aparatu</span></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="py-8 md:py-12">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <h1 class="cinzel text-xs md:text-sm text-gold font-bold tracking-[0.5em] mb-4 uppercase">Przed leczeniem</h1>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl serif mb-6 text-navy">Przygotowanie do aparatu</h2>
+        <p class="text-[15px] md:text-base text-gray-600 font-light mb-6 leading-relaxed max-w-3xl">
+          Dobre przygotowanie zwiększa komfort leczenia i pomaga uniknąć problemów z dziąsłami oraz próchnicą w trakcie
+          noszenia aparatu. Poniżej — typowy zakres: higiena, czasem ćwiczenia oraz diagnostyka obrazowa.
+        </p>
+        <a href="/#kontakt" class="btn-gold inline-flex items-center gap-2 px-8 py-3 rounded-full text-xs font-bold uppercase tracking-[0.2em]">
+          Umów wizytę
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </section>
+
+    <section class="py-10 md:py-14 bg-[#f8f7f4] border-y border-gray-100">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-6">Oferta — co obejmujemy przed startem</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
+            <h4 class="font-semibold text-navy mb-2">Higiena</h4>
+            <p class="text-[14px] md:text-[15px] text-gray-600 font-light leading-relaxed">
+              Instruktaż szczotkowania, nitki i szczoteczek międzyzębowych — aparat utrudnia usuwanie płytki, dlatego
+              nawyki warto wyćwiczyć wcześniej.
+            </p>
+          </div>
+          <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
+            <h4 class="font-semibold text-navy mb-2">Ćwiczenia</h4>
+            <p class="text-[14px] md:text-[15px] text-gray-600 font-light leading-relaxed">
+              Gdy plan leczenia tego wymaga, zalecamy proste ćwiczenia mięśniowe lub oddechowe — zawsze konkretnie pod
+              Twoją sytuację, nie „z katalogu”.
+            </p>
+          </div>
+          <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
+            <h4 class="font-semibold text-navy mb-2">Skan i rentgen</h4>
+            <p class="text-[14px] md:text-[15px] text-gray-600 font-light leading-relaxed">
+              Skan wewnątrzustny zamiast wycisków; RTG (np. pantomogram, cefalometria) gdy potrzebujemy ocenić korzenie i
+              relacje szczęk.
+            </p>
+          </div>
+        </div>
+        <p class="mt-6 text-[15px] text-gray-600 font-light">
+          Szczegóły skanera:{' '}
+          <a href="/zabiegi/skan-3d-itero" class="font-semibold text-gold hover:underline">Skan 3D iTero</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-10 md:py-14">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-8">Proces diagnostyczny — kolejność</h3>
+        <ol class="space-y-5 text-[15px] text-gray-600 font-light list-decimal pl-5 marker:text-gold marker:font-semibold">
+          <li class="pl-2">
+            <span class="text-navy font-medium">Konsultacja</span> — ustalenie, czy i kiedy zakładamy aparat; ewentualne
+            zlecenie higienizacji lub leczenia zachowawczego przed startem.
+          </li>
+          <li class="pl-2">
+            <span class="text-navy font-medium">Dokumentacja</span> — skan 3D, fotografie, w razie potrzeby zdjęcia
+            rentgenowskie (korzenie, stawy, symetria szczęk).
+          </li>
+          <li class="pl-2">
+            <span class="text-navy font-medium">Plan</span> — omówienie z Tobą: rodzaj aparatu, etapy, wizyty kontrolne.
+          </li>
+          <li class="pl-2">
+            <span class="text-navy font-medium">Założenie</span> — umówienie terminu i zalecenia na pierwsze dni po
+            założeniu aparatu.
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="py-10 md:py-14 bg-gray-50 border-y border-gray-100">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <h3 class="cinzel text-xl md:text-2xl text-navy mb-4">Skan a rentgen — krótko</h3>
+        <p class="text-[15px] text-gray-600 font-light leading-relaxed mb-4">
+          <strong class="text-navy font-medium">Skan 3D</strong> pokazuje zgryz i umożliwia planowanie ruchu zębów oraz
+          symulację (w zależności od metody).{' '}
+          <strong class="text-navy font-medium">Zdjęcia rentgenowskie</strong> są niezbędne, gdy musimy ocenić kość,
+          korzenie, zęby zatrzymane lub relacje szczękowo-żuchwowe — dobieramy zakres indywidualnie, zgodnie ze
+          standardami bezpiecznego planowania leczenia.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-12 md:py-16">
+      <div class="container mx-auto px-6 max-w-4xl text-center">
+        <p class="text-[15px] text-gray-600 font-light mb-6">
+          Pełna ścieżka ortodontyczna — na stronie{' '}
+          <a href="/zabiegi/ortodoncja" class="font-semibold text-gold hover:underline">Ortodoncja</a>.
+        </p>
+        <a href="/#kontakt" class="btn-gold inline-flex items-center gap-2 px-10 py-4 rounded-full text-xs font-bold uppercase tracking-[0.2em]">
+          Kontakt
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

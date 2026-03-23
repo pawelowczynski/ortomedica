@@ -1,0 +1,197 @@
+---
+import Layout from '../../layouts/layout.astro';
+import Header from '../../components/header.astro';
+import Footer from '../../components/footer.astro';
+
+const canonical = 'https://orthomedica-lubin.pl/zabiegi/ortodoncja';
+---
+
+<Layout
+  title="Ortodoncja Lubin — leczenie wad zgryzu | ORTHOMEDICA"
+  description="Ortodoncja w Lubinie: konsultacja, dobór metody leczenia, aparaty stałe i nakładki Invisalign. Leczymy dzieci, młodzież i dorosłych."
+  canonical={canonical}
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": "Ortodoncja",
+    "url": canonical,
+    "provider": {
+      "@type": "Dentist",
+      "name": "ORTHOMEDICA — dr n. med. Kornelia Rumin",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ul. Pawia 67",
+        "addressLocality": "Lubin",
+        "postalCode": "59-300",
+        "addressCountry": "PL"
+      },
+      "telephone": "+48694731124"
+    }
+  })} />
+  <Header />
+
+  <main class="pt-28 md:pt-32 pb-20 bg-white">
+    <nav class="text-xs md:text-sm text-gray-400 mb-6 md:mb-8" aria-label="Okruszki nawigacyjne">
+      <div class="container mx-auto px-6">
+        <ol class="flex flex-wrap items-center gap-1 md:gap-2">
+          <li><a href="/" class="hover:text-gold">Strona główna</a></li>
+          <li class="text-gray-300">/</li>
+          <li><span class="text-gray-400">Zabiegi</span></li>
+          <li class="text-gray-300">/</li>
+          <li><span class="text-navy">Ortodoncja</span></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="py-8 md:py-12">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <h1 class="cinzel text-xs md:text-sm text-gold font-bold tracking-[0.5em] mb-4 uppercase">Ortodoncja</h1>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl serif mb-6 text-navy">Ortodoncja w ORTHOMEDICA</h2>
+        <p class="text-[15px] md:text-base text-gray-600 font-light mb-6 leading-relaxed max-w-3xl">
+          Planujemy i prowadzimy leczenie wad zgryzu z wykorzystaniem nowoczesnej diagnostyki i metod dopasowanych do
+          wieku oraz oczekiwań pacjenta — od pierwszej konsultacji po retencję.
+        </p>
+        <a href="/#kontakt" class="btn-gold inline-flex items-center gap-2 px-8 py-3 rounded-full text-xs font-bold uppercase tracking-[0.2em]">
+          Umów konsultację
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </section>
+
+    <section class="py-10 md:py-14 bg-[#f8f7f4] border-y border-gray-100">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-8">Dla kogo</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
+            <h4 class="font-semibold text-navy mb-3">Dzieci i młodzież</h4>
+            <p class="text-[15px] text-gray-600 font-light leading-relaxed mb-4">
+              Wczesna diagnostyka, obserwacja i leczenie przechwytujące — opisujemy na osobnej podstronie wraz ze
+              stomatologią dziecięcą.
+            </p>
+            <a href="/zabiegi/stomatologia-i-ortodoncja-dziecieca" class="text-sm font-semibold text-gold hover:underline">
+              Stomatologia i ortodoncja dziecięca
+            </a>
+          </div>
+          <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
+            <h4 class="font-semibold text-navy mb-3">Młodzież i dorośli</h4>
+            <p class="text-[15px] text-gray-600 font-light leading-relaxed">
+              Pełne leczenie wad zgryzu aparatami stałymi lub nakładkami — po konsultacji i dokumentacji wybieramy metodę
+              odpowiednią do Twojej sytuacji klinicznej i stylu życia.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-10 md:py-14">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-4">Oferta — metody leczenia</h3>
+        <p class="text-[15px] text-gray-600 font-light mb-8 max-w-3xl">
+          Poniżej szczegółowe podstrony poszczególnych rozwiązań. Na konsultacji omówimy, które z nich są dla Ciebie
+          możliwe.
+        </p>
+        <ul class="space-y-3 text-[15px] text-gray-700 font-light">
+          <li class="flex flex-wrap items-baseline gap-x-2">
+            <span class="text-gold font-semibold">·</span>
+            <a href="/zabiegi/leczenie-wad-zgryzu" class="text-navy font-medium hover:text-gold underline-offset-2 hover:underline">Leczenie wad zgryzu</a>
+            <span class="text-gray-500">— przegląd wad i ścieżek terapii</span>
+          </li>
+          <li class="flex flex-wrap items-baseline gap-x-2">
+            <span class="text-gold font-semibold">·</span>
+            <a href="/zabiegi/invisalign-lubin" class="text-navy font-medium hover:text-gold underline-offset-2 hover:underline">Invisalign</a>
+            <span class="text-gray-500">— nakładki przezroczyste</span>
+          </li>
+          <li class="flex flex-wrap items-baseline gap-x-2">
+            <span class="text-gold font-semibold">·</span>
+            <a href="/zabiegi/aparat-staly-metalowy" class="text-navy font-medium hover:text-gold underline-offset-2 hover:underline">Aparat stały metalowy</a>
+          </li>
+          <li class="flex flex-wrap items-baseline gap-x-2">
+            <span class="text-gold font-semibold">·</span>
+            <a href="/zabiegi/aparat-staly-ceramiczny" class="text-navy font-medium hover:text-gold underline-offset-2 hover:underline">Aparat stały ceramiczny</a>
+          </li>
+          <li class="flex flex-wrap items-baseline gap-x-2">
+            <span class="text-gold font-semibold">·</span>
+            <a href="/zabiegi/aparat-ruchomy" class="text-navy font-medium hover:text-gold underline-offset-2 hover:underline">Aparat ruchomy</a>
+            <span class="text-gray-500">— u dzieci w fazie wzrostu</span>
+          </li>
+          <li class="flex flex-wrap items-baseline gap-x-2">
+            <span class="text-gold font-semibold">·</span>
+            <a href="/zabiegi/retencja-ortodontyczna" class="text-navy font-medium hover:text-gold underline-offset-2 hover:underline">Retencja</a>
+            <span class="text-gray-500">— utrwalenie wyniku</span>
+          </li>
+          <li class="flex flex-wrap items-baseline gap-x-2">
+            <span class="text-gold font-semibold">·</span>
+            <a href="/zabiegi/ortodoncja-dziecieca" class="text-navy font-medium hover:text-gold underline-offset-2 hover:underline">Ortodoncja dziecięca</a>
+            <span class="text-gray-500">— rozszerzony opis</span>
+          </li>
+        </ul>
+        <p class="mt-8 text-[15px] text-gray-600 font-light">
+          Przed założeniem aparatu warto zapoznać się z zakresem{' '}
+          <a href="/zabiegi/przygotowanie-do-aparatu" class="font-semibold text-gold hover:underline">przygotowania do aparatu</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-10 md:py-14 bg-gray-50 border-y border-gray-100">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-8">Proces leczenia — krok po kroku</h3>
+        <ol class="space-y-6 list-none counter-reset-none">
+          <li class="flex gap-4">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold font-semibold text-sm">1</span>
+            <div>
+              <p class="font-semibold text-navy mb-1">Konsultacja</p>
+              <p class="text-[15px] text-gray-600 font-light">Wywiad, badanie kliniczne, wstępna ocena zgryzu i celów leczenia.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold font-semibold text-sm">2</span>
+            <div>
+              <p class="font-semibold text-navy mb-1">Diagnostyka</p>
+              <p class="text-[15px] text-gray-600 font-light">
+                Skan 3D, zdjęcia, w razie potrzeby RTG — szczegóły w zakładce{' '}
+                <a href="/zabiegi/przygotowanie-do-aparatu" class="text-gold font-medium hover:underline">Przygotowanie do aparatu</a>.
+              </p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold font-semibold text-sm">3</span>
+            <div>
+              <p class="font-semibold text-navy mb-1">Plan i omówienie</p>
+              <p class="text-[15px] text-gray-600 font-light">Dobór aparatu lub nakładek, harmonogram wizyt, koszty i etapy.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold font-semibold text-sm">4</span>
+            <div>
+              <p class="font-semibold text-navy mb-1">Leczenie aktywne</p>
+              <p class="text-[15px] text-gray-600 font-light">Regularne wizyty kontrolne i korekty zgodnie z planem.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold font-semibold text-sm">5</span>
+            <div>
+              <p class="font-semibold text-navy mb-1">Zakończenie i retencja</p>
+              <p class="text-[15px] text-gray-600 font-light">Usunięcie aparatu, retencja — utrwalenie efektu leczenia.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="py-12 md:py-16">
+      <div class="container mx-auto px-6 text-center max-w-2xl">
+        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-4">Zacznij od konsultacji</h3>
+        <p class="text-[15px] text-gray-600 font-light mb-6">
+          Umów się w ORTHOMEDICA — omówimy Twoją sytuację i możliwe warianty leczenia.
+        </p>
+        <a href="/#kontakt" class="btn-gold inline-flex items-center gap-2 px-10 py-4 rounded-full text-xs font-bold uppercase tracking-[0.2em]">
+          Kontakt
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

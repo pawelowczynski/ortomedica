@@ -1,0 +1,167 @@
+---
+import Layout from '../../layouts/layout.astro';
+import Header from '../../components/header.astro';
+import Footer from '../../components/footer.astro';
+
+const canonical = 'https://orthomedica-lubin.pl/zabiegi/stomatologia-i-ortodoncja-dziecieca';
+---
+
+<Layout
+  title="Stomatologia i ortodoncja dziecięca Lubin — ORTHOMEDICA"
+  description="Kompleksowa opieka stomatologiczna i ortodontyczna dla dzieci w Lubinie: profilaktyka, leczenie zachowawcze, wczesna diagnostyka wad zgryzu i spokojna pierwsza wizyta."
+  canonical={canonical}
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": "Stomatologia i ortodoncja dziecięca",
+    "url": canonical,
+    "description": "Stomatologia i ortodoncja dziecięca w ORTHOMEDICA — Lubin.",
+    "provider": {
+      "@type": "Dentist",
+      "name": "ORTHOMEDICA — dr n. med. Kornelia Rumin",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ul. Pawia 67",
+        "addressLocality": "Lubin",
+        "postalCode": "59-300",
+        "addressCountry": "PL"
+      },
+      "telephone": "+48694731124"
+    }
+  })} />
+  <Header />
+
+  <main class="pt-28 md:pt-32 pb-20 bg-white">
+    <nav class="text-xs md:text-sm text-gray-400 mb-6 md:mb-8" aria-label="Okruszki nawigacyjne">
+      <div class="container mx-auto px-6">
+        <ol class="flex flex-wrap items-center gap-1 md:gap-2">
+          <li><a href="/" class="hover:text-gold">Strona główna</a></li>
+          <li class="text-gray-300">/</li>
+          <li><span class="text-gray-400">Zabiegi</span></li>
+          <li class="text-gray-300">/</li>
+          <li><span class="text-navy">Stomatologia i ortodoncja dziecięca</span></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="py-8 md:py-12">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <h1 class="cinzel text-xs md:text-sm text-gold font-bold tracking-[0.5em] mb-4 uppercase">
+          Dla najmłodszych pacjentów
+        </h1>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl serif mb-6 text-navy">
+          Stomatologia i ortodoncja dziecięca w Lubinie
+        </h2>
+        <p class="text-[15px] md:text-base text-gray-600 font-light mb-6 leading-relaxed max-w-3xl">
+          W ORTHOMEDICA łączymy <strong class="text-navy font-medium">stomatologię zachowawczą</strong> dla dzieci z
+          <strong class="text-navy font-medium">wczesną opieką ortodontyczną</strong>. Rodzice otrzymują jeden spójny
+          plan: najpierw zdrowe zęby i nawyki, potem — gdy jest ku temu wskazanie — świadoma korekta zgryzu.
+        </p>
+        <a href="/#kontakt" class="btn-gold inline-flex items-center gap-2 px-8 py-3 rounded-full text-xs font-bold uppercase tracking-[0.2em]">
+          Umów wizytę dziecka
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </section>
+
+    <section class="py-10 md:py-14 bg-[#f8f7f4] border-y border-gray-100">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-2">Oferta</h3>
+        <p class="text-sm text-gray-500 font-light mb-8 max-w-2xl">
+          Dwa filary opieki — można z nich korzystać równolegle, zgodnie z wiekiem i potrzebami dziecka.
+        </p>
+        <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+          <div class="bg-white rounded-2xl border border-gray-100 p-6 md:p-8 shadow-sm">
+            <h4 class="cinzel text-lg text-navy mb-4">Stomatologia dziecięca</h4>
+            <ul class="space-y-3 text-[15px] text-gray-600 font-light list-disc pl-5 marker:text-gold">
+              <li>profilaktyka: lakowanie bruzd, fluoryzacja, instruktaż higieny,</li>
+              <li>wizyta adaptacyjna — oswajanie z gabinetem,</li>
+              <li>leczenie próchnicy zębów mlecznych i stałych,</li>
+              <li>edukacja rodzica i dziecka — proste zalecenia do domu.</li>
+            </ul>
+            <p class="mt-6 text-[14px] text-gray-600 font-light">
+              Lekarz:{' '}
+              <a href="/lek-dent-aleksandra-czerkawska" class="font-semibold text-gold hover:underline">lek. dent. Aleksandra Czerkawska</a>
+            </p>
+          </div>
+          <div class="bg-white rounded-2xl border border-gray-100 p-6 md:p-8 shadow-sm">
+            <h4 class="cinzel text-lg text-navy mb-4">Ortodoncja dziecięca</h4>
+            <ul class="space-y-3 text-[15px] text-gray-600 font-light list-disc pl-5 marker:text-gold">
+              <li>pierwsza konsultacja ok. 7. r.ż. (w razie potrzeby wcześniej/później),</li>
+              <li>obserwacja i kontrole rozwoju zgryzu,</li>
+              <li>leczenie przechwytujące i aparaty ruchome — gdy zalecamy,</li>
+              <li>omówienie nawyków (np. ssanie kciuka) i wzrostu szczęk.</li>
+            </ul>
+            <p class="mt-6 text-[14px] text-gray-600 font-light">
+              Rozszerzony opis:{' '}
+              <a href="/zabiegi/ortodoncja-dziecieca" class="font-semibold text-gold hover:underline">Ortodoncja dziecięca</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-10 md:py-14">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-8">Proces opieki — typowa kolejność</h3>
+        <ol class="space-y-6">
+          <li class="flex gap-4">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold font-semibold text-sm">1</span>
+            <div>
+              <p class="font-semibold text-navy mb-1">Kontakt i pierwsza wizyta</p>
+              <p class="text-[15px] text-gray-600 font-light">Rejestracja — często zaczynamy od wizyty adaptacyjnej lub przeglądu stomatologicznego.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold font-semibold text-sm">2</span>
+            <div>
+              <p class="font-semibold text-navy mb-1">Profilaktyka i ewentualne leczenie zachowawcze</p>
+              <p class="text-[15px] text-gray-600 font-light">Zdrowa jama ustna to podstawa przed lub równolegle do ortodoncji.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold font-semibold text-sm">3</span>
+            <div>
+              <p class="font-semibold text-navy mb-1">Konsultacja ortodontyczna</p>
+              <p class="text-[15px] text-gray-600 font-light">Ocena zgryzu; czasem tylko obserwacja i kolejne kontrole.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold font-semibold text-sm">4</span>
+            <div>
+              <p class="font-semibold text-navy mb-1">Plan i realizacja</p>
+              <p class="text-[15px] text-gray-600 font-light">Gdy wskazane — leczenie ortodontyczne; na każdym etapie informujemy rodzica o postępach.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="py-10 md:py-14 bg-gray-50 border-y border-gray-100">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-4">Dlaczego stomatologia i ortodoncja razem?</h3>
+        <p class="text-[15px] md:text-base text-gray-600 font-light leading-relaxed">
+          Zdrowe dziąsła i zęby oraz prawidłowa higiena to warunek skutecznego leczenia ortodontycznego. W jednym miejscu
+          tłumaczymy pełny obraz: od profilaktyki po ewentualne leczenie zachowawcze i decyzje ortodontyczne — bez
+          rozdzielania opieki na niezależne „fragmenty”.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-12 md:py-16">
+      <div class="container mx-auto px-6 text-center max-w-2xl">
+        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-4">Zapraszamy do ORTHOMEDICA</h3>
+        <p class="text-[15px] md:text-base text-gray-600 font-light mb-6">
+          Umów wizytę — omówimy potrzeby Twojego dziecka pod kątem stomatologicznym i ortodontycznym.
+        </p>
+        <a href="/#kontakt" class="btn-gold inline-flex items-center gap-2 px-10 py-4 rounded-full text-xs font-bold uppercase tracking-[0.2em]">
+          Kontakt i rejestracja
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
