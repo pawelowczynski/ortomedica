@@ -1,0 +1,124 @@
+---
+import Layout from '../../layouts/layout.astro';
+import Header from '../../components/header.astro';
+import Footer from '../../components/footer.astro';
+
+const canonical = 'https://orthomedica-lubin.pl/zabiegi/chirurgia-stomatologiczna';
+---
+
+<Layout
+  title="Chirurgia stomatologiczna Lubin | ORTHOMEDICA"
+  description="Chirurgia stomatologiczna w ORTHOMEDICA w Lubinie: konsultacja, plan leczenia, zabiegi w bezpiecznych warunkach i opieka pozabiegowa."
+  canonical={canonical}
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": "Chirurgia stomatologiczna",
+    "url": canonical,
+    "provider": {
+      "@type": "Dentist",
+      "name": "ORTHOMEDICA — dr n. med. Kornelia Rumin",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ul. Pawia 67",
+        "addressLocality": "Lubin",
+        "postalCode": "59-300",
+        "addressCountry": "PL"
+      },
+      "telephone": "+48694731124"
+    }
+  })} />
+
+  <Header />
+
+  <main class="pt-28 md:pt-32 pb-20 bg-white">
+    <nav class="text-xs md:text-sm text-gray-400 mb-6 md:mb-8" aria-label="Okruszki nawigacyjne">
+      <div class="container mx-auto px-6">
+        <ol class="flex flex-wrap items-center gap-1 md:gap-2">
+          <li><a href="/" class="hover:text-gold">Strona główna</a></li>
+          <li class="text-gray-300">/</li>
+          <li><span class="text-gray-400">Zabiegi</span></li>
+          <li class="text-gray-300">/</li>
+          <li><span class="text-navy">Chirurgia stomatologiczna</span></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="py-8 md:py-12">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <h1 class="cinzel text-xs md:text-sm text-gold font-bold tracking-[0.5em] mb-4 uppercase">Chirurgia stomatologiczna</h1>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl serif mb-6 text-navy">Bezpieczne leczenie chirurgiczne w ORTHOMEDICA</h2>
+        <p class="text-[15px] md:text-base text-gray-600 font-light mb-6 leading-relaxed max-w-3xl">
+          Prowadzimy zabiegi chirurgii stomatologicznej w oparciu o dokładną diagnostykę i jasny plan postępowania.
+          Priorytetem jest Twój komfort, bezpieczeństwo oraz pełna informacja przed i po zabiegu.
+        </p>
+        <a href="/#kontakt" class="btn-gold inline-flex items-center gap-2 px-8 py-3 rounded-full text-xs font-bold uppercase tracking-[0.2em]">
+          Umów konsultację
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </section>
+
+    <section class="py-10 md:py-14 bg-[#f8f7f4] border-y border-gray-100">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-8">Zakres zabiegów</h3>
+        <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+          <div class="bg-white rounded-2xl border border-gray-100 p-6 md:p-8 shadow-sm">
+            <h4 class="font-semibold text-navy mb-3">Najczęściej wykonywane procedury</h4>
+            <ul class="space-y-2 text-[15px] text-gray-600 font-light list-disc pl-5 marker:text-gold">
+              <li>usunięcia zębów ze wskazań stomatologicznych,</li>
+              <li>zabiegi przygotowujące do leczenia ortodontycznego i protetycznego,</li>
+              <li>konsultacje chirurgiczne i planowanie etapów leczenia.</li>
+            </ul>
+          </div>
+          <div class="bg-white rounded-2xl border border-gray-100 p-6 md:p-8 shadow-sm">
+            <h4 class="font-semibold text-navy mb-3">Wsparcie po zabiegu</h4>
+            <p class="text-[15px] text-gray-600 font-light leading-relaxed">
+              Po leczeniu otrzymasz jasne zalecenia pozabiegowe oraz plan kontroli. Dzięki temu proces gojenia przebiega
+              przewidywalnie, a ewentualne pytania są szybko wyjaśniane.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-10 md:py-14">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-8">Jak wygląda proces leczenia?</h3>
+        <ol class="space-y-6">
+          <li class="flex gap-4">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold font-semibold text-sm">1</span>
+            <div>
+              <p class="font-semibold text-navy mb-1">Konsultacja i kwalifikacja</p>
+              <p class="text-[15px] text-gray-600 font-light">Badanie, omówienie objawów i kwalifikacja do zabiegu.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold font-semibold text-sm">2</span>
+            <div>
+              <p class="font-semibold text-navy mb-1">Plan postępowania</p>
+              <p class="text-[15px] text-gray-600 font-light">Ustalenie przebiegu leczenia, przygotowania oraz terminu.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold font-semibold text-sm">3</span>
+            <div>
+              <p class="font-semibold text-navy mb-1">Zabieg</p>
+              <p class="text-[15px] text-gray-600 font-light">Procedura wykonywana w kontrolowanych warunkach z naciskiem na komfort pacjenta.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold font-semibold text-sm">4</span>
+            <div>
+              <p class="font-semibold text-navy mb-1">Kontrola i gojenie</p>
+              <p class="text-[15px] text-gray-600 font-light">Kontrola pozabiegowa i dalsze zalecenia dostosowane do sytuacji klinicznej.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

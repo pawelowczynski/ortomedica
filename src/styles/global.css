@@ -69,7 +69,8 @@ body {
 .input-field {
   display: block;
   width: 100%;
-  padding: 0.75rem 1rem;
+  min-height: 3.25rem;
+  padding: 0.9rem 1rem;
   border: 1px solid #e5e7eb;
   border-radius: 0.75rem;
   background: #fff;
@@ -84,6 +85,18 @@ body {
 
 .input-field::placeholder {
   color: #9ca3af;
+}
+
+/* Process tabs */
+.process-tab-content {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.process-tab-content.is-active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Cookie banner / before-after helpers */

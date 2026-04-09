@@ -1,19 +1,33 @@
 ---
-/**
- * Sekcja zarezerwowana pod przyszły cennik — obecnie pusty obszar (kotwica #cennik zachowana dla nawigacji).
- */
 ---
 
-<section
-  id="cennik"
-  class="cennik-section py-16 md:py-24 bg-gray-50 border-y border-gray-100"
-  aria-labelledby="cennik-heading"
->
-  <div class="container mx-auto px-6 max-w-5xl">
-    <h2 id="cennik-heading" class="sr-only">Cennik</h2>
-    <div
-      class="min-h-[14rem] md:min-h-[18rem] rounded-3xl border border-dashed border-gray-200 bg-white/40"
-      aria-hidden="true"
-    ></div>
+<section id="cennik" class="cennik-section py-14 md:py-18 bg-gray-50 border-y border-gray-100" aria-labelledby="cennik-heading">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <div class="text-center mb-6 md:mb-8">
+      <span class="text-gold font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Cennik orientacyjny</span>
+      <h2 id="cennik-heading" class="cinzel text-3xl md:text-4xl text-navy mb-4">Cennik</h2>
+      <p class="text-[15px] text-gray-500 font-light">Przykładowe widełki cenowe najczęściej wybieranych świadczeń.</p>
+    </div>
+
+    <div class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
+      <ul class="divide-y divide-gray-100">
+        <li class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 px-6 py-5">
+          <span class="font-semibold text-navy">Konsultacja specjalistyczna</span>
+          <span class="text-gold font-bold">od 200 PLN</span>
+        </li>
+        <li class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 px-6 py-5">
+          <span class="font-semibold text-navy">Aparat stały (jeden łuk)</span>
+          <span class="text-gold font-bold">od 3000 PLN</span>
+        </li>
+        <li class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 px-6 py-5">
+          <span class="font-semibold text-navy">Leczenie nakładkowe</span>
+          <span class="text-gold font-bold">8000 - 15000 PLN</span>
+        </li>
+      </ul>
+    </div>
+
+    <p class="text-xs text-gray-500 mt-5 text-center">
+      Podane ceny mają charakter orientacyjny. Ostateczny koszt leczenia ustalany jest po badaniu lekarskim i diagnostyce.
+    </p>
   </div>
 </section>

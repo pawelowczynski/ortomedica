@@ -182,6 +182,33 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 7. Back to top
+  const processTabButtons = document.querySelectorAll('.process-tab-btn');
+  const processTabContents = document.querySelectorAll('.process-tab-content');
+  if (processTabButtons.length && processTabContents.length) {
+    processTabButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-target');
+        if (!target) return;
+
+        processTabButtons.forEach((button) => {
+          const active = button === btn;
+          button.classList.toggle('is-active', active);
+          button.classList.toggle('bg-gold', active);
+          button.classList.toggle('text-white', active);
+          button.classList.toggle('bg-white/10', !active);
+          button.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+
+        processTabContents.forEach((panel) => {
+          const shouldShow = panel.id === `timeline-${target}`;
+          panel.classList.toggle('is-active', shouldShow);
+          panel.classList.toggle('hidden', !shouldShow);
+        });
+      });
+    });
+  }
+
+  // 8. Back to top
   const backToTopBtn = document.getElementById('back-to-top');
   if (backToTopBtn) {
     window.addEventListener('scroll', () => {
@@ -196,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 8. Contact form validation
+  // 9. Contact form validation
   const contactForm = document.getElementById('contactForm');
   const formFeedback = document.getElementById('formFeedback');
 

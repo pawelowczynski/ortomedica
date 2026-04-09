@@ -1,47 +1,89 @@
 ---
 ---
 
-<section id="pierwsza-wizyta" class="py-24 bg-navy text-white relative overflow-hidden">
+<section id="jak-leczymy" class="py-14 md:py-18 bg-navy text-white relative overflow-hidden">
+  <span id="pierwsza-wizyta" class="block relative -top-28"></span>
   <div class="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
   <div class="container mx-auto px-6 relative z-10">
-    <div class="text-center max-w-2xl mx-auto mb-14">
+    <div class="text-center max-w-2xl mx-auto mb-8 md:mb-10">
       <span class="text-gold font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Jak to działa</span>
-      <h2 class="cinzel text-3xl md:text-4xl mb-4">Ścieżka leczenia ortodontycznego</h2>
+      <h2 class="cinzel text-3xl md:text-4xl mb-4">Ścieżka leczenia</h2>
       <p class="text-[15px] md:text-base text-white/70 font-light">
-        Od pierwszej konsultacji przez diagnostykę i plan po realizację leczenia i kontrole — przejrzyście, krok po kroku.
+        Wybierz ścieżkę dopasowaną do wieku pacjenta i zobacz kolejne kroki leczenia.
       </p>
     </div>
 
     <div class="max-w-5xl mx-auto">
-      <h3 class="cinzel text-lg text-gold mb-8 text-center md:text-left">Ortodoncja (dzieci i młodzież)</h3>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div class="text-center">
-          <div class="w-20 h-20 mx-auto bg-white/5 border border-white/10 rounded-full flex items-center justify-center mb-6">
-            <span class="cinzel text-3xl text-gold font-bold">1</span>
-          </div>
-          <h4 class="font-bold uppercase tracking-widest text-xs mb-3">Konsultacja</h4>
-          <p class="text-[15px] text-white/60 font-light">Ok. 7. r.ż. lub później — ocena zgryzu.</p>
+      <div class="bg-white/5 rounded-3xl border border-white/10 p-4 md:p-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+          <button
+            type="button"
+            class="process-tab-btn is-active w-full rounded-xl px-5 py-4 text-sm font-bold uppercase tracking-wider bg-gold text-white transition-all"
+            data-target="dziecko"
+            aria-controls="timeline-dziecko"
+            aria-selected="true"
+          >
+            Pierwsza wizyta dziecka
+          </button>
+          <button
+            type="button"
+            class="process-tab-btn w-full rounded-xl px-5 py-4 text-sm font-bold uppercase tracking-wider bg-white/10 text-white transition-all"
+            data-target="ortodoncja"
+            aria-controls="timeline-ortodoncja"
+            aria-selected="false"
+          >
+            Leczenie ortodontyczne
+          </button>
         </div>
-        <div class="text-center">
-          <div class="w-20 h-20 mx-auto bg-white/5 border border-white/10 rounded-full flex items-center justify-center mb-6">
-            <span class="cinzel text-3xl text-gold font-bold">2</span>
+
+        <div id="timeline-dziecko" class="process-tab-content is-active">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <article class="rounded-2xl bg-white/5 border border-white/10 p-5">
+              <p class="cinzel text-2xl text-gold mb-2">1</p>
+              <h3 class="font-bold text-xs uppercase tracking-widest mb-2">Wywiad i adaptacja</h3>
+              <p class="text-sm text-white/70">Spokojna rozmowa z rodzicem i dzieckiem oraz ocena nawyków jamy ustnej.</p>
+            </article>
+            <article class="rounded-2xl bg-white/5 border border-white/10 p-5">
+              <p class="cinzel text-2xl text-gold mb-2">2</p>
+              <h3 class="font-bold text-xs uppercase tracking-widest mb-2">Badanie i diagnoza</h3>
+              <p class="text-sm text-white/70">Kontrola zgryzu i wskazanie, czy potrzebna jest profilaktyka, obserwacja albo leczenie.</p>
+            </article>
+            <article class="rounded-2xl bg-white/5 border border-white/10 p-5">
+              <p class="cinzel text-2xl text-gold mb-2">3</p>
+              <h3 class="font-bold text-xs uppercase tracking-widest mb-2">Plan dla rodzica</h3>
+              <p class="text-sm text-white/70">Proste zalecenia domowe oraz harmonogram kolejnych wizyt kontrolnych.</p>
+            </article>
+            <article class="rounded-2xl bg-white/5 border border-white/10 p-5">
+              <p class="cinzel text-2xl text-gold mb-2">4</p>
+              <h3 class="font-bold text-xs uppercase tracking-widest mb-2">Dalsze prowadzenie</h3>
+              <p class="text-sm text-white/70">Monitorowanie rozwoju uzębienia i szybka reakcja na ewentualne nieprawidłowości.</p>
+            </article>
           </div>
-          <h4 class="font-bold uppercase tracking-widest text-xs mb-3">Diagnostyka 3D</h4>
-          <p class="text-[15px] text-white/60 font-light">Skan iTero, dokumentacja, gdy potrzebna.</p>
         </div>
-        <div class="text-center">
-          <div class="w-20 h-20 mx-auto bg-white/5 border border-white/10 rounded-full flex items-center justify-center mb-6">
-            <span class="cinzel text-3xl text-gold font-bold">3</span>
+
+        <div id="timeline-ortodoncja" class="process-tab-content hidden">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <article class="rounded-2xl bg-white/5 border border-white/10 p-5">
+              <p class="cinzel text-2xl text-gold mb-2">1</p>
+              <h3 class="font-bold text-xs uppercase tracking-widest mb-2">Konsultacja</h3>
+              <p class="text-sm text-white/70">Ocena wady zgryzu i omówienie oczekiwań oraz priorytetów leczenia.</p>
+            </article>
+            <article class="rounded-2xl bg-white/5 border border-white/10 p-5">
+              <p class="cinzel text-2xl text-gold mb-2">2</p>
+              <h3 class="font-bold text-xs uppercase tracking-widest mb-2">Diagnostyka</h3>
+              <p class="text-sm text-white/70">Skan 3D, dokumentacja i analiza potrzebna do precyzyjnego planu terapii.</p>
+            </article>
+            <article class="rounded-2xl bg-white/5 border border-white/10 p-5">
+              <p class="cinzel text-2xl text-gold mb-2">3</p>
+              <h3 class="font-bold text-xs uppercase tracking-widest mb-2">Plan leczenia</h3>
+              <p class="text-sm text-white/70">Dobór metody: aparat stały lub nakładki wraz z harmonogramem wizyt.</p>
+            </article>
+            <article class="rounded-2xl bg-white/5 border border-white/10 p-5">
+              <p class="cinzel text-2xl text-gold mb-2">4</p>
+              <h3 class="font-bold text-xs uppercase tracking-widest mb-2">Kontrole i retencja</h3>
+              <p class="text-sm text-white/70">Regularne kontrole, finalizacja leczenia i utrzymanie osiągniętego efektu.</p>
+            </article>
           </div>
-          <h4 class="font-bold uppercase tracking-widest text-xs mb-3">Plan</h4>
-          <p class="text-[15px] text-white/60 font-light">Dobór metody: aparat, nakładki lub obserwacja.</p>
-        </div>
-        <div class="text-center">
-          <div class="w-20 h-20 mx-auto bg-white/5 border border-white/10 rounded-full flex items-center justify-center mb-6">
-            <span class="cinzel text-3xl text-gold font-bold">4</span>
-          </div>
-          <h4 class="font-bold uppercase tracking-widest text-xs mb-3">Leczenie</h4>
-          <p class="text-[15px] text-white/60 font-light">Realizacja i wizyty kontrolne.</p>
         </div>
       </div>
     </div>
