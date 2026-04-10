@@ -1,0 +1,41 @@
+Sekcja,Nr,Punkt oferty,Status,Uwagi / stan w repozytorium
+1. Strategia i identyfikacja wizualna,1.1,Przygotowanie logotypu (wektor + web),Częściowo,"Jest favicon.svg; brak pakietu logo do druku (AI/EPS) w repo."
+1. Strategia i identyfikacja wizualna,1.2,"Identyfikacja wizualna dla social media (szablony, kolory, typografia)",Do zrobienia,Nie w repozytorium strony — materiały graficzne osobno.
+1. Strategia i identyfikacja wizualna,1.3,Strategia komunikacji w social media (FB IG TikTok),Do zrobienia,Dokumentacja/proces — poza kodem.
+1. Strategia i identyfikacja wizualna,1.4,Fotografia gabinetów,Częściowo,"Sekcja galerii (ClinicGallery) + obrazy; sesja „ofertowa” nie do weryfikacji z samego kodu."
+1. Strategia i identyfikacja wizualna,1.5,Fotografia personelu,Gotowe,"Zdjęcia w Team + podstrony lekarzy."
+2. Projekt i budowa strony,2.1,Projekt graficzny UX/UI strony głównej i podstron,Gotowe,"Wdrożony layout Astro: nawigacja sekcje podstrony usług lekarzy blog."
+2. Projekt i budowa strony,2.2,Sekcja Oferta oraz szczegółowy Cennik (wymogi prawne),Gotowe,"OfferGrid /cennik CennikFull; stopka z ujawnieniami i informacjami dla pacjentów."
+2. Projekt i budowa strony,2.3,"Profile lekarzy (zdjęcia biogramy specjalizacje)",Gotowe,"Team.astro + dr-kornelia-rumin lek-dent-*."
+2. Projekt i budowa strony,2.4,Landing pages usług (Invisalign implanty wybielanie itd.),Częściowo,"Jest m.in. /zabiegi/invisalign-lubin; brak dedykowanych LP implanty/wybielanie."
+2. Projekt i budowa strony,2.5,Sekcja FAQ + wsparcie SEO,Gotowe,"FAQSection faq.ts schema FAQPage na stronie głównej."
+2. Projekt i budowa strony,2.6,Moduł opinii pacjentów (import z Google Maps),Do zrobienia,"Testimonials.astro — placeholder widżetu; brak integracji."
+2. Projekt i budowa strony,2.7,Metamorfozy przed/po,Gotowe,Metamorphoses + slider w main.js.
+2. Projekt i budowa strony,2.8,Galeria gabinetów,Gotowe,ClinicGallery.
+2. Projekt i budowa strony,2.9,Formularz kontaktowy + WhatsApp,Częściowo,"UI + WA; wysyłka formularza symulowana setTimeout — brak backendu/usługi mail."
+2. Projekt i budowa strony,2.10,Copywriting medyczny (bezpieczny prawnie),Częściowo,"Treści + polityka/regulamin; formalny audyt prawny osobno."
+3. Wdrożenie techniczne i SEO,3.1,Wdrożenie na serwerze klienta + SSL,Do zrobienia,Poza repozytorium — wdrożenie infrastruktury.
+3. Wdrożenie techniczne i SEO,3.2,Zakup domeny i konfiguracja DNS,Do zrobienia,Poza kodem.
+3. Wdrożenie techniczne i SEO,3.3,Skrzynki mailowe i formularze kontaktowe,Do zrobienia,Skrzynki organizacyjnie; formularz niepodpięty.
+3. Wdrożenie techniczne i SEO,3.4,CMS do samodzielnej edycji treści przez klienta,Częściowo,"Blog w Markdown (content collections); reszta stron to kod Astro nie pełny CMS."
+3. Wdrożenie techniczne i SEO,3.5,Konfiguracja obsługi formularzy kontaktowych,Do zrobienia,Zależne od 2.9.
+3. Wdrożenie techniczne i SEO,3.6,Optymalizacja obrazów,Częściowo,"Lazy loading itd.; brak @astrojs/image w zależnościach."
+4. Analityka i prawo,4.1,Google Analytics 4 i Google Search Console,Do zrobienia,Brak skryptów/weryfikacji w layout.
+4. Analityka i prawo,4.2,Pixel Meta (konwersje),Do zrobienia,Brak w projekcie.
+4. Analityka i prawo,4.3,Pliki cookies i polityka prywatności RODO,Gotowe,Baner cookie + polityka-prywatnosci; mapa po zgodzie.
+4. Analityka i prawo,4.4,Regulamin serwisu (osobny od polityki),Gotowe,regulamin.astro.
+4. Analityka i prawo,4.5,Double opt-in i zgody marketingowe w formularzach,Do zrobienia,Brak checkboxów zgód i mechanizmu double opt-in.
+4. Analityka i prawo,4.6,Audyt zgodności treści z ustawą o reklamie wyrobów medycznych,Do zrobienia,Proces prawny poza kodem.
+5. Social media i launch,5.1,"Założenie i konfiguracja profili FB IG TikTok",Do zrobienia,Poza repozytorium.
+5. Social media i launch,5.2,Grafika startowa (covery awatary),Do zrobienia,Poza repozytorium.
+5. Social media i launch,5.3,Scenariusze na pierwsze 5 filmów Reels/TikTok,Do zrobienia,Poza repozytorium.
+6. Pozycjonowanie,6.1,Google Business Profile,Do zrobienia,Konfiguracja u Google nie w kodzie.
+6. Pozycjonowanie,6.2,Content marketing blog i social media,Częściowo,"Blog jest; social media nie w repo."
+6. Pozycjonowanie,6.3,sitemap.xml i robots.txt przez @astrojs/sitemap,Częściowo,"robots.txt + public/sitemap-*.xml istnieją; brak integracji @astrojs/sitemap w astro.config — ryzyko braku auto-aktualizacji przy buildzie."
+6. Pozycjonowanie,6.4,Schema.org LocalBusiness Dentist MedicalOrganization,Częściowo,"MedicalBusiness Physician FAQPage; brak explicite Dentist/LocalBusiness jak w ofercie."
+6. Pozycjonowanie,6.5,Open Graph i meta tagi dla social media,Gotowe,layout.astro.
+6. Pozycjonowanie,6.6,Techniczne SEO szybkość nagłówki meta,Częściowo,"Struktura i meta OK; pełny audyt np. Lighthouse osobno."
+6. Pozycjonowanie,6.7,Lokalne SEO frazy dentysta + miasto,Częściowo,"Treści Lubin/okolice LocalSEO; efekt w SERP praca ciągła."
+6. Pozycjonowanie,6.8,Dostosowanie mobile i dostępność,Częściowo,Responsywność Tailwind; brak udokumentowanego audytu dostępności.
+6. Pozycjonowanie,6.9,WCAG 2.1 AA,Do zrobienia / do weryfikacji,Brak testów dostępności w repo.
+6. Pozycjonowanie,6.10,Top 3 Google dla wybranych fraz w 6–8 mc,Wynik biznesowy,Nie jest to punkt implementacji w kodzie.
