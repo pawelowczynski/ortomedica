@@ -3,23 +3,28 @@ Checklista oferty na GitHubie (jak Trello / Kanban)
 
 Repozytorium: pawelowczynski/ortomedica (zgodnie z git remote origin).
 
-1) Zaloguj sie do GitHub CLI (jednorazowo):
-   gh auth login
+--- Sposob A (ZALECANY): GitHub Actions — bez logowania gh na komputerze ---
 
-2) Z katalogu glownego projektu (tam gdzie jest oferta-vs-projekt-orthomedica.csv):
+1) Wejdz w repozytorium na GitHubie:
+   https://github.com/pawelowczynski/ortomedica/actions/workflows/oferta-import-issues.yml
+
+2) Przycisk "Run workflow" → Run workflow (domyslnie bez ponownego importu).
+
+3) Jesli kiedys uruchomiles import i chcesz drugi raz (UWAGA: duplikaty issues):
+   Run workflow → zaznacz "force_import".
+
+4) Tablica Kanban:
+   https://github.com/pawelowczynski/ortomedica/projects
+   New project → Board → dodaj issues (filtr: label:oferta/import-batch)
+
+Punkty "Gotowe" i "Wynik biznesowy" sa zamykane automatycznie; otwarte = do pracy / czesciowo.
+
+Pliki: oferta-vs-projekt-orthomedica.csv, scripts/import-oferta-issues.mjs, .github/workflows/oferta-import-issues.yml
+
+--- Sposob B: lokalnie (wymaga gh auth login) ---
+
+   gh auth login
    powershell -ExecutionPolicy Bypass -File .\scripts\create-github-oferta-issues.ps1
 
-   Podglad bez tworzenia:
-   powershell -ExecutionPolicy Bypass -File .\scripts\create-github-oferta-issues.ps1 -DryRun
-
-   Ponowny import (duplikaty!):
-   ... -Force
-
-3) Tablica Kanban:
-   https://github.com/pawelowczynski/ortomedica/projects
-   Utworz nowy Project (Board), dodaj issues z filtru:
-   label:oferta/import-batch
-
-Punkty "Gotowe" i "Wynik biznesowy" sa zamykane automatycznie jako zakonczone; otwarte = do pracy / czesciowo.
-
-Pliki: oferta-vs-projekt-orthomedica.csv, scripts/create-github-oferta-issues.ps1
+   Podglad: ... -DryRun
+   Ponowny import: ... -Force

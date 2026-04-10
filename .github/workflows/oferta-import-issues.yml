@@ -1,0 +1,28 @@
+# Import checklisty oferty jako Issues (bez lokalnego gh auth login).
+# Actions → Oferta — import issues z CSV → Run workflow
+name: Oferta — import issues z CSV
+
+on:
+  workflow_dispatch:
+    inputs:
+      force_import:
+        description: 'Ponowny import mimo istniejacych issues (etykieta oferta/import-batch)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Import issues from CSV
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          FORCE_IMPORT: ${{ inputs.force_import }}
+        run: node scripts/import-oferta-issues.mjs
