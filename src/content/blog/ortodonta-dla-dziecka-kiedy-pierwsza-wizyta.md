@@ -1,6 +1,6 @@
 ---
 title: "Ortodonta dla dziecka – kiedy na pierwszą wizytę?"
-description: "Sprawdź, w jakim wieku najlepiej zgłosić się z dzieckiem do ortodonty i jakie niepokojące objawy w zgryzie warto skonsultować w klinice ORTHOMEDICA w Lubinie."
+description: "Sprawdź, w jakim wieku najlepiej zgłosić się z dzieckiem do ortodonty i jakie niepokojące objawy w zgryzie warto skonsultować w gabinecie ORTHOMEDICA w Lubinie."
 date: "2026-03-05"
 author: "dr n. med. Kornelia Rumin"
 tags:

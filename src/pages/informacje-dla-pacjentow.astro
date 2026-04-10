@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/layout.astro';
+import Header from '../components/header.astro';
+import Footer from '../components/footer.astro';
+import {
+  ENTITY,
+  MEDICAL_DISCLOSURE,
+  MEDICAL_DEVICE_ADVERTISING,
+  formatEntityAddress,
+  formatNipLine,
+  formatRegonLine,
+  formatRegistryLine,
+  PHONE_DISPLAY,
+} from '../data/site';
+---
+
+<Layout
+  title="Informacje dla pacjentów – ORTHOMEDICA Lubin"
+  description="Zakres świadczeń, cennik, opłaty za dokumentację medyczną, NFZ, monitoring, informacja o wyrobach medycznych i prawa pacjenta — ORTHOMEDICA Lubin."
+  canonical="https://orthomedica-lubin.pl/informacje-dla-pacjentow"
+>
+  <Header />
+
+  <main class="pt-28 md:pt-32 pb-20 bg-white">
+    <section class="py-10 md:py-14">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <p class="text-gold font-bold tracking-[0.3em] text-[10px] uppercase mb-3">Prawo i przejrzystość</p>
+        <h1 class="cinzel text-2xl md:text-3xl lg:text-4xl text-navy mb-6">Informacje dla pacjentów</h1>
+        <p class="text-[15px] text-gray-600 font-light mb-8 leading-relaxed">
+          Poniższe informacje odpowiadają m.in. obowiązkowi udostępniania pacjentom aktualnych danych, o których mowa w
+          <span class="font-semibold text-navy">art. 24 ust. 2 ustawy z dnia 15 kwietnia 2011 r. o działalności leczniczej</span>
+          (w zakresie m.in. rodzaju działalności, zakresu świadczeń, opłat za świadczenia odpłatne oraz opłaty za udostępnienie dokumentacji medycznej),
+          a także — w razie zastosowania —
+          <span class="font-semibold text-navy">art. 23a</span> tej ustawy (monitoring).
+        </p>
+
+        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">Dane podmiotu udzielającego świadczeń</h2>
+        <p class="text-[15px] text-gray-600 font-light mb-6 leading-relaxed">
+          <span class="font-semibold text-navy">{ENTITY.legalAdministrator}</span><br />
+          {formatEntityAddress()}<br />
+          tel.: <a href="tel:+48694731124" class="text-navy hover:text-gold font-semibold">{PHONE_DISPLAY}</a><br />
+          e-mail:
+          <a href={`mailto:${ENTITY.email}`} class="text-navy hover:text-gold font-semibold">{ENTITY.email}</a><br />
+          {formatNipLine()}<br />
+          {formatRegonLine()}<br />
+          {formatRegistryLine()}
+        </p>
+
+        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">Rodzaj działalności i zakres świadczeń</h2>
+        <p class="text-[15px] text-gray-600 font-light mb-6 leading-relaxed">{MEDICAL_DISCLOSURE.scopeSummary}</p>
+
+        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">Opłaty za świadczenia zdrowotne (art. 24 ust. 1 pkt 12)</h2>
+        <p class="text-[15px] text-gray-600 font-light mb-4 leading-relaxed">
+          Aktualne widełki cenowe świadczeń odpłatnych znajdują się w
+          <a href="/cennik" class="text-navy hover:text-gold font-semibold">cenniku orientacyjnym</a>. Ostateczna wysokość opłaty
+          ustala się po badaniu i omówieniu planu leczenia.
+        </p>
+
+        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">Opłata za udostępnienie dokumentacji medycznej (art. 24 ust. 1 pkt 9)</h2>
+        <p class="text-[15px] text-gray-600 font-light mb-4 leading-relaxed">{MEDICAL_DISCLOSURE.medicalRecordsFeeNote}</p>
+        <ul class="list-disc pl-5 space-y-2 text-[15px] text-gray-600 font-light mb-6 bg-gray-50 p-5 rounded-xl border border-gray-100">
+          <li><span class="font-semibold text-navy">Pierwsza strona kopii dokumentacji:</span> — zł (uzupełnij)</li>
+          <li><span class="font-semibold text-navy">Każda kolejna strona:</span> — zł (uzupełnij)</li>
+          <li><span class="font-semibold text-navy">Nośnik elektroniczny / inne:</span> — zł lub „wg kosztu” (uzupełnij)</li>
+        </ul>
+
+        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">Umowa z Narodowym Funduszem Zdrowia</h2>
+        <p class="text-[15px] text-gray-600 font-light mb-6 leading-relaxed">{MEDICAL_DISCLOSURE.nfzNote}</p>
+
+        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">Monitoring (art. 23a ustawy o działalności leczniczej)</h2>
+        <p class="text-[15px] text-gray-600 font-light mb-6 leading-relaxed">{MEDICAL_DISCLOSURE.cctvNote}</p>
+
+        <h2 id="informacja-o-wyrobach-medycznych" class="cinzel text-xl md:text-2xl text-navy mb-3 scroll-mt-28">
+          Informacja o wyrobach medycznych i treściach na stronie (ustawa o wyrobach medycznych)
+        </h2>
+        <p class="text-[15px] text-gray-600 font-light mb-4 leading-relaxed">
+          Poniższe ujawnienia odnoszą się do obowiązujących zasad <strong class="text-navy">informowania</strong> o metodach leczenia oraz o wyrobach
+          medycznych stosowanych w stomatologii i ortodoncji, w tym do przepisów o <strong class="text-navy">reklamie wyrobów medycznych</strong> w
+          <span class="font-semibold text-navy">ustawie z dnia 15 kwietnia 2011 r. o wyrobach medycznych</span>.
+          Mają usprawnić przejrzystość witryny; <strong class="text-navy">nie zastępują</strong> pełnego audytu prawnego ani indywidualnej porady dla
+          konkretnej kampanii reklamowej.
+        </p>
+        <div class="space-y-4 text-[15px] text-gray-600 font-light mb-8 leading-relaxed bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-100">
+          {MEDICAL_DEVICE_ADVERTISING.fullHtmlParagraphs.map((p) => (
+            <p class="last:mb-0" set:html={p.replace(/\*\*(.+?)\*\*/g, '<strong class="text-navy">$1</strong>')} />
+          ))}
+        </div>
+
+        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">Prawa pacjenta</h2>
+        <p class="text-[15px] text-gray-600 font-light mb-4 leading-relaxed">
+          Informacje o prawach pacjenta m.in. na stronie Ministerstwa Zdrowia oraz Rzecznika Praw Pacjenta:
+        </p>
+        <ul class="list-disc pl-5 space-y-2 text-[15px] text-gray-600 font-light mb-8">
+          <li>
+            <a href={MEDICAL_DISCLOSURE.patientRightsUrl} class="text-navy hover:text-gold font-semibold" target="_blank" rel="noopener noreferrer"
+              >Prawa pacjenta (gov.pl)</a
+            >
+          </li>
+          <li>
+            <a href={MEDICAL_DISCLOSURE.patientOmbudsmanUrl} class="text-navy hover:text-gold font-semibold" target="_blank" rel="noopener noreferrer"
+              >Rzecznik Praw Pacjenta</a
+            >
+          </li>
+        </ul>
+
+        <p class="text-[13px] text-gray-500 font-light border-t border-gray-100 pt-6">
+          Treść ma charakter informacyjny. W razie rozbieżności obowiązują przepisy prawa oraz dokumentacja w gabinecie.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

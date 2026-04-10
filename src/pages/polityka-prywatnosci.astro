@@ -2,11 +2,12 @@
 import Layout from '../layouts/layout.astro';
 import Header from '../components/header.astro';
 import Footer from '../components/footer.astro';
+import { ENTITY, formatNipLine, formatRegonLine, formatEntityAddress } from '../data/site';
 ---
 
 <Layout
   title="Polityka prywatności – ORTHOMEDICA Lubin"
-  description="Polityka prywatności gabinetu ORTHOMEDICA w Lubinie – informacje o przetwarzaniu danych osobowych, plikach cookie i prawach pacjenta."
+  description="Polityka prywatności gabinetu stomatologicznego ORTHOMEDICA w Lubinie – przetwarzanie danych, pliki cookie i prawa pacjenta."
   canonical="https://orthomedica-lubin.pl/polityka-prywatnosci"
 >
   <Header />
@@ -23,16 +24,17 @@ import Footer from '../components/footer.astro';
           <span class="font-semibold text-navy">orthomedica-lubin.pl</span> przez:
         </p>
         <p class="text-[15px] text-gray-600 font-light mb-6">
-          <span class="font-semibold text-navy">ORTHOMEDICA – dr n. med. Kornelia Rumin</span><br />
-          ul. Pawia 67, 59-300 Lubin<br />
-          NIP: (do uzupełnienia)<br />
-          e-mail: <a href="mailto:rejestracja@orthomedica-lubin.pl" class="text-navy hover:text-gold">rejestracja@orthomedica-lubin.pl</a><br />
+          <span class="font-semibold text-navy">{ENTITY.legalAdministrator}</span><br />
+          {formatEntityAddress()}<br />
+          {formatNipLine()}<br />
+          {formatRegonLine()}<br />
+          e-mail: <a href={`mailto:${ENTITY.email}`} class="text-navy hover:text-gold">{ENTITY.email}</a><br />
           tel.: <a href="tel:+48694731124" class="text-navy hover:text-gold">+48 694 731 124</a>
         </p>
 
         <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">1. Administrator danych</h2>
         <p class="text-[15px] text-gray-600 font-light mb-4">
-          Administratorem danych osobowych jest ORTHOMEDICA – dr n. med. Kornelia Rumin z siedzibą w Lubinie przy ul. Pawia 67.
+          Administratorem danych osobowych jest {ENTITY.legalAdministrator} z siedzibą przy {formatEntityAddress()}.
           We wszelkich sprawach związanych z przetwarzaniem danych osobowych można kontaktować się za pomocą adresu e-mail
           lub numeru telefonu wskazanych powyżej.
         </p>

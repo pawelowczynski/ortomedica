@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
-const { title, description, canonical = 'https://orthomedica-lubin.pl/', image = 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=1200' } = Astro.props;
+import { DEFAULT_OG_IMAGE_URL } from '../data/site';
+
+const { title, description, canonical = 'https://orthomedica-lubin.pl/', image = DEFAULT_OG_IMAGE_URL } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="pl" class="scroll-smooth">

@@ -1,6 +1,6 @@
 ---
 title: "Aparat stały – jak dbać o zęby podczas leczenia?"
-description: "Praktyczne wskazówki, jak dbać o higienę jamy ustnej w trakcie leczenia aparatem stałym – poradnik dla pacjentów kliniki ORTHOMEDICA w Lubinie."
+description: "Praktyczne wskazówki, jak dbać o higienę jamy ustnej w trakcie leczenia aparatem stałym – poradnik dla pacjentów gabinetu ORTHOMEDICA w Lubinie."
 date: "2026-03-01"
 author: "dr n. med. Kornelia Rumin"
 tags:

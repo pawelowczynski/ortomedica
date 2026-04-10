@@ -407,3 +407,38 @@ export const cennikTabs = [
   },
 ];
 
+/** Skrócona lista na stronie głównej (#cennik) — ceny zgodne z pełnym cennikiem */
+export const cennikPreview = [
+  {
+    name: 'Aparat stały (metalowy, 1 łuk)',
+    price: 'od 3 000 zł',
+  },
+  {
+    name: 'Aparat ruchomy (np. Twin Block)',
+    detail: 'leczenie dziecięce — inne modele wg wyceny',
+    price: 'od 3 000 zł',
+  },
+  {
+    name: 'Konsultacja z diagnostyką ortodontyczną',
+    price: 'od 400 zł',
+  },
+  {
+    name: 'Przegląd stomatologiczny',
+    price: '150 – 200 zł',
+  },
+  {
+    name: 'RTG panoramiczne / cefalometryczne',
+    price: '150 zł',
+  },
+  {
+    name: 'Higienizacja (scaling, piaskowanie, fluoryzacja)',
+    detail: 'oba łuki',
+    price: 'od 400 zł',
+  },
+  {
+    name: 'Ekstrakcje zębów',
+    detail: 'mleczne i stałe — cena zależy od zęba',
+    price: 'od 300 zł',
+  },
+];
+

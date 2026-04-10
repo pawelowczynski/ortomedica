@@ -1,0 +1,148 @@
+---
+import { cennikTabs } from './cennik.data.js';
+
+function isIndividualQuote(price) {
+  return typeof price === 'string' && price.toLowerCase().includes('wycena');
+}
+---
+
+<div class="cennik-full space-y-14 md:space-y-16">
+  <nav
+    class="rounded-2xl border border-gray-100 bg-gray-50/80 p-4 md:p-6"
+    aria-label="Spis treści cennika"
+  >
+    <p class="text-xs font-bold uppercase tracking-[0.2em] text-gold mb-3">Spis treści</p>
+    <ul class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-navy">
+      {
+        cennikTabs.map((tab) => (
+          <li>
+            <a href={`#cennik-${tab.id}`} class="hover:text-gold underline-offset-2 hover:underline font-medium">
+              {tab.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+
+  {
+    cennikTabs.map((tab) => (
+      <section id={`cennik-${tab.id}`} class="scroll-mt-28 md:scroll-mt-32">
+        <div class="flex flex-wrap items-baseline gap-3 mb-4">
+          <span class="text-2xl text-gold" aria-hidden="true">
+            {tab.icon}
+          </span>
+          <h2 class="cinzel text-2xl md:text-3xl text-navy">{tab.label}</h2>
+        </div>
+        {tab.intro && <p class="text-[15px] text-gray-600 font-light mb-6 max-w-3xl">{tab.intro}</p>}
+
+        {tab.type === 'orthodontics' && tab.subTabs && (
+          <div class="space-y-12">
+            {tab.subTabs.map((sub) => (
+              <div id={`cennik-${sub.id}`} class="scroll-mt-28 md:scroll-mt-32">
+                <h3 class="text-lg font-semibold text-navy mb-2 border-b border-gray-100 pb-2">{sub.label}</h3>
+                {sub.intro && <p class="text-sm text-gray-600 font-light mb-4">{sub.intro}</p>}
+                <ul class="space-y-3">
+                  {sub.items.map((item) => (
+                    <li class="rounded-xl border border-gray-100 bg-white p-4 md:p-5 shadow-sm">
+                      <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                        <div class="min-w-0">
+                          {item.tag && (
+                            <span class="inline-block text-[10px] font-semibold uppercase tracking-wide bg-navy text-white px-2 py-0.5 rounded-full mb-2">
+                              {item.tag}
+                            </span>
+                          )}
+                          <p class="font-semibold text-navy">{item.name}</p>
+                          {item.desc && <p class="text-sm text-gray-500 mt-1">{item.desc}</p>}
+                          {item.note && <p class="text-xs text-gray-500 mt-2 italic">{item.note}</p>}
+                        </div>
+                        <div class="shrink-0 text-left sm:text-right">
+                          <p
+                            class:list={[
+                              'text-lg font-bold text-gold whitespace-nowrap',
+                              isIndividualQuote(item.price) && 'italic text-gray-500 font-normal text-base',
+                            ]}
+                          >
+                            {item.price}
+                          </p>
+                          {item.unit && <p class="text-xs text-gray-400 mt-0.5">{item.unit}</p>}
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+                {sub.infoBox && (
+                  <div class="mt-4 rounded-xl border-l-4 border-gold bg-gray-50 p-4 text-sm text-gray-600">
+                    <p class="font-semibold text-navy mb-1">{sub.infoBox.title}</p>
+                    <p class="font-light">{sub.infoBox.content}</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+
+        {tab.type === 'cards' && tab.items && (
+          <ul class="space-y-3">
+            {tab.items.map((item) => (
+              <li class="rounded-xl border border-gray-100 bg-white p-4 md:p-5 shadow-sm">
+                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                  <div class="min-w-0">
+                    {item.tag && (
+                      <span class="inline-block text-[10px] font-semibold uppercase tracking-wide bg-amber-100 text-amber-900 px-2 py-0.5 rounded-full mb-2">
+                        {item.tag}
+                      </span>
+                    )}
+                    <p class="font-semibold text-navy">{item.name}</p>
+                    {item.desc && <p class="text-sm text-gray-500 mt-1">{item.desc}</p>}
+                  </div>
+                  <div class="shrink-0 text-left sm:text-right">
+                    <p
+                      class:list={[
+                        'text-lg font-bold text-gold whitespace-nowrap',
+                        isIndividualQuote(item.price) && 'italic text-gray-500 font-normal text-base',
+                      ]}
+                    >
+                      {item.price}
+                    </p>
+                    {item.unit && <p class="text-xs text-gray-400 mt-0.5">{item.unit}</p>}
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {tab.type === 'groups' && tab.groups && (
+          <div class="space-y-8">
+            {tab.groups.map((group) => (
+              <div>
+                <h3 class="text-base font-semibold text-navy mb-3">{group.groupName}</h3>
+                <ul class="divide-y divide-gray-100 rounded-xl border border-gray-100 bg-white overflow-hidden shadow-sm">
+                  {group.items.map((row) => (
+                    <li class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 px-4 py-3.5">
+                      <span class="text-[15px] text-gray-700">{row.name}</span>
+                      <span
+                        class:list={[
+                          'font-bold text-gold sm:text-right',
+                          isIndividualQuote(row.price) && 'italic text-gray-500 font-normal',
+                        ]}
+                      >
+                        {row.price}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
+    ))
+  }
+
+  <p class="text-xs text-gray-500 text-center max-w-2xl mx-auto leading-relaxed">
+    Ceny mają charakter orientacyjny i mogą ulec zmianie. Wiążący kosztorys wystawiamy po badaniu. Oferujemy płatność w
+    ratach — zapytaj na konsultacji.
+  </p>
+</div>

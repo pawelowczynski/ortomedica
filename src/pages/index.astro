@@ -13,13 +13,29 @@ import ClinicGallery from '../components/ClinicGallery.astro';
 import LocalSEO from '../components/LocalSEO.astro';
 import FAQSection from '../components/FAQSection.astro';
 import ContactSection from '../components/ContactSection.astro';
+import { DEFAULT_OG_IMAGE_URL } from '../data/site';
+import { homePageFaqs } from '../data/faq';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: homePageFaqs.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a,
+    },
+  })),
+};
 ---
 
 <Layout 
     title="ORTHOMEDICA Lubin | Stomatologia dziecięca, chirurgia, gnatologia, ortodoncja"
-    description="Klinika ORTHOMEDICA w Lubinie — stomatologia dziecięca w centrum oferty, chirurgia i gnatologia, ortodoncja dla dzieci i młodzieży. Umów wizytę."
+    description="Gabinet stomatologiczny ORTHOMEDICA w Lubinie — stomatologia dziecięca w centrum oferty, chirurgia i gnatologia, ortodoncja dla dzieci i młodzieży. Umów wizytę."
 >
     <!-- Tu zrzucamy specyficzne tagi SEO dla tej strony (Schema.org) -->
+    <script slot="head" type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
     <script slot="head" type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@graph": [
@@ -27,7 +43,7 @@ import ContactSection from '../components/ContactSection.astro';
           "@type": "MedicalBusiness",
           "name": "ORTHOMEDICA - dr n. med. Kornelia Rumin",
           "description": "Stomatologia dziecięca, chirurgia stomatologiczna, gnatologia i ortodoncja — Lubin.",
-          "image": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=1200",
+          "image": DEFAULT_OG_IMAGE_URL,
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "ul. Pawia 67",

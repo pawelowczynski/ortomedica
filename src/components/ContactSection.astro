@@ -1,4 +1,7 @@
 ---
+import { WHATSAPP_E164 } from '../data/site';
+
+const waHref = `https://wa.me/${WHATSAPP_E164.replace(/\D/g, '')}`;
 ---
 
 <section id="kontakt" class="py-14 md:py-18 bg-white relative">
@@ -19,7 +22,7 @@
             +48 694 731 124
           </a>
           <a
-            href="https://wa.me/48789012345"
+            href={waHref}
             target="_blank"
             rel="noopener"
             class="bg-[#25D366] hover:bg-[#20bd5a] text-white px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition-colors shadow-lg"

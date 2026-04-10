@@ -1,38 +1,7 @@
 ---
-const faqs = [
-  {
-    q: 'Kiedy najlepiej zapisać dziecko na pierwszą wizytę ortodontyczną?',
-    a: 'Najczęściej rekomendujemy konsultację około 7. roku życia. To dobry moment, aby ocenić rozwój zgryzu i zaplanować profilaktykę.'
-  },
-  {
-    q: 'Czy przed leczeniem ortodontycznym potrzebna jest diagnostyka 3D?',
-    a: 'W wielu przypadkach tak, bo pozwala precyzyjnie zaplanować terapię. Zakres diagnostyki dobieramy indywidualnie po badaniu.'
-  },
-  {
-    q: 'Ile trwa leczenie aparatem stałym?',
-    a: 'Najczęściej od 18 do 24 miesięcy, ale czas zależy od rodzaju wady zgryzu i systematyczności wizyt kontrolnych.'
-  },
-  {
-    q: 'Czy Invisalign jest odpowiedni dla dorosłych pacjentów?',
-    a: 'Tak, to częsty wybór dorosłych. Podczas konsultacji oceniamy, czy nakładki będą najlepszym rozwiązaniem w danym przypadku.'
-  },
-  {
-    q: 'Czy leczenie ortodontyczne boli?',
-    a: 'Zakładanie aparatu jest bezbolesne, natomiast po aktywacji może pojawić się krótkotrwała tkliwość zębów. To normalna reakcja.'
-  },
-  {
-    q: 'Czy mogę płacić za leczenie w ratach?',
-    a: 'Tak, dostępne są elastyczne opcje płatności. Szczegóły ustalamy podczas wizyty konsultacyjnej.'
-  },
-  {
-    q: 'Jak dbać o higienę z aparatem?',
-    a: 'Wymagana jest dokładna higiena po każdym posiłku oraz regularne wizyty higienizacyjne. Otrzymasz od nas praktyczne instrukcje.'
-  },
-  {
-    q: 'Jak szybko mogę umówić pierwszy termin?',
-    a: 'Zwykle pierwszą konsultację można zaplanować w ciągu kilku dni roboczych. W pilnych przypadkach szukamy najszybszego terminu.'
-  }
-];
+import { homePageFaqs } from '../data/faq';
+
+const faqs = homePageFaqs;
 ---
 
 <section id="faq" class="py-14 md:py-18 bg-gray-50">
@@ -58,9 +27,10 @@ const faqs = [
       }
     </div>
 
-    <div class="mt-8 text-center">
+    <div class="mt-8 text-center space-y-3">
+      <p class="text-[13px] text-gray-500 font-light">Powyżej znajduje się pełna lista pytań z tej sekcji.</p>
       <a href="/blog" class="inline-flex items-center gap-2 text-navy hover:text-gold font-semibold transition-colors">
-        Zobacz wszystkie pytania
+        Poradniki i artykuły na blogu
         <i data-lucide="arrow-right" class="w-4 h-4"></i>
       </a>
     </div>

@@ -1,4 +1,5 @@
 ---
+import { cennikPreview } from './cennik.data.js';
 ---
 
 <section id="cennik" class="cennik-section py-14 md:py-18 bg-gray-50 border-y border-gray-100" aria-labelledby="cennik-heading">
@@ -6,28 +7,38 @@
     <div class="text-center mb-6 md:mb-8">
       <span class="text-gold font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Cennik orientacyjny</span>
       <h2 id="cennik-heading" class="cinzel text-3xl md:text-4xl text-navy mb-4">Cennik</h2>
-      <p class="text-[15px] text-gray-500 font-light">Przykładowe widełki cenowe najczęściej wybieranych świadczeń.</p>
+      <p class="text-[15px] text-gray-500 font-light">
+        Przykładowe widełki najczęściej wybieranych świadczeń — aparaty, konsultacje, RTG, higiena i ekstrakcje.
+      </p>
     </div>
 
     <div class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
       <ul class="divide-y divide-gray-100">
-        <li class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 px-6 py-5">
-          <span class="font-semibold text-navy">Konsultacja specjalistyczna</span>
-          <span class="text-gold font-bold">od 200 PLN</span>
-        </li>
-        <li class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 px-6 py-5">
-          <span class="font-semibold text-navy">Aparat stały (jeden łuk)</span>
-          <span class="text-gold font-bold">od 3000 PLN</span>
-        </li>
-        <li class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 px-6 py-5">
-          <span class="font-semibold text-navy">Leczenie nakładkowe</span>
-          <span class="text-gold font-bold">8000 - 15000 PLN</span>
-        </li>
+        {
+          cennikPreview.map((row) => (
+            <li class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 px-6 py-5">
+              <div class="min-w-0">
+                <span class="font-semibold text-navy block">{row.name}</span>
+                {row.detail && <span class="text-xs text-gray-500 mt-1 block">{row.detail}</span>}
+              </div>
+              <span class="text-gold font-bold shrink-0">{row.price}</span>
+            </li>
+          ))
+        }
       </ul>
     </div>
 
-    <p class="text-xs text-gray-500 mt-5 text-center">
-      Podane ceny mają charakter orientacyjny. Ostateczny koszt leczenia ustalany jest po badaniu lekarskim i diagnostyce.
+    <div class="mt-8 text-center">
+      <a
+        href="/cennik"
+        class="inline-flex items-center justify-center rounded-full bg-navy px-8 py-3 text-sm font-semibold uppercase tracking-wider text-white hover:bg-gold hover:text-navy transition-colors"
+      >
+        Pełny cennik — wszystkie działy
+      </a>
+    </div>
+
+    <p class="text-xs text-gray-500 mt-6 text-center max-w-xl mx-auto leading-relaxed">
+      Ceny mają charakter orientacyjny. Wiążący kosztorys po badaniu. Płatność w ratach — zapytaj na konsultacji.
     </p>
   </div>
 </section>

@@ -17,7 +17,17 @@ Repozytorium: pawelowczynski/ortomedica (zgodnie z git remote origin).
    https://github.com/pawelowczynski/ortomedica/projects
    New project → Board → dodaj issues (filtr: label:oferta/import-batch)
 
-Punkty "Gotowe" i "Wynik biznesowy" sa zamykane automatycznie; otwarte = do pracy / czesciowo.
+--- Zasada: skonczone zadanie = Done na boardzie ---
+
+Na GitHubie kolumna "Done" NIE laczy sie z issue automatycznie, dopoki nie wlaczysz tego w projekcie.
+
+1) Otworz swoj Project (tablica z kartami).
+2) Kliknij Workflows / Przeplywy pracy (ikona pioruna lub menu projektu) albo ... przy nazwie projektu → ustawienia automatyzacji.
+3) Wlacz przeplyw w stylu: When an issue is closed → Set status to Done (lub: przenies do kolumny Done / Item closed).
+   Oficjalny opis: https://docs.github.com/en/issues/planning-and-tracking-with-projects/automating-your-project/using-the-built-in-automations
+4) W pracy codziennej: jak zadanie jest skonczone — zamknij Issue (Close issue). Po wlaczonej automatyzacji karta sama wskoczy do Done.
+
+Import CSV juz zamyka issue z etykieta oferta/gotowe i wynik biznesowy — te od razu sa "closed" i powinny ladowac w Done po pkt 1–3.
 
 Pliki: oferta-vs-projekt-orthomedica.csv, scripts/import-oferta-issues.mjs, .github/workflows/oferta-import-issues.yml
 

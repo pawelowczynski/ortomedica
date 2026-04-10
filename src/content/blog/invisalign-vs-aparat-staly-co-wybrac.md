@@ -1,6 +1,6 @@
 ---
 title: "Invisalign vs aparat stały – co wybrać w Lubinie?"
-description: "Porównanie leczenia alignerami Invisalign i aparatem stałym – wskazania, czas leczenia i komfort pacjenta w warunkach kliniki ORTHOMEDICA w Lubinie."
+description: "Porównanie leczenia alignerami Invisalign i aparatem stałym – wskazania, czas leczenia i komfort pacjenta w gabinecie ORTHOMEDICA w Lubinie."
 date: "2026-03-10"
 author: "dr n. med. Kornelia Rumin"
 tags:

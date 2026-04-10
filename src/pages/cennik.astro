@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/layout.astro';
+import Header from '../components/header.astro';
+import Footer from '../components/footer.astro';
+import CennikFull from '../components/CennikFull.astro';
+---
+
+<Layout
+  title="Cennik – ORTHOMEDICA Lubin | Ortodoncja, stomatologia, diagnostyka"
+  description="Pełny cennik orientacyjny ORTHOMEDICA: ortodoncja, aparaty stałe i nakładki, stomatologia zachowawcza, endodoncja, chirurgia, profilaktyka i diagnostyka obrazowa."
+  canonical="https://orthomedica-lubin.pl/cennik"
+>
+  <Header />
+
+  <main class="pt-28 md:pt-32 pb-20 bg-gray-50">
+    <section class="py-10 md:py-14" aria-labelledby="cennik-page-heading">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <p class="text-gold font-bold tracking-[0.3em] text-[10px] uppercase mb-3">Cennik orientacyjny</p>
+        <h1 id="cennik-page-heading" class="cinzel text-3xl md:text-4xl text-navy mb-4">
+          Pełny cennik
+        </h1>
+        <p class="text-[15px] text-gray-600 font-light mb-10 max-w-2xl">
+          Widełki cenowe dla wszystkich świadczeń z oferty. Ostateczny koszt ustalamy po konsultacji i diagnostyce.
+        </p>
+
+        <CennikFull />
+
+        <p class="mt-10 text-center">
+          <a
+            href="/#kontakt"
+            class="inline-flex items-center justify-center rounded-full bg-navy px-8 py-3 text-sm font-semibold uppercase tracking-wider text-white hover:bg-gold hover:text-navy transition-colors"
+          >
+            Umów wizytę
+          </a>
+        </p>
+        <p class="mt-6 text-center">
+          <a href="/" class="text-sm text-gray-500 hover:text-navy underline underline-offset-2"> Wróć na stronę główną </a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

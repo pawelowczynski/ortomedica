@@ -1,0 +1,103 @@
+ORTHOMEDICA — podsumowanie strony www dla klienta
+==================================================
+(dokument roboczy: funkcjonalności + uzasadnienia projektowe)
+
+1. Cel strony
+-------------
+Strona ma w jednym miejscu: przedstawić ofertę gabinetu w Lubinie, zbudować zaufanie (zespół, galeria, FAQ, metamorfozy), ułatwić kontakt (telefon, WhatsApp, formularz) oraz wspierać pozycjonowanie lokalne (Lubin i okolice). Priorytet komunikacji: stomatologia dziecięca i ortodoncja, przy zachowaniu spójnego obrazu całego zespołu.
+
+
+1a. Kilka słów „pod Google” — dlaczego to dobrze wpływa na gabinet
+--------------------------------------------------
+W praktyce większość pacjentów, zanim zadzwoni, wpisuje w wyszukiwarkę coś w stylu „ortodonta Lubin”, „stomatolog dziecięcy w okolicy” albo konkretną usługę. To zupełnie naturalne — szukamy blisko domu, porównujemy, czytamy pierwsze wrażenie. Strona, która jest przygotowana pod takie zapytania (czytelne tytuły, opisy, struktura, lokalne odniesienia, FAQ, blog), to po prostu **drzwi otwarte** dla ludzi, którzy już szukają pomocy — nie trzeba ich „namawiać z ulicy”, oni sami wychodzą z intencją.
+
+Dobrze zrobiona witryna pod wyniki Google to też **spokój i profesja od pierwszego kontaktu**. Zamiast surowej wizytówki albo pustej podstrony pacjent widzi spójną historię: kim jesteście, czym się zajmujecie, jak wygląda wizyta, jak się umówić. To buduje zaufanie jeszcze zanim ktoś podejmie decyzję o telefonie — a w medycynie zaufanie jest prawie wszystkim.
+
+Nie chodzi przy tym o „magiczne jednorazowe podbicie pozycji”, tylko o **solidny fundament**: strona, która jest czytelna dla ludzi i sensownie opisana dla wyszukiwarki, z czasem pracuje na markę gabinetu jak **niewidzialna recepcja**, która jest dostępna o każdej porze. W połączeniu z profilem Google Business i dobrymi opiniami daje to po prostu **większą szansę**, że to właśnie do Was trafi rodzic szukający miejsca dla dziecka albo dorosły pacjent rozważający ortodoncję.
+
+Krótko mówiąc: inwestycja w taką stronę to nie tylko „ładny obrazek w internecie”, to **realne wsparcie widoczności tam, gdzie pacjenci już szukają** — spokojnie, profesjonalnie i na lata.
+
+
+2. Funkcjonalności (co jest na stronie)
+---------------------------------------
+
+Strona główna — sekcje w logicznej kolejności „od ogółu do szczegółu”:
+• Hero (nagłówek): główna obietnica, miasto, szybki przycisk do kontaktu; na dole (desktop) trzy liczby budujące zaufanie (dzieci w centrum uwagi, liczba pacjentów, średnia w Google).
+• Oferta: trzy filary (stomatologia i ortodoncja dziecięca, ortodoncja, chirurgia) z linkami do dłuższych podstron o usługach.
+• Jak leczymy: przełączane zakładki (np. dziecko / dorosły) — czytelny opis procesu bez przeładowania jednym długim tekstem.
+• Metamorfozy: interaktywny suwak przed/po (za zgodą pacjenta), z dopiskiem prawnym, że efekt jest indywidualny.
+• Zespół: karty lekarzy ze zdjęciami i skrótem specjalizacji; linki do pełnych profili.
+• Opinie: miejsce pod widżet recenzji Google (do podłączenia technicznie).
+• Galeria gabinetu: wizualne potwierdzenie standardu miejsca.
+• Cennik (na stronie głównej — skrót + link do pełnego cennika).
+• FAQ: najczęstsze pytania pacjentów (SEO + mniej pytań do rejestracji).
+• Kontakt: telefon, WhatsApp, dane adresowe, formularz z wyborem celu wizyty; mapa Google ładowana dopiero po zgodzie użytkownika (RODO).
+• Lokalne SEO: krótki akapit o pacjentach z okolicy (Lubin, Polkowice, Legnica itd.).
+
+Podstrony:
+• Pełny cennik (/cennik).
+• Blog z wpisami merytorycznymi (Markdown — łatwa rozbudowa treści).
+• Podstrony zabiegów/usług (ortodoncja, Invisalign, aparaty, chirurgia, stomatologia dziecięca itd.).
+• Profile lekarzy.
+• Informacje dla pacjentów (w tym ujawnienia ustawowe, zakres świadczeń, NFZ, dokumentacja, wyroby medyczne / reklama).
+• Polityka prywatności i regulamin.
+
+Technika i widoczność w sieci:
+• Meta tagi, Open Graph i Twitter Card (ładny podgląd linku w social mediach).
+• Dane strukturalne Schema.org (m.in. gabinet medyczny, FAQ, lekarz) — pomocne wyszukiwarkom.
+• Język strony: polski (lang=pl), płynne przewijanie do kotwic (scroll-smooth).
+
+
+3. Uzasadnienia designerskie i UX
+----------------------------------
+
+Kolorystyka: granat (navy) + złoty akcent
+• Granat kojarzy się ze spokojem, profesją i higieną — częsty wybór w medycynie zamiast czystej bieli „szpitalnej”.
+• Złoty akcent ograniczony do CTA, nagłówków pomocniczych i ikon: kieruje wzrok na działania (zadzwoń, umów wizytę) bez krzykliwej reklamy.
+
+Typografia: Montserrat + Cinzel + Playfair Display
+• Montserrat — czytelny, nowoczesny sans-serif do tekstu ciągłego (dobry na mobile).
+• Cinzel — serif o klasycznym charakterze do marki ORTHOMEDICA w nawigacji: podkreśla prestiż i stałość marki.
+• Playfair Display — wyrazisty serif w dużym nagłówku hero: „premium”, spójny z gabinetem nastawionym na jakość, nie na taniość.
+
+Hero ze zdjęciem tła i przyciemnieniem
+• Zdjęcie gabinetu / klimatu pracy buduje emocjonalne połączenie; ciemny gradient zapewnia kontrast, żeby biały tekst był zawsze czytelny.
+• Na większych ekranach delikatny efekt parallax (tło) — subtelna głębia bez rozpraszania.
+
+Nawigacja przyklejona (fixed) + zmiana po przewinięciu
+• Zawsze widoczny numer telefonu i linki — skraca drogę do kontaktu.
+• Po scrollu pasek dostaje jasne tło i cień: lepsza czytelność na jasnych sekcjach pod hero.
+
+Mobile: osobne menu pełnoekranowe + „sticky” pasek na dole (Zadzwoń / WhatsApp)
+• Na telefonie większość użytkowników dzwoni lub pisze — dwa przyciski na stałe na dołu zmniejszają frustrację szukania numeru.
+
+Przyciski główne (złote, zaokrąglone)
+• Zaokrąglenia i powiększenie strefy kliknięcia są wygodne na dotyk; kontrast z tłem spełnia rolę „pierwszego kroku” pacjenta.
+
+Metamorfozy przed/po
+• Suwak angażuje i pokazuje efekt leczenia lepiej niż dwa statyczne zdjęcia obok siebie; dopisek prawny przy sekcji chroni przed błędnym oczekiwaniem „takiego samego efektu u każdego”.
+
+Formularz i mapa
+• Pola z wyraźnym fokusem (obramowanie w kolorze akcentu), walidacja podstawowych danych, honeypot antyspam.
+• Mapa nie ładuje się w tle — użytkownik świadomie akceptuje cookies / ładuje mapę: zgodność z RODO i przejrzystość.
+
+Stopka z „ciężkim” blokiem prawnym
+• Skrót obowiązkowych informacji + link do pełnej strony „Informacje dla pacjentów”: przejrzystość dla pacjenta i mniejsze ryzyko pominięcia wymogów informacyjnych.
+
+Sekcja lokalnego SEO pod kontaktem
+• Naturalne wplecenie miast z dojazdem wspiera frazy typu „ortodonta / stomatolog Lubin i okolice” bez nachalnej listy słów kluczowych.
+
+
+4. Dlaczego taka kolejność sekcji na stronie głównej
+----------------------------------------------------
+Najpierw „kim jesteśmy i co oferujemy” (hero + oferta), potem „jak to wygląda w praktyce” (proces), dowód społeczny (metamorfozy, zespół, opinie, galeria), potem pieniądze i obiekcje (cennik, FAQ), na końcu działanie (kontakt + lokalizacja). To typowa ścieżka użytkownika decydującego się na wizytę u lekarza.
+
+
+5. Co warto wiedzieć (transparentnie)
+--------------------------------------
+• Formularz kontaktowy na stronie wymaga jeszcze podłączenia do wysyłki e-mail lub systemu CRM (obecnie może być symulacja wersji demonstracyjnej — warto dokończyć przed produkcją).
+• Widżet Google Reviews — przygotowane miejsce w układzie; integracja zależy od wybranego rozwiązania i polityki Google.
+• Pełny audyt prawny reklamy medycznej poza ujawnieniami na stronie nadal może być po stronie doradcy prawnego przy kampaniach płatnych.
+
+---
+Dokument można dowolnie skrócić lub rozwinąć w mailu do klienta. Data: kwiecień 2026.
