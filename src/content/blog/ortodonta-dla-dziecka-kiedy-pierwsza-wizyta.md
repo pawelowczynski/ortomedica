@@ -7,7 +7,7 @@ tags:
   - "dzieci"
   - "profilaktyka"
   - "pierwsza-wizyta"
-heroImage: "https://images.unsplash.com/photo-1606811841715-9ff9c632b2b3?auto=format&fit=crop&q=80&w=1200"
+heroImage: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&q=80&w=1200"
 canonical: "https://orthomedica-lubin.pl/blog/ortodonta-dla-dziecka-kiedy-pierwsza-wizyta"
 ---
 

@@ -2,7 +2,7 @@ export const cennikTabs = [
   {
     id: 'ortodoncja',
     label: 'Ortodoncja',
-    icon: '◎',
+    icon: 'orbit',
     featured: true,
     type: 'orthodontics',
     intro:
@@ -226,7 +226,7 @@ export const cennikTabs = [
   {
     id: 'zachowawcza',
     label: 'Stomatologia',
-    icon: '◇',
+    icon: 'smile',
     type: 'groups',
     intro:
       'Leczenie ubytków próchnicowych i odbudowa zębów — dbamy o funkcję i estetykę przed, w trakcie i po leczeniu ortodontycznym.',
@@ -254,7 +254,7 @@ export const cennikTabs = [
   {
     id: 'endodoncja',
     label: 'Endodoncja',
-    icon: '⬡',
+    icon: 'circle-dot',
     type: 'groups',
     intro:
       'Nowoczesne leczenie kanałowe pod powiększeniem, przygotowujące zęby do dalszego leczenia protetycznego lub ortodontycznego.',
@@ -274,7 +274,7 @@ export const cennikTabs = [
   {
     id: 'chirurgia',
     label: 'Chirurgia',
-    icon: '✚',
+    icon: 'scissors',
     type: 'groups',
     intro:
       'Zabiegi chirurgiczne wykonywane w znieczuleniu miejscowym, niezbędne m.in. przed leczeniem ortodontycznym i protetycznym.',
@@ -293,7 +293,7 @@ export const cennikTabs = [
   {
     id: 'gnatologia',
     label: 'Gnatologia',
-    icon: '◈',
+    icon: 'activity',
     type: 'cards',
     intro:
       'Diagnozujemy i leczymy zaburzenia stawów skroniowo-żuchwowych oraz mięśni żucia, które często towarzyszą wadom zgryzu.',
@@ -309,7 +309,7 @@ export const cennikTabs = [
   {
     id: 'profilaktyka',
     label: 'Profilaktyka',
-    icon: '✿',
+    icon: 'sparkles',
     type: 'cards',
     intro:
       'Zabiegi higienizacyjne i profilaktyczne, które przygotowują do leczenia ortodontycznego i pomagają utrzymać zdrowe zęby.',
@@ -362,7 +362,7 @@ export const cennikTabs = [
   {
     id: 'obrazowe',
     label: 'Diagnostyka obrazowa',
-    icon: '⊙',
+    icon: 'scan-line',
     type: 'cards',
     intro:
       'Nowoczesna diagnostyka obrazowa — RTG i tomografia CBCT, które wykorzystujemy do planowania leczenia ortodontycznego, chirurgicznego i zachowawczego.',

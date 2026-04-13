@@ -7,7 +7,7 @@ tags:
   - "invisalign"
   - "aparaty-stale"
   - "pacjenci-dorosli"
-heroImage: "https://images.unsplash.com/photo-1606811974490-7a5be3a79a3a?auto=format&fit=crop&q=80&w=1200"
+heroImage: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&q=80&w=1200"
 canonical: "https://orthomedica-lubin.pl/blog/invisalign-vs-aparat-staly-co-wybrac"
 ---
 
