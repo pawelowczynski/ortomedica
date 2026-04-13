@@ -38,6 +38,14 @@ body {
   color: var(--navy);
 }
 
+#main-nav.scrolled #mobile-menu-btn {
+  color: var(--navy);
+}
+
+#main-nav.scrolled #mobile-menu-btn:hover {
+  background-color: rgba(10, 25, 47, 0.08);
+}
+
 /* Primary button */
 .btn-gold {
   background: linear-gradient(120deg, #a9874f 0%, #c7ab77 50%, #a9874f 100%) !important;
