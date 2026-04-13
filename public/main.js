@@ -50,14 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileMenu.classList.add('is-open');
       mobileMenu.setAttribute('aria-hidden', 'false');
       menuBtn.setAttribute('aria-expanded', 'true');
-      if (nav) nav.classList.add('menu-open');
       document.body.classList.add('overflow-hidden');
       menuBtn.innerHTML = '<i data-lucide="x" class="w-8 h-8"></i>';
     } else {
       mobileMenu.classList.remove('is-open');
       mobileMenu.setAttribute('aria-hidden', 'true');
       menuBtn.setAttribute('aria-expanded', 'false');
-      if (nav) nav.classList.remove('menu-open');
       document.body.classList.remove('overflow-hidden');
       menuBtn.innerHTML = '<i data-lucide="menu" class="w-8 h-8"></i>';
     }
