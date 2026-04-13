@@ -208,16 +208,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 8. Back to top
+  // 8. Back to top (hidden at top; show after scroll — lower threshold on mobile)
   const backToTopBtn = document.getElementById('back-to-top');
   if (backToTopBtn) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 500) {
+    const backToTopThreshold = () => (window.matchMedia('(max-width: 767px)').matches ? 120 : 380);
+
+    const updateBackToTop = () => {
+      if (window.scrollY > backToTopThreshold()) {
         backToTopBtn.classList.add('visible');
       } else {
         backToTopBtn.classList.remove('visible');
       }
-    });
+    };
+
+    updateBackToTop();
+    window.addEventListener('scroll', updateBackToTop, { passive: true });
+    window.addEventListener('resize', updateBackToTop, { passive: true });
     backToTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });

@@ -1,11 +1,11 @@
 <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-5 text-white" id="main-nav">
     <div class="container mx-auto px-6">
-        <nav class="flex items-center justify-between gap-3">
-            <a href="/#home" class="brand-text flex items-center gap-2 md:gap-3 text-white hover:text-gold transition-colors group">
-                <img src="/logo.png" alt="ORTHOMEDICA" class="h-8 w-auto md:h-9 object-contain" width="40" height="36" loading="eager">
-                <span class="flex flex-col leading-tight">
-                    <span class="cinzel text-xl md:text-2xl font-bold tracking-wider">ORTHOMEDICA</span>
-                    <span class="text-[9px] md:text-[10px] uppercase tracking-[0.16em] opacity-80">centrum stomatologiczno-ortodontyczne</span>
+        <nav class="flex items-center justify-between gap-2 md:gap-3">
+            <a href="/#home" class="brand-text flex min-w-0 flex-1 items-center gap-2 md:max-w-none md:flex-none md:gap-3 text-white hover:text-gold transition-colors group">
+                <img src="/logo.png" alt="ORTHOMEDICA" class="h-8 w-auto shrink-0 md:h-9 object-contain" width="40" height="36" loading="eager">
+                <span class="flex min-w-0 flex-col leading-tight">
+                    <span class="cinzel truncate text-lg font-bold tracking-wider md:text-xl md:tracking-wider lg:text-2xl">ORTHOMEDICA</span>
+                    <span class="hidden text-[10px] uppercase tracking-[0.16em] opacity-80 md:block">centrum stomatologiczno-ortodontyczne</span>
                 </span>
             </a>
             <ul class="hidden md:flex items-center gap-6 lg:gap-8">
@@ -16,13 +16,14 @@
                 <li><a href="/blog" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-gold transition-colors">Blog</a></li>
                 <li><a href="/#kontakt" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-gold transition-colors">Kontakt</a></li>
             </ul>
-            <div class="flex items-center gap-2 md:gap-3">
+            <div class="flex shrink-0 items-center gap-2 md:gap-3">
                 <a
                     href="tel:+48694731124"
-                    class="inline-flex items-center justify-center gap-2 btn-gold px-4 md:px-5 py-2.5 md:py-3 rounded-full font-bold text-[11px] md:text-xs uppercase tracking-wider whitespace-nowrap shadow-lg"
+                    class="inline-flex h-10 w-10 items-center justify-center gap-0 rounded-full btn-gold p-0 font-bold uppercase shadow-lg md:h-auto md:w-auto md:gap-2 md:px-5 md:py-3 md:rounded-full md:text-[11px] lg:text-xs md:tracking-wider"
+                    aria-label="Zadzwoń +48 694 731 124"
                 >
-                    <i data-lucide="phone-call" class="w-4 h-4"></i>
-                    <span>+48 694 731 124</span>
+                    <i data-lucide="phone-call" class="h-4 w-4 md:h-4 md:w-4"></i>
+                    <span class="hidden md:inline md:whitespace-nowrap">+48 694 731 124</span>
                 </a>
                 <button type="button" id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors" aria-label="Menu">
                     <i data-lucide="menu" class="w-8 h-8"></i>

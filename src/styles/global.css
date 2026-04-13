@@ -184,6 +184,31 @@ body {
   }
 }
 
+/* Back to top: hidden until user scrolls down */
+.back-to-top-btn {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease;
+}
+
+.back-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top-btn {
+    transition: none;
+  }
+}
+
 /* Hero background */
 .hero-bg {
   background-image:
