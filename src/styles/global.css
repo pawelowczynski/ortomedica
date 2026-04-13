@@ -78,19 +78,21 @@ body {
 
 .mobile-menu-panel {
   position: absolute;
-  top: 0;
-  right: max(0.5rem, env(safe-area-inset-right, 0px));
-  bottom: 0;
+  top: max(0.75rem, calc(env(safe-area-inset-top, 0px) + 4.35rem));
+  right: 0;
+  bottom: auto;
+  left: auto;
   display: flex;
-  width: min(14.5rem, calc(100vw - 4.25rem));
+  width: min(14.5rem, calc(100vw - 1.5rem));
+  max-height: calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 5rem);
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1.5rem;
-  padding: 1.25rem 1rem 1.75rem;
-  border-bottom-left-radius: 1.25rem;
+  padding: 1.25rem 1.15rem 1.35rem 1.25rem;
+  border-radius: 1rem 0 0 1rem;
   background: rgba(10, 25, 47, 0.96);
-  box-shadow: -12px 0 40px rgba(0, 0, 0, 0.22);
+  box-shadow: -10px 16px 36px rgba(0, 0, 0, 0.28);
   transform: translateX(100%);
   transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(14px);
