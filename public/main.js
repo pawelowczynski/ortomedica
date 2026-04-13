@@ -30,9 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateNav);
   }
 
-  // 3. Mobile menu
+  // 3. Mobile menu (drawer z prawej; belka nawigacji zostaje nad panelem)
   const menuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
+  const mobileBackdrop = document.getElementById('mobile-menu-backdrop');
   const mobileLinks = document.querySelectorAll('.mobile-link');
   let isMenuOpen = false;
 
@@ -42,27 +43,49 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function toggleMenu() {
+  function setMenuOpen(open) {
     if (!menuBtn || !mobileMenu) return;
-    isMenuOpen = !isMenuOpen;
-    if (isMenuOpen) {
-      mobileMenu.classList.remove('hidden');
-      mobileMenu.classList.add('visible');
+    isMenuOpen = open;
+    if (open) {
+      mobileMenu.classList.add('is-open');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      menuBtn.setAttribute('aria-expanded', 'true');
+      if (nav) nav.classList.add('menu-open');
+      document.body.classList.add('overflow-hidden');
       menuBtn.innerHTML = '<i data-lucide="x" class="w-8 h-8"></i>';
     } else {
-      mobileMenu.classList.remove('visible');
-      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('is-open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      if (nav) nav.classList.remove('menu-open');
+      document.body.classList.remove('overflow-hidden');
       menuBtn.innerHTML = '<i data-lucide="menu" class="w-8 h-8"></i>';
     }
     refreshIcons();
   }
 
+  function toggleMenu() {
+    if (!menuBtn || !mobileMenu) return;
+    setMenuOpen(!isMenuOpen);
+  }
+
   if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', toggleMenu);
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+    if (mobileBackdrop) {
+      mobileBackdrop.addEventListener('click', () => {
+        if (isMenuOpen) setMenuOpen(false);
+      });
+    }
     mobileLinks.forEach((link) => {
       link.addEventListener('click', () => {
-        if (isMenuOpen) toggleMenu();
+        if (isMenuOpen) setMenuOpen(false);
       });
+    });
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isMenuOpen) setMenuOpen(false);
     });
   }
 
