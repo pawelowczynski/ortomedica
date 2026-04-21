@@ -43,6 +43,7 @@ jobs:
           set -euo pipefail
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
+          KEY_FILE="$HOME/.ssh/deploy_key"
           python - <<'PY'
           import os, pathlib
           key = os.environ["SSH_KEY"]
@@ -56,19 +57,6 @@ jobs:
           ssh-keyscan -p "$SSH_PORT" "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null || true
           chmod 644 ~/.ssh/known_hosts
           REMOTE_DIR="domains/orthomedica.lubin.pl/public_html"
-          ssh \
-            -i "$HOME/.ssh/deploy_key" \
-            -p "$SSH_PORT" \
-            -o IdentitiesOnly=yes \
-            -o StrictHostKeyChecking=accept-new \
-            -o BatchMode=yes \
-            "$SSH_USER@$SSH_HOST" \
-            "mkdir -p \"$REMOTE_DIR\""
-          tar -C dist -czf - . | ssh \
-            -i "$HOME/.ssh/deploy_key" \
-            -p "$SSH_PORT" \
-            -o IdentitiesOnly=yes \
-            -o StrictHostKeyChecking=accept-new \
-            -o BatchMode=yes \
-            "$SSH_USER@$SSH_HOST" \
-            "tar -xzf - -C \"$REMOTE_DIR\""
+          SSH_BASE=(ssh -i "$KEY_FILE" -p "$SSH_PORT" -o IdentityFile="$KEY_FILE" -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new -o BatchMode=yes)
+          "${SSH_BASE[@]}" "$SSH_USER@$SSH_HOST" "mkdir -p \"$REMOTE_DIR\""
+          tar -C dist -czf - . | "${SSH_BASE[@]}" "$SSH_USER@$SSH_HOST" "tar -xzf - -C \"$REMOTE_DIR\""
