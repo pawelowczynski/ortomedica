@@ -8,7 +8,7 @@ tags:
   - "aparaty-stale"
   - "pacjenci-dorosli"
 heroImage: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&q=80&w=1200"
-canonical: "https://orthomedica-lubin.pl/blog/invisalign-vs-aparat-staly-co-wybrac"
+canonical: "https://www.orthomedica.lubin.pl/blog/invisalign-vs-aparat-staly-co-wybrac"
 ---
 
 Nowoczesna ortodoncja oferuje dziś różne możliwości leczenia – od klasycznych aparatów stałych po niemal niewidoczne alignery Invisalign. 

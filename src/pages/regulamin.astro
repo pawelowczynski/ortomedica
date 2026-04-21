@@ -1,84 +1,87 @@
----
+﻿---
 import Layout from '../layouts/layout.astro';
 import Header from '../components/header.astro';
 import Footer from '../components/footer.astro';
+import { ENTITY, formatRegisteredOfficeAddress, formatClinicAddress } from '../data/site';
 ---
 
 <Layout
-  title="Regulamin serwisu – ORTHOMEDICA Lubin"
-  description="Regulamin korzystania ze strony orthomedica-lubin.pl oraz zasad rezerwacji wizyt w gabinecie ORTHOMEDICA w Lubinie."
-  canonical="https://orthomedica-lubin.pl/regulamin"
+  title="Regulamin serwisu - ORTHOMEDICA Lubin"
+  description="Regulamin korzystania ze strony www.orthomedica.lubin.pl oraz zasad rezerwacji wizyt w gabinecie ORTHOMEDICA w Lubinie."
+  canonical="https://www.orthomedica.lubin.pl/regulamin"
 >
   <Header />
 
   <main class="pt-28 md:pt-32 pb-20 bg-white">
     <section class="py-10 md:py-14">
       <div class="container mx-auto px-6 max-w-4xl">
-        <h1 class="cinzel text-2xl md:3xl lg:text-4xl text-navy mb-6">
+        <h1 class="cinzel text-2xl md:text-3xl lg:text-4xl text-navy mb-6">
           Regulamin serwisu internetowego
         </h1>
         <p class="text-[15px] text-gray-600 font-light mb-6">
-          Niniejszy Regulamin określa zasady korzystania ze strony internetowej
-          <span class="font-semibold text-navy">orthomedica-lubin.pl</span>, prowadzonej przez ORTHOMEDICA – dr n. med. Kornelia Rumin
-          z siedzibą w Lubinie przy ul. Pawia 67.
+          Niniejszy Regulamin okresla zasady korzystania ze strony internetowej
+          <span class="font-semibold text-navy">www.orthomedica.lubin.pl</span>, prowadzonej przez
+          <span class="font-semibold text-navy"> {ENTITY.legalAdministrator}</span>
+          z siedziba przy {formatRegisteredOfficeAddress()}.
+          Swiadczenia zdrowotne sa udzielane w gabinecie pod adresem {formatClinicAddress()}.
         </p>
 
-        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">1. Postanowienia ogólne</h2>
+        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">1. Postanowienia ogolne</h2>
         <ul class="list-disc pl-5 space-y-2 text-[15px] text-gray-600 font-light mb-4">
-          <li>Serwis ma charakter informacyjny i nie zastępuje porad medycznych udzielanych podczas wizyty w gabinecie.</li>
-          <li>Administratorem serwisu jest ORTHOMEDICA – dr n. med. Kornelia Rumin.</li>
-          <li>Użytkownik korzystający z serwisu zobowiązany jest do korzystania z niego zgodnie z obowiązującym prawem i dobrymi obyczajami.</li>
+          <li>Serwis ma charakter informacyjny i nie zastepuje porad medycznych udzielanych podczas wizyty w gabinecie.</li>
+          <li>Administratorem serwisu jest {ENTITY.legalAdministrator}.</li>
+          <li>Uzytkownik korzystajacy z serwisu zobowiazany jest do korzystania z niego zgodnie z obowiazujacym prawem i dobrymi obyczajami.</li>
         </ul>
 
         <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">2. Rezerwacja wizyt i kontakt</h2>
         <p class="text-[15px] text-gray-600 font-light mb-4">
-          Za pośrednictwem serwisu użytkownik może skontaktować się z gabinetem (formularz kontaktowy, numery telefonów,
-          WhatsApp) w celu umówienia wizyty lub zadania pytań dotyczących oferty.
+          Za posrednictwem serwisu uzytkownik moze skontaktowac sie z gabinetem (formularz kontaktowy, numery telefonow,
+          WhatsApp) w celu umowienia wizyty lub zadania pytan dotyczacych oferty.
         </p>
         <ul class="list-disc pl-5 space-y-2 text-[15px] text-gray-600 font-light mb-4">
-          <li>Rezerwacja terminu wizyty staje się wiążąca po jej potwierdzeniu przez rejestrację gabinetu (telefonicznie, SMS lub e-mail).</li>
-          <li>Gabinet zastrzega sobie możliwość zmiany terminu wizyty z ważnych przyczyn organizacyjnych, po uprzednim kontakcie z pacjentem.</li>
-          <li>W przypadku rezygnacji z wizyty pacjent proszony jest o możliwie wczesne poinformowanie rejestracji.</li>
+          <li>Rezerwacja terminu wizyty staje sie wiazaca po jej potwierdzeniu przez rejestracje gabinetu (telefonicznie, SMS lub e-mail).</li>
+          <li>Gabinet zastrzega sobie mozliwosc zmiany terminu wizyty z waznych przyczyn organizacyjnych, po uprzednim kontakcie z pacjentem.</li>
+          <li>W przypadku rezygnacji z wizyty pacjent proszony jest o mozliwie wczesne poinformowanie rejestracji.</li>
         </ul>
 
-        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">3. Odpowiedzialność</h2>
+        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">3. Odpowiedzialnosc</h2>
         <p class="text-[15px] text-gray-600 font-light mb-4">
-          Informacje zamieszczone w serwisie mają charakter ogólny i nie stanowią indywidualnej diagnozy ani planu
-          leczenia. Ostateczne decyzje terapeutyczne podejmowane są po badaniu pacjenta w gabinecie.
+          Informacje zamieszczone w serwisie maja charakter ogolny i nie stanowia indywidualnej diagnozy ani planu
+          leczenia. Ostateczne decyzje terapeutyczne podejmowane sa po badaniu pacjenta w gabinecie.
         </p>
         <ul class="list-disc pl-5 space-y-2 text-[15px] text-gray-600 font-light mb-4">
-          <li>Administrator dokłada starań, aby informacje w serwisie były aktualne i rzetelne.</li>
-          <li>Administrator nie ponosi odpowiedzialności za skutki wykorzystania informacji ze strony bez konsultacji z lekarzem.</li>
-          <li>Administrator nie odpowiada za przerwy w dostępności serwisu wynikające z prac technicznych lub przyczyn niezależnych.</li>
+          <li>Administrator doklada staran, aby informacje w serwisie byly aktualne i rzetelne.</li>
+          <li>Administrator nie ponosi odpowiedzialnosci za skutki wykorzystania informacji ze strony bez konsultacji z lekarzem.</li>
+          <li>Administrator nie odpowiada za przerwy w dostepnosci serwisu wynikajace z prac technicznych lub przyczyn niezaleznych.</li>
         </ul>
 
         <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">4. Prawa autorskie</h2>
         <p class="text-[15px] text-gray-600 font-light mb-4">
-          Treści zamieszczone w serwisie (teksty, grafiki, zdjęcia, układ strony) stanowią własność Administratora
-          lub są wykorzystywane na podstawie odpowiednich licencji. Zabrania się ich kopiowania i rozpowszechniania
-          bez zgody Administratora, za wyjątkiem dozwolonego użytku przewidzianego przepisami prawa.
+          Tresci zamieszczone w serwisie (teksty, grafiki, zdjecia, uklad strony) stanowia wlasnosc Administratora
+          lub sa wykorzystywane na podstawie odpowiednich licencji. Zabrania sie ich kopiowania i rozpowszechniania
+          bez zgody Administratora, za wyjatkiem dozwolonego uzytku przewidzianego przepisami prawa.
         </p>
 
         <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">5. Dane osobowe i pliki cookie</h2>
         <p class="text-[15px] text-gray-600 font-light mb-4">
-          Zasady przetwarzania danych osobowych użytkowników serwisu oraz stosowania plików cookie opisane są w
-          odrębnej <a href="/polityka-prywatnosci" class="text-navy hover:text-gold font-semibold">Polityce prywatności</a>.
+          Zasady przetwarzania danych osobowych uzytkownikow serwisu oraz stosowania plikow cookie opisane sa w
+          odrebnej <a href="/polityka-prywatnosci" class="text-navy hover:text-gold font-semibold">Polityce prywatnosci</a>.
         </p>
 
-        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">6. Informacje dla pacjentów (m.in. ustawa o działalności leczniczej)</h2>
+        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">6. Informacje dla pacjentow (m.in. ustawa o dzialalnosci leczniczej)</h2>
         <p class="text-[15px] text-gray-600 font-light mb-4">
-          W zakresie obowiązków informacyjnych wobec pacjentów, w tym wynikających z art. 24 ust. 2 ustawy z dnia 15 kwietnia
-          2011 r. o działalności leczniczej (m.in. zakres świadczeń, opłaty za świadczenia odpłatne, opłata za udostępnienie
-          dokumentacji medycznej, monitoring), Administrator publikuje aktualne dane w serwisie, w szczególności na stronie
-          <a href="/informacje-dla-pacjentow" class="text-navy hover:text-gold font-semibold">Informacje dla pacjentów</a>,
+          W zakresie obowiazkow informacyjnych wobec pacjentow, w tym wynikajacych z art. 24 ust. 2 ustawy z dnia 15 kwietnia
+          2011 r. o dzialalnosci leczniczej (m.in. zakres swiadczen, oplaty za swiadczenia odplatne, oplata za udostepnienie
+          dokumentacji medycznej, monitoring), Administrator publikuje aktualne dane w serwisie, w szczegolnosci na stronie
+          <a href="/informacje-dla-pacjentow" class="text-navy hover:text-gold font-semibold">Informacje dla pacjentow</a>,
           w <a href="/cennik" class="text-navy hover:text-gold font-semibold">cenniku</a> oraz w gabinecie.
         </p>
 
         <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">7. Zmiany Regulaminu</h2>
         <p class="text-[15px] text-gray-600 font-light">
           Administrator zastrzega sobie prawo do wprowadzania zmian w niniejszym Regulaminie w przypadku rozwoju serwisu
-          lub zmiany przepisów prawa. Aktualna wersja Regulaminu jest dostępna na stronie
-          <span class="font-semibold text-navy">orthomedica-lubin.pl/regulamin</span>.
+          lub zmiany przepisow prawa. Aktualna wersja Regulaminu jest dostepna na stronie
+          <span class="font-semibold text-navy">www.orthomedica.lubin.pl/regulamin</span>.
         </p>
       </div>
     </section>

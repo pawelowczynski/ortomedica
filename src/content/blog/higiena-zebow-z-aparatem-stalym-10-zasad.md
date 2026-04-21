@@ -8,7 +8,7 @@ tags:
   - "aparat-staly"
   - "profilaktyka"
 heroImage: "https://placehold.co/1200x800/E6FAF0/0A192F?text=Higiena+z+aparatem"
-canonical: "https://orthomedica-lubin.pl/blog/higiena-zebow-z-aparatem-stalym-10-zasad"
+canonical: "https://www.orthomedica.lubin.pl/blog/higiena-zebow-z-aparatem-stalym-10-zasad"
 ---
 
 Aparat stały utrudnia codzienne oczyszczanie zębów, ale przy dobrej rutynie można skutecznie zapobiegać próchnicy i stanom zapalnym dziąseł.
@@ -41,7 +41,7 @@ tags:
   - "aparat-staly"
   - "profilaktyka"
 heroImage: "https://placehold.co/1200x800/E6FAF0/0A192F?text=Higiena+z+aparatem"
-canonical: "https://orthomedica-lubin.pl/blog/higiena-zebow-z-aparatem-stalym-10-zasad"
+canonical: "https://www.orthomedica.lubin.pl/blog/higiena-zebow-z-aparatem-stalym-10-zasad"
 ---
 
 Aparat stały utrudnia codzienne oczyszczanie zębów, ale przy dobrej rutynie można skutecznie zapobiegać próchnicy i stanom zapalnym dziąseł.

@@ -8,7 +8,7 @@ tags:
   - "pierwsza-wizyta"
   - "stomatologia"
 heroImage: "https://placehold.co/1200x800/F3E8D1/0A192F?text=Pierwsza+wizyta+dziecka"
-canonical: "https://orthomedica-lubin.pl/blog/jak-przygotowac-dziecko-do-pierwszej-wizyty-u-dentysty"
+canonical: "https://www.orthomedica.lubin.pl/blog/jak-przygotowac-dziecko-do-pierwszej-wizyty-u-dentysty"
 ---
 
 Pierwsza wizyta dziecka w gabinecie stomatologicznym ma ogromne znaczenie dla dalszego podejścia do leczenia. Dobre doświadczenie na starcie to mniej stresu i większa współpraca podczas kolejnych kontroli.
@@ -46,7 +46,7 @@ tags:
   - "pierwsza-wizyta"
   - "stomatologia"
 heroImage: "https://placehold.co/1200x800/F3E8D1/0A192F?text=Pierwsza+wizyta+dziecka"
-canonical: "https://orthomedica-lubin.pl/blog/jak-przygotowac-dziecko-do-pierwszej-wizyty-u-dentysty"
+canonical: "https://www.orthomedica.lubin.pl/blog/jak-przygotowac-dziecko-do-pierwszej-wizyty-u-dentysty"
 ---
 
 Pierwsza wizyta dziecka w gabinecie stomatologicznym ma ogromne znaczenie dla dalszego podejścia do leczenia. Dobre doświadczenie na starcie to mniej stresu i większa współpraca podczas kolejnych kontroli.

@@ -8,7 +8,7 @@ tags:
   - "bruksizm"
   - "konsultacja"
 heroImage: "https://placehold.co/1200x800/FFF1E6/0A192F?text=Zgrzytanie+zebami+u+dzieci"
-canonical: "https://orthomedica-lubin.pl/blog/zgrzytanie-zebami-u-dzieci-kiedy-do-specjalisty"
+canonical: "https://www.orthomedica.lubin.pl/blog/zgrzytanie-zebami-u-dzieci-kiedy-do-specjalisty"
 ---
 
 Zgrzytanie zębami, czyli bruksizm, dość często pojawia się u dzieci - szczególnie nocą. W wielu przypadkach ma charakter przejściowy, ale czasem wymaga diagnostyki.
@@ -41,7 +41,7 @@ tags:
   - "bruksizm"
   - "konsultacja"
 heroImage: "https://placehold.co/1200x800/FFF1E6/0A192F?text=Zgrzytanie+zebami+u+dzieci"
-canonical: "https://orthomedica-lubin.pl/blog/zgrzytanie-zebami-u-dzieci-kiedy-do-specjalisty"
+canonical: "https://www.orthomedica.lubin.pl/blog/zgrzytanie-zebami-u-dzieci-kiedy-do-specjalisty"
 ---
 
 Zgrzytanie zębami, czyli bruksizm, dość często pojawia się u dzieci - szczególnie nocą. W wielu przypadkach ma charakter przejściowy, ale czasem wymaga diagnostyki.

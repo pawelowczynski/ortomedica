@@ -1,0 +1,146 @@
+---
+import Layout from '../layouts/layout.astro';
+import Header from '../components/header.astro';
+import Footer from '../components/footer.astro';
+import { SITE_ORIGIN } from '../data/site';
+import type { DoctorProfile } from '../data/teamProfiles';
+
+interface Props {
+  profile: DoctorProfile;
+}
+
+const { profile } = Astro.props;
+
+const absoluteImage = new URL(profile.imageSrc, SITE_ORIGIN).href;
+
+const physicianJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Dentist',
+  name: profile.displayName,
+  description: profile.schemaDescription,
+  url: profile.canonical,
+  image: absoluteImage,
+  jobTitle: profile.schemaJobTitle,
+  worksFor: {
+    '@type': 'MedicalBusiness',
+    name: 'ORTHOMEDICA',
+    url: SITE_ORIGIN,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'ul. Pawia 67',
+      addressLocality: 'Lubin',
+      postalCode: '59-300',
+      addressCountry: 'PL',
+    },
+  },
+};
+
+const hasHighlights = profile.qualificationHighlights.length > 0;
+const hasAdditional = profile.additionalTraining.length > 0;
+---
+
+<Layout title={profile.pageTitle} description={profile.pageDescription} canonical={profile.canonical}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(physicianJsonLd)} />
+
+  <Header />
+
+  <main class="pt-28 md:pt-32 pb-20 bg-white">
+    <section class="py-12 md:py-16">
+      <div class="container mx-auto px-6">
+        <nav class="text-xs md:text-sm text-gray-400 mb-6" aria-label="Okruszki nawigacyjne">
+          <ol class="flex flex-wrap items-center gap-1 md:gap-2">
+            <li><a href="/" class="hover:text-gold">Strona główna</a></li>
+            <li class="text-gray-300">/</li>
+            <li>
+              <a href="/#o-mnie" class="hover:text-gold">Lekarze</a>
+            </li>
+            <li class="text-gray-300">/</li>
+            <li><span class="text-navy">{profile.displayName}</span></li>
+          </ol>
+        </nav>
+
+        <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+          <div class="relative order-2 lg:order-1">
+            <div class="absolute -top-6 -left-6 md:-top-10 md:-left-10 w-40 h-40 md:w-56 md:h-56 bg-gold/10 rounded-full -z-0"></div>
+            <div class="absolute -bottom-6 -right-6 w-28 h-28 border-2 border-gold/30 rounded-full -z-0"></div>
+            <img
+              src={profile.imageSrc}
+              alt={profile.imageAlt}
+              loading="lazy"
+              width="800"
+              height="1067"
+              class="rounded-3xl shadow-2xl relative z-10 w-full object-cover aspect-[4/5] md:aspect-[3/4]"
+            />
+          </div>
+
+          <div class="order-1 lg:order-2 min-w-0">
+            <p class="cinzel text-xs md:text-sm text-gold font-bold tracking-[0.5em] mb-4 uppercase italic">Profil lekarza</p>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl serif mb-2 text-navy">{profile.headline}</h1>
+            <p class="text-xs uppercase tracking-[0.25em] text-gold mb-6 md:mb-8">{profile.roleLabel}</p>
+
+            <div class="max-w-xl">
+              <slot />
+            </div>
+
+            {hasHighlights && (
+              <div class="mt-10 max-w-xl border-t border-gray-100 pt-8">
+                <h2 class="text-lg serif text-navy mb-4">Skrót kwalifikacji</h2>
+                <dl class="space-y-4 text-[15px] text-gray-600 font-light">
+                  {profile.qualificationHighlights.map((row) => (
+                    <div>
+                      <dt class="font-semibold text-navy text-sm">{row.label}</dt>
+                      <dd class="mt-1 leading-relaxed">{row.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            )}
+
+            <div class="mt-10 max-w-xl border-t border-gray-100 pt-8">
+              <h2 class="text-lg serif text-navy mb-3">Szkolenia, certyfikaty i członkostwa</h2>
+              <p class="text-sm text-gray-500 font-light leading-relaxed mb-4">
+                Gabinet może uzupełnić tę listę o kursy podyplomowe, certyfikaty ukończenia szkoleń, członkostwa w towarzystwach
+                naukowych oraz inne dokumenty potwierdzające kwalifikacje — prosimy lekarzy o przekazanie listy lub skanów do
+                administratora strony.
+              </p>
+              {hasAdditional ? (
+                <ul class="space-y-3 text-[15px] text-gray-600 font-light">
+                  {profile.additionalTraining.map((item) => (
+                    <li class="border-l-2 border-gold/40 pl-4">
+                      <span class="font-medium text-navy">{item.title}</span>
+                      {(item.year || item.issuer) && (
+                        <span class="block text-sm text-gray-500 mt-0.5">
+                          {[item.issuer, item.year].filter(Boolean).join(' · ')}
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <div
+                  class="rounded-2xl border border-dashed border-gray-200 bg-gray-50/80 px-5 py-6 text-center text-sm text-gray-500 font-light leading-relaxed"
+                  role="status"
+                >
+                  Miejsce na wykaz szkoleń i certyfikatów — treść zostanie dodana po dostarczeniu materiałów przez zespół
+                  gabinetu.
+                </div>
+              )}
+            </div>
+
+            <div class="mt-10">
+              <a
+                href="/#kontakt"
+                class="btn-gold inline-flex items-center gap-2 px-8 py-3 rounded-full text-xs font-bold uppercase tracking-[0.2em]"
+              >
+                Umów wizytę u lekarza
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

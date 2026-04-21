@@ -8,7 +8,7 @@ tags:
   - "higiena"
   - "pacjenci-dorosli"
 heroImage: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&q=80&w=1200"
-canonical: "https://orthomedica-lubin.pl/blog/aparat-staly-jak-dbac-o-zeby"
+canonical: "https://www.orthomedica.lubin.pl/blog/aparat-staly-jak-dbac-o-zeby"
 ---
 
 Zdrowa higiena jamy ustnej w trakcie leczenia aparatem stałym ma kluczowe znaczenie dla końcowego efektu leczenia ortodontycznego. 

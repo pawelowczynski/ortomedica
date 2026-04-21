@@ -1,8 +1,14 @@
----
+﻿---
 import '../styles/global.css';
 import { DEFAULT_OG_IMAGE_URL } from '../data/site';
 
-const { title, description, canonical = 'https://orthomedica-lubin.pl/', image = DEFAULT_OG_IMAGE_URL } = Astro.props;
+const SITE_ORIGIN = 'https://www.orthomedica.lubin.pl';
+const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION;
+/** GA4 / Meta — ladowane dopiero po zgodzie na cookies (main.js), nie tutaj */
+const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? '';
+const fbPixelId = import.meta.env.PUBLIC_FB_PIXEL_ID ?? '';
+
+const { title, description, canonical = `${SITE_ORIGIN}/`, image = DEFAULT_OG_IMAGE_URL } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="pl" class="scroll-smooth">
@@ -12,6 +18,8 @@ const { title, description, canonical = 'https://orthomedica-lubin.pl/', image =
     <title>{title}</title>
     <meta name="description" content={description}>
     <link rel="canonical" href={canonical}>
+    {gscVerification && <meta name="google-site-verification" content={gscVerification} />}
+    <link rel="manifest" href="/site.webmanifest">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -35,6 +43,12 @@ const { title, description, canonical = 'https://orthomedica-lubin.pl/', image =
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
     <script is:inline src="https://unpkg.com/lucide@latest"></script>
+    <script is:inline define:vars={{ gaMeasurementId, fbPixelId }}>
+      window.__ORTHOMEDICA_ANALYTICS__ = {
+        gaMeasurementId: gaMeasurementId || '',
+        fbPixelId: fbPixelId || '',
+      };
+    </script>
 
 </head>
 <body class="antialiased pb-24 md:pb-0 relative">

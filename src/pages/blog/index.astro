@@ -41,13 +41,13 @@ const schema = {
   'name': 'Blog ortodontyczny ORTHOMEDICA – porady i wiedza',
   'description':
     'Blog ortodontyczny gabinetu ORTHOMEDICA w Lubinie. Porady o aparatach stałych, Invisalign, leczeniu dzieci i dorosłych oraz higienie jamy ustnej.',
-  'url': 'https://orthomedica-lubin.pl/blog',
+  'url': 'https://www.orthomedica.lubin.pl/blog',
   'mainEntity': {
     '@type': 'ItemList',
     'itemListElement': sortedPosts.map((post: BlogPost, index: number) => ({
       '@type': 'ListItem',
       'position': index + 1,
-      'url': `https://orthomedica-lubin.pl/blog/${post.file
+      'url': `https://www.orthomedica.lubin.pl/blog/${post.file
         .split('/')
         .pop()
         ?.replace('.md', '')}`,
@@ -60,7 +60,7 @@ const schema = {
 <Layout
   title="Blog ortodontyczny ORTHOMEDICA – porady specjalisty z Lubina"
   description="Poznaj praktyczne porady ortodontyczne od dr n. med. Kornelii Rumin. Blog ORTHOMEDICA o aparatach stałych, Invisalign i leczeniu dzieci oraz dorosłych w Lubinie."
-  canonical="https://orthomedica-lubin.pl/blog"
+  canonical="https://www.orthomedica.lubin.pl/blog"
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(schema)} />
 

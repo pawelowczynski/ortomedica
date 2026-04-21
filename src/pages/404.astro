@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/layout.astro';
+import Header from '../components/header.astro';
+import Footer from '../components/footer.astro';
+---
+
+<Layout
+  title="404 - Strona nie istnieje | ORTHOMEDICA"
+  description="Nie znaleziono strony, której szukasz. Wroc na strone glowna ORTHOMEDICA i sprawdz dostepne uslugi."
+  canonical="https://www.orthomedica.lubin.pl/404"
+>
+  <Header />
+  <main class="pt-28 md:pt-32 pb-20 bg-white">
+    <section class="py-16 md:py-24">
+      <div class="container mx-auto px-6 max-w-3xl text-center">
+        <p class="text-gold font-bold tracking-[0.3em] text-[10px] uppercase mb-4">Blad 404</p>
+        <h1 class="cinzel text-3xl md:text-4xl lg:text-5xl text-navy mb-5">Nie znaleziono strony</h1>
+        <p class="text-[15px] text-gray-600 font-light leading-relaxed mb-8">
+          Ta podstrona nie istnieje lub jej adres zostal zmieniony. Skorzystaj z ponizszych przyciskow, aby przejsc dalej.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="/" class="btn-gold px-6 py-3 rounded-full text-xs uppercase tracking-wider font-bold text-white">Strona glowna</a>
+          <a href="/zabiegi/ortodoncja" class="px-6 py-3 rounded-full text-xs uppercase tracking-wider font-bold border border-navy text-navy hover:bg-navy hover:text-white transition-colors">Nasze uslugi</a>
+          <a href="/blog" class="px-6 py-3 rounded-full text-xs uppercase tracking-wider font-bold border border-gray-300 text-gray-700 hover:bg-gray-100 transition-colors">Blog</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

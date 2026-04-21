@@ -1,14 +1,21 @@
----
+﻿---
 import Layout from '../layouts/layout.astro';
 import Header from '../components/header.astro';
 import Footer from '../components/footer.astro';
-import { ENTITY, formatNipLine, formatRegonLine, formatEntityAddress } from '../data/site';
+import {
+  ENTITY,
+  formatNipLine,
+  formatRegonLine,
+  formatKrsLine,
+  formatRegisteredOfficeAddress,
+  formatClinicAddress,
+} from '../data/site';
 ---
 
 <Layout
   title="Polityka prywatności – ORTHOMEDICA Lubin"
-  description="Polityka prywatności gabinetu stomatologicznego ORTHOMEDICA w Lubinie – przetwarzanie danych, pliki cookie i prawa pacjenta."
-  canonical="https://orthomedica-lubin.pl/polityka-prywatnosci"
+  description="Polityka prywatności gabinetu stomatologicznego ORTHOMEDICA w Lubinie – przetwarzanie danych, pliki cookie, analityka i prawa pacjenta."
+  canonical="https://www.orthomedica.lubin.pl/polityka-prywatnosci"
 >
   <Header />
 
@@ -21,20 +28,23 @@ import { ENTITY, formatNipLine, formatRegonLine, formatEntityAddress } from '../
         <p class="text-[15px] text-gray-600 font-light mb-6">
           Niniejsza Polityka prywatności opisuje zasady przetwarzania danych osobowych pacjentów i użytkowników strony
           internetowej prowadzonej pod adresem
-          <span class="font-semibold text-navy">orthomedica-lubin.pl</span> przez:
+          <span class="font-semibold text-navy">www.orthomedica.lubin.pl</span> przez:
         </p>
         <p class="text-[15px] text-gray-600 font-light mb-6">
           <span class="font-semibold text-navy">{ENTITY.legalAdministrator}</span><br />
-          {formatEntityAddress()}<br />
+          Siedziba: {formatRegisteredOfficeAddress()}<br />
+          Gabinet: {formatClinicAddress()}<br />
           {formatNipLine()}<br />
           {formatRegonLine()}<br />
+          {formatKrsLine()}<br />
           e-mail: <a href={`mailto:${ENTITY.email}`} class="text-navy hover:text-gold">{ENTITY.email}</a><br />
           tel.: <a href="tel:+48694731124" class="text-navy hover:text-gold">+48 694 731 124</a>
         </p>
 
         <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">1. Administrator danych</h2>
         <p class="text-[15px] text-gray-600 font-light mb-4">
-          Administratorem danych osobowych jest {ENTITY.legalAdministrator} z siedzibą przy {formatEntityAddress()}.
+          Administratorem danych osobowych jest {ENTITY.legalAdministrator} z siedzibą przy {formatRegisteredOfficeAddress()}.
+          Świadczenia zdrowotne są udzielane w gabinecie pod adresem {formatClinicAddress()}.
           We wszelkich sprawach związanych z przetwarzaniem danych osobowych można kontaktować się za pomocą adresu e-mail
           lub numeru telefonu wskazanych powyżej.
         </p>
@@ -48,7 +58,9 @@ import { ENTITY, formatNipLine, formatRegonLine, formatEntityAddress } from '../
           <li>udzielanie świadczeń zdrowotnych i prowadzenie dokumentacji medycznej zgodnie z przepisami prawa,</li>
           <li>odpowiadanie na zapytania wysyłane przez formularz kontaktowy na stronie,</li>
           <li>realizacja obowiązków księgowych i podatkowych,</li>
-          <li>zapewnienie bezpieczeństwa i funkcjonowania strony internetowej (logi serwera, pliki cookie).</li>
+          <li>prowadzenie statystyk i pomiaru skuteczności strony (Google Analytics) oraz działań marketingowych (m.in. piksel Meta) — wyłącznie po jednorazowej zgodzie („Akceptuj wszystko”) obejmującej ten zakres,</li>
+          <li>wyświetlanie mapy lokalizacji gabinetu (Google Maps) — po tej samej zgodzie,</li>
+          <li>zapewnienie bezpieczeństwa i funkcjonowania strony internetowej (logi serwera, pliki cookie niezbędne do działania serwisu).</li>
         </ul>
 
         <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">3. Podstawy prawne przetwarzania</h2>
@@ -57,55 +69,131 @@ import { ENTITY, formatNipLine, formatRegonLine, formatEntityAddress } from '../
           w szczególności na podstawie:
         </p>
         <ul class="list-disc pl-5 space-y-2 text-[15px] text-gray-600 font-light mb-4">
-          <li>art. 6 ust. 1 lit. b RODO – w celu zawarcia i wykonania umowy o udzielanie świadczeń zdrowotnych,</li>
-          <li>art. 6 ust. 1 lit. c RODO – w celu wypełnienia obowiązków prawnych ciążących na Administratorze,</li>
-          <li>art. 9 ust. 2 lit. h RODO – w zakresie danych dotyczących zdrowia,</li>
-          <li>art. 6 ust. 1 lit. a RODO – w zakresie dobrowolnie wyrażonych zgód (np. zgoda marketingowa),</li>
-          <li>art. 6 ust. 1 lit. f RODO – w celu dochodzenia lub obrony roszczeń oraz zapewnienia bezpieczeństwa systemów.</li>
+          <li>
+            art. 6 ust. 1 lit. b RODO — w celu zawarcia i wykonania umowy o udzielanie świadczeń zdrowotnych (w tym kontakt w sprawie wizyty),
+          </li>
+          <li>art. 6 ust. 1 lit. c RODO — w celu wypełnienia obowiązków prawnych ciążących na Administratorze,</li>
+          <li>art. 9 ust. 2 lit. h RODO — w zakresie danych szczególnych (dane dotyczące zdrowia) w związku ze świadczeniami medycznymi,</li>
+          <li>
+            art. 6 ust. 1 lit. a RODO — w zakresie plików cookie służących mapie, analityce internetowej i narzędziom marketingowym (Google Analytics, piksel Meta), jeśli użytkownik wyrazi zgodę jednym przyciskiem „Akceptuj wszystko” w banerze; nie ma osobnych przełączników kategorii — akceptacja obejmuje całość opisaną w banerze; zgoda jest dobrowolna i może zostać cofnięta (np. usunięcie plików cookie w przeglądarce),
+          </li>
+          <li>
+            art. 6 ust. 1 lit. f RODO — w celu dochodzenia lub obrony roszczeń, zapewnienia bezpieczeństwa systemów oraz — w ograniczonym zakresie — logów serwera; w zakresie marketingu bezpośredniego możliwy jest sprzeciw zgodnie z art. 21 RODO,
+          </li>
         </ul>
 
-        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">4. Odbiorcy danych</h2>
+        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">4. Odbiorcy danych i narzędzia zewnętrzne</h2>
         <p class="text-[15px] text-gray-600 font-light mb-4">
-          Dane osobowe mogą być przekazywane podmiotom świadczącym usługi na rzecz Administratora, takim jak:
-          dostawca systemu medycznego, podmiot prowadzący księgowość, dostawca usług IT, laboratoria diagnostyczne –
-          zawsze na podstawie stosownych umów powierzenia i wyłącznie w niezbędnym zakresie.
+          Dane osobowe mogą być przekazywane podmiotom świadczącym usługi na rzecz Administratora, takim jak: dostawca hostingu
+          strony internetowej, dostawca systemu medycznego, podmiot prowadzący księgowość, dostawca usług IT, laboratoria
+          diagnostyczne — zawsze na podstawie stosownych umów powierzenia lub innej podstawy przewidzianej prawem i wyłącznie
+          w niezbędnym zakresie.
+        </p>
+        <p class="text-[15px] text-gray-600 font-light mb-4">
+          Po wyrażeniu zgody w banerze (jeden wybór — wszystkie wskazane funkcje naraz) dane mogą być przetwarzane także przez następujące podmioty
+          (jako odrębnych administratorów lub podmioty przetwarzające — zgodnie z umowami zawieranymi przez Administratora lub
+          bezpośrednio przez dostawców narzędzi):
+        </p>
+        <ul class="list-disc pl-5 space-y-2 text-[15px] text-gray-600 font-light mb-4">
+          <li>
+            <span class="font-semibold text-navy">Google Ireland Limited / Google LLC</span> — mapy osadzone na stronie (Google Maps),
+            analityka strony (Google Analytics 4). Polityki i informacje:{' '}
+            <a href="https://policies.google.com/privacy?hl=pl" class="text-navy hover:text-gold" target="_blank" rel="noopener noreferrer">polityka prywatności Google</a>,{' '}
+            <a href="https://business.safety.google/adscookies/" class="text-navy hover:text-gold" target="_blank" rel="noopener noreferrer">cookies reklamowe Google</a>.
+          </li>
+          <li>
+            <span class="font-semibold text-navy">Meta Platforms Ireland Limited</span> — piksel Facebook (Facebook Pixel) służący
+            mierzeniu konwersji i remarketingowi. Informacje:{' '}
+            <a href="https://www.facebook.com/privacy/policy" class="text-navy hover:text-gold" target="_blank" rel="noopener noreferrer">Polityka prywatności Meta</a>.
+          </li>
+        </ul>
+        <p class="text-[15px] text-gray-600 font-light mb-4">
+          Przekazywanie danych do dostawców z siedzibą poza Europejskim Obszarem Gospodarczym (w tym USA) może następować na
+          podstawie decyzji Komisji Europejskiej o odpowiednim poziomie ochrony, standardowych klauzul umownych lub innych
+          mechanizmów przewidzianych w RODO. Szczegóły znajdują się w dokumentacji wskazanych dostawców.
         </p>
 
         <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">5. Okres przechowywania danych</h2>
         <p class="text-[15px] text-gray-600 font-light mb-4">
           Dane osobowe przechowywane są przez okres wymagany odpowiednimi przepisami prawa (w szczególności dotyczącymi
-          dokumentacji medycznej i rozliczeń podatkowych), a w przypadku danych przetwarzanych na podstawie zgody –
-          do czasu jej wycofania.
+          dokumentacji medycznej i rozliczeń podatkowych). Dane przetwarzane na podstawie zgody — do czasu jej wycofania lub
+          osiągnięcia celu, po czym mogą być anonimizowane lub usuwane. Logi serwera przechowywane są przez okres technicznie
+          i prawnie uzasadniony (zwykle krótszy).
         </p>
 
         <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">6. Prawa osoby, której dane dotyczą</h2>
         <p class="text-[15px] text-gray-600 font-light mb-2">
-          Osobie, której dane dotyczą, przysługuje prawo:
+          Osobie, której dane dotyczą, przysługuje prawo do:
         </p>
         <ul class="list-disc pl-5 space-y-2 text-[15px] text-gray-600 font-light mb-4">
           <li>dostępu do danych oraz otrzymania ich kopii,</li>
-          <li>sprostowania (poprawienia) danych,</li>
+          <li>sprostowania (poprawienia) nieprawidłowych danych,</li>
+          <li>usunięcia danych („prawo do bycia zapomnianym”), o ile nie występują przeszkody prawne (np. obowiązek przechowywania dokumentacji medycznej),</li>
           <li>ograniczenia przetwarzania,</li>
-          <li>wniesienia sprzeciwu wobec przetwarzania danych na podstawie prawnie uzasadnionego interesu,</li>
-          <li>wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych.</li>
+          <li>przenoszenia danych — w zakresie przewidzianym prawem,</li>
+          <li>wniesienia sprzeciwu wobec przetwarzania opartego na prawnie uzasadnionym interesie Administratora,</li>
+          <li>wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych (UODO), ul. Stawki 2, 00-193 Warszawa,{' '}
+            <a href="https://uodo.gov.pl" class="text-navy hover:text-gold" target="_blank" rel="noopener noreferrer">uodo.gov.pl</a>.
         </ul>
         <p class="text-[15px] text-gray-600 font-light mb-4">
-          W przypadku przetwarzania danych na podstawie zgody – istnieje prawo do jej wycofania w dowolnym momencie,
-          bez wpływu na zgodność z prawem przetwarzania przed jej wycofaniem.
+          W przypadku przetwarzania danych na podstawie zgody — istnieje prawo do jej wycofania w dowolnym momencie bez wpływu
+          na zgodność z prawem przetwarzania przed jej wycofaniem. Wycofanie zgody na cookies może nastąpić poprzez usunięcie
+          plików cookie w przeglądarce lub zmianę ustawień; może to ograniczyć funkcje strony (np. mapę lub statystyki).
         </p>
 
-        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">7. Pliki cookie i logi serwera</h2>
+        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">7. Pliki cookie — rodzaje i cele</h2>
         <p class="text-[15px] text-gray-600 font-light mb-4">
-          Strona może korzystać z plików cookie w celu zapewnienia jej prawidłowego działania (np. zapamiętanie zgody
-          na wyświetlanie mapy Google) oraz do celów statystycznych w oparciu o zanonimizowane dane. W ustawieniach
-          przeglądarki internetowej użytkownik może samodzielnie zarządzać obsługą plików cookie.
+          Strona korzysta z plików cookie (małych plików zapisywanych na urządzeniu użytkownika). Wykorzystujemy w szczególności:
+        </p>
+        <ul class="list-disc pl-5 space-y-3 text-[15px] text-gray-600 font-light mb-4">
+          <li>
+            <span class="font-semibold text-navy">Cookie niezbędne / funkcjonalne</span> — umożliwiają podstawowe działanie strony
+            (np. zapamiętanie decyzji o plikach cookie w pamięci przeglądarki użytkownika). Podstawa: zgoda (art. 6 ust. 1 lit. a
+            RODO) w zakresie, w jakim wymaga tego prawo, oraz prawnie uzasadniony interes przy minimalnym zakresie technicznym.
+          </li>
+          <li>
+            <span class="font-semibold text-navy">Cookie związane z treściami zewnętrznymi</span> — po kliknięciu „Akceptuj wszystko” w banerze
+            cookies ładowana jest mapa Google (osadzona treść z domen Google). Może to wiązać się z zapisem plików cookie przez
+            Google. Podstawa: zgoda użytkownika.
+          </li>
+          <li>
+            <span class="font-semibold text-navy">Analityka (Google Analytics 4)</span> — po zgodzie („Akceptuj wszystko”) wykorzystywana jest do zbierania
+            zagregowanych informacji o ruchu na stronie (np. odsłony, źródła wejść). Dane mogą obejmować m.in. skrócony adres IP
+            lub identyfikatory techniczne. Podstawa: zgoda.
+          </li>
+          <li>
+            <span class="font-semibold text-navy">Marketing / piksel Meta (Facebook)</span> — po tej samej zgodzie może być ładowany piksel Meta
+            w celu mierzenia konwersji i remarketingu. Podstawa: zgoda.
+          </li>
+        </ul>
+        <p class="text-[15px] text-gray-600 font-light mb-4">
+          Baner cookies oferuje jeden przycisk: „Akceptuj wszystko” — wyraża on jednocześnie zgodę na wykorzystanie plików cookie
+          w zakresie mapy Google, Google Analytics i piksela Meta (łącznie). Osobnych opcji odrzucenia wybranych kategorii strona nie
+          wyświetla. Do czasu kliknięcia tego przycisku mapa Google oraz skrypty Google Analytics i piksela Meta nie są ładowane
+          (z wyjątkiem samego baneru i niezbędnego działania strony).
+        </p>
+        <p class="text-[15px] text-gray-600 font-light mb-4">
+          Użytkownik może w każdej chwili zmienić ustawienia przeglądarki internetowej i samodzielnie usuwać lub blokować pliki cookie;
+          może to jednak utrudnić korzystanie z niektórych funkcji serwisu.
         </p>
 
-        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">8. Postanowienia końcowe</h2>
+        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">8. Profilowanie i zautomatyzowane decyzje</h2>
+        <p class="text-[15px] text-gray-600 font-light mb-4">
+          Narzędzia analityczne i marketingowe (Google, Meta) mogą wykorzystywać dane do profilowania lub personalizacji reklam zgodnie
+          z zasadami tych dostawców. Administrator nie podejmuje wobec pacjenta wyłącznie zautomatyzowanych decyzji, które wywoływałyby
+          skutki prawne lub w podobny sposób istotnie na niego wpływały, w rozumieniu art. 22 RODO, w oparciu o same dane ze strony
+          internetowej — z wyłączeniem mechanizmów po stronie Google/Meta, które regulują ich własne polityki.
+        </p>
+
+        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">9. Postanowienia końcowe</h2>
         <p class="text-[15px] text-gray-600 font-light">
-          Administrator zastrzega sobie prawo do aktualizacji niniejszej Polityki prywatności w przypadku zmiany
-          obowiązujących przepisów lub sposobu przetwarzania danych. Aktualna wersja dokumentu jest zawsze dostępna
-          na stronie <span class="font-semibold text-navy">orthomedica-lubin.pl/polityka-prywatnosci</span>.
+          Administrator zastrzega sobie prawo do aktualizacji niniejszej Polityki prywatności w przypadku zmiany obowiązujących
+          przepisów, funkcji strony lub sposobu przetwarzania danych. Aktualna wersja dokumentu jest zawsze dostępna pod adresem{' '}
+          <span class="font-semibold text-navy">www.orthomedica.lubin.pl/polityka-prywatnosci</span>.
+        </p>
+        <p class="text-[13px] text-gray-500 font-light mt-6 border-t border-gray-100 pt-6">
+          Treść ma charakter informacyjny i nie zastępuje indywidualnej porady prawnej. W razie wątpliwości dotyczących przetwarzania
+          danych osobowych prosimy o kontakt na adres e-mail wskazany powyżej.
         </p>
       </div>
     </section>
@@ -113,4 +201,3 @@ import { ENTITY, formatNipLine, formatRegonLine, formatEntityAddress } from '../
 
   <Footer />
 </Layout>
-

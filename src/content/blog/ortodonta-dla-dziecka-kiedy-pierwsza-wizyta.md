@@ -8,7 +8,7 @@ tags:
   - "profilaktyka"
   - "pierwsza-wizyta"
 heroImage: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&q=80&w=1200"
-canonical: "https://orthomedica-lubin.pl/blog/ortodonta-dla-dziecka-kiedy-pierwsza-wizyta"
+canonical: "https://www.orthomedica.lubin.pl/blog/ortodonta-dla-dziecka-kiedy-pierwsza-wizyta"
 ---
 
 Prawidłowy rozwój zgryzu u dziecka ma ogromne znaczenie dla funkcji żucia, mowy i estetyki uśmiechu w dorosłym życiu. 

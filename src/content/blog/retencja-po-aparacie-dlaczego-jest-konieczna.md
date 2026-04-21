@@ -8,7 +8,7 @@ tags:
   - "aparat-staly"
   - "leczenie-wad-zgryzu"
 heroImage: "https://placehold.co/1200x800/FDEBD2/0A192F?text=Retencja+po+aparacie"
-canonical: "https://orthomedica-lubin.pl/blog/retencja-po-aparacie-dlaczego-jest-konieczna"
+canonical: "https://www.orthomedica.lubin.pl/blog/retencja-po-aparacie-dlaczego-jest-konieczna"
 ---
 
 Wielu pacjentów myśli, że po zdjęciu aparatu leczenie ortodontyczne jest zakończone. W praktyce kluczowy etap to retencja, czyli utrwalenie uzyskanego ustawienia zębów.
@@ -41,7 +41,7 @@ tags:
   - "aparat-staly"
   - "leczenie-wad-zgryzu"
 heroImage: "https://placehold.co/1200x800/FDEBD2/0A192F?text=Retencja+po+aparacie"
-canonical: "https://orthomedica-lubin.pl/blog/retencja-po-aparacie-dlaczego-jest-konieczna"
+canonical: "https://www.orthomedica.lubin.pl/blog/retencja-po-aparacie-dlaczego-jest-konieczna"
 ---
 
 Wielu pacjentów myśli, że po zdjęciu aparatu leczenie ortodontyczne jest zakończone. W praktyce kluczowy etap to retencja, czyli utrwalenie uzyskanego ustawienia zębów.

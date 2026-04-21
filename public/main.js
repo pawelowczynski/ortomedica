@@ -131,10 +131,69 @@ document.addEventListener('DOMContentLoaded', () => {
     mapObserver.observe(mapContainer);
   }
 
+  /** GA4 + Meta Pixel — tylko po zgodzie (RODO); ID z layout (build-time PUBLIC_*) */
+  function loadScript(src) {
+    return new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = src;
+      s.onload = () => resolve();
+      s.onerror = () => reject(new Error('script load failed'));
+      document.head.appendChild(s);
+    });
+  }
+
+  function initMarketingAnalytics() {
+    const cfg = window.__ORTHOMEDICA_ANALYTICS__;
+    if (!cfg) return;
+
+    const gaId = cfg.gaMeasurementId;
+    if (gaId && !window.__orthomedicaGaLoaded) {
+      window.__orthomedicaGaLoaded = true;
+      loadScript(`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaId)}`)
+        .then(() => {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            window.dataLayer.push(arguments);
+          }
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', gaId);
+        })
+        .catch(() => {});
+    }
+
+    const fbId = cfg.fbPixelId;
+    if (fbId && !window.__orthomedicaFbLoaded) {
+      window.__orthomedicaFbLoaded = true;
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      if (window.fbq) {
+        window.fbq('init', fbId);
+        window.fbq('track', 'PageView');
+      }
+    }
+  }
+
   function acceptCookies() {
     localStorage.setItem('cookiesAccepted', 'true');
     if (cookieBanner) cookieBanner.classList.add('hidden-banner');
     loadGoogleMap();
+    initMarketingAnalytics();
   }
 
   function checkCookies() {
@@ -144,6 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 1000);
     } else {
       setupMapObserver();
+      initMarketingAnalytics();
     }
   }
 

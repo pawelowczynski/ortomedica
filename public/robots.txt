@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://orthomedica-lubin.pl/sitemap-index.xml
+Sitemap: https://www.orthomedica.lubin.pl/sitemap-index.xml

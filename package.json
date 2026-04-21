@@ -9,9 +9,11 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "fetch-reviews": "node --env-file=.env ./scripts/fetch-google-reviews.mjs"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.2",
     "@tailwindcss/vite": "^4.2.1",
     "astro": "^6.0.3",
     "lucide": "^0.577.0",

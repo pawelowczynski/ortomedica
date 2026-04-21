@@ -1,79 +1,50 @@
 ---
-import Layout from '../layouts/layout.astro';
-import Header from '../components/header.astro';
-import Footer from '../components/footer.astro';
+import DoctorProfileLayout from '../components/DoctorProfileLayout.astro';
+import { drKorneliaRuminProfile } from '../data/teamProfiles';
 ---
 
-<Layout
-  title="Dr n. med. Kornelia Rumin – Ortodonta w Lubinie | ORTHOMEDICA"
-  description="Profil lekarza: dr n. med. Kornelia Rumin, specjalista ortodonta w gabinecie ORTHOMEDICA w Lubinie. Leczenie wad zgryzu u dzieci i dorosłych."
-  canonical="https://orthomedica-lubin.pl/dr-kornelia-rumin"
->
-  <Header />
+<DoctorProfileLayout profile={drKorneliaRuminProfile}>
+  <article class="prose prose-lg text-gray-600 font-light">
+    <p class="mb-4 text-[15px] leading-relaxed">
+      Zdrowy zgryz i piękny uśmiech to nie tylko estetyka — to lepszy komfort życia każdego dnia. Dr Kornelia Rumin to
+      specjalista ortodonta z ponad 10-letnim doświadczeniem klinicznym, która w gabinecie ORTHOMEDICA w Lubinie zajmuje się
+      leczeniem wad zgryzu zarówno u dzieci, jak i u dorosłych. Łączy wysokie kwalifikacje naukowe z indywidualnym,
+      holistycznym podejściem do każdego pacjenta.
+    </p>
 
-  <main class="pt-28 md:pt-32 pb-20 bg-white">
-    <section class="py-12 md:py-16">
-      <div class="container mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-          <div class="relative order-2 lg:order-1">
-            <div class="absolute -top-6 -left-6 md:-top-10 md:-left-10 w-40 h-40 md:w-56 md:h-56 bg-gold/10 rounded-full -z-0"></div>
-            <div class="absolute -bottom-6 -right-6 w-28 h-28 border-2 border-gold/30 rounded-full -z-0"></div>
-            <img
-              src="/images/team/kornelia-rumin.jpg"
-              alt="Dr n. med. Kornelia Rumin"
-              loading="lazy"
-              class="rounded-3xl shadow-2xl relative z-10 w-full object-cover aspect-[4/5] md:aspect-[3/4]"
-            />
-          </div>
+    <h3 class="text-xl md:text-2xl serif text-navy mt-8 mb-3">Wykształcenie i specjalizacja</h3>
+    <p class="mb-4 text-[15px] leading-relaxed">
+      Dr Kornelia Rumin jest absolwentką Akademii Medycznej we Wrocławiu, którą ukończyła z wyróżnieniem na Wydziale
+      Lekarsko-Stomatologicznym w 2011 roku. Dzięki jednemu z najwyższych wyników Lekarsko-Dentystycznego Egzaminu
+      Państwowego uzyskała miejsce na rezydenturze z ortodoncji w Katedrze i Zakładzie Ortopedii Szczękowej i Ortodoncji
+      Uniwersytetu Medycznego we Wrocławiu, gdzie w 2017 roku uzyskała tytuł specjalisty ortodonty.
+    </p>
+    <p class="mb-4 text-[15px] leading-relaxed">
+      Swój rozwój naukowy zwieńczyła w 2023 roku tytułem doktora nauk medycznych. Jej rozprawa doktorska poświęcona była
+      nowoczesnym metodom skracania czasu leczenia ortodontycznego z zastosowaniem miniimplantów — techniki, która dziś
+      realnie przekłada się na krótszy i wygodniejszy czas terapii dla pacjentów gabinetu ORTHOMEDICA.
+    </p>
 
-          <div class="order-1 lg:order-2">
-            <h1 class="cinzel text-xs md:text-sm text-gold font-bold tracking-[0.5em] mb-4 uppercase italic">
-              Profil lekarza
-            </h1>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl serif mb-6 md:mb-8 text-navy">
-              Dr n. med. Kornelia Rumin – Ortodonta w Lubinie
-            </h2>
+    <h3 class="text-xl md:text-2xl serif text-navy mt-8 mb-3">Doświadczenie kliniczne</h3>
+    <p class="mb-4">
+      Przez lata współpracy z Uniwersytetem Medycznym we Wrocławiu oraz pracą w prywatnych gabinetach stomatologicznych na
+      Dolnym Śląsku dr Rumin prowadziła leczenie wielu złożonych wad zgryzu. Doświadczenie kliniczne łączyła z pracą
+      dydaktyczną i naukową, dzięki czemu wypracowała umiejętność kompleksowej diagnozy i skutecznego leczenia nawet
+      najbardziej wymagających przypadków.
+    </p>
+    <p class="mb-4">
+      W swojej pracy ściśle współpracuje z innymi specjalistami, co pozwala na pełną opiekę nad pacjentem — od diagnozy,
+      przez leczenie, aż po trwałe i stabilne efekty.
+    </p>
 
-            <article class="prose prose-lg text-gray-600 font-light mb-8 max-w-xl">
-              <p class="mb-4 text-[15px] leading-relaxed">
-                Zdrowy zgryz i piękny uśmiech to nie tylko estetyka — to lepszy komfort życia każdego dnia. 
-                Dr Kornelia Rumin to specjalista ortodonta z ponad 10-letnim doświadczeniem klinicznym, która w gabinecie ORTHOMEDICA w Lubinie zajmuje się leczeniem wad zgryzu zarówno u dzieci, jak i u dorosłych. 
-                Łączy wysokie kwalifikacje naukowe z indywidualnym, holistycznym podejściem do każdego pacjenta.
-              </p>
-
-              <h3 class="text-xl md:text-2xl serif text-navy mt-8 mb-3">Wykształcenie i specjalizacja</h3>
-              <p class="mb-4 text-[15px] leading-relaxed">
-                Dr Kornelia Rumin jest absolwentką Akademii Medycznej we Wrocławiu, którą ukończyła z wyróżnieniem na Wydziale Lekarsko-Stomatologicznym w 2011 roku. 
-                Dzięki jednemu z najwyższych wyników Lekarsko-Dentystycznego Egzaminu Państwowego uzyskała miejsce na rezydenturze z ortodoncji w Katedrze i Zakładzie Ortopedii Szczękowej i Ortodoncji Uniwersytetu Medycznego we Wrocławiu, gdzie w 2017 roku uzyskała tytuł specjalisty ortodonty.
-              </p>
-              <p class="mb-4 text-[15px] leading-relaxed">
-                Swój rozwój naukowy zwieńczyła w 2023 roku tytułem doktora nauk medycznych. Jej rozprawa doktorska poświęcona była nowoczesnym metodom skracania czasu leczenia ortodontycznego z zastosowaniem miniimplantów — techniki, która dziś realnie przekłada się na krótszy i wygodniejszy czas terapii dla pacjentów gabinetu ORTHOMEDICA.
-              </p>
-
-              <h3 class="text-xl md:text-2xl serif text-navy mt-8 mb-3">Doświadczenie kliniczne</h3>
-              <p class="mb-4">
-                Przez lata współpracy z Uniwersytetem Medycznym we Wrocławiu oraz pracą w prywatnych gabinetach stomatologicznych na Dolnym Śląsku dr Rumin prowadziła leczenie wielu złożonych wad zgryzu. 
-                Doświadczenie kliniczne łączyła z pracą dydaktyczną i naukową, dzięki czemu wypracowała umiejętność kompleksowej diagnozy i skutecznego leczenia nawet najbardziej wymagających przypadków.
-              </p>
-              <p class="mb-4">
-                W swojej pracy ściśle współpracuje z innymi specjalistami, co pozwala na pełną opiekę nad pacjentem — od diagnozy, przez leczenie, aż po trwałe i stabilne efekty.
-              </p>
-
-              <h3 class="text-xl md:text-2xl serif text-navy mt-8 mb-3">Jak leczę? Moje podejście do pacjenta</h3>
-              <p class="mb-4 italic text-[15px] leading-relaxed">
-                „Ortodoncja to dla mnie nie tylko korekta zgryzu — to poprawa jakości życia. Każdego pacjenta traktuję indywidualnie, bo każdy uśmiech jest inny.”
-                — dr Kornelia Rumin
-              </p>
-              <p class="mb-0 text-[15px] leading-relaxed">
-                Stosowane metody leczenia przynoszą stabilne, długotrwałe efekty. Pacjenci nie tylko zyskują estetyczny uśmiech — przede wszystkim poprawiają funkcjonowanie żucia, mowy i ogólny komfort codziennego życia.
-              </p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <Footer />
-</Layout>
-
+    <h3 class="text-xl md:text-2xl serif text-navy mt-8 mb-3">Jak leczę? Moje podejście do pacjenta</h3>
+    <p class="mb-4 italic text-[15px] leading-relaxed">
+      „Ortodoncja to dla mnie nie tylko korekta zgryzu — to poprawa jakości życia. Każdego pacjenta traktuję indywidualnie,
+      bo każdy uśmiech jest inny.” — dr Kornelia Rumin
+    </p>
+    <p class="mb-0 text-[15px] leading-relaxed">
+      Stosowane metody leczenia przynoszą stabilne, długotrwałe efekty. Pacjenci nie tylko zyskują estetyczny uśmiech —
+      przede wszystkim poprawiają funkcjonowanie żucia, mowy i ogólny komfort codziennego życia.
+    </p>
+  </article>
+</DoctorProfileLayout>

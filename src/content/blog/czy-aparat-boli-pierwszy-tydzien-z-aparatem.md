@@ -8,7 +8,7 @@ tags:
   - "ortodoncja"
   - "poradnik"
 heroImage: "https://placehold.co/1200x800/E9F2FF/0A192F?text=Pierwszy+tydzien+z+aparatem"
-canonical: "https://orthomedica-lubin.pl/blog/czy-aparat-boli-pierwszy-tydzien-z-aparatem"
+canonical: "https://www.orthomedica.lubin.pl/blog/czy-aparat-boli-pierwszy-tydzien-z-aparatem"
 ---
 
 Po założeniu aparatu stałego większość pacjentów odczuwa przejściową tkliwość zębów. To naturalna reakcja tkanek na delikatne siły ortodontyczne.
@@ -47,7 +47,7 @@ tags:
   - "ortodoncja"
   - "poradnik"
 heroImage: "https://placehold.co/1200x800/E9F2FF/0A192F?text=Pierwszy+tydzien+z+aparatem"
-canonical: "https://orthomedica-lubin.pl/blog/czy-aparat-boli-pierwszy-tydzien-z-aparatem"
+canonical: "https://www.orthomedica.lubin.pl/blog/czy-aparat-boli-pierwszy-tydzien-z-aparatem"
 ---
 
 Po założeniu aparatu stałego większość pacjentów odczuwa przejściową tkliwość zębów. To naturalna reakcja tkanek na delikatne siły ortodontyczne.

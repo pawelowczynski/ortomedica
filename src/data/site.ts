@@ -1,5 +1,9 @@
-/** Dane witryny i ujawnień prawnych — uzupełnij NIP, REGON, wpis do rejestru wg CEIDG / mpwiz.gov.pl */
-export const SITE_ORIGIN = 'https://orthomedica-lubin.pl';
+/** Dane witryny i ujawnień prawnych podmiotu */
+export const SITE_ORIGIN = 'https://www.orthomedica.lubin.pl';
+
+/** Wizytówka Google (opinie, trasa) — link zewnętrzny */
+export const GOOGLE_BUSINESS_REVIEWS_URL =
+  'https://www.google.com/maps/place/ORTHOMEDICA+Centrum+Ortodontyczno-Stomatologiczne,+dr+n.+med.+Kornelia+Rumin/@51.3884494,16.2096637,17z/data=!4m8!3m7!1s0x470f6fe7d683d68d:0x6ff7e4a488d769f3!8m2!3d51.3884494!4d16.2096637!9m1!1b1';
 
 export const DEFAULT_OG_IMAGE_URL = `${SITE_ORIGIN}/images/team/kornelia-rumin.jpg`;
 
@@ -11,17 +15,22 @@ export const ENTITY = {
   /** Nazwa handlowa / jak widzi pacjent */
   publicBrand: 'ORTHOMEDICA',
   /** Jak w dokumentach prawnych (dopasuj do wpisu CEIDG / umów) */
-  legalAdministrator: 'ORTHOMEDICA – dr n. med. Kornelia Rumin',
-  street: 'ul. Pawia 67',
-  postalCode: '59-300',
-  city: 'Lubin',
+  legalAdministrator: 'ORTHOMEDICA sp. z o.o.',
+  registeredOfficeStreet: 'ul. Piękna 60AF/1',
+  registeredOfficePostalCode: '50-506',
+  registeredOfficeCity: 'Wrocław-Krzyki',
+  clinicStreet: 'ul. Pawia 67',
+  clinicPostalCode: '59-300',
+  clinicCity: 'Lubin',
   email: 'rejestracja@orthomedica-lubin.pl',
-  nip: '',
-  regon: '',
-  /** Numer wpisu / identyfikacja w rejestrze podmiotów wykonujących działalność leczniczą (jeśli dotyczy) */
-  medicalActivityRegistry: '',
-  /** Organ prowadzący rejestr (np. właściwa okręgowa rada lekarska) — jeśli dotyczy */
-  medicalActivityRegistryAuthority: '',
+  nip: '8992930722',
+  regon: '522554361',
+  /** Numer KRS spółki (Krajowy Rejestr Sądowy) — osobno od wpisu w rejestrze medycznym */
+  krs: '0000981806',
+  /** Numer wpisu w rejestrze podmiotów wykonujących działalność leczniczą (rejestr medyczny) */
+  medicalActivityRegistry: '000000276186',
+  /** Organ prowadzący rejestr (ustawa o działalności leczniczej) */
+  medicalActivityRegistryAuthority: 'Ministerstwo Zdrowia',
 } as const;
 
 /** Treści informacyjne — art. 24 ust. 2 ustawy z dnia 15 kwietnia 2011 r. o działalności leczniczej (m.in. pkt 4, 9, 12; art. 23a) */
@@ -34,7 +43,7 @@ export const MEDICAL_DISCLOSURE = {
     'Wysokość opłaty za udostępnienie dokumentacji medycznej (w tym wydanie kopii na żądanie pacjenta) wynika z ustawy z dnia 6 listopada 2008 r. o prawach pacjenta i Rzeczniku Praw Pacjenta (art. 28) oraz obowiązujących rozporządzeń i nie przekracza ustawowych maksimów. Konkretne stawki (pierwsza strona, kolejne strony, nośnik elektroniczny) są podawane w rejestracji i w regulaminie organizacyjnym gabinetu.',
 
   nfzNote:
-    'Świadczenia są udzielane odpłatnie na zasadach komercyjnych. Gabinet nie zawarł umowy o udzielanie świadczeń opieki zdrowotnej z Narodowym Funduszem Zdrowia w zakresie prezentowanym na tej stronie (jeśli udzielacie świadczeń NFZ — zastąp tę treść).',
+    'Świadczenia są udzielane odpłatnie na zasadach komercyjnych. Gabinet nie zawarł umowy o udzielanie świadczeń opieki zdrowotnej z Narodowym Funduszem Zdrowia w zakresie prezentowanym na tej stronie.',
 
   /** art. 23a — zmień, jeśli faktycznie stosujecie monitoring */
   cctvNote:
@@ -65,8 +74,12 @@ export const MEDICAL_DEVICE_ADVERTISING = {
   ] as const,
 } as const;
 
-export function formatEntityAddress(): string {
-  return `${ENTITY.street}, ${ENTITY.postalCode} ${ENTITY.city}`;
+export function formatRegisteredOfficeAddress(): string {
+  return `${ENTITY.registeredOfficeStreet}, ${ENTITY.registeredOfficePostalCode} ${ENTITY.registeredOfficeCity}`;
+}
+
+export function formatClinicAddress(): string {
+  return `${ENTITY.clinicStreet}, ${ENTITY.clinicPostalCode} ${ENTITY.clinicCity}`;
 }
 
 export function formatNipLine(): string {
@@ -75,6 +88,10 @@ export function formatNipLine(): string {
 
 export function formatRegonLine(): string {
   return ENTITY.regon ? `REGON: ${ENTITY.regon}` : 'REGON: — uzupełnij zgodnie z CEIDG';
+}
+
+export function formatKrsLine(): string {
+  return ENTITY.krs ? `KRS: ${ENTITY.krs}` : 'KRS: — uzupełnij zgodnie z KRS';
 }
 
 export function formatRegistryLine(): string {

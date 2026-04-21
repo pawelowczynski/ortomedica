@@ -8,7 +8,7 @@ tags:
   - "itero"
   - "diagnostyka"
 heroImage: "https://placehold.co/1200x800/E8F0FF/0A192F?text=Skan+3D+iTero"
-canonical: "https://orthomedica-lubin.pl/blog/skan-3d-itero-co-daje-pacjentowi"
+canonical: "https://www.orthomedica.lubin.pl/blog/skan-3d-itero-co-daje-pacjentowi"
 ---
 
 Nowoczesna ortodoncja coraz częściej opiera się na diagnostyce cyfrowej. Jednym z najważniejszych narzędzi jest skaner iTero, który pozwala szybko i dokładnie odwzorować uzębienie pacjenta.
@@ -39,7 +39,7 @@ tags:
   - "itero"
   - "diagnostyka"
 heroImage: "https://placehold.co/1200x800/E8F0FF/0A192F?text=Skan+3D+iTero"
-canonical: "https://orthomedica-lubin.pl/blog/skan-3d-itero-co-daje-pacjentowi"
+canonical: "https://www.orthomedica.lubin.pl/blog/skan-3d-itero-co-daje-pacjentowi"
 ---
 
 Nowoczesna ortodoncja coraz częściej opiera się na diagnostyce cyfrowej. Jednym z najważniejszych narzędzi jest skaner iTero, który pozwala szybko i dokładnie odwzorować uzębienie pacjenta.

@@ -1,0 +1,298 @@
+---
+import Layout from '../../layouts/layout.astro';
+import Header from '../../components/header.astro';
+import Footer from '../../components/footer.astro';
+import { METAMORPHOSIS_FEATURED } from '../../data/metamorphoses';
+import { SITE_ORIGIN, DEFAULT_OG_IMAGE_URL } from '../../data/site';
+
+const canonical = `${SITE_ORIGIN}/metamorfozy/korekta-glebokiego-zgryzu-i-stloczen`;
+const m = METAMORPHOSIS_FEATURED;
+const articleImageUrl = `${SITE_ORIGIN}${m.imgAfter}`;
+const datePublished = '2026-04-21';
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Korekta głębokiego zgryzu i stłoczeń — opis leczenia Invisalign',
+  description:
+    'Case study ortodontyczne: głęboki zgryz i stłoczenia, leczenie Invisalign — cele, przebieg, czas i retencja. ORTHOMEDICA Lubin.',
+  url: canonical,
+  datePublished,
+  dateModified: datePublished,
+  author: { '@type': 'Organization', name: 'ORTHOMEDICA' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'ORTHOMEDICA',
+    logo: { '@type': 'ImageObject', url: `${SITE_ORIGIN}/logo.png` },
+  },
+  image: [articleImageUrl, DEFAULT_OG_IMAGE_URL],
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Strona główna', item: `${SITE_ORIGIN}/` },
+    { '@type': 'ListItem', position: 2, name: 'Metamorfozy', item: `${SITE_ORIGIN}/#metamorfozy` },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: 'Korekta głębokiego zgryzu i stłoczeń',
+      item: canonical,
+    },
+  ],
+};
+
+/** Wyraźne style linków w treści — domyślne `prose` potrafią zlewać linki z tekstem */
+const linkClass =
+  'text-navy font-semibold underline decoration-gold decoration-2 underline-offset-[3px] hover:text-gold hover:decoration-gold transition-colors';
+---
+
+<Layout
+  title="Korekta głębokiego zgryzu i stłoczeń — pełny opis leczenia (Invisalign) | ORTHOMEDICA Lubin"
+  description="Case study ORTHOMEDICA: głęboki zgryz i stłoczenia leczone Invisalign w Lubinie — zdjęcia przed/po, cele, przebieg, czas ok. 14 miesięcy, retencja. Umów konsultację."
+  canonical={canonical}
+  image={articleImageUrl}
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <Header />
+
+  <main class="pt-28 md:pt-32 pb-20 bg-white">
+    <nav class="text-xs md:text-sm text-gray-400 mb-6 md:mb-8" aria-label="Okruszki nawigacyjne">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <ol class="flex flex-wrap items-center gap-1 md:gap-2">
+          <li><a href="/" class="hover:text-gold">Strona główna</a></li>
+          <li class="text-gray-300">/</li>
+          <li><a href="/#metamorfozy" class="hover:text-gold">Metamorfozy</a></li>
+          <li class="text-gray-300">/</li>
+          <li><span class="text-gray-500">Korekta głębokiego zgryzu i stłoczeń</span></li>
+        </ol>
+      </div>
+    </nav>
+
+    <article class="container mx-auto px-6 max-w-4xl" itemscope itemtype="https://schema.org/Article">
+      <meta itemprop="datePublished" content={datePublished} />
+      <meta itemprop="dateModified" content={datePublished} />
+
+      <header class="mb-10 md:mb-12 text-center md:text-left">
+        <p class="text-gold font-bold tracking-[0.3em] text-[10px] uppercase mb-4">Case study ortodontyczny</p>
+        <h1 class="cinzel text-3xl md:text-4xl lg:text-[2.5rem] text-navy mb-5 leading-tight max-w-4xl" itemprop="headline">
+          Korekta głębokiego zgryzu i stłoczeń — pełny opis leczenia Invisalign
+        </h1>
+        <p class="text-[15px] md:text-base text-gray-500 font-light max-w-2xl" itemprop="description">
+          <span class="text-navy/80 font-medium">ORTHOMEDICA Lubin</span> · system nakładek Invisalign® · szacowany czas aktywnej fazy:{' '}
+          <strong class="text-navy font-semibold">{m.duration}</strong> · publikacja za zgodą pacjenta na wykorzystanie materiałów
+        </p>
+      </header>
+
+      <p class="text-[15px] md:text-[16px] text-gray-600 font-light leading-relaxed mb-10 md:mb-12 border-l-2 border-gold/40 pl-5 md:pl-6">
+        Poniżej opisujemy realny przebieg terapii u pacjenta z&nbsp;głębokim zgryzem i&nbsp;stłoczeniami, leczonego w naszym gabinecie
+        ortodontycznym w <strong class="text-navy font-medium">Lubinie</strong>. Jeśli szukasz ogólnych informacji o metodzie, zobacz
+        stronę <a href="/zabiegi/invisalign-lubin" class={linkClass}>Invisalign w Lubinie</a> oraz
+        <a href="/zabiegi/ortodoncja" class={linkClass}>ortodoncję</a> — tutaj skupiamy się na&nbsp;jednym, konkretnym przypadku.
+      </p>
+
+      <!-- Sekcja ze zdjęciami: jedyny h2 „nad” galerią, potem opisy pod figure -->
+      <section class="mb-12 md:mb-16" aria-labelledby="heading-zdjecia">
+        <h2 id="heading-zdjecia" class="cinzel text-xl md:text-2xl text-navy mb-6">
+          Dokumentacja fotograficzna: przed i po leczeniu
+        </h2>
+        <p class="text-[14px] text-gray-500 font-light mb-8 max-w-3xl">
+          Porównanie stanu wyjściowego i końcowego po zakończeniu aktywnej fazy leczenia nakładkami. Ujęcia służą dokumentacji klinicznej;
+          na stronie głównej ten sam przypadek pokazujemy dodatkowo jako <a href="/#metamorfozy" class={linkClass}>interaktywny suwak przed/po</a>.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <figure class="m-0 rounded-2xl overflow-hidden border border-gray-100 shadow-md bg-gray-50">
+            <div class="aspect-[4/3] w-full overflow-hidden bg-gray-100">
+              <img
+                src={m.imgBefore}
+                alt={m.altBefore}
+                width={800}
+                height={600}
+                loading="eager"
+                decoding="async"
+                class="w-full h-full object-cover object-center"
+                itemprop="image"
+              />
+            </div>
+            <figcaption class="px-4 py-3 text-[13px] text-gray-600 font-light bg-white border-t border-gray-100">
+              <span class="font-semibold text-navy uppercase tracking-wider text-[10px]">Przed</span> — stan wyjściowy przed rozpoczęciem terapii.
+            </figcaption>
+          </figure>
+          <figure class="m-0 rounded-2xl overflow-hidden border border-gray-100 shadow-md bg-gray-50">
+            <div class="aspect-[4/3] w-full overflow-hidden bg-gray-100">
+              <img
+                src={m.imgAfter}
+                alt={m.altAfter}
+                width={800}
+                height={600}
+                loading="eager"
+                decoding="async"
+                class="w-full h-full object-cover object-center"
+              />
+            </div>
+            <figcaption class="px-4 py-3 text-[13px] text-gray-600 font-light bg-white border-t border-gray-100">
+              <span class="font-semibold text-gold uppercase tracking-wider text-[10px]">Po</span> — efekt po zakończeniu leczenia aktywnego (szczegóły czasu: {m.duration}).
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <div
+        class="prose prose-sm md:prose-base max-w-none prose-headings:font-normal prose-headings:font-serif prose-headings:text-navy prose-p:text-gray-600 prose-p:font-light prose-p:leading-relaxed prose-li:text-gray-600 prose-strong:text-navy prose-ul:my-4 prose-ol:my-4"
+      >
+        <h2>Opis wady i kontekst kliniczny</h2>
+        <p>
+          W tym przypadku dominował <strong>głęboki zgryz</strong> (silne nakładanie się górnych zębów przednich na dolne) oraz
+          <strong>stłoczenia</strong> w łuku — co utrudniało higienę, zwiększało ryzyko urazów dziąseł i odbijało się na estetyce
+          uśmiechu. Wady zgryzu omawiamy też szerzej w materiale o{' '}
+          <a href="/zabiegi/leczenie-wad-zgryzu" class={linkClass}>leczeniu wad zgryzu</a>. Dokładny zakres i plan zawsze ustalamy indywidualnie po
+          badaniu, a w razie potrzeby po analizie skanu lub dokumentacji RTG — nowoczesną diagnostykę opisujemy m.in. przy{' '}
+          <a href="/zabiegi/skan-3d-itero" class={linkClass}>skanie iTero 3D</a>.
+        </p>
+
+        <h2>Cele leczenia ortodontycznego</h2>
+        <p>Główne cele terapii w tym przypadku to m.in.:</p>
+        <ul>
+          <li>redukcja głębokości zgryzu i poprawa relacji między łukami,</li>
+          <li>równomierne rozmieszczenie zębów, ograniczenie stłoczeń,</li>
+          <li>stabilniejsza okluzja i komfort żucia,</li>
+          <li>poprawa estetyki przy zachowaniu zdrowia przyzębia.</li>
+        </ul>
+
+        <h2>Dlaczego Invisalign, a nie aparat stały?</h2>
+        <p>
+          Po kwalifikacji wybrano leczenie <strong>nakładkami Invisalign®</strong> — serią przezroczystych nakładek wymienianych według
+          harmonogramu ustalonego przez lekarza. To rozwiązanie bywa preferowane przez pacjentów ceniących dyskrecję i higienę; nie
+          zawsze jednak zastępuje <a href="/zabiegi/aparat-staly-metalowy" class={linkClass}>aparat stały</a> — o różnicach przeczytasz w artykule
+          <a href="/blog/invisalign-vs-aparat-staly-co-wybrac" class={linkClass}>Invisalign vs aparat stały — co wybrać</a>. Ostateczna kwalifikacja należy
+          wyłącznie do lekarza ortodonty po ocenie stanu zdrowia i dokumentacji.
+        </p>
+
+        <h2>Przebieg leczenia krok po kroku</h2>
+        <p>
+          Poniżej uproszczony schemat — szczegóły i terminy zawsze dopasowujemy do pacjenta. Warto też przeczytać o{' '}
+          <a href="/zabiegi/przygotowanie-do-aparatu" class={linkClass}>przygotowaniu do leczenia ortodontycznego</a>.
+        </p>
+
+        <h3 class="!text-lg md:!text-xl !mt-8 !mb-3">1. Konsultacja i diagnostyka</h3>
+        <p>
+          Zdjęcia, skan lub wyciski, omówzenie planu i orientacyjnej prognozy czasu. Na miejscu w Lubinie odpowiadamy na pytania o
+          przebieg i koszty — orientacyjnie pomoże też <a href="/cennik" class={linkClass}>cennik</a>.
+        </p>
+
+        <h3 class="!text-lg md:!text-xl !mt-8 !mb-3">2. Projekt cyfrowy i akceptacja planu</h3>
+        <p>
+          Wizualizacja kierunku przesunięć zębów; akceptacja planu przez lekarza i pacjenta w zakresie przewidzianym przepisami.
+        </p>
+
+        <h3 class="!text-lg md:!text-xl !mt-8 !mb-3">3. Fazy nakładek i kontrole</h3>
+        <p>
+          Sekwencyjna wymiana nakładek, wizyty kontrolne w gabinecie w celu monitorowania przebiegu i ewentualnej korekty planu.
+        </p>
+
+        <h3 class="!text-lg md:!text-xl !mt-8 !mb-3">4. Zakończenie aktywnej fazy</h3>
+        <p>
+          Ocena osiągnięcia celów klinicznych, dopracowanie detali okluzji.
+        </p>
+
+        <h3 class="!text-lg md:!text-xl !mt-8 !mb-3">5. Retencja</h3>
+        <p>
+          Utrwalenie efektu zgodnie z zaleceniami — temat retencji omawiamy osobno na stronie{' '}
+          <a href="/zabiegi/retencja-ortodontyczna" class={linkClass}>retencja ortodontyczna</a>; warto też zapoznać się z wpisem na blogu:
+          <a href="/blog/retencja-po-aparacie-dlaczego-jest-konieczna" class={linkClass}>Retencja po aparacie — dlaczego jest konieczna</a>.
+        </p>
+
+        <h2>Czas leczenia i rola pacjenta</h2>
+        <p>
+          W opisywanym przypadku szacowany czas aktywnej fazy wyniósł ok. <strong>{m.duration}</strong>. Rzeczywisty czas zależy od
+          biologii ruchu zębów, złożoności wady, ewentualnych korekt planu oraz <strong>konsekwencji w noszeniu nakładek</strong> i
+          obecności na wizytach.
+        </p>
+
+        <h2>Efekt końcowy i uczciwość informacyjna</h2>
+        <p>
+          Zdjęcia na stronie mają charakter <strong>ilustracyjny</strong> i dokumentacyjny — efekt u każdej osoby jest inny i zależy od
+          wielu czynników. Nie stanowią obietnicy identycznego rezultatu u innych pacjentów. Szersze ujawnienia prawne znajdziesz w
+          sekcji <a href="/informacje-dla-pacjentow#informacja-o-wyrobach-medycznych" class={linkClass}>informacja o wyrobach medycznych</a> oraz na
+          stronie <a href="/informacje-dla-pacjentow" class={linkClass}>Informacje dla pacjentów</a>.
+        </p>
+
+        <h2>Zespół i kontakt w Lubinie</h2>
+        <p>
+          Plan leczenia ortodontycznego dobiera{' '}
+          <a href="/dr-kornelia-rumin" class={linkClass}>dr n. med. Kornelia Rumin</a> wraz z zespołem gabinetu. Jeśli chcesz omówić podobny przypadek,
+          <a href="/#kontakt" class={linkClass}>umów konsultację</a> — chętnie przedstawimy możliwe ścieżki, także w porównaniu z innymi metodami z naszej{' '}
+          <a href="/#oferta" class={linkClass}>oferty</a>.
+        </p>
+      </div>
+
+      <aside class="mt-12 md:mt-14 rounded-2xl border border-gray-100 bg-[#f8f7f4] p-6 md:p-8" aria-labelledby="heading-powiazane">
+        <h2 id="heading-powiazane" class="cinzel text-lg md:text-xl text-navy mb-4">
+          Przydatne linki na naszej stronie
+        </h2>
+        <ul class="space-y-3 text-[15px] text-gray-600 font-light list-none p-0 m-0">
+          <li>
+            <a href="/zabiegi/invisalign-lubin" class={`${linkClass} inline-flex items-center gap-2`}>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-gold shrink-0"></i>
+              Invisalign w Lubinie
+            </a>
+          </li>
+          <li>
+            <a href="/zabiegi/ortodoncja" class={`${linkClass} inline-flex items-center gap-2`}>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-gold shrink-0"></i>
+              Ortodoncja — zakres usług
+            </a>
+          </li>
+          <li>
+            <a href="/zabiegi/leczenie-wad-zgryzu" class={`${linkClass} inline-flex items-center gap-2`}>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-gold shrink-0"></i>
+              Leczenie wad zgryzu
+            </a>
+          </li>
+          <li>
+            <a href="/zabiegi/retencja-ortodontyczna" class={`${linkClass} inline-flex items-center gap-2`}>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-gold shrink-0"></i>
+              Retencja po leczeniu
+            </a>
+          </li>
+          <li>
+            <a href="/cennik" class={`${linkClass} inline-flex items-center gap-2`}>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-gold shrink-0"></i>
+              Cennik orientacyjny
+            </a>
+          </li>
+          <li>
+            <a href="/blog" class={`${linkClass} inline-flex items-center gap-2`}>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-gold shrink-0"></i>
+              Blog dla pacjentów
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <div class="mt-12 pt-10 border-t border-gray-100 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
+        <a href="/#metamorfozy" class="text-navy hover:text-gold font-semibold text-sm inline-flex items-center gap-2">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+          Wróć do galerii metamorfoz
+        </a>
+        <a
+          href="/#kontakt"
+          class="btn-gold px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider inline-flex items-center justify-center gap-2"
+        >
+          Umów wizytę
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <p class="text-[12px] text-gray-400 font-light mt-10 leading-relaxed max-w-3xl">
+        Treści mają charakter informacyjny i nie zastępują konsultacji medycznej ani dokumentacji z leczenia. Indywidualna kwalifikacja,
+        plan i prognoza zawsze ustala lekarz po badaniu.
+      </p>
+    </article>
+  </main>
+
+  <Footer />
+</Layout>

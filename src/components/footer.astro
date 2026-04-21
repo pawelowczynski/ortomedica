@@ -4,9 +4,11 @@ import {
   MEDICAL_DISCLOSURE,
   MEDICAL_DEVICE_ADVERTISING,
   WHATSAPP_E164,
-  formatEntityAddress,
+  formatRegisteredOfficeAddress,
+  formatClinicAddress,
   formatNipLine,
   formatRegonLine,
+  formatKrsLine,
   formatRegistryLine,
 } from '../data/site';
 
@@ -35,8 +37,10 @@ const waHref = `https://wa.me/${WHATSAPP_E164.replace(/\D/g, '')}`;
                 <p class="font-semibold text-white/60 uppercase tracking-wider mb-2">Dane i ujawnienia prawne</p>
                 <p class="mb-2">
                     <span class="text-white/55">{ENTITY.legalAdministrator}</span><br />
-                    {formatEntityAddress()}<br />
+                    Siedziba: {formatRegisteredOfficeAddress()}<br />
+                    Gabinet: {formatClinicAddress()}<br />
                     {formatNipLine()} · {formatRegonLine()}<br />
+                    {formatKrsLine()}<br />
                     {formatRegistryLine()}
                 </p>
                 <p class="mb-2">{MEDICAL_DISCLOSURE.medicalRecordsFeeNote}</p>
@@ -83,12 +87,12 @@ const waHref = `https://wa.me/${WHATSAPP_E164.replace(/\D/g, '')}`;
             <div>
                 <h4 class="font-bold text-sm mb-1 text-navy">Ciasteczka & RODO</h4>
                 <p class="text-[11px] text-gray-500 font-light leading-relaxed">
-                    Używamy plików cookie m.in. do poprawnego działania mapy Google. Klikając "Akceptuj" wyrażasz na to zgodę.
+                    Na stronie jest jeden wybór: kliknięcie „Akceptuj wszystko” oznacza zgodę na pliki cookie potrzebne do mapy Google, Google Analytics oraz piksela Meta (Facebook) — w jednym pakiecie, zgodnie z polityką prywatności. Bez tego wyboru mapa i narzędzia analityczne/marketingowe się nie ładują.
                 </p>
             </div>
         </div>
         <div class="flex gap-3">
-            <button id="accept-cookies" class="flex-1 bg-gold text-white py-3 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-navy transition-colors shadow-md hover:shadow-lg">Akceptuj</button>
+            <button id="accept-cookies" type="button" class="flex-1 bg-gold text-white py-3 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-navy transition-colors shadow-md hover:shadow-lg">Akceptuj wszystko</button>
             <a href="/polityka-prywatnosci" class="flex-1 text-center bg-gray-50 text-navy py-3 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-gray-200 transition-colors border border-gray-100">Polityka</a>
         </div>
     </div>
