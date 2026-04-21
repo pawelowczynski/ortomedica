@@ -41,6 +41,9 @@ jobs:
           SSH_KEY: ${{ secrets.CYBERFOLKS_SSH_KEY }}
         run: |
           set -euo pipefail
+          # GitHub-hosted runners often have an ssh-agent loaded with unrelated keys.
+          # Disable it so OpenSSH doesn't burn through "MaxAuthTries" before our deploy key.
+          unset SSH_AUTH_SOCK
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
           KEY_FILE="$HOME/.ssh/deploy_key"
@@ -57,6 +60,23 @@ jobs:
           ssh-keyscan -p "$SSH_PORT" "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null || true
           chmod 644 ~/.ssh/known_hosts
           REMOTE_DIR="domains/orthomedica.lubin.pl/public_html"
-          SSH_BASE=(ssh -i "$KEY_FILE" -p "$SSH_PORT" -o IdentityFile="$KEY_FILE" -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new -o BatchMode=yes)
-          "${SSH_BASE[@]}" "$SSH_USER@$SSH_HOST" "mkdir -p \"$REMOTE_DIR\""
-          tar -C dist -czf - . | "${SSH_BASE[@]}" "$SSH_USER@$SSH_HOST" "tar -xzf - -C \"$REMOTE_DIR\""
+          ssh \
+            -vvv \
+            -i "$KEY_FILE" \
+            -p "$SSH_PORT" \
+            -o IdentityFile="$KEY_FILE" \
+            -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=accept-new \
+            -o BatchMode=yes \
+            "$SSH_USER@$SSH_HOST" \
+            "mkdir -p \"$REMOTE_DIR\" && echo ssh_ok"
+          tar -C dist -czf - . | ssh \
+            -vvv \
+            -i "$KEY_FILE" \
+            -p "$SSH_PORT" \
+            -o IdentityFile="$KEY_FILE" \
+            -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=accept-new \
+            -o BatchMode=yes \
+            "$SSH_USER@$SSH_HOST" \
+            "tar -xzf - -C \"$REMOTE_DIR\""
