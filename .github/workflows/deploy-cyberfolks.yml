@@ -33,13 +33,21 @@ jobs:
       - name: Build Astro
         run: npm run build
 
-      - name: Copy dist to CyberFolks
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.CYBERFOLKS_HOST }}
-          username: ${{ secrets.CYBERFOLKS_USER }}
-          key: ${{ secrets.CYBERFOLKS_SSH_KEY }}
-          port: ${{ secrets.CYBERFOLKS_PORT }}
-          source: dist/*
-          target: domains/orthomedica.lubin.pl/public_html
-          overwrite: true
+      - name: Upload dist via rsync (SSH)
+        env:
+          SSH_HOST: ${{ secrets.CYBERFOLKS_HOST }}
+          SSH_USER: ${{ secrets.CYBERFOLKS_USER }}
+          SSH_PORT: ${{ secrets.CYBERFOLKS_PORT }}
+          SSH_KEY: ${{ secrets.CYBERFOLKS_SSH_KEY }}
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "$SSH_PORT" "$SSH_HOST" >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/deploy_key -p $SSH_PORT -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new" \
+            dist/ \
+            "$SSH_USER@$SSH_HOST:domains/orthomedica.lubin.pl/public_html/"
