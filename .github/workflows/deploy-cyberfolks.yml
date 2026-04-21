@@ -33,7 +33,7 @@ jobs:
       - name: Build Astro
         run: npm run build
 
-      - name: Upload dist via rsync (SSH)
+      - name: Upload dist via scp (SSH)
         env:
           SSH_HOST: ${{ secrets.CYBERFOLKS_HOST }}
           SSH_USER: ${{ secrets.CYBERFOLKS_USER }}
@@ -47,7 +47,6 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -p "$SSH_PORT" "$SSH_HOST" >> ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
-          rsync -avz --delete \
-            -e "ssh -i ~/.ssh/deploy_key -p $SSH_PORT -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new" \
-            dist/ \
-            "$SSH_USER@$SSH_HOST:domains/orthomedica.lubin.pl/public_html/"
+          SSH_OPTS="-i ~/.ssh/deploy_key -p $SSH_PORT -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new -o BatchMode=yes"
+          ssh $SSH_OPTS "$SSH_USER@$SSH_HOST" "mkdir -p domains/orthomedica.lubin.pl/public_html"
+          scp $SSH_OPTS -r dist/* "$SSH_USER@$SSH_HOST:domains/orthomedica.lubin.pl/public_html/"
