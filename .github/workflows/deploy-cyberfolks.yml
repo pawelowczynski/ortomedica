@@ -33,7 +33,7 @@ jobs:
       - name: Build Astro
         run: npm run build
 
-      - name: Upload dist via scp (SSH)
+      - name: Upload dist via tar over SSH
         env:
           SSH_HOST: ${{ secrets.CYBERFOLKS_HOST }}
           SSH_USER: ${{ secrets.CYBERFOLKS_USER }}
@@ -52,21 +52,23 @@ jobs:
           path.write_text(key, encoding="utf-8")
           os.chmod(path, 0o600)
           PY
-          ssh-keyscan -p "$SSH_PORT" "$SSH_HOST" >> ~/.ssh/known_hosts
+          # Best-effort: keyscan can be flaky/non-fatal; SSH still uses StrictHostKeyChecking=accept-new
+          ssh-keyscan -p "$SSH_PORT" "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null || true
           chmod 644 ~/.ssh/known_hosts
-          ssh -vv \
+          REMOTE_DIR="domains/orthomedica.lubin.pl/public_html"
+          ssh \
             -i "$HOME/.ssh/deploy_key" \
             -p "$SSH_PORT" \
             -o IdentitiesOnly=yes \
             -o StrictHostKeyChecking=accept-new \
             -o BatchMode=yes \
             "$SSH_USER@$SSH_HOST" \
-            "mkdir -p domains/orthomedica.lubin.pl/public_html && echo ssh_ok"
-          scp -v \
+            "mkdir -p \"$REMOTE_DIR\""
+          tar -C dist -czf - . | ssh \
             -i "$HOME/.ssh/deploy_key" \
             -p "$SSH_PORT" \
             -o IdentitiesOnly=yes \
             -o StrictHostKeyChecking=accept-new \
             -o BatchMode=yes \
-            -r dist/* \
-            "$SSH_USER@$SSH_HOST:domains/orthomedica.lubin.pl/public_html/"
+            "$SSH_USER@$SSH_HOST" \
+            "tar -xzf - -C \"$REMOTE_DIR\""
