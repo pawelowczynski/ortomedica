@@ -43,10 +43,30 @@ jobs:
           set -euo pipefail
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
-          printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
-          chmod 600 ~/.ssh/deploy_key
+          python - <<'PY'
+          import os, pathlib
+          key = os.environ["SSH_KEY"]
+          path = pathlib.Path.home() / ".ssh" / "deploy_key"
+          # Normalize newlines (GitHub Secrets sometimes store CRLF)
+          key = key.replace("\r\n", "\n").replace("\r", "\n").rstrip("\n") + "\n"
+          path.write_text(key, encoding="utf-8")
+          os.chmod(path, 0o600)
+          PY
           ssh-keyscan -p "$SSH_PORT" "$SSH_HOST" >> ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
-          SSH_OPTS="-i ~/.ssh/deploy_key -p $SSH_PORT -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new -o BatchMode=yes"
-          ssh $SSH_OPTS "$SSH_USER@$SSH_HOST" "mkdir -p domains/orthomedica.lubin.pl/public_html"
-          scp $SSH_OPTS -r dist/* "$SSH_USER@$SSH_HOST:domains/orthomedica.lubin.pl/public_html/"
+          ssh -vv \
+            -i "$HOME/.ssh/deploy_key" \
+            -p "$SSH_PORT" \
+            -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=accept-new \
+            -o BatchMode=yes \
+            "$SSH_USER@$SSH_HOST" \
+            "mkdir -p domains/orthomedica.lubin.pl/public_html && echo ssh_ok"
+          scp -v \
+            -i "$HOME/.ssh/deploy_key" \
+            -p "$SSH_PORT" \
+            -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=accept-new \
+            -o BatchMode=yes \
+            -r dist/* \
+            "$SSH_USER@$SSH_HOST:domains/orthomedica.lubin.pl/public_html/"
