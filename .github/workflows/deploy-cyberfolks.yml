@@ -1,0 +1,45 @@
+name: Deploy to CyberFolks
+
+on:
+  push:
+    branches: [master, main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-cyberfolks
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build Astro
+        run: npm run build
+
+      - name: Copy dist to CyberFolks
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.CYBERFOLKS_HOST }}
+          username: ${{ secrets.CYBERFOLKS_USER }}
+          key: ${{ secrets.CYBERFOLKS_SSH_KEY }}
+          port: ${{ secrets.CYBERFOLKS_PORT }}
+          source: dist/*
+          target: domains/orthomedica.lubin.pl/public_html
+          overwrite: true
