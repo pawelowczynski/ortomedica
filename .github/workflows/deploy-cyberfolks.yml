@@ -34,6 +34,7 @@ jobs:
         run: npm run build
 
       - name: Upload dist via tar over SSH
+        shell: bash
         env:
           SSH_HOST: ${{ secrets.CYBERFOLKS_HOST }}
           SSH_USER: ${{ secrets.CYBERFOLKS_USER }}
@@ -41,8 +42,7 @@ jobs:
           SSH_KEY: ${{ secrets.CYBERFOLKS_SSH_KEY }}
         run: |
           set -euo pipefail
-          # GitHub-hosted runners often have an ssh-agent loaded with unrelated keys.
-          # Disable it so OpenSSH doesn't burn through "MaxAuthTries" before our deploy key.
+          # Runner ssh-agent can exhaust MaxAuthTries before our deploy key is tried.
           unset SSH_AUTH_SOCK
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
@@ -61,22 +61,22 @@ jobs:
           chmod 644 ~/.ssh/known_hosts
           REMOTE_DIR="domains/orthomedica.lubin.pl/public_html"
           ssh \
-            -vvv \
             -i "$KEY_FILE" \
             -p "$SSH_PORT" \
             -o IdentityFile="$KEY_FILE" \
             -o IdentitiesOnly=yes \
             -o StrictHostKeyChecking=accept-new \
             -o BatchMode=yes \
+            -o LogLevel=ERROR \
             "$SSH_USER@$SSH_HOST" \
-            "mkdir -p \"$REMOTE_DIR\" && echo ssh_ok"
+            "mkdir -p \"$REMOTE_DIR\""
           tar -C dist -czf - . | ssh \
-            -vvv \
             -i "$KEY_FILE" \
             -p "$SSH_PORT" \
             -o IdentityFile="$KEY_FILE" \
             -o IdentitiesOnly=yes \
             -o StrictHostKeyChecking=accept-new \
             -o BatchMode=yes \
+            -o LogLevel=ERROR \
             "$SSH_USER@$SSH_HOST" \
             "tar -xzf - -C \"$REMOTE_DIR\""
