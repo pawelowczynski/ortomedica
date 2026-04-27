@@ -79,13 +79,30 @@ if ($subjectKey === '' || !isset($allowedSubjects[$subjectKey])) {
 
 $subjectLabel = $allowedSubjects[$subjectKey];
 
-$to = getenv('CONTACT_MAIL_TO') ?: 'rejestracja@orthomedica-lubin.pl';
-$to = $stripNl($to);
-if (!filter_var($to, FILTER_VALIDATE_EMAIL)) {
+$toRaw = getenv('CONTACT_MAIL_TO') ?: 'rejestracja@orthomedica-lubin.pl,szpadel@gmail.com';
+$toRaw = $stripNl($toRaw);
+$toList = array_values(
+  array_filter(
+    array_map(
+      static fn($addr) => trim((string) $addr),
+      explode(',', $toRaw)
+    ),
+    static fn($addr) => $addr !== ''
+  )
+);
+foreach ($toList as $addr) {
+  if (!filter_var($addr, FILTER_VALIDATE_EMAIL)) {
+    http_response_code(500);
+    echo json_encode(['ok' => false, 'message' => 'Błąd konfiguracji serwera. Skontaktuj się telefonicznie.'], JSON_UNESCAPED_UNICODE);
+    exit;
+  }
+}
+if ($toList === []) {
   http_response_code(500);
   echo json_encode(['ok' => false, 'message' => 'Błąd konfiguracji serwera. Skontaktuj się telefonicznie.'], JSON_UNESCAPED_UNICODE);
   exit;
 }
+$to = implode(',', $toList);
 
 $mailSubject = '[ORTHOMEDICA WWW] ' . $subjectLabel;
 $bodyLines = [
@@ -104,7 +121,7 @@ $body = implode("\r\n", $bodyLines);
 $fromAddr = getenv('CONTACT_MAIL_FROM') ?: 'noreply@orthomedica.lubin.pl';
 $fromAddr = $stripNl($fromAddr);
 if (!filter_var($fromAddr, FILTER_VALIDATE_EMAIL)) {
-  $fromAddr = $to;
+  $fromAddr = $toList[0];
 }
 
 $headers = [
