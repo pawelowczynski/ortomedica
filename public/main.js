@@ -321,8 +321,13 @@ document.addEventListener('DOMContentLoaded', () => {
       formFeedback.classList.add('hidden');
 
       const botCheck = document.getElementById('bot_check');
-      if (botCheck && botCheck.value) {
-        console.warn('Wykryto bota.');
+      if (botCheck && botCheck.value.trim() !== '') {
+        botCheck.value = '';
+        formFeedback.innerHTML =
+          "<i data-lucide='alert-circle' class='inline w-4 h-4 mr-1 mb-0.5'></i> Automatyczne uzupełnienie (np. menedżer haseł) wypełniło pole antyspamowe — pole zostało wyczyszczone. Spróbuj wysłać ponownie.";
+        formFeedback.classList.remove('hidden');
+        formFeedback.classList.add('bg-amber-50', 'text-amber-800', 'border-amber-200');
+        refreshIcons();
         return;
       }
 
