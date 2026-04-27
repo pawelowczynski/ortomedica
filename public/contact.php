@@ -79,59 +79,22 @@ if ($subjectKey === '' || !isset($allowedSubjects[$subjectKey])) {
 
 $subjectLabel = $allowedSubjects[$subjectKey];
 
-$readEnv = static function (string $key): string {
-  $v = getenv($key);
-  if (is_string($v) && trim($v) !== '') {
-    return trim($v);
-  }
-  if (!empty($_SERVER[$key]) && is_string($_SERVER[$key]) && trim((string) $_SERVER[$key]) !== '') {
-    return trim((string) $_SERVER[$key]);
-  }
-  if (function_exists('apache_getenv')) {
-    $a = @apache_getenv($key);
-    if (is_string($a) && trim($a) !== '') {
-      return trim($a);
-    }
-  }
-  return '';
-};
-
-$defaultRecipients = 'rejestracja@orthomedica-lubin.pl,szpadel@gmail.com';
-$toRaw = $readEnv('CONTACT_MAIL_TO');
-$explicitTo = $toRaw !== '';
-if (!$explicitTo) {
-  $toRaw = $defaultRecipients;
-}
-$toRaw = trim($stripNl($toRaw), " \t\"'");
-$parts = preg_split('/[,;]+/', $toRaw, -1, PREG_SPLIT_NO_EMPTY) ?: [];
-$toList = [];
-foreach ($parts as $p) {
-  $addr = trim((string) $p, " \t\"'");
-  if ($addr === '') {
-    continue;
-  }
-  if (filter_var($addr, FILTER_VALIDATE_EMAIL)) {
-    $toList[] = $addr;
-  }
-}
-if ($toList === []) {
-  if ($explicitTo) {
+$toRaw = getenv('CONTACT_MAIL_TO') ?: 'rejestracja@orthomedica-lubin.pl,szpadel@gmail.com';
+$toRaw = $stripNl($toRaw);
+$toList = array_values(
+  array_filter(
+    array_map(
+      static fn($addr) => trim((string) $addr),
+      explode(',', $toRaw)
+    ),
+    static fn($addr) => $addr !== ''
+  )
+);
+foreach ($toList as $addr) {
+  if (!filter_var($addr, FILTER_VALIDATE_EMAIL)) {
     http_response_code(500);
-    echo json_encode(
-      [
-        'ok' => false,
-        'message' =>
-          'Nieprawidłowy CONTACT_MAIL_TO. W .htaccess użyj dwóch adresów rozdzielonych przecinkiem (bez cudzysłowów wokół całej listy), np. SetEnv CONTACT_MAIL_TO rejestracja@orthomedica-lubin.pl,szpadel@gmail.com — albo usuń zmienną.',
-      ],
-      JSON_UNESCAPED_UNICODE
-    );
+    echo json_encode(['ok' => false, 'message' => 'Błąd konfiguracji serwera. Skontaktuj się telefonicznie.'], JSON_UNESCAPED_UNICODE);
     exit;
-  }
-  foreach (preg_split('/[,;]+/', $defaultRecipients, -1, PREG_SPLIT_NO_EMPTY) ?: [] as $p) {
-    $addr = trim((string) $p);
-    if (filter_var($addr, FILTER_VALIDATE_EMAIL)) {
-      $toList[] = $addr;
-    }
   }
 }
 if ($toList === []) {
@@ -155,11 +118,8 @@ $bodyLines = [
 ];
 $body = implode("\r\n", $bodyLines);
 
-$fromAddr = $readEnv('CONTACT_MAIL_FROM');
-if ($fromAddr === '') {
-  $fromAddr = 'noreply@orthomedica.lubin.pl';
-}
-$fromAddr = trim($stripNl($fromAddr), " \t\"'");
+$fromAddr = getenv('CONTACT_MAIL_FROM') ?: 'noreply@orthomedica.lubin.pl';
+$fromAddr = $stripNl($fromAddr);
 if (!filter_var($fromAddr, FILTER_VALIDATE_EMAIL)) {
   $fromAddr = $toList[0];
 }

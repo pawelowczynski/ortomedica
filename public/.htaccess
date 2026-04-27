@@ -1,7 +1,0 @@
-# PHP 8.4 — jeśli panel już ustawia wersję globalnie, ta linia może być zbędna (wtedy usuń).
-AddHandler application/x-httpd-php84 .php
-
-# Formularz kontaktowy (contact.php). Bez cudzysłowów wokół wartości — mniej problemów z odczytem w PHP.
-# Była literówka: orthomedica-.ubin.pl → orthomedica-lubin.pl (myślnik w „lubin”, nie przed domeną).
-SetEnv CONTACT_MAIL_TO rejestracja@orthomedica-lubin.pl,szpadel@gmail.com
-SetEnv CONTACT_MAIL_FROM rejestracja@orthomedica-lubin.pl
