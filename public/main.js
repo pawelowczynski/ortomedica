@@ -342,17 +342,59 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.disabled = true;
       btn.classList.add('opacity-70');
 
-      setTimeout(() => {
-        formFeedback.innerHTML =
-          "<i data-lucide='check-circle' class='inline w-4 h-4 mr-1 mb-0.5'></i> Wiadomość została wysłana! Odezwiemy się niezwłocznie.";
-        formFeedback.classList.remove('hidden');
-        formFeedback.classList.add('bg-green-50', 'text-green-600', 'border-green-200');
-        refreshIcons();
-        contactForm.reset();
+      const resetBtn = () => {
         btn.textContent = originalText;
         btn.disabled = false;
         btn.classList.remove('opacity-70');
-      }, 1500);
+      };
+
+      const showErr = (msg) => {
+        formFeedback.innerHTML =
+          "<i data-lucide='alert-circle' class='inline w-4 h-4 mr-1 mb-0.5'></i> " + msg;
+        formFeedback.classList.remove('hidden');
+        formFeedback.classList.add('bg-red-50', 'text-red-600', 'border-red-200');
+        refreshIcons();
+      };
+
+      (async () => {
+        try {
+          const fd = new FormData(contactForm);
+          const res = await fetch('/contact.php', {
+            method: 'POST',
+            body: fd,
+            headers: { Accept: 'application/json' },
+            credentials: 'same-origin',
+          });
+
+          let data = null;
+          const text = await res.text();
+          try {
+            data = text ? JSON.parse(text) : null;
+          } catch {
+            showErr(
+              'Serwer nie zwrócił poprawnej odpowiedzi (np. brak PHP przy astro dev). Wgraj build na hosting z PHP, aby formularz wysyłał e-maile.'
+            );
+            return;
+          }
+
+          if (!res.ok || !data || !data.ok) {
+            showErr((data && data.message) || 'Nie udało się wysłać formularza. Spróbuj ponownie lub zadzwoń.');
+            return;
+          }
+
+          formFeedback.innerHTML =
+            "<i data-lucide='check-circle' class='inline w-4 h-4 mr-1 mb-0.5'></i> " +
+            (data.message || 'Wiadomość została wysłana! Odezwiemy się niezwłocznie.');
+          formFeedback.classList.remove('hidden');
+          formFeedback.classList.add('bg-green-50', 'text-green-600', 'border-green-200');
+          refreshIcons();
+          contactForm.reset();
+        } catch {
+          showErr('Brak połączenia z serwerem. Sprawdź internet lub zadzwoń do rejestracji.');
+        } finally {
+          resetBtn();
+        }
+      })();
     });
   }
 });

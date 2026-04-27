@@ -41,3 +41,23 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## Steam macOS compatibility research script
+
+This repository now includes a Python helper script to estimate macOS support for Top Steam games:
+
+```sh
+python ./scripts/steam-macos-compatibility.py --limit 500 --delay 1.0 --output steam_top500_macos.csv
+```
+
+What it does:
+- Downloads SteamSpy `all` dataset and selects Top N games by current CCU.
+- Calls Steam Store API (`appdetails`) for each AppID.
+- Saves CSV with AppID, names, CCU, macOS support flag, and request status.
+
+Useful options:
+- `--limit 500` Number of games to analyze.
+- `--delay 1.0` Delay between Store API calls (seconds).
+- `--timeout 20` Per-request timeout.
+- `--retries 3` Retry count for failed calls.
+- `--output steam_top500_macos.csv` Output CSV path.

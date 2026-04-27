@@ -1,0 +1,501 @@
+rank,appid,steamspy_name,store_name,ccu,mac_supported,status
+1,730,Counter-Strike: Global Offensive,Counter-Strike 2,1013936,False,ok
+2,578080,PUBG: BATTLEGROUNDS,PUBG: BATTLEGROUNDS,314682,False,ok
+3,2622380,ELDEN RING NIGHTREIGN,ELDEN RING NIGHTREIGN,163599,False,ok
+4,252490,Rust,Rust,143870,True,ok
+5,1172470,Apex Legends,Apex Legends™,124262,False,ok
+6,431960,Wallpaper Engine,Wallpaper Engine,91184,False,ok
+7,271590,Grand Theft Auto V Legacy,Grand Theft Auto V Legacy,67851,False,ok
+8,1938090,Call of Duty: Modern Warfare II,Call of Duty®,67419,False,ok
+9,1203220,NARAKA: BLADEPOINT,NARAKA: BLADEPOINT,66954,False,ok
+10,1086940,Baldur's Gate 3,Baldur's Gate 3,54771,True,ok
+11,553850,HELLDIVERS 2,HELLDIVERS™ 2,53399,False,ok
+12,359550,Tom Clancy's Rainbow Six Siege,Tom Clancy's Rainbow Six Siege,51847,False,ok
+13,413150,Stardew Valley,Stardew Valley,50662,True,ok
+14,236390,War Thunder,War Thunder,50478,True,ok
+15,381210,Dead by Daylight,Dead by Daylight,44886,False,ok
+16,440,Team Fortress 2,Team Fortress 2,43819,False,ok
+17,2669320,EA SPORTS FC 25,EA SPORTS FC™ 25,42032,False,ok
+18,1366800,Crosshair X,Crosshair X,41428,False,ok
+19,3240220,Grand Theft Auto V Enhanced,Grand Theft Auto V Enhanced,39502,False,ok
+20,221100,DayZ,DayZ,37066,False,ok
+21,230410,Warframe,Warframe,36195,False,ok
+22,438100,VRChat,VRChat,34699,False,ok
+23,3241660,R.E.P.O.,R.E.P.O.,32349,False,ok
+24,394360,Hearts of Iron IV,Hearts of Iron IV,32112,True,ok
+25,322330,Don't Starve Together,Don't Starve Together,30542,True,ok
+26,1174180,Red Dead Redemption 2,Red Dead Redemption 2,29885,False,ok
+27,1245620,ELDEN RING,ELDEN RING,29529,False,ok
+28,1903340,Clair Obscur: Expedition 33,Clair Obscur: Expedition 33,27880,False,ok
+29,322170,Geometry Dash,Geometry Dash,27850,True,ok
+30,218620,PAYDAY 2,PAYDAY 2,27254,False,ok
+31,289070,Sid Meier’s Civilization VI,Sid Meier’s Civilization® VI,25420,True,ok
+32,1222670,The Sims 4,The Sims™ 4,25276,False,ok
+33,550,Left 4 Dead 2,Left 4 Dead 2,25122,False,ok
+34,489830,The Elder Scrolls V: Skyrim Special Edition,The Elder Scrolls V: Skyrim Special Edition,25085,False,ok
+35,1085660,Destiny 2,Destiny 2,24619,False,ok
+36,105600,Terraria,Terraria,24580,True,ok
+37,108600,Project Zomboid,Project Zomboid,22864,True,ok
+38,3164500,Schedule I,Schedule I,22757,False,ok
+39,1091500,Cyberpunk 2077,Cyberpunk 2077,22265,True,ok
+40,346110,ARK: Survival Evolved,ARK: Survival Evolved,22170,True,ok
+41,252950,Rocket League,Rocket League®,21106,False,ok
+42,39210,FINAL FANTASY XIV Online,FINAL FANTASY XIV Online,19824,False,ok
+43,294100,RimWorld,RimWorld,19211,True,ok
+44,4000,Garry's Mod,Garry's Mod,18400,True,ok
+45,1623730,Palworld,Palworld,18028,False,ok
+46,1599340,Lost Ark,Lost Ark,17355,False,ok
+47,227300,Euro Truck Simulator 2,Euro Truck Simulator 2,17281,True,ok
+48,2379780,Balatro,Balatro,17123,True,ok
+49,251570,7 Days to Die,7 Days to Die,17045,True,ok
+50,1142710,Total War: WARHAMMER III,Total War: WARHAMMER III,16842,True,ok
+51,2694490,Path of Exile 2,Path of Exile 2,16727,False,ok
+52,427520,Factorio,Factorio,16426,True,ok
+53,306130,The Elder Scrolls Online,The Elder Scrolls® Online,15987,True,ok
+54,292030,The Witcher 3: Wild Hunt,The Witcher 3: Wild Hunt,15893,False,ok
+55,284160,BeamNG.drive,BeamNG.drive,15863,False,ok
+56,629520,Soundpad,Soundpad,15279,False,ok
+57,646570,Slay the Spire,Slay the Spire,15038,True,ok
+58,2358720,Black Myth: Wukong,Black Myth: Wukong,15004,False,ok
+59,766570,Russian Fishing 4,Russian Fishing 4,14950,False,ok
+60,1364780,Street Fighter 6,Street Fighter™ 6,14920,False,ok
+61,250900,The Binding of Isaac: Rebirth,The Binding of Isaac: Rebirth,14904,True,ok
+62,261550,Mount & Blade II: Bannerlord,Mount & Blade II: Bannerlord,14477,False,ok
+63,892970,Valheim,Valheim,14439,True,ok
+64,2623190,The Elder Scrolls IV: Oblivion Remastered,The Elder Scrolls IV: Oblivion Remastered,14420,False,ok
+65,582660,Black Desert,Black Desert,14345,False,ok
+66,1158310,Crusader Kings III,Crusader Kings III,14302,True,ok
+67,291550,Brawlhalla,Brawlhalla,14169,True,ok
+68,281990,Stellaris,Stellaris,13727,True,ok
+69,813780,Age of Empires II: Definitive Edition,Age of Empires II: Definitive Edition,13465,False,ok
+70,1665460,eFootball,eFootball™,13404,False,ok
+71,526870,Satisfactory,Satisfactory,12596,False,ok
+72,2246340,Monster Hunter Wilds,Monster Hunter Wilds,12494,False,ok
+73,236850,Europa Universalis IV,Europa Universalis IV,12445,True,ok
+74,1049590,Eternal Return,Eternal Return,12341,False,ok
+75,275850,No Man's Sky,No Man's Sky,12291,True,ok
+76,8930,Sid Meier's Civilization V,Sid Meier's Civilization® V,12206,True,ok
+77,2399830,ARK: Survival Ascended,ARK: Survival Ascended,12007,False,ok
+78,582010,Monster Hunter: World,Monster Hunter: World,11923,False,ok
+79,377160,Fallout 4,Fallout 4,11179,False,ok
+80,1476970,Legends of IdleOn - Idle MMO,IdleOn,11081,False,ok
+81,1604030,V Rising,V Rising,10961,False,ok
+82,1203620,Enshrouded,Enshrouded,10654,False,ok
+83,304930,Unturned,Unturned,10408,True,ok
+84,1551360,Forza Horizon 5,Forza Horizon 5,10009,False,ok
+85,739630,Phasmophobia,Phasmophobia,9978,False,ok
+86,365670,Blender,Blender,9640,True,ok
+87,1454400,Cookie Clicker,Cookie Clicker,9583,True,ok
+88,1237950,STAR WARS Battlefront II,STAR WARS™ Battlefront™ II,9213,False,ok
+89,393380,Squad,Squad,9116,False,ok
+90,244210,Assetto Corsa,Assetto Corsa,8961,False,ok
+91,255710,Cities: Skylines,Cities: Skylines,8842,True,ok
+92,2344520,Diablo IV,Diablo® IV,8835,False,ok
+93,1151340,Fallout 76,Fallout 76,8796,False,ok
+94,49520,Borderlands 2,Borderlands 2,8551,True,ok
+95,513710,SCUM,SCUM,8535,False,ok
+96,552990,World of Warships,World of Warships,8518,False,ok
+97,761890,Albion Online,Albion Online,8184,True,ok
+98,216150,MapleStory,MapleStory,8092,False,ok
+99,632360,Risk of Rain 2,Risk of Rain 2,7902,False,ok
+100,457140,Oxygen Not Included,Oxygen Not Included,7545,True,ok
+101,2479810,Gray Zone Warfare,Gray Zone Warfare,7543,False,ok
+102,960090,Bloons TD 6,Bloons TD 6,7489,True,ok
+103,1284190,The Planet Crafter,The Planet Crafter,7330,False,ok
+104,10,Counter-Strike,Counter-Strike,7323,True,ok
+105,1361210,"Warhammer 40,000: Darktide","Warhammer 40,000: Darktide",7267,False,ok
+106,107410,Arma 3,Arma 3,7181,True,ok
+107,1466860,Age of Empires IV: Anniversary Edition,Age of Empires IV: Anniversary Edition,7084,False,ok
+108,1771300,Kingdom Come: Deliverance II,Kingdom Come: Deliverance II,7073,False,ok
+109,2183900,"Warhammer 40,000: Space Marine 2","Warhammer 40,000: Space Marine 2",6851,False,ok
+110,814380,Sekiro: Shadows Die Twice - GOTY Edition,Sekiro™: Shadows Die Twice - GOTY Edition,6767,False,ok
+111,270880,American Truck Simulator,American Truck Simulator,6742,True,ok
+112,1286830,STAR WARS: The Old Republic,STAR WARS™: The Old Republic™,6625,False,ok
+113,1942280,Brotato,Brotato,6389,True,ok
+114,1238810,Battlefield V,Battlefield™ V,6327,False,ok
+115,1238840,Battlefield 1,Battlefield™ 1,6308,False,ok
+116,594650,Hunt: Showdown 1896,Hunt: Showdown 1896,6300,False,ok
+117,1966720,Lethal Company,Lethal Company,6199,False,ok
+118,240,Counter-Strike: Source,Counter-Strike: Source,6187,False,ok
+119,899770,Last Epoch,Last Epoch,5831,False,ok
+120,990080,Hogwarts Legacy,Hogwarts Legacy,5716,False,ok
+121,444200,World of Tanks Blitz,World of Tanks Blitz,5707,True,ok
+122,440900,Conan Exiles,Conan Exiles,5677,False,ok
+123,993090,Lossless Scaling,Lossless Scaling,5667,False,ok
+124,1063730,New World: Aeternum,New World: Aeternum,5583,False,ok
+125,2001120,Split Fiction,Split Fiction,5476,False,ok
+126,1172620,Sea of Thieves: 2026 Edition,Sea of Thieves: 2026 Edition,5437,False,ok
+127,1248130,Farming Simulator 22,Farming Simulator 22,5419,True,ok
+128,311210,Call of Duty: Black Ops III,Call of Duty®: Black Ops III,5414,True,ok
+129,233860,Kenshi,Kenshi,5412,False,ok
+130,949230,Cities: Skylines II,Cities: Skylines II,5392,False,ok
+131,548430,Deep Rock Galactic,Deep Rock Galactic,5216,False,ok
+132,2195250,EA SPORTS FC 24,EA SPORTS FC™ 24,5110,False,ok
+133,286160,Tabletop Simulator,Tabletop Simulator,5021,True,ok
+134,1426210,It Takes Two,It Takes Two,5018,False,ok
+135,1687950,Persona 5 Royal,Persona 5 Royal,4994,False,ok
+136,239140,Dying Light,Dying Light,4953,True,ok
+137,367520,Hollow Knight,Hollow Knight,4912,True,ok
+138,1293830,Forza Horizon 4,Forza Horizon 4,4864,False,ok
+139,359320,Elite Dangerous,Elite Dangerous,4845,False,ok
+140,544810,KARDS - The WWII Card Game,KARDS - The WW2 Card Game,4796,False,ok
+141,2709570,Supermarket Together,Supermarket Together,4704,False,ok
+142,648800,Raft,Raft,4701,False,ok
+143,700330,SCP: Secret Laboratory,SCP: Secret Laboratory,4696,False,ok
+144,238960,Path of Exile,Path of Exile,4694,True,ok
+145,529340,Victoria 3,Victoria 3,4609,True,ok
+146,431730,Aseprite,Aseprite,4541,True,ok
+147,232090,Killing Floor 2,Killing Floor 2,4508,False,ok
+148,779340,Total War: THREE KINGDOMS,Total War: THREE KINGDOMS,4507,True,ok
+149,1118200,People Playground,People Playground,4505,False,ok
+150,1326470,Sons Of The Forest,Sons Of The Forest,4450,False,ok
+151,1778820,TEKKEN 8,TEKKEN 8,4409,False,ok
+152,374320,DARK SOULS III,DARK SOULS™ III,4381,False,ok
+153,1144200,Ready or Not,Ready or Not,4296,False,ok
+154,534380,Dying Light 2 Stay Human: Reloaded Edition,Dying Light 2 Stay Human: Reloaded Edition,4223,False,ok
+155,244850,Space Engineers,Space Engineers,4201,False,ok
+156,1904540,Football Manager 2023,Football Manager 2023,4178,True,ok
+157,1468810,鬼谷八荒 Tale of Immortal,鬼谷八荒 Tale of Immortal,4116,False,ok
+158,214950,Total War: ROME II - Emperor Edition,Total War: ROME II - Emperor Edition,3901,True,ok
+159,22380,Fallout: New Vegas,,3892,,not_available
+160,262060,Darkest Dungeon,Darkest Dungeon®,3848,True,ok
+161,945360,Among Us,Among Us,3832,False,ok
+162,2050650,Resident Evil 4,Resident Evil 4,3748,False,ok
+163,1304930,The Outlast Trials,The Outlast Trials,3743,False,ok
+164,1716740,Starfield,Starfield,3725,False,ok
+165,8500,EVE Online,EVE Online,3705,True,ok
+166,1621690,Core Keeper,Core Keeper,3688,False,ok
+167,1446780,MONSTER HUNTER RISE,MONSTER HUNTER RISE,3658,False,ok
+168,2186680,"Warhammer 40,000: Rogue Trader","Warhammer 40,000: Rogue Trader",3582,True,ok
+169,435150,Divinity: Original Sin 2 - Definitive Edition,Divinity: Original Sin 2 - Definitive Edition,3510,True,ok
+170,686810,Hell Let Loose,Hell Let Loose,3380,False,ok
+171,1868140,DAVE THE DIVER,DAVE THE DIVER,3367,True,ok
+172,976730,Halo: The Master Chief Collection,Halo: The Master Chief Collection,3362,False,ok
+173,391540,Undertale,Undertale,3331,True,ok
+174,1284210,Guild Wars 2,Guild Wars 2®,3277,False,ok
+175,1250410,Microsoft Flight Simulator (2020) 40th Anniversary Edition,Microsoft Flight Simulator (2020) 40th Anniversary Edition,3245,False,ok
+176,2622000,Astral Party,Astral Party,3227,False,ok
+177,397540,Borderlands 3,Borderlands 3,3164,False,ok
+178,268500,XCOM 2,XCOM® 2,3123,True,ok
+179,1229490,ULTRAKILL,ULTRAKILL,3122,False,ok
+180,1260320,Party Animals,Party Animals,3070,False,ok
+181,48700,Mount & Blade: Warband,Mount & Blade: Warband,3055,True,ok
+182,627690,Idle Champions of the Forgotten Realms,Idle Champions of the Forgotten Realms,3034,True,ok
+183,933110,Age of Empires III: Definitive Edition,Age of Empires III: Definitive Edition,3016,False,ok
+184,1794680,Vampire Survivors,Vampire Survivors,2966,True,ok
+185,1677740,Stumble Guys,Stumble Guys,2928,False,ok
+186,1782210,Crab Game,Crab Game,2921,True,ok
+187,242760,The Forest,The Forest,2892,False,ok
+188,570940,DARK SOULS: REMASTERED,DARK SOULS™: REMASTERED,2879,False,ok
+189,32470,STAR WARS Empire at War - Gold Pack,STAR WARS™ Empire at War - Gold Pack,2818,False,ok
+190,4700,Total War: MEDIEVAL II – Definitive Edition,Total War: MEDIEVAL II – Definitive Edition,2814,True,ok
+191,380600,Fishing Planet,Fishing Planet,2781,True,ok
+192,1517290,Battlefield 2042,Battlefield™ 2042,2774,False,ok
+193,644930,They Are Billions,They Are Billions,2751,False,ok
+194,264710,Subnautica,Subnautica,2719,True,ok
+195,1366540,Dyson Sphere Program,Dyson Sphere Program,2703,False,ok
+196,412220,DDraceNetwork,DDNet,2679,True,ok
+197,3590,Plants vs. Zombies GOTY Edition,Plants vs. Zombies GOTY Edition,2656,True,ok
+198,1659040,HITMAN World of Assassination,HITMAN World of Assassination,2637,True,ok
+199,812140,Assassin's Creed Odyssey,Assassin's Creed® Odyssey,2629,False,ok
+200,305620,The Long Dark,The Long Dark,2575,True,ok
+201,588650,Dead Cells,Dead Cells,2559,True,ok
+202,1290000,PowerWash Simulator,PowerWash Simulator,2547,False,ok
+203,379430,Kingdom Come: Deliverance,Kingdom Come: Deliverance,2520,False,ok
+204,703080,Planet Zoo,Planet Zoo,2497,False,ok
+205,1343400,RuneScape,RuneScape ®,2496,True,ok
+206,2670630,Supermarket Simulator,Supermarket Simulator,2464,True,ok
+207,1384160,GUILTY GEAR -STRIVE-,GUILTY GEAR -STRIVE-,2463,False,ok
+208,1328670,Mass Effect Legendary Edition,Mass Effect™ Legendary Edition,2420,False,ok
+209,1643320,S.T.A.L.K.E.R. 2: Heart of Chornobyl,S.T.A.L.K.E.R. 2: Heart of Chornobyl,2403,False,ok
+210,962130,Grounded,Grounded,2394,False,ok
+211,219990,Grim Dawn,Grim Dawn,2376,False,ok
+212,602960,Barotrauma,Barotrauma,2371,True,ok
+213,1774580,STAR WARS Jedi: Survivor,STAR WARS Jedi: Survivor™,2353,False,ok
+214,1222140,Detroit: Become Human,Detroit: Become Human,2344,False,ok
+215,231430,Company of Heroes 2,Company of Heroes 2,2330,True,ok
+216,221380,Age of Empires II (Retired),Age of Empires II (Retired),2278,False,ok
+217,1240440,Halo Infinite,Halo Infinite,2275,False,ok
+218,782330,DOOM Eternal,DOOM Eternal,2262,False,ok
+219,1145360,Hades,Hades,2253,True,ok
+220,601150,Devil May Cry 5,Devil May Cry 5,2248,False,ok
+221,386180,Crossout,Crossout,2231,False,ok
+222,518790,theHunter: Call of the Wild,theHunter: Call of the Wild™,2207,False,ok
+223,1404210,Red Dead Online,Red Dead Online,2207,False,ok
+224,1128810,RISK: Global Domination,RISK: Global Domination,2153,True,ok
+225,304390,FOR HONOR,FOR HONOR™,2146,False,ok
+226,392160,X4: Foundations,X4: Foundations,2141,False,ok
+227,552500,Warhammer: Vermintide 2,Warhammer: Vermintide 2,2124,False,ok
+228,12210,Grand Theft Auto IV: The Complete Edition,Grand Theft Auto IV: The Complete Edition,2122,False,ok
+229,728880,Overcooked! 2,Overcooked! 2,2107,True,ok
+230,268910,Cuphead,Cuphead,2080,True,ok
+231,10500,Total War: EMPIRE – Definitive Edition,Total War: EMPIRE – Definitive Edition,2028,True,ok
+232,2215430,Ghost of Tsushima DIRECTOR'S CUT,Ghost of Tsushima DIRECTOR'S CUT,2025,False,ok
+233,363970,Clicker Heroes,Clicker Heroes,2019,True,ok
+234,881100,Noita,Noita,2019,False,ok
+235,1167630,Teardown,Teardown,1984,False,ok
+236,1363080,Manor Lords,Manor Lords,1977,False,ok
+237,620,Portal 2,Portal 2,1959,False,ok
+238,1184370,Pathfinder: Wrath of the Righteous - Enhanced Edition,Pathfinder: Wrath of the Righteous - Enhanced Edition,1874,True,ok
+239,977950,A Dance of Fire and Ice,A Dance of Fire and Ice,1870,True,ok
+240,601510,Yu-Gi-Oh! Duel Links,Yu-Gi-Oh! Duel Links,1856,False,ok
+241,386360,SMITE,SMITE®,1853,False,ok
+242,220200,Kerbal Space Program,Kerbal Space Program,1844,True,ok
+243,1145350,Hades II,Hades II,1838,True,ok
+244,581320,Insurgency: Sandstorm,Insurgency: Sandstorm,1826,False,ok
+245,961200,Predecessor,Predecessor,1816,False,ok
+246,34330,Total War: SHOGUN 2,Total War: SHOGUN 2,1807,True,ok
+247,1943950,Escape the Backrooms,Escape the Backrooms,1756,False,ok
+248,1569040,Football Manager 2022,Football Manager 2022,1742,True,ok
+249,323190,Frostpunk,Frostpunk,1699,True,ok
+250,699130,World War Z,World War Z,1663,False,ok
+251,3070070,TCG Card Shop Simulator,TCG Card Shop Simulator,1661,False,ok
+252,635260,CarX Drift Racing Online,CarX Drift Racing Online,1658,False,ok
+253,815370,Green Hell,Green Hell,1656,False,ok
+254,335300,DARK SOULS II: Scholar of the First Sin,DARK SOULS™ II: Scholar of the First Sin,1612,False,ok
+255,582160,Assassin's Creed Origins,Assassin's Creed® Origins,1604,False,ok
+256,1850570,DEATH STRANDING DIRECTOR'S CUT,DEATH STRANDING DIRECTOR'S CUT,1604,False,ok
+257,1259420,Days Gone,Days Gone,1600,False,ok
+258,2322010,God of War Ragnarök,God of War Ragnarök,1591,False,ok
+259,379720,DOOM,DOOM,1590,False,ok
+260,208650,Batman: Arkham Knight,Batman™: Arkham Knight,1587,False,ok
+261,1282100,REMNANT II,REMNANT II®,1573,False,ok
+262,212680,FTL: Faster Than Light,FTL: Faster Than Light,1566,True,ok
+263,1824220,Chivalry 2,Chivalry 2,1565,False,ok
+264,220,Half-Life 2,Half-Life 2,1555,False,ok
+265,1029690,Sniper Elite 5,Sniper Elite 5,1538,False,ok
+266,1313140,Cult of the Lamb,Cult of the Lamb,1535,True,ok
+267,568220,Lobotomy Corporation | Monster Management Simulation,Lobotomy Corporation | Monster Management Simulation,1524,False,ok
+268,471710,Rec Room,Rec Room,1510,False,ok
+269,246620,Plague Inc: Evolved,Plague Inc: Evolved,1494,True,ok
+270,805550,Assetto Corsa Competizione,Assetto Corsa Competizione,1479,False,ok
+271,219740,Don't Starve,Don't Starve,1472,True,ok
+272,594570,Total War: WARHAMMER II,Total War: WARHAMMER II,1464,True,ok
+273,72850,The Elder Scrolls V: Skyrim,The Elder Scrolls V: Skyrim,1463,False,ok
+274,637090,BATTLETECH,BATTLETECH,1446,True,ok
+275,460930,Tom Clancy's Ghost Recon Wildlands,Tom Clancy's Ghost Recon® Wildlands,1441,False,ok
+276,1217060,Gunfire Reborn,Gunfire Reborn,1428,False,ok
+277,325610,Total War: ATTILA,Total War: ATTILA,1422,False,ok
+278,389430,Knight Online,Knight Online,1421,False,ok
+279,356190,Middle-earth: Shadow of War,Middle-earth™: Shadow of War™,1405,False,ok
+280,1056640,Phantasy Star Online 2,Phantasy Star Online 2 New Genesis,1400,False,ok
+281,438040,Shakes and Fidget,Shakes and Fidget,1389,True,ok
+282,1222680,Need for Speed Heat,Need for Speed™ Heat,1385,False,ok
+283,3910,Sid Meier's Civilization III Complete,Sid Meier's Civilization® III Complete,1383,False,ok
+284,1593500,God of War,God of War,1380,False,ok
+285,203770,Crusader Kings II,Crusader Kings II,1373,True,ok
+286,1129580,Medieval Dynasty,Medieval Dynasty,1366,False,ok
+287,1172380,STAR WARS Jedi: Fallen Order,STAR WARS Jedi: Fallen Order™,1354,False,ok
+288,1190000,Car Mechanic Simulator 2021,Car Mechanic Simulator 2021,1343,False,ok
+289,287700,METAL GEAR SOLID V: THE PHANTOM PAIN,METAL GEAR SOLID V: THE PHANTOM PAIN,1333,False,ok
+290,1506830,FIFA 22,FIFA 22,1319,False,ok
+291,613100,House Flipper,House Flipper,1311,True,ok
+292,701160,Kingdom Two Crowns,Kingdom Two Crowns,1305,True,ok
+293,1092790,Inscryption,Inscryption,1301,True,ok
+294,508440,Totally Accurate Battle Simulator,Totally Accurate Battle Simulator,1299,True,ok
+295,552520,Far Cry 5,Far Cry® 5,1297,False,ok
+296,924970,Back 4 Blood,Back 4 Blood,1288,False,ok
+297,1196590,Resident Evil Village,Resident Evil Village,1284,False,ok
+298,335240,Transformice,Transformice,1284,True,ok
+299,495420,State of Decay 2: Juggernaut Edition,State of Decay 2: Juggernaut Edition,1281,False,ok
+300,1811260,EA SPORTS FIFA 23,EA SPORTS™ FIFA 23,1280,False,ok
+301,767560,War Robots,War Robots,1280,False,ok
+302,47890,The Sims 3,The Sims™ 3,1264,False,ok
+303,2680010,The First Berserker: Khazan,The First Berserker: Khazan,1253,False,ok
+304,297000,Heroes of Might & Magic III - HD Edition,Heroes® of Might & Magic® III - HD Edition,1213,False,ok
+305,286690,Metro 2033 Redux,Metro 2033 Redux,1208,True,ok
+306,1147560,Skul: The Hero Slayer,Skul: The Hero Slayer,1205,True,ok
+307,1817070,Marvel’s Spider-Man Remastered,Marvel’s Spider-Man Remastered,1190,False,ok
+308,504230,Celeste,Celeste,1174,True,ok
+309,1237970,Titanfall 2,Titanfall® 2,1173,False,ok
+310,311690,Enter the Gungeon,Enter the Gungeon,1165,False,ok
+311,466560,Northgard: Definitive Edition,Northgard: Definitive Edition,1164,True,ok
+312,22330,The Elder Scrolls IV: Oblivion Game of the Year Edition (2009),The Elder Scrolls IV: Oblivion® Game of the Year Edition (2009),1156,False,ok
+313,2567870,Chained Together,Chained Together,1154,False,ok
+314,1238860,Battlefield 4,Battlefield 4™,1153,False,ok
+315,883710,Resident Evil 2,Resident Evil 2,1123,False,ok
+316,1263850,Football Manager 2021,Football Manager 2021,1122,True,ok
+317,453480,Shadowverse CCG,Shadowverse CCG,1122,True,ok
+318,346900,AdVenture Capitalist,AdVenture Capitalist,1109,True,ok
+319,880940,Pummel Party,Pummel Party,1096,False,ok
+320,9900,Star Trek Online,Star Trek Online,1057,False,ok
+321,436150,Governor of Poker 3,Governor of Poker 3,1053,True,ok
+322,1343370,Old School RuneScape,Old School RuneScape,1050,True,ok
+323,1840,Source Filmmaker,Source Filmmaker,1047,False,ok
+324,444090,Paladins,Paladins®,1028,False,ok
+325,976310,Mortal Kombat 11,Mortal Kombat 11,1026,False,ok
+326,1100600,Football Manager 2020,Football Manager 2020,1012,True,ok
+327,1888160,ARMORED CORE VI FIRES OF RUBICON,ARMORED CORE™ VI FIRES OF RUBICON™,1011,False,ok
+328,433850,Z1 Battle Royale,Z1 Battle Royale,1010,False,ok
+329,1046930,Dota Underlords,Dota Underlords,1008,True,ok
+330,588430,Fallout Shelter,Fallout Shelter,1001,False,ok
+331,881020,Granblue Fantasy: Relink,Granblue Fantasy: Relink,996,False,ok
+332,1044720,Farthest Frontier,Farthest Frontier,995,False,ok
+333,838350,The Scroll Of Taiwu,The Scroll Of Taiwu,989,False,ok
+334,361420,ASTRONEER,ASTRONEER,988,False,ok
+335,787860,Farming Simulator 19,Farming Simulator 19,983,True,ok
+336,552100,Brick Rigs,Brick Rigs,983,False,ok
+337,431240,Golf With Your Friends,Golf With Your Friends,979,True,ok
+338,1113000,Persona 4 Golden,Persona 4 Golden,962,False,ok
+339,477160,Human Fall Flat,Human Fall Flat,950,True,ok
+340,1790600,DRAGON BALL: Sparking! ZERO,DRAGON BALL: Sparking! ZERO,949,False,ok
+341,1371980,No Rest for the Wicked,No Rest for the Wicked,947,False,ok
+342,599140,Graveyard Keeper,Graveyard Keeper,941,True,ok
+343,34030,Total War: NAPOLEON – Definitive Edition,Total War: NAPOLEON – Definitive Edition,929,True,ok
+344,753640,Outer Wilds,Outer Wilds,928,False,ok
+345,242050,Assassin’s Creed IV Black Flag,Assassin’s Creed® IV Black Flag™,923,False,ok
+346,632470,Disco Elysium - The Final Cut,Disco Elysium - The Final Cut,918,True,ok
+347,975370,Dwarf Fortress,Dwarf Fortress,915,False,ok
+348,387990,Scrap Mechanic,Scrap Mechanic,909,False,ok
+349,362890,Black Mesa,Black Mesa,907,False,ok
+350,585420,Trailmakers,Trailmakers,903,False,ok
+351,211820,Starbound,Starbound,894,True,ok
+352,459820,Crush Crush,Crush Crush,892,True,ok
+353,2552430,KINGDOM HEARTS -HD 1.5+2.5 ReMIX-,KINGDOM HEARTS -HD 1.5+2.5 ReMIX-,886,False,ok
+354,646910,The Crew 2,The Crew™ 2,873,False,ok
+355,360430,Mafia III: Definitive Edition,Mafia III: Definitive Edition,869,True,ok
+356,1286680,Tiny Tina's Wonderlands,Tiny Tina's Wonderlands,866,False,ok
+357,228200,Company of Heroes,Company of Heroes,864,False,ok
+358,447040,Watch_Dogs 2,Watch_Dogs® 2,863,False,ok
+359,433340,Slime Rancher,Slime Rancher,858,True,ok
+360,1533390,Gorilla Tag,Gorilla Tag,852,False,ok
+361,544730,Catan Universe,Catan Universe,848,True,ok
+362,312520,Rain World,Rain World,836,False,ok
+363,1599600,PlateUp!,PlateUp!,832,False,ok
+364,397900,Business Tour - Board Game with Online Multiplayer,Business Tour - Board Game with Online Multiplayer,809,True,ok
+365,1845910,Dragon Age: The Veilguard,Dragon Age™: The Veilguard,804,False,ok
+366,266840,Age of Mythology: Extended Edition,Age of Mythology: Extended Edition,804,False,ok
+367,212500,The Lord of the Rings Online,The Lord of the Rings Online™,793,False,ok
+368,2835570,Buckshot Roulette,Buckshot Roulette,793,False,ok
+369,418370,Resident Evil 7 Biohazard,Resident Evil 7 Biohazard,792,False,ok
+370,2551020,One-armed robber,One-armed robber,786,False,ok
+371,233450,Prison Architect,Prison Architect,781,True,ok
+372,391220,Rise of the Tomb Raider,Rise of the Tomb Raider™,777,True,ok
+373,500,Left 4 Dead,Left 4 Dead,774,False,ok
+374,365590,Tom Clancy’s The Division,Tom Clancy’s The Division™,774,False,ok
+375,2054970,Dragon's Dogma 2,Dragon's Dogma 2,768,False,ok
+376,629760,MORDHAU,MORDHAU,764,False,ok
+377,304050,Trove,Trove,758,False,ok
+378,282070,This War of Mine,This War of Mine,756,True,ok
+379,2881650,Content Warning,Content Warning,722,False,ok
+380,920210,LEGO Star Wars: The Skywalker Saga,LEGO® Star Wars™: The Skywalker Saga,719,False,ok
+381,412020,Metro Exodus,Metro Exodus,702,True,ok
+382,972660,Spiritfarer: Farewell Edition,Spiritfarer®: Farewell Edition,702,True,ok
+383,1151640,Horizon Zero Dawn Complete Edition,Horizon Zero Dawn™ Complete Edition,700,False,ok
+384,848450,Subnautica: Below Zero,Subnautica: Below Zero,698,True,ok
+385,1057090,Ori and the Will of the Wisps,Ori and the Will of the Wisps,697,False,ok
+386,524220,NieR:Automata,NieR:Automata™,690,False,ok
+387,493340,Planet Coaster,Planet Coaster,687,True,ok
+388,3146520,WEBFISHING,WEBFISHING,686,False,ok
+389,1030840,Mafia: Definitive Edition,Mafia: Definitive Edition,686,False,ok
+390,254700,Resident Evil 4 (2005),Resident Evil 4 (2005),673,False,ok
+391,774171,Muse Dash,Muse Dash,672,True,ok
+392,109600,Neverwinter,Neverwinter,665,False,ok
+393,1097150,Fall Guys: Ultimate Knockout,Fall Guys,664,False,ok
+394,629730,Blade and Sorcery,Blade and Sorcery,657,False,ok
+395,1520470,封灵档案,Soul Dossier,656,False,ok
+396,200260,Batman: Arkham City - Game of the Year Edition,Batman: Arkham City - Game of the Year Edition,655,False,ok
+397,454650,DRAGON BALL XENOVERSE 2,DRAGON BALL XENOVERSE 2,652,False,ok
+398,870780,CONTROL Ultimate Edition,CONTROL Ultimate Edition,648,True,ok
+399,744900,Dead Frontier 2,Dead Frontier 2,647,False,ok
+400,2420510,HoloCure - Save the Fans!,HoloCure - Save the Fans!,645,False,ok
+401,1272080,PAYDAY 3,PAYDAY 3,644,False,ok
+402,225540,Just Cause 3,Just Cause™ 3,639,False,ok
+403,400,Portal,Portal,638,False,ok
+404,223750,DCS World Steam Edition,DCS World Steam Edition,636,False,ok
+405,22320,The Elder Scrolls III: Morrowind Game of the Year Edition,The Elder Scrolls III: Morrowind® Game of the Year Edition,635,False,ok
+406,70,Half-Life,Half-Life,634,True,ok
+407,2527500,MiSide,MiSide,631,False,ok
+408,690790,DiRT Rally 2.0,DiRT Rally 2.0,631,False,ok
+409,1211020,Wobbly Life,Wobbly Life,625,False,ok
+410,1284410,GWENT: The Witcher Card Game,GWENT: The Witcher Card Game,619,False,ok
+411,203140,Hitman: Absolution,Hitman: Absolution™,618,False,ok
+412,636480,Ravenfield,Ravenfield,617,True,ok
+413,20900,The Witcher: Enhanced Edition Director's Cut,The Witcher: Enhanced Edition Director's Cut,616,True,ok
+414,209000,Batman: Arkham Origins,Batman™: Arkham Origins,616,False,ok
+415,207610,The Walking Dead,The Walking Dead,614,True,ok
+416,3097560,Liar's Bar,Liar's Bar,605,False,ok
+417,35140,Batman: Arkham Asylum Game of the Year Edition,Batman: Arkham Asylum Game of the Year Edition,601,False,ok
+418,389730,TEKKEN 7,TEKKEN 7,599,False,ok
+419,475150,Titan Quest Anniversary Edition,Titan Quest Anniversary Edition,599,False,ok
+420,17390,SPORE,SPORE™,599,False,ok
+421,200510,XCOM: Enemy Unknown,XCOM: Enemy Unknown,590,False,ok
+422,640820,Pathfinder: Kingmaker — Enhanced Plus Edition,Pathfinder: Kingmaker — Enhanced Plus Edition,590,True,ok
+423,1721470,Poppy Playtime,Poppy Playtime,588,False,ok
+424,750920,Shadow of the Tomb Raider: Definitive Edition,Shadow of the Tomb Raider: Definitive Edition,582,True,ok
+425,872790,Football Manager 2019,Football Manager 2019,581,True,ok
+426,492720,Tropico 6,Tropico 6,575,True,ok
+427,671860,BattleBit Remastered,BattleBit Remastered,568,False,ok
+428,21690,Resident Evil 5,Resident Evil 5,566,False,ok
+429,1213210,Command & Conquer Remastered Collection,Command & Conquer™ Remastered Collection,564,False,ok
+430,234140,Mad Max,Mad Max,563,False,ok
+431,298110,Far Cry 4,Far Cry® 4,558,False,ok
+432,203160,Tomb Raider Game of the Year,Tomb Raider Game of the Year,556,True,ok
+433,1557740,ROUNDS,ROUNDS,555,True,ok
+434,4760,Rome: Total War - Collection,Rome: Total War™ - Collection,552,False,ok
+435,208580,STAR WARS Knights of the Old Republic II - The Sith Lords,STAR WARS™ Knights of the Old Republic™ II - The Sith Lords™,551,True,ok
+436,638970,Yakuza 0,Yakuza 0,550,False,ok
+437,24200,DC Universe Online,DC Universe™ Online,546,False,ok
+438,312660,Sniper Elite 4,Sniper Elite 4,541,False,ok
+439,1030830,Mafia II: Definitive Edition,Mafia II: Definitive Edition,538,False,ok
+440,42700,Call of Duty: Black Ops,Call of Duty®: Black Ops,527,False,ok
+441,307690,Sleeping Dogs: Definitive Edition,Sleeping Dogs: Definitive Edition,524,True,ok
+442,287450,Rise of Nations: Extended Edition,Rise of Nations: Extended Edition,522,False,ok
+443,535930,Two Point Hospital,Two Point Hospital,518,True,ok
+444,1562430,DREDGE,DREDGE,517,True,ok
+445,1296830,暖雪 Warm Snow,暖雪 Warm Snow,516,False,ok
+446,221040,Resident Evil 6,Resident Evil 6,515,False,ok
+447,603850,Age of History II,Age of History II,513,False,ok
+448,678950,DRAGON BALL FighterZ,DRAGON BALL FighterZ,511,False,ok
+449,464920,Surviving Mars,Surviving Mars,507,True,ok
+450,1150690,OMORI,OMORI,506,True,ok
+451,24010,Train Simulator Classic,Train Simulator Classic,503,False,ok
+452,1332010,Stray,Stray,498,True,ok
+453,218230,PlanetSide 2,PlanetSide 2,496,False,ok
+454,220240,Far Cry 3,Far Cry 3,488,False,ok
+455,314160,Microsoft Flight Simulator X: Steam Edition,Microsoft Flight Simulator X: Steam Edition,486,False,ok
+456,20920,The Witcher 2: Assassins of Kings Enhanced Edition,The Witcher 2: Assassins of Kings Enhanced Edition,479,True,ok
+457,774361,Blasphemous,Blasphemous,479,True,ok
+458,242920,Banished,Banished,477,False,ok
+459,224260,No More Room in Hell,No More Room in Hell,473,False,ok
+460,794260,Outward Definitive Edition,Outward Definitive Edition,469,False,ok
+461,834910,ATLAS,ATLAS,468,False,ok
+462,668580,Atomic Heart,Atomic Heart,466,False,ok
+463,418460,Rising Storm 2: Vietnam,Rising Storm 2: Vietnam,449,False,ok
+464,1274570,DEVOUR,DEVOUR,447,True,ok
+465,1536610,OpenTTD,OpenTTD,445,True,ok
+466,204360,Castle Crashers,Castle Crashers®,443,True,ok
+467,678960,CODE VEIN,CODE VEIN,443,False,ok
+468,241930,Middle-earth: Shadow of Mordor,Middle-earth™: Shadow of Mordor™,441,False,ok
+469,261640,Borderlands: The Pre-Sequel,Borderlands: The Pre-Sequel,437,True,ok
+470,274170,Hotline Miami 2: Wrong Number,Hotline Miami 2: Wrong Number,437,True,ok
+471,368260,Marvel's Midnight Suns,Marvel's Midnight Suns,436,False,ok
+472,251060,Wargame: Red Dragon,Wargame: Red Dragon,434,True,ok
+473,10090,Call of Duty: World at War,Call of Duty: World at War,433,False,ok
+474,211500,RaceRoom Racing Experience,RaceRoom Racing Experience,431,False,ok
+475,617290,Remnant: From the Ashes,Remnant: From the Ashes,429,False,ok
+476,527230,For The King,For The King,428,True,ok
+477,698780,Doki Doki Literature Club!,Doki Doki Literature Club!,427,True,ok
+478,307780,Mortal Kombat X,Mortal Kombat X,426,False,ok
+479,32370,STAR WARS Knights of the Old Republic,STAR WARS™ Knights of the Old Republic™,424,True,ok
+480,620980,Beat Saber,Beat Saber,423,False,ok
+481,253710,theHunter Classic,theHunter Classic,417,False,ok
+482,201810,Wolfenstein: The New Order,Wolfenstein: The New Order,417,False,ok
+483,239030,"Papers, Please","Papers, Please",416,True,ok
+484,383150,Dead Island Definitive Edition,Dead Island Definitive Edition,410,False,ok
+485,223710,Cry of Fear,Cry of Fear,405,False,ok
+486,219150,Hotline Miami,Hotline Miami,404,True,ok
+487,1637320,Dome Keeper,Dome Keeper,402,True,ok
+488,10180,Call of Duty: Modern Warfare 2 (2009),Call of Duty®: Modern Warfare® 2 (2009),399,True,ok
+489,47810,Dragon Age: Origins - Ultimate Edition,Dragon Age: Origins - Ultimate Edition,394,False,ok
+490,342200,MechWarrior Online Solaris 7,MechWarrior Online™ Legends,392,False,ok
+491,482730,Football Manager 2017,Football Manager 2017,388,True,ok
+492,243470,Watch_Dogs,Watch_Dogs™,388,False,ok
+493,373420,Divinity: Original Sin - Enhanced Edition,Divinity: Original Sin - Enhanced Edition,387,True,ok
+494,39140,FINAL FANTASY VII,FINAL FANTASY VII,386,False,ok
+495,349040,NARUTO SHIPPUDEN: Ultimate Ninja STORM 4,NARUTO SHIPPUDEN: Ultimate Ninja STORM 4,384,False,ok
+496,228280,Baldur's Gate: Enhanced Edition,Baldur's Gate: Enhanced Edition,378,True,ok
+497,7940,Call of Duty 4: Modern Warfare (2007),Call of Duty® 4: Modern Warfare® (2007),377,True,ok
+498,1017180,The Long Drive,The Long Drive,377,False,ok
+499,285900,Gang Beasts,Gang Beasts,376,True,ok
+500,289650,Assassin's Creed Unity,Assassin's Creed® Unity,373,False,ok
