@@ -1,9 +1,20 @@
+# Deploy na CyberFolks wyłącznie ręcznie (workflow_dispatch).
+# - holding: czyści public_html i wgrywa deploy/cyberfolks-holding/
+# - full_site: buduje Astro i wgrywa dist (jak dawniej przy pushu)
+# Vercel: osobno przez integrację GitHub.
 name: Deploy to CyberFolks
 
 on:
-  push:
-    branches: [master, main]
   workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Co wdrożyć na orthomedica.lubin.pl'
+        required: true
+        type: choice
+        options:
+          - holding
+          - full_site
+        default: holding
 
 permissions:
   contents: read
@@ -13,7 +24,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,6 +32,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Node
+        if: github.event.inputs.mode == 'full_site'
         uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -28,21 +40,23 @@ jobs:
           cache-dependency-path: package-lock.json
 
       - name: Install deps
+        if: github.event.inputs.mode == 'full_site'
         run: npm ci
 
       - name: Build Astro
+        if: github.event.inputs.mode == 'full_site'
         run: npm run build
 
-      - name: Upload dist via tar over SSH
+      - name: Upload via SSH
         shell: bash
         env:
           SSH_HOST: ${{ secrets.CYBERFOLKS_HOST }}
           SSH_USER: ${{ secrets.CYBERFOLKS_USER }}
           SSH_PORT: ${{ secrets.CYBERFOLKS_PORT }}
           SSH_KEY: ${{ secrets.CYBERFOLKS_SSH_KEY }}
+          MODE: ${{ github.event.inputs.mode }}
         run: |
           set -euo pipefail
-          # Runner ssh-agent can exhaust MaxAuthTries before our deploy key is tried.
           unset SSH_AUTH_SOCK
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
@@ -51,32 +65,20 @@ jobs:
           import os, pathlib
           key = os.environ["SSH_KEY"]
           path = pathlib.Path.home() / ".ssh" / "deploy_key"
-          # Normalize newlines (GitHub Secrets sometimes store CRLF)
           key = key.replace("\r\n", "\n").replace("\r", "\n").rstrip("\n") + "\n"
           path.write_text(key, encoding="utf-8")
           os.chmod(path, 0o600)
           PY
-          # Best-effort: keyscan can be flaky/non-fatal; SSH still uses StrictHostKeyChecking=accept-new
           ssh-keyscan -p "$SSH_PORT" "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null || true
           chmod 644 ~/.ssh/known_hosts
           REMOTE_DIR="domains/orthomedica.lubin.pl/public_html"
-          ssh \
-            -i "$KEY_FILE" \
-            -p "$SSH_PORT" \
-            -o IdentityFile="$KEY_FILE" \
-            -o IdentitiesOnly=yes \
-            -o StrictHostKeyChecking=accept-new \
-            -o BatchMode=yes \
-            -o LogLevel=ERROR \
-            "$SSH_USER@$SSH_HOST" \
-            "mkdir -p \"$REMOTE_DIR\""
-          tar -C dist -czf - . | ssh \
-            -i "$KEY_FILE" \
-            -p "$SSH_PORT" \
-            -o IdentityFile="$KEY_FILE" \
-            -o IdentitiesOnly=yes \
-            -o StrictHostKeyChecking=accept-new \
-            -o BatchMode=yes \
-            -o LogLevel=ERROR \
-            "$SSH_USER@$SSH_HOST" \
-            "tar -xzf - -C \"$REMOTE_DIR\""
+          SSH_BASE=(ssh -i "$KEY_FILE" -p "$SSH_PORT" -o IdentityFile="$KEY_FILE" -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new -o BatchMode=yes -o LogLevel=ERROR "$SSH_USER@$SSH_HOST")
+
+          "${SSH_BASE[@]}" "mkdir -p \"$REMOTE_DIR\""
+
+          if [[ "$MODE" == "holding" ]]; then
+            "${SSH_BASE[@]}" "find \"$REMOTE_DIR\" -mindepth 1 -delete"
+            tar -C deploy/cyberfolks-holding -czf - . | "${SSH_BASE[@]}" "tar -xzf - -C \"$REMOTE_DIR\""
+          else
+            tar -C dist -czf - . | "${SSH_BASE[@]}" "tar -xzf - -C \"$REMOTE_DIR\""
+          fi
