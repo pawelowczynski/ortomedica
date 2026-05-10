@@ -59,7 +59,11 @@ Environment variables are documented in [`.env.example`](../.env.example):
 
 ## 6) Deployment Flow
 
-**Vercel:** standardowy deploy z integracji GitHub (osobno od Actions) — pełna witryna Astro przy pushu na produkcyjną gałąź.
+**Pełna instrukcja techniczna (GitHub / Vercel / CyberFolks, sekrety, gałęzie, troubleshooting):** [`docs/deploy-and-hosting.md`](./deploy-and-hosting.md).
+
+Skrót:
+
+**Vercel:** standardowy deploy z integracji GitHub (osobno od Actions) — pełna witryna Astro przy pushu na produkcyjną gałąź (zależnie od ustawień projektu w panelu Vercel).
 
 **CyberFolks** (`orthomedica.lubin.pl`): workflow [`.github/workflows/deploy-cyberfolks.yml`](../.github/workflows/deploy-cyberfolks.yml) — **tylko** *workflow_dispatch*, z polem **mode**: `holding` (czyści `public_html`, wgrywa [`deploy/cyberfolks-holding/`](../deploy/cyberfolks-holding/README.md)) lub `full_site` (build Astro + tar `dist`). Automatyczny deploy przy pushu jest wyłączony.
 
@@ -138,6 +142,7 @@ Decisions log (append-only):
 
 - 2026-04-30: Project context document created at [`docs/project-context.md`](./project-context.md) to align future recommendations with Astro architecture and current CI/CD reality.
 - 2026-05-10: CyberFolks workflow zmieniony na wyłącznie `workflow_dispatch`; dodano pakiet holdingowy [`deploy/cyberfolks-holding/`](../deploy/cyberfolks-holding/README.md); Vercel pozostaje głównym środowiskiem deweloperskim przy pushu.
+- 2026-05-10: Dodano [`docs/deploy-and-hosting.md`](./deploy-and-hosting.md) — techniczny opis deployu GitHub / Vercel / CyberFolks dla kolejnych agentów.
 
 ## 11) Handover Snapshot (Current Answers)
 
@@ -147,7 +152,7 @@ Known from repository:
 
 - Stack and delivery:
   - Astro + Tailwind static site, built to `dist`.
-  - CI/CD: Vercel (Git integration); CyberFolks — ręczny SSH deploy przez Actions + opcjonalna strona holdingowa w `deploy/cyberfolks-holding/`.
+  - CI/CD: Vercel (Git integration); CyberFolks — ręczny SSH deploy przez Actions + holding w `deploy/cyberfolks-holding/` — szczegóły: [`docs/deploy-and-hosting.md`](./deploy-and-hosting.md).
 - Content model:
   - Main routes in `src/pages`.
   - Blog content in `src/content/blog` (markdown + static path generation in `[slug].astro`).

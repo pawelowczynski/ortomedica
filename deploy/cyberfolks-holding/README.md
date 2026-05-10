@@ -1,5 +1,7 @@
 # Strona holdingowa — CyberFolks (`public_html`)
 
+Ogólny opis pipeline’u GitHub / Vercel / CyberFolks: [`docs/deploy-and-hosting.md`](../../docs/deploy-and-hosting.md).
+
 ## Automatycznie (zalecane)
 
 W GitHub: **Actions** → **Deploy to CyberFolks** → **Run workflow** → **mode: holding** → Run.
