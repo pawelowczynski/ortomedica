@@ -16,7 +16,5 @@ Możesz też skopiować zawartość tego folderu do `domains/orthomedica.lubin.p
 
 ### Pliki
 
-- `index.html` — „wkrótce”, nazwa, adres i telefon (zgodnie z `src/data/site.ts`).
-- `brand-mark.svg` — znak jak favicon witryny.
-
-Opcjonalnie: dorzuć `logo.png` i w `index.html` podmień `<img class="mark" …>` na `./logo.png`.
+- `index.html` — komunikat „wkrótce”, adres i telefon (`src/data/site.ts`).
+- `logo-podpis.png` — logo źródłowe (projekt: `LOGO-PODPIS.png`).
