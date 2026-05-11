@@ -3,7 +3,7 @@ import {
   ENTITY,
   MEDICAL_DISCLOSURE,
   MEDICAL_DEVICE_ADVERTISING,
-  WHATSAPP_E164,
+  whatsAppChatHref,
   formatRegisteredOfficeAddress,
   formatClinicAddress,
   formatNipLine,
@@ -13,37 +13,37 @@ import {
 } from '../data/site';
 
 const currentYear = new Date().getFullYear();
-const waHref = `https://wa.me/${WHATSAPP_E164.replace(/\D/g, '')}`;
+const waHref = whatsAppChatHref();
 ---
-    <footer class="py-12 bg-navy-light text-center border-t border-white/10">
+    <footer class="border-t border-brand-steel/10 bg-gray-soft py-12 text-center text-brand-steel">
         <div class="container mx-auto px-6">
             <div class="mb-6">
-                <span class="flex min-w-0 flex-col items-center text-center leading-tight text-white">
+                <span class="flex min-w-0 flex-col items-center text-center leading-tight">
                     <span class="cinzel truncate text-2xl font-bold tracking-[0.3em]">
-                        <span class="brand-ortho transition-colors">ORTHO</span><span class="brand-medica transition-colors">MEDICA</span>
+                        <span class="brand-ortho text-brand-blue transition-colors">ORTHO</span><span class="brand-medica text-brand-steel transition-colors">MEDICA</span>
                     </span>
-                    <span class="brand-subtitle hidden text-[10px] uppercase tracking-[0.16em] opacity-80 md:block transition-colors">centrum stomatologiczno-ortodontyczne</span>
+                    <span class="brand-subtitle block text-[10px] uppercase tracking-[0.16em] text-brand-carmine opacity-95 transition-colors">centrum stomatologiczno-ortodontyczne</span>
                 </span>
             </div>
-            <p class="text-[10px] text-white/50 uppercase tracking-[0.4em] mb-8 leading-loose">
+            <p class="mb-8 text-[10px] uppercase leading-loose tracking-[0.4em] text-brand-steel/55">
                 Stomatologia dziecięca · chirurgia · gnatologia · ortodoncja<br />Lubin · gabinet ORTHOMEDICA
             </p>
-            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-8">
-                <a href="/blog" class="text-white/40 hover:text-gold transition-colors text-sm">Blog</a>
-                <a href="/#metamorfozy" class="text-white/40 hover:text-gold transition-colors text-sm">Metamorfozy</a>
-                <a href="/#opinie" class="text-white/40 hover:text-gold transition-colors text-sm">Opinie</a>
-                <a href="/#gabinet" class="text-white/40 hover:text-gold transition-colors text-sm">Gabinet</a>
-                <a href="/#faq" class="text-white/40 hover:text-gold transition-colors text-sm">FAQ</a>
-                <a href="/informacje-dla-pacjentow" class="text-white/40 hover:text-gold transition-colors text-sm">Informacje dla pacjentów</a>
-                <a href="/informacje-dla-pacjentow#informacja-o-wyrobach-medycznych" class="text-white/40 hover:text-gold transition-colors text-sm">Wyroby medyczne</a>
-                <a href="/polityka-prywatnosci" class="text-white/40 hover:text-gold transition-colors text-sm">Polityka prywatności</a>
-                <a href="/regulamin" class="text-white/40 hover:text-gold transition-colors text-sm">Regulamin</a>
+            <div class="mb-8 flex flex-wrap justify-center gap-x-6 gap-y-2">
+                <a href="/blog" class="text-sm text-brand-steel/55 transition-colors hover:text-gold">Blog</a>
+                <a href="/#metamorfozy" class="text-sm text-brand-steel/55 transition-colors hover:text-gold">Metamorfozy</a>
+                <a href="/#opinie" class="text-sm text-brand-steel/55 transition-colors hover:text-gold">Opinie</a>
+                <a href="/#gabinet" class="text-sm text-brand-steel/55 transition-colors hover:text-gold">Gabinet</a>
+                <a href="/#faq" class="text-sm text-brand-steel/55 transition-colors hover:text-gold">FAQ</a>
+                <a href="/informacje-dla-pacjentow" class="text-sm text-brand-steel/55 transition-colors hover:text-gold">Informacje dla pacjentów</a>
+                <a href="/informacje-dla-pacjentow#informacja-o-wyrobach-medycznych" class="text-sm text-brand-steel/55 transition-colors hover:text-gold">Wyroby medyczne</a>
+                <a href="/polityka-prywatnosci" class="text-sm text-brand-steel/55 transition-colors hover:text-gold">Polityka prywatności</a>
+                <a href="/regulamin" class="text-sm text-brand-steel/55 transition-colors hover:text-gold">Regulamin</a>
             </div>
 
-            <div class="max-w-2xl mx-auto text-left text-[10px] text-white/45 leading-relaxed mb-8 border-t border-white/10 pt-8">
-                <p class="font-semibold text-white/60 uppercase tracking-wider mb-2">Dane i ujawnienia prawne</p>
+            <div class="mx-auto mb-8 max-w-2xl border-t border-brand-steel/10 pt-8 text-left text-[10px] leading-relaxed text-brand-steel/65">
+                <p class="mb-2 font-semibold uppercase tracking-wider text-brand-steel/80">Dane i ujawnienia prawne</p>
                 <p class="mb-2">
-                    <span class="text-white/55">{ENTITY.legalAdministrator}</span><br />
+                    <span>{ENTITY.legalAdministrator}</span><br />
                     Siedziba: {formatRegisteredOfficeAddress()}<br />
                     Gabinet: {formatClinicAddress()}<br />
                     {formatNipLine()} · {formatRegonLine()}<br />
@@ -53,53 +53,53 @@ const waHref = `https://wa.me/${WHATSAPP_E164.replace(/\D/g, '')}`;
                 <p class="mb-2">{MEDICAL_DISCLOSURE.medicalRecordsFeeNote}</p>
                 <p class="mb-2">{MEDICAL_DISCLOSURE.nfzNote}</p>
                 <p class="mb-3">{MEDICAL_DISCLOSURE.cctvNote}</p>
-                <p class="mb-3 text-white/40">
+                <p class="mb-3 text-brand-steel/55">
                     {MEDICAL_DEVICE_ADVERTISING.footerTeaser}{' '}
-                    <a href="/informacje-dla-pacjentow#informacja-o-wyrobach-medycznych" class="text-gold/90 hover:text-gold underline underline-offset-2">szczegóły</a>.
+                    <a href="/informacje-dla-pacjentow#informacja-o-wyrobach-medycznych" class="text-gold underline underline-offset-2 hover:text-brand-steel">szczegóły</a>.
                 </p>
                 <p>
-                    <a href="/informacje-dla-pacjentow" class="text-gold/90 hover:text-gold underline underline-offset-2">Pełne informacje dla pacjentów</a>
+                    <a href="/informacje-dla-pacjentow" class="text-gold underline underline-offset-2 hover:text-brand-steel">Pełne informacje dla pacjentów</a>
                     ·
-                    <a href={MEDICAL_DISCLOSURE.patientRightsUrl} class="text-gold/90 hover:text-gold underline underline-offset-2" target="_blank" rel="noopener noreferrer">Prawa pacjenta</a>
+                    <a href={MEDICAL_DISCLOSURE.patientRightsUrl} class="text-gold underline underline-offset-2 hover:text-brand-steel" target="_blank" rel="noopener noreferrer">Prawa pacjenta</a>
                 </p>
             </div>
 
-            <div class="text-[9px] text-white/30 uppercase tracking-widest">
+            <div class="text-[9px] uppercase tracking-widest text-brand-steel/40">
                 &copy; {currentYear} Orthomedica Lubin. Wszelkie prawa zastrzeżone.
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-28 md:bottom-8 right-6 w-12 h-12 bg-navy text-white rounded-full shadow-xl flex items-center justify-center z-40 hover:bg-gold transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-gold/50 back-to-top-btn" aria-label="Wróć na górę">
-        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    <button id="back-to-top" class="back-to-top-btn fixed bottom-28 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-brand-gold text-white shadow-xl transition-colors hover:bg-brand-gold-dark focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-gold/50 md:bottom-8" aria-label="Wróć na górę">
+        <i data-lucide="arrow-up" class="h-5 w-5 text-white"></i>
     </button>
 
     <!-- Mobile Sticky Bottom CTA -->
-    <div class="fixed bottom-0 left-0 z-40 flex w-full md:hidden min-h-[3.75rem] shadow-xl">
-        <a href="tel:+48694731124" class="flex min-h-[3.75rem] w-1/2 items-center justify-center gap-2.5 border-r border-white/25 bg-brand-carmine px-2 py-4 text-sm font-bold uppercase tracking-wide text-white active:brightness-90 sm:py-5">
+    <div class="fixed bottom-0 left-0 z-40 flex w-full min-h-[3.75rem] shadow-xl md:hidden">
+        <a href="tel:+48694731124" class="flex min-h-[3.75rem] w-1/2 items-center justify-center gap-2.5 border-r border-white/20 bg-brand-gold px-2 py-4 text-sm font-bold uppercase tracking-wide text-white active:brightness-95 sm:py-5">
             <i data-lucide="phone" class="h-5 w-5 shrink-0 text-white"></i>
             Zadzwoń
         </a>
-        <a href={waHref} target="_blank" rel="noopener noreferrer" class="flex min-h-[3.75rem] w-1/2 items-center justify-center gap-2.5 bg-brand-steel px-2 py-4 text-sm font-bold uppercase tracking-wide text-white active:brightness-90 sm:py-5">
+        <a href={waHref} target="_blank" rel="noopener noreferrer" class="flex min-h-[3.75rem] w-1/2 items-center justify-center gap-2.5 bg-[#25D366] px-2 py-4 text-sm font-bold uppercase tracking-wide text-white active:brightness-95 sm:py-5">
             <svg class="h-5 w-5 shrink-0 text-white" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.564-10.563 5.826 0 10.564 4.738 10.564 10.563 0 5.827-4.739 10.565-10.564 10.565z"/></svg>
             WhatsApp
         </a>
     </div>
 
     <!-- GDPR Cookie Banner -->
-    <div id="cookie-banner" class="fixed bottom-0 md:bottom-6 left-0 md:left-6 md:max-w-[400px] w-full bg-white text-navy p-6 md:rounded-2xl shadow-xl z-[100] hidden-banner pb-32 md:pb-6 border-t md:border border-gray-100">
-        <div class="flex gap-4 items-start mb-5">
-            <i data-lucide="cookie" class="w-6 h-6 text-gold shrink-0"></i>
+    <div id="cookie-banner" class="fixed bottom-0 left-0 z-[100] w-full border-t border-gray-100 bg-white p-6 pb-32 text-navy shadow-xl hidden-banner md:bottom-6 md:left-6 md:max-w-[400px] md:rounded-2xl md:border md:pb-6">
+        <div class="mb-5 flex items-start gap-4">
+            <i data-lucide="cookie" class="h-6 w-6 shrink-0 text-gold"></i>
             <div>
-                <h4 class="font-bold text-sm mb-1 text-navy">Ciasteczka & RODO</h4>
-                <p class="text-[11px] text-gray-500 font-light leading-relaxed">
+                <h4 class="mb-1 text-sm font-bold text-navy">Ciasteczka & RODO</h4>
+                <p class="text-[11px] font-light leading-relaxed text-gray-500">
                     Na stronie jest jeden wybór: kliknięcie „Akceptuj wszystko” oznacza zgodę na pliki cookie potrzebne do mapy Google, Google Analytics oraz piksela Meta (Facebook) — w jednym pakiecie, zgodnie z polityką prywatności. Bez tego wyboru mapa i narzędzia analityczne/marketingowe się nie ładują.
                 </p>
             </div>
         </div>
         <div class="flex gap-3">
-            <button id="accept-cookies" type="button" class="flex-1 bg-gold text-white py-3 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-navy transition-colors shadow-md hover:shadow-lg">Akceptuj wszystko</button>
-            <a href="/polityka-prywatnosci" class="flex-1 text-center bg-gray-50 text-navy py-3 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-gray-200 transition-colors border border-gray-100">Polityka</a>
+            <button id="accept-cookies" type="button" class="flex-1 rounded-xl bg-brand-gold py-3 text-xs font-bold uppercase tracking-wider text-white shadow-md transition-colors hover:bg-brand-gold-dark hover:shadow-lg">Akceptuj wszystko</button>
+            <a href="/polityka-prywatnosci" class="flex-1 rounded-xl border border-gray-100 bg-gray-50 py-3 text-center text-xs font-bold uppercase tracking-wider text-navy transition-colors hover:bg-gray-200">Polityka</a>
         </div>
     </div>

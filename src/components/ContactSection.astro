@@ -1,7 +1,7 @@
 ---
-import { WHATSAPP_E164 } from '../data/site';
+import { whatsAppChatHref } from '../data/site';
 
-const waHref = `https://wa.me/${WHATSAPP_E164.replace(/\D/g, '')}`;
+const waHref = whatsAppChatHref();
 ---
 
 <section id="kontakt" class="py-14 md:py-18 bg-white relative">
@@ -9,16 +9,16 @@ const waHref = `https://wa.me/${WHATSAPP_E164.replace(/\D/g, '')}`;
     <div class="grid lg:grid-cols-2 gap-10 lg:gap-14">
       <!-- Info i Formularz -->
       <div>
-        <span class="text-brand-carmine font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Zrób pierwszy krok</span>
+        <span class="mb-4 block text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Zrób pierwszy krok</span>
         <h2 class="cinzel text-3xl md:text-4xl mb-6 md:mb-8 text-brand-steel">Umów wizytę — stomatologia dla dzieci</h2>
 
         <!-- Przyciski akcji -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
           <a
             href="tel:+48694731124"
-            class="cta-pulse-carmine bg-brand-carmine hover:bg-[#9F0F2A] text-white px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition-colors shadow-lg"
+            class="btn-gold flex items-center justify-center gap-3 rounded-xl px-6 py-4 font-bold shadow-lg"
           >
-            <i data-lucide="phone-call" class="w-5 h-5 text-white"></i>
+            <i data-lucide="phone-call" class="h-5 w-5"></i>
             +48 694 731 124
           </a>
           <a
@@ -39,7 +39,7 @@ const waHref = `https://wa.me/${WHATSAPP_E164.replace(/\D/g, '')}`;
         <!-- Dane adresowe -->
         <div class="space-y-6 mb-12 bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-100">
           <div class="flex gap-4 items-start">
-            <i data-lucide="map-pin" class="text-brand-carmine shrink-0 mt-1"></i>
+            <i data-lucide="map-pin" class="mt-1 shrink-0 text-gold"></i>
             <div>
               <p class="font-bold text-brand-steel text-[15px] mb-1">ORTHOMEDICA · Lubin</p>
               <p class="text-[15px] text-gray-500">
@@ -50,7 +50,7 @@ const waHref = `https://wa.me/${WHATSAPP_E164.replace(/\D/g, '')}`;
             </div>
           </div>
           <div class="flex gap-4 items-start">
-            <i data-lucide="clock" class="text-brand-carmine shrink-0 mt-1"></i>
+            <i data-lucide="clock" class="mt-1 shrink-0 text-gold"></i>
             <div>
               <p class="text-[15px] text-gray-500">
                 Pn - Pt: 09:00 - 18:00
@@ -60,11 +60,11 @@ const waHref = `https://wa.me/${WHATSAPP_E164.replace(/\D/g, '')}`;
             </div>
           </div>
           <div class="flex gap-4 items-start">
-            <i data-lucide="mail" class="text-brand-carmine shrink-0 mt-1"></i>
+            <i data-lucide="mail" class="mt-1 shrink-0 text-gold"></i>
             <div>
               <a
                 href="mailto:rejestracja@orthomedica-lubin.pl"
-                class="text-[15px] text-brand-steel hover:text-brand-carmine font-bold transition-colors focus-visible:outline-none"
+                class="text-[15px] font-bold text-brand-steel transition-colors hover:text-gold focus-visible:outline-none"
               >
                 rejestracja@orthomedica-lubin.pl
               </a>
@@ -145,7 +145,7 @@ const waHref = `https://wa.me/${WHATSAPP_E164.replace(/\D/g, '')}`;
 
           <button
             type="submit"
-            class="w-full btn-gold py-5 rounded-xl font-bold uppercase tracking-wider text-sm mt-2 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-carmine/30 shadow-lg"
+            class="btn-gold mt-2 w-full rounded-xl py-5 text-sm font-bold uppercase tracking-wider shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-gold/40"
           >
             Wyślij zgłoszenie
           </button>
@@ -166,7 +166,8 @@ const waHref = `https://wa.me/${WHATSAPP_E164.replace(/\D/g, '')}`;
         </p>
         <button
           id="load-map-btn"
-          class="bg-brand-steel text-white px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-brand-carmine transition-colors"
+          type="button"
+          class="btn-gold rounded-full px-6 py-3 text-xs font-bold uppercase tracking-wider"
         >
           Załaduj mapę i pokaż trasę
         </button>

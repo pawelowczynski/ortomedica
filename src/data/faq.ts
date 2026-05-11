@@ -22,8 +22,8 @@ export const homePageFaqs: FaqItem[] = [
     a: 'Zakładanie aparatu jest bezbolesne, natomiast po aktywacji może pojawić się krótkotrwała tkliwość zębów. To normalna reakcja.',
   },
   {
-    q: 'Czy mogę płacić za leczenie w ratach?',
-    a: 'Tak, dostępne są elastyczne opcje płatności. Szczegóły ustalamy podczas wizyty konsultacyjnej.',
+    q: 'Kiedy poznam ostateczny koszt leczenia?',
+    a: 'Widełki z cennika są orientacyjne. Dokładną kwotę i harmonogram rozliczenia przedstawiamy po diagnostyce, gdy plan terapii jest już jasny — omówimy to na konsultacji.',
   },
   {
     q: 'Jak dbać o higienę z aparatem?',
@@ -31,6 +31,6 @@ export const homePageFaqs: FaqItem[] = [
   },
   {
     q: 'Jak szybko mogę umówić pierwszy termin?',
-    a: 'Zwykle pierwszą konsultację można zaplanować w ciągu kilku dni roboczych. W pilnych przypadkach szukamy najszybszego terminu.',
+    a: 'Terminy zależą od aktualnego obłożenia gabinetu. Zapis i informacja o wolnych konsultacjach — w rejestracji lub przez dane kontaktowe na stronie; dobieramy pierwszy możliwy termin zgodnie z grafikiem, bez rezerwacji „z dnia na dzień”.',
   },
 ];

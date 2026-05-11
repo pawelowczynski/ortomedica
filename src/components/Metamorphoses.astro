@@ -4,22 +4,9 @@ import { METAMORPHOSIS_FEATURED as item } from '../data/metamorphoses';
 
 <section id="metamorfozy" class="py-14 md:py-18 bg-gray-soft">
   <div class="container mx-auto px-6">
-    <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4 md:gap-6">
-      <div class="max-w-xl">
-        <span class="text-gold font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Galeria uśmiechów</span>
-        <h2 class="cinzel text-3xl md:text-4xl text-navy">Metamorfozy pacjentów</h2>
-      </div>
-      <div class="md:text-right max-w-md">
-        <p class="text-[14px] md:text-[15px] text-gray-500 font-light">
-          Przesuń suwak, aby zobaczyć efekt leczenia dokumentowany u pacjenta ORTHOMEDICA (zgoda na publikację). Kolejne case study dodajemy wyłącznie po uzyskaniu zgód.
-        </p>
-        <p class="text-[11px] text-gray-400 font-light mt-3 leading-relaxed">
-          Efekt jest indywidualny i nie stanowi gwarancji u innych osób —
-          <a href="/informacje-dla-pacjentow#informacja-o-wyrobach-medycznych" class="text-navy/60 hover:text-gold underline underline-offset-2"
-            >ujawnienia (wyroby medyczne)</a
-          >.
-        </p>
-      </div>
+    <div class="mb-8 max-w-xl md:mb-10">
+      <span class="mb-4 block text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Galeria uśmiechów</span>
+      <h2 class="cinzel text-3xl text-navy md:text-4xl">Metamorfozy pacjentów</h2>
     </div>
 
     <div class="max-w-3xl mx-auto">
@@ -27,7 +14,7 @@ import { METAMORPHOSIS_FEATURED as item } from '../data/metamorphoses';
         <div class="relative w-full h-64 md:h-80 ba-container cursor-ew-resize select-none overflow-hidden rounded-t-[2rem]">
           <div class="absolute inset-0 z-10 pointer-events-none">
             <span
-              class="ba-label ba-label-po absolute top-4 right-4 bg-gold text-white text-xs font-bold px-4 py-2 rounded-lg uppercase tracking-widest shadow-lg border border-gold/20"
+              class="ba-label ba-label-po absolute top-4 right-4 rounded-lg border border-brand-gold/40 px-4 py-2 text-xs font-bold uppercase tracking-widest shadow-lg"
             >
               Po
             </span>
@@ -42,7 +29,7 @@ import { METAMORPHOSIS_FEATURED as item } from '../data/metamorphoses';
           </div>
           <div class="ba-before absolute inset-0 z-20 pointer-events-none" style="clip-path: inset(0 50% 0 0);">
             <span
-              class="ba-label ba-label-przed absolute top-4 left-4 bg-navy text-white text-xs font-bold px-4 py-2 rounded-lg uppercase tracking-widest shadow-lg border border-white/20"
+              class="ba-label ba-label-przed absolute top-4 left-4 rounded-lg border border-brand-steel/20 px-4 py-2 text-xs font-bold uppercase tracking-widest shadow-lg"
             >
               Przed
             </span>
@@ -57,12 +44,25 @@ import { METAMORPHOSIS_FEATURED as item } from '../data/metamorphoses';
             <div class="absolute top-0 right-0 w-0.5 h-full bg-gold"></div>
           </div>
           <div
-            class="ba-slider-handle absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-white border-2 border-gold rounded-full flex items-center justify-center shadow-xl pointer-events-none transition-transform duration-200"
+            class="ba-slider-handle absolute top-1/2 left-1/2 z-30 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-gold bg-white shadow-xl pointer-events-none transition-transform duration-200"
           >
-            <i data-lucide="arrow-right-left" class="w-4 h-4 text-gold"></i>
+            <i data-lucide="arrow-right-left" class="h-4 w-4 text-gold"></i>
           </div>
         </div>
-        <div class="p-8 grow bg-white">
+        <div class="border-t border-gray-100 bg-white px-3 py-2 md:px-4">
+          <p class="text-[9px] font-light leading-snug text-gray-400 md:text-[10px] md:leading-relaxed">
+            Przesuń suwak, aby zobaczyć efekt leczenia dokumentowany u pacjenta ORTHOMEDICA (zgoda na publikację). Kolejne case study dodajemy wyłącznie po uzyskaniu zgód.
+          </p>
+          <p class="mt-1.5 text-[9px] font-light leading-snug text-gray-400 md:text-[10px] md:leading-relaxed">
+            Efekt jest indywidualny i nie stanowi gwarancji u innych osób —
+            <a
+              href="/informacje-dla-pacjentow#informacja-o-wyrobach-medycznych"
+              class="text-gray-500 underline underline-offset-2 hover:text-gold"
+              >ujawnienia (wyroby medyczne)</a
+            >.
+          </p>
+        </div>
+        <div class="grow bg-white p-8">
           <h3 class="cinzel text-lg md:text-xl mb-3 text-navy">{item.title}</h3>
           <div class="flex flex-wrap gap-4 mb-3">
             {item.tags.map((tag) => (

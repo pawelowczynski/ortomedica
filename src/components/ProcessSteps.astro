@@ -1,24 +1,24 @@
 ---
 ---
 
-<section id="jak-leczymy" class="py-14 md:py-18 bg-brand-steel text-white relative overflow-hidden">
-  <span id="pierwsza-wizyta" class="block relative -top-28"></span>
-  <div class="absolute top-0 right-0 w-96 h-96 bg-brand-carmine/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
-  <div class="container mx-auto px-6 relative z-10">
-    <div class="text-center max-w-2xl mx-auto mb-8 md:mb-10">
-      <span class="text-brand-carmine font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Jak to działa</span>
-      <h2 class="cinzel text-3xl md:text-4xl mb-4">Ścieżka leczenia</h2>
-      <p class="text-[15px] md:text-base text-white/70 font-light">
+<section id="jak-leczymy" class="relative overflow-hidden bg-surface-warm py-14 text-brand-steel md:py-18">
+  <span id="pierwsza-wizyta" class="relative -top-28 block"></span>
+  <div class="absolute top-0 right-0 h-96 w-96 translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-gold-light/25 blur-3xl"></div>
+  <div class="container relative z-10 mx-auto px-6">
+    <div class="mx-auto mb-8 max-w-2xl text-center md:mb-10">
+      <span class="mb-4 block text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Jak to działa</span>
+      <h2 class="cinzel mb-4 text-3xl md:text-4xl">Ścieżka leczenia</h2>
+      <p class="text-[15px] font-light text-brand-steel/75 md:text-base">
         Wybierz ścieżkę dopasowaną do wieku pacjenta i zobacz kolejne kroki leczenia.
       </p>
     </div>
 
-    <div class="max-w-5xl mx-auto">
-      <div class="bg-white/5 rounded-3xl border border-white/10 p-4 md:p-6">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+    <div class="mx-auto max-w-5xl">
+      <div class="rounded-3xl border border-brand-steel/10 bg-white p-4 shadow-sm md:p-6">
+        <div class="mb-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
           <button
             type="button"
-            class="process-tab-btn is-active w-full cursor-pointer rounded-xl px-5 py-4 text-sm font-bold uppercase tracking-wider bg-brand-carmine text-white transition-all"
+            class="process-tab-btn is-active w-full cursor-pointer rounded-xl border border-brand-gold bg-brand-gold px-5 py-4 text-sm font-bold uppercase tracking-wider text-white transition-all"
             data-target="dziecko"
             aria-controls="timeline-dziecko"
             aria-selected="true"
@@ -27,7 +27,7 @@
           </button>
           <button
             type="button"
-            class="process-tab-btn w-full cursor-pointer rounded-xl px-5 py-4 text-sm font-bold uppercase tracking-wider bg-white/10 text-white transition-all"
+            class="process-tab-btn w-full cursor-pointer rounded-xl border border-gray-200 bg-white px-5 py-4 text-sm font-bold uppercase tracking-wider text-brand-steel transition-all"
             data-target="ortodoncja"
             aria-controls="timeline-ortodoncja"
             aria-selected="false"
@@ -37,67 +37,67 @@
         </div>
 
         <div id="timeline-dziecko" class="process-tab-content is-active">
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <article class="rounded-2xl bg-white/5 border border-white/10 p-5">
-              <div class="flex items-baseline gap-3 mb-2">
-                <p class="cinzel text-2xl text-brand-carmine font-bold leading-none tabular-nums shrink-0">1</p>
-                <h3 class="font-bold text-xs uppercase tracking-widest leading-snug min-w-0">Wywiad i adaptacja</h3>
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <article class="rounded-2xl border border-gray-100 bg-gray-soft/80 p-5">
+              <div class="mb-2 flex items-baseline gap-3">
+                <p class="cinzel text-2xl font-bold leading-none text-gold tabular-nums shrink-0">1</p>
+                <h3 class="min-w-0 text-xs font-bold uppercase leading-snug tracking-widest">Wywiad i adaptacja</h3>
               </div>
-              <p class="text-sm text-white/70">Spokojna rozmowa z rodzicem i dzieckiem oraz ocena nawyków jamy ustnej.</p>
+              <p class="text-sm text-brand-steel/70">Spokojna rozmowa z rodzicem i dzieckiem oraz ocena nawyków jamy ustnej.</p>
             </article>
-            <article class="rounded-2xl bg-white/5 border border-white/10 p-5">
-              <div class="flex items-baseline gap-3 mb-2">
-                <p class="cinzel text-2xl text-brand-carmine font-bold leading-none tabular-nums shrink-0">2</p>
-                <h3 class="font-bold text-xs uppercase tracking-widest leading-snug min-w-0">Badanie i diagnoza</h3>
+            <article class="rounded-2xl border border-gray-100 bg-gray-soft/80 p-5">
+              <div class="mb-2 flex items-baseline gap-3">
+                <p class="cinzel text-2xl font-bold leading-none text-gold tabular-nums shrink-0">2</p>
+                <h3 class="min-w-0 text-xs font-bold uppercase leading-snug tracking-widest">Badanie i diagnoza</h3>
               </div>
-              <p class="text-sm text-white/70">Kontrola zgryzu i wskazanie, czy potrzebna jest profilaktyka, obserwacja albo leczenie.</p>
+              <p class="text-sm text-brand-steel/70">Kontrola zgryzu i wskazanie, czy potrzebna jest profilaktyka, obserwacja albo leczenie.</p>
             </article>
-            <article class="rounded-2xl bg-white/5 border border-white/10 p-5">
-              <div class="flex items-baseline gap-3 mb-2">
-                <p class="cinzel text-2xl text-brand-carmine font-bold leading-none tabular-nums shrink-0">3</p>
-                <h3 class="font-bold text-xs uppercase tracking-widest leading-snug min-w-0">Plan dla rodzica</h3>
+            <article class="rounded-2xl border border-gray-100 bg-gray-soft/80 p-5">
+              <div class="mb-2 flex items-baseline gap-3">
+                <p class="cinzel text-2xl font-bold leading-none text-gold tabular-nums shrink-0">3</p>
+                <h3 class="min-w-0 text-xs font-bold uppercase leading-snug tracking-widest">Plan dla rodzica</h3>
               </div>
-              <p class="text-sm text-white/70">Proste zalecenia domowe oraz harmonogram kolejnych wizyt kontrolnych.</p>
+              <p class="text-sm text-brand-steel/70">Proste zalecenia domowe oraz harmonogram kolejnych wizyt kontrolnych.</p>
             </article>
-            <article class="rounded-2xl bg-white/5 border border-white/10 p-5">
-              <div class="flex items-baseline gap-3 mb-2">
-                <p class="cinzel text-2xl text-brand-carmine font-bold leading-none tabular-nums shrink-0">4</p>
-                <h3 class="font-bold text-xs uppercase tracking-widest leading-snug min-w-0">Dalsze prowadzenie</h3>
+            <article class="rounded-2xl border border-gray-100 bg-gray-soft/80 p-5">
+              <div class="mb-2 flex items-baseline gap-3">
+                <p class="cinzel text-2xl font-bold leading-none text-gold tabular-nums shrink-0">4</p>
+                <h3 class="min-w-0 text-xs font-bold uppercase leading-snug tracking-widest">Dalsze prowadzenie</h3>
               </div>
-              <p class="text-sm text-white/70">Monitorowanie rozwoju uzębienia i szybka reakcja na ewentualne nieprawidłowości.</p>
+              <p class="text-sm text-brand-steel/70">Monitorowanie rozwoju uzębienia i szybka reakcja na ewentualne nieprawidłowości.</p>
             </article>
           </div>
         </div>
 
         <div id="timeline-ortodoncja" class="process-tab-content hidden">
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <article class="rounded-2xl bg-white/5 border border-white/10 p-5">
-              <div class="flex items-baseline gap-3 mb-2">
-                <p class="cinzel text-2xl text-brand-carmine font-bold leading-none tabular-nums shrink-0">1</p>
-                <h3 class="font-bold text-xs uppercase tracking-widest leading-snug min-w-0">Konsultacja</h3>
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <article class="rounded-2xl border border-gray-100 bg-gray-soft/80 p-5">
+              <div class="mb-2 flex items-baseline gap-3">
+                <p class="cinzel text-2xl font-bold leading-none text-gold tabular-nums shrink-0">1</p>
+                <h3 class="min-w-0 text-xs font-bold uppercase leading-snug tracking-widest">Konsultacja</h3>
               </div>
-              <p class="text-sm text-white/70">Ocena wady zgryzu i omówienie oczekiwań oraz priorytetów leczenia.</p>
+              <p class="text-sm text-brand-steel/70">Ocena wady zgryzu i omówienie oczekiwań oraz priorytetów leczenia.</p>
             </article>
-            <article class="rounded-2xl bg-white/5 border border-white/10 p-5">
-              <div class="flex items-baseline gap-3 mb-2">
-                <p class="cinzel text-2xl text-brand-carmine font-bold leading-none tabular-nums shrink-0">2</p>
-                <h3 class="font-bold text-xs uppercase tracking-widest leading-snug min-w-0">Diagnostyka</h3>
+            <article class="rounded-2xl border border-gray-100 bg-gray-soft/80 p-5">
+              <div class="mb-2 flex items-baseline gap-3">
+                <p class="cinzel text-2xl font-bold leading-none text-gold tabular-nums shrink-0">2</p>
+                <h3 class="min-w-0 text-xs font-bold uppercase leading-snug tracking-widest">Diagnostyka</h3>
               </div>
-              <p class="text-sm text-white/70">Skan 3D, dokumentacja i analiza potrzebna do precyzyjnego planu terapii.</p>
+              <p class="text-sm text-brand-steel/70">Skan 3D, dokumentacja i analiza potrzebna do precyzyjnego planu terapii.</p>
             </article>
-            <article class="rounded-2xl bg-white/5 border border-white/10 p-5">
-              <div class="flex items-baseline gap-3 mb-2">
-                <p class="cinzel text-2xl text-brand-carmine font-bold leading-none tabular-nums shrink-0">3</p>
-                <h3 class="font-bold text-xs uppercase tracking-widest leading-snug min-w-0">Plan leczenia</h3>
+            <article class="rounded-2xl border border-gray-100 bg-gray-soft/80 p-5">
+              <div class="mb-2 flex items-baseline gap-3">
+                <p class="cinzel text-2xl font-bold leading-none text-gold tabular-nums shrink-0">3</p>
+                <h3 class="min-w-0 text-xs font-bold uppercase leading-snug tracking-widest">Plan leczenia</h3>
               </div>
-              <p class="text-sm text-white/70">Dobór metody: aparat stały lub nakładki wraz z harmonogramem wizyt.</p>
+              <p class="text-sm text-brand-steel/70">Dobór metody: aparat stały lub nakładki wraz z harmonogramem wizyt.</p>
             </article>
-            <article class="rounded-2xl bg-white/5 border border-white/10 p-5">
-              <div class="flex items-baseline gap-3 mb-2">
-                <p class="cinzel text-2xl text-brand-carmine font-bold leading-none tabular-nums shrink-0">4</p>
-                <h3 class="font-bold text-xs uppercase tracking-widest leading-snug min-w-0">Kontrole i retencja</h3>
+            <article class="rounded-2xl border border-gray-100 bg-gray-soft/80 p-5">
+              <div class="mb-2 flex items-baseline gap-3">
+                <p class="cinzel text-2xl font-bold leading-none text-gold tabular-nums shrink-0">4</p>
+                <h3 class="min-w-0 text-xs font-bold uppercase leading-snug tracking-widest">Kontrole i retencja</h3>
               </div>
-              <p class="text-sm text-white/70">Regularne kontrole, finalizacja leczenia i utrzymanie osiągniętego efektu.</p>
+              <p class="text-sm text-brand-steel/70">Regularne kontrole, finalizacja leczenia i utrzymanie osiągniętego efektu.</p>
             </article>
           </div>
         </div>
@@ -105,7 +105,7 @@
     </div>
 
     <div class="mt-16 text-center">
-      <a href="#kontakt" class="btn-gold inline-flex items-center justify-center px-8 py-4 rounded-full font-bold text-xs uppercase tracking-[0.2em]">
+      <a href="#kontakt" class="btn-gold inline-flex items-center justify-center rounded-full px-8 py-4 text-xs font-bold uppercase tracking-[0.2em]">
         Umów wizytę
       </a>
     </div>

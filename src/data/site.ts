@@ -8,8 +8,29 @@ export const GOOGLE_BUSINESS_REVIEWS_URL =
 export const DEFAULT_OG_IMAGE_URL = `${SITE_ORIGIN}/images/team/kornelia-rumin.jpg`;
 
 export const PHONE_E164 = '+48694731124';
-export const WHATSAPP_E164 = PHONE_E164;
 export const PHONE_DISPLAY = '+48 694 731 124';
+
+/**
+ * Numer WhatsApp Business (E.164, z prefiksem kraju).
+ * Musi być ten sam numer, który masz w WhatsApp Business / Meta Business Suite.
+ * Jeśli czat biznesowy jest na innej linii niż telefon rejestracji — wpisz tutaj numer WA, a `PHONE_*` zostaw bez zmian.
+ */
+export const WHATSAPP_E164 = PHONE_E164;
+
+/** Tekst otwierający czat po kliknięciu „WhatsApp” (parametr `text` w wa.me). Pusty string = bez prefilla. */
+export const WHATSAPP_PREFILL_MESSAGE =
+  'Dzień dobry, chciałbym/chciałabym umówić wizytę w ORTHOMEDICA w Lubinie.';
+
+/** Link „Kliknij, aby czatować” (WhatsApp Business / wa.me). */
+export function whatsAppChatHref(): string {
+  const digits = WHATSAPP_E164.replace(/\D/g, '');
+  const base = `https://wa.me/${digits}`;
+  const msg = WHATSAPP_PREFILL_MESSAGE.trim();
+  if (msg === '') {
+    return base;
+  }
+  return `${base}?text=${encodeURIComponent(msg)}`;
+}
 
 export const ENTITY = {
   /** Nazwa handlowa / jak widzi pacjent */

@@ -274,9 +274,13 @@ document.addEventListener('DOMContentLoaded', () => {
         processTabButtons.forEach((button) => {
           const active = button === btn;
           button.classList.toggle('is-active', active);
-          button.classList.toggle('bg-gold', active);
+          button.classList.toggle('bg-brand-gold', active);
+          button.classList.toggle('border-brand-gold', active);
           button.classList.toggle('text-white', active);
-          button.classList.toggle('bg-white/10', !active);
+          button.classList.toggle('text-brand-steel', !active);
+          button.classList.toggle('bg-white', !active);
+          button.classList.toggle('border', !active);
+          button.classList.toggle('border-gray-200', !active);
           button.setAttribute('aria-selected', active ? 'true' : 'false');
         });
 

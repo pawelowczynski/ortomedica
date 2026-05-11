@@ -8,7 +8,7 @@ const hasHighlights = GOOGLE_REVIEW_HIGHLIGHTS.length > 0;
 <section id="opinie" class="py-14 md:py-18 bg-gray-50 border-y border-gray-100">
   <div class="container mx-auto px-6">
     <div class="text-center mb-8 md:mb-10 max-w-2xl mx-auto">
-      <div class="flex justify-center gap-1 text-brand-carmine mb-4" aria-hidden="true">
+      <div class="mb-4 flex justify-center gap-1 text-gold" aria-hidden="true">
         <i data-lucide="star" class="fill-current w-6 h-6"></i>
         <i data-lucide="star" class="fill-current w-6 h-6"></i>
         <i data-lucide="star" class="fill-current w-6 h-6"></i>
@@ -27,7 +27,7 @@ const hasHighlights = GOOGLE_REVIEW_HIGHLIGHTS.length > 0;
           href={GOOGLE_BUSINESS_REVIEWS_URL}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center justify-center gap-2 rounded-full border border-brand-steel/15 bg-white px-6 py-3 text-sm font-semibold text-brand-steel shadow-sm transition-colors hover:border-brand-carmine hover:text-brand-carmine"
+          class="inline-flex items-center justify-center gap-2 rounded-full border border-brand-steel/15 bg-white px-6 py-3 text-sm font-semibold text-brand-steel shadow-sm transition-colors hover:border-gold/50 hover:text-gold"
         >
           <i data-lucide="external-link" class="h-4 w-4 shrink-0" aria-hidden="true"></i>
           Wszystkie opinie w Google
@@ -39,13 +39,13 @@ const hasHighlights = GOOGLE_REVIEW_HIGHLIGHTS.length > 0;
           {GOOGLE_REVIEW_HIGHLIGHTS.map((review) => (
             <li>
               <blockquote class="h-full rounded-2xl border border-gray-100 bg-white p-6 shadow-sm flex flex-col">
-                <div class="flex gap-0.5 text-brand-carmine mb-3" aria-label={`Ocena ${review.rating} z 5`}>
+                <div class="mb-3 flex gap-0.5 text-gold" aria-label={`Ocena ${review.rating} z 5`}>
                   {[1, 2, 3, 4, 5].map((n) => (
                     <i
                       data-lucide="star"
                       class:list={[
-                        'w-4 h-4 shrink-0 fill-current',
-                        n <= review.rating ? 'text-brand-carmine' : 'text-gray-200',
+                        'h-4 w-4 shrink-0 fill-current',
+                        n <= review.rating ? 'text-gold' : 'text-gray-200',
                       ]}
                     />
                   ))}
@@ -73,7 +73,7 @@ const hasHighlights = GOOGLE_REVIEW_HIGHLIGHTS.length > 0;
             href={GOOGLE_BUSINESS_REVIEWS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-sm font-semibold text-brand-carmine hover:text-brand-steel transition-colors"
+            class="inline-flex items-center gap-2 text-sm font-semibold text-gold transition-colors hover:text-brand-steel"
           >
             Przejdź do opinii w Google
             <i data-lucide="arrow-right" class="w-4 h-4"></i>

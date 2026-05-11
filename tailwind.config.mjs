@@ -7,12 +7,16 @@ export default {
 				'brand-carmine': '#BE1433',
 				'brand-steel': '#1A3A79',
 				'brand-blue': '#009BD5',
-				// Backward-compatible aliases for existing utility classes.
+				'brand-gold': '#b2945e',
+				'brand-gold-light': '#d4bc8d',
+				'brand-gold-dark': '#8f6f3d',
 				navy: '#1A3A79',
 				'navy-light': '#1A3A79',
-				gold: '#BE1433',
-				'gold-light': '#D94A64',
+				gold: '#b2945e',
+				'gold-light': '#d4bc8d',
 				'gray-soft': '#f8f9fa',
+				'surface-soft': '#f6f4ef',
+				'surface-warm': '#faf8f5',
 				primary: '#1A3A79',
 				accent: '#BE1433',
 				secondary: '#009BD5',
@@ -21,4 +25,3 @@ export default {
 	},
 	plugins: [],
 }
-
