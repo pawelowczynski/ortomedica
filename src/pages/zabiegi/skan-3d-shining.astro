@@ -2,18 +2,20 @@
 import Layout from '../../layouts/layout.astro';
 import Header from '../../components/header.astro';
 import Footer from '../../components/footer.astro';
+
+const canonical = 'https://www.orthomedica.lubin.pl/zabiegi/skan-3d-shining';
 ---
 
 <Layout
-  title="Skan 3D iTero Lubin — cyfrowa diagnostyka ortodontyczna | ORTHOMEDICA"
-  description="Skan 3D iTero w Lubinie — cyfrowe wyciski, dokładna diagnostyka i symulacja uśmiechu przed leczeniem ortodontycznym. ORTHOMEDICA."
-  canonical="https://www.orthomedica.lubin.pl/zabiegi/skan-3d-itero"
+  title="Skan 3D Shining Lubin — cyfrowa diagnostyka ortodontyczna | ORTHOMEDICA"
+  description="Skan 3D Shining w Lubinie — cyfrowe wyciski, dokładna diagnostyka i plan leczenia ortodontycznego bez klasycznych mas. ORTHOMEDICA."
+  canonical={canonical}
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "MedicalProcedure",
-    "name": "Skan 3D iTero",
-    "url": "https://www.orthomedica.lubin.pl/zabiegi/skan-3d-itero",
+    "name": "Skan 3D Shining",
+    "url": canonical,
     "bodyLocation": "Jama ustna",
     "procedureType": "NonSurgical",
     "provider": {
@@ -39,7 +41,7 @@ import Footer from '../../components/footer.astro';
           <li class="text-gray-300">/</li>
           <li><span class="text-gray-400">Zabiegi</span></li>
           <li class="text-gray-300">/</li>
-          <li><span class="text-navy">Skan 3D iTero</span></li>
+          <li><span class="text-navy">Skan 3D Shining</span></li>
         </ol>
       </div>
     </nav>
@@ -52,10 +54,10 @@ import Footer from '../../components/footer.astro';
               Diagnostyka cyfrowa
             </h1>
             <h2 class="text-3xl md:text-4xl lg:text-5xl serif mb-4 md:mb-6 text-navy">
-              Skan 3D iTero w Lubinie
+              Skan 3D Shining w Lubinie
             </h2>
             <p class="text-[15px] md:text-base text-gray-600 font-light mb-6 md:mb-8 max-w-xl">
-              Zamiast klasycznych, nieprzyjemnych wycisków masą, wykonujemy cyfrowy skan zębów kamerą iTero.
+              Zamiast klasycznych, nieprzyjemnych wycisków masą, wykonujemy cyfrowy skan zębów skanerem Shining.
               To szybkie, precyzyjne i komfortowe badanie, które pozwala od razu zobaczyć trójwymiarowy model
               Twojego uśmiechu.
             </p>
@@ -69,7 +71,7 @@ import Footer from '../../components/footer.astro';
             <div class="rounded-3xl overflow-hidden shadow-lg border border-gray-100">
               <img
                 src="https://images.unsplash.com/photo-1598257006458-087169a1f08d?auto=format&fit=crop&q=80&w=1200"
-                alt="Skaner 3D iTero w gabinecie"
+                alt="Skaner 3D w gabinecie stomatologicznym"
                 loading="lazy"
                 class="w-full h-64 md:h-80 object-cover"
               />
@@ -99,14 +101,14 @@ import Footer from '../../components/footer.astro';
 
     <section class="py-10 md:py-14 bg-gray-soft border-y border-gray-100">
       <div class="container mx-auto px-6 max-w-4xl">
-        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-6">Na czym polega skan 3D iTero?</h3>
+        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-6">Na czym polega skan 3D Shining?</h3>
         <p class="text-[15px] md:text-base text-gray-600 font-light mb-4">
-          Skaner iTero wykonuje serię zdjęć wewnątrzustnych, które komputer łączy w trójwymiarowy model Twoich zębów.
+          Skaner Shining wykonuje serię zdjęć wewnątrzustnych, które komputer łączy w trójwymiarowy model Twoich zębów.
           Badanie trwa kilka minut i jest całkowicie bezbolesne. Nie używamy mas wyciskowych, które mogą wywoływać
           odruch wymiotny.
         </p>
         <p class="text-[15px] md:text-base text-gray-600 font-light mb-0">
-          Uzyskany model 3D służy do planowania leczenia nakładkami Invisalign, aparatami stałymi oraz do analiz
+          Uzyskany model 3D służy do planowania leczenia aparatami stałymi, nakładkami oraz do analiz
           ortodontycznych i protetycznych. Możemy go również wykorzystać do przygotowania symulacji przewidywanego
           efektu leczenia.
         </p>
@@ -124,8 +126,8 @@ import Footer from '../../components/footer.astro';
             <li>bezpieczeństwo — brak promieniowania, badanie oparte na optyce.</li>
           </ul>
           <p class="text-[15px] md:text-base text-gray-600 font-light">
-            Skan 3D iTero stanowi dziś standard w nowoczesnej ortodoncji i jest pierwszym krokiem do zaplanowania
-            leczenia nakładkami Invisalign.
+            Skan 3D Shining współpracuje z RTG wykonywanym w gabinecie: skan pokazuje zęby i dziąsła w detalu, a zdjęcia
+            rentgenowskie uzupełniają ocenę korzeni i kości — obie metody się uzupełniają.
           </p>
         </div>
 
@@ -144,7 +146,7 @@ import Footer from '../../components/footer.astro';
 
     <section class="py-10 md:py-14 bg-gray-50 border-y border-gray-100">
       <div class="container mx-auto px-6 max-w-4xl">
-        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-6">Mini FAQ — skan 3D iTero</h3>
+        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-6">Mini FAQ — skan 3D Shining</h3>
         <div class="space-y-4">
           <details class="group bg-white rounded-2xl border border-gray-100 shadow-sm open:border-gold transition-all">
             <summary class="flex items-center justify-between px-5 py-3 cursor-pointer list-none">
@@ -175,7 +177,7 @@ import Footer from '../../components/footer.astro';
       <div class="container mx-auto px-6 text-center max-w-2xl">
         <h3 class="cinzel text-2xl md:text-3xl text-navy mb-4">Zacznij od komfortowej diagnostyki</h3>
         <p class="text-[15px] md:text-base text-gray-600 font-light mb-6">
-          Skan 3D iTero to pierwszy krok do nowoczesnego leczenia ortodontycznego. Umów wizytę w ORTHOMEDICA
+          Skan 3D Shining to pierwszy krok do precyzyjnego planu ortodontycznego. Umów wizytę w ORTHOMEDICA
           i zobacz swój uśmiech w 3D.
         </p>
         <a href="/#kontakt" class="btn-gold inline-flex items-center gap-2 px-10 py-4 rounded-full text-xs font-bold uppercase tracking-[0.2em]">
@@ -188,4 +190,3 @@ import Footer from '../../components/footer.astro';
 
   <Footer />
 </Layout>
-

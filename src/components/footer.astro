@@ -5,7 +5,6 @@ import {
   MEDICAL_DEVICE_ADVERTISING,
   whatsAppChatHref,
   formatRegisteredOfficeAddress,
-  formatClinicAddress,
   formatNipLine,
   formatRegonLine,
   formatKrsLine,
@@ -26,12 +25,10 @@ const waHref = whatsAppChatHref();
                 </span>
             </div>
             <p class="mb-8 text-[10px] uppercase leading-loose tracking-[0.4em] text-brand-steel/55">
-                Stomatologia dziecięca · chirurgia · gnatologia · ortodoncja<br />Lubin · gabinet ORTHOMEDICA
+                Ortodoncja · stomatologia dziecięca · chirurgia · gnatologia<br />Lubin · ORTHOMEDICA
             </p>
             <div class="mb-8 flex flex-wrap justify-center gap-x-6 gap-y-2">
                 <a href="/blog" class="text-sm text-brand-steel/55 transition-colors hover:text-gold">Blog</a>
-                <a href="/#metamorfozy" class="text-sm text-brand-steel/55 transition-colors hover:text-gold">Metamorfozy</a>
-                <a href="/#opinie" class="text-sm text-brand-steel/55 transition-colors hover:text-gold">Opinie</a>
                 <a href="/#gabinet" class="text-sm text-brand-steel/55 transition-colors hover:text-gold">Gabinet</a>
                 <a href="/#faq" class="text-sm text-brand-steel/55 transition-colors hover:text-gold">FAQ</a>
                 <a href="/informacje-dla-pacjentow" class="text-sm text-brand-steel/55 transition-colors hover:text-gold">Informacje dla pacjentów</a>
@@ -45,7 +42,6 @@ const waHref = whatsAppChatHref();
                 <p class="mb-2">
                     <span>{ENTITY.legalAdministrator}</span><br />
                     Siedziba: {formatRegisteredOfficeAddress()}<br />
-                    Gabinet: {formatClinicAddress()}<br />
                     {formatNipLine()} · {formatRegonLine()}<br />
                     {formatKrsLine()}<br />
                     {formatRegistryLine()}

@@ -1,4 +1,18 @@
 ---
+const childLinks = [
+  '/blog/ortodonta-dla-dziecka-kiedy-pierwsza-wizyta',
+  '/blog/jak-przygotowac-dziecko-do-pierwszej-wizyty-u-dentysty',
+  '/blog/zgrzytanie-zebami-u-dzieci-kiedy-do-specjalisty',
+  '/blog/aparat-staly-jak-dbac-o-zeby',
+];
+const orthoLinks = [
+  '/blog/czy-aparat-boli-pierwszy-tydzien-z-aparatem',
+  '/zabiegi/skan-3d-shining',
+  '/blog/higiena-zebow-z-aparatem-stalym-10-zasad',
+  '/blog/retencja-po-aparacie-dlaczego-jest-konieczna',
+];
+const linkClass =
+  'mt-3 inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-gold transition-colors hover:text-brand-steel';
 ---
 
 <section id="jak-leczymy" class="relative overflow-hidden bg-surface-warm py-14 text-brand-steel md:py-18">
@@ -44,6 +58,10 @@
                 <h3 class="min-w-0 text-xs font-bold uppercase leading-snug tracking-widest">Wywiad i adaptacja</h3>
               </div>
               <p class="text-sm text-brand-steel/70">Spokojna rozmowa z rodzicem i dzieckiem oraz ocena nawyków jamy ustnej.</p>
+              <a href={childLinks[0]} class={linkClass}>
+                Poradnik
+                <i data-lucide="arrow-right" class="h-3.5 w-3.5"></i>
+              </a>
             </article>
             <article class="rounded-2xl border border-gray-100 bg-gray-soft/80 p-5">
               <div class="mb-2 flex items-baseline gap-3">
@@ -51,6 +69,10 @@
                 <h3 class="min-w-0 text-xs font-bold uppercase leading-snug tracking-widest">Badanie i diagnoza</h3>
               </div>
               <p class="text-sm text-brand-steel/70">Kontrola zgryzu i wskazanie, czy potrzebna jest profilaktyka, obserwacja albo leczenie.</p>
+              <a href={childLinks[1]} class={linkClass}>
+                Poradnik
+                <i data-lucide="arrow-right" class="h-3.5 w-3.5"></i>
+              </a>
             </article>
             <article class="rounded-2xl border border-gray-100 bg-gray-soft/80 p-5">
               <div class="mb-2 flex items-baseline gap-3">
@@ -58,6 +80,10 @@
                 <h3 class="min-w-0 text-xs font-bold uppercase leading-snug tracking-widest">Plan dla rodzica</h3>
               </div>
               <p class="text-sm text-brand-steel/70">Proste zalecenia domowe oraz harmonogram kolejnych wizyt kontrolnych.</p>
+              <a href={childLinks[2]} class={linkClass}>
+                Artykuł
+                <i data-lucide="arrow-right" class="h-3.5 w-3.5"></i>
+              </a>
             </article>
             <article class="rounded-2xl border border-gray-100 bg-gray-soft/80 p-5">
               <div class="mb-2 flex items-baseline gap-3">
@@ -65,6 +91,10 @@
                 <h3 class="min-w-0 text-xs font-bold uppercase leading-snug tracking-widest">Dalsze prowadzenie</h3>
               </div>
               <p class="text-sm text-brand-steel/70">Monitorowanie rozwoju uzębienia i szybka reakcja na ewentualne nieprawidłowości.</p>
+              <a href={childLinks[3]} class={linkClass}>
+                Blog
+                <i data-lucide="arrow-right" class="h-3.5 w-3.5"></i>
+              </a>
             </article>
           </div>
         </div>
@@ -77,20 +107,32 @@
                 <h3 class="min-w-0 text-xs font-bold uppercase leading-snug tracking-widest">Konsultacja</h3>
               </div>
               <p class="text-sm text-brand-steel/70">Ocena wady zgryzu i omówienie oczekiwań oraz priorytetów leczenia.</p>
+              <a href={orthoLinks[0]} class={linkClass}>
+                Poradnik
+                <i data-lucide="arrow-right" class="h-3.5 w-3.5"></i>
+              </a>
             </article>
             <article class="rounded-2xl border border-gray-100 bg-gray-soft/80 p-5">
               <div class="mb-2 flex items-baseline gap-3">
                 <p class="cinzel text-2xl font-bold leading-none text-gold tabular-nums shrink-0">2</p>
                 <h3 class="min-w-0 text-xs font-bold uppercase leading-snug tracking-widest">Diagnostyka</h3>
               </div>
-              <p class="text-sm text-brand-steel/70">Skan 3D, dokumentacja i analiza potrzebna do precyzyjnego planu terapii.</p>
+              <p class="text-sm text-brand-steel/70">Skan 3D, RTG, dokumentacja i analiza potrzebna do precyzyjnego planu terapii.</p>
+              <a href={orthoLinks[1]} class={linkClass}>
+                Skan 3D
+                <i data-lucide="arrow-right" class="h-3.5 w-3.5"></i>
+              </a>
             </article>
             <article class="rounded-2xl border border-gray-100 bg-gray-soft/80 p-5">
               <div class="mb-2 flex items-baseline gap-3">
                 <p class="cinzel text-2xl font-bold leading-none text-gold tabular-nums shrink-0">3</p>
                 <h3 class="min-w-0 text-xs font-bold uppercase leading-snug tracking-widest">Plan leczenia</h3>
               </div>
-              <p class="text-sm text-brand-steel/70">Dobór metody: aparat stały lub nakładki wraz z harmonogramem wizyt.</p>
+              <p class="text-sm text-brand-steel/70">Dobór metody: aparat stały lub inne rozwiązania wraz z harmonogramem wizyt.</p>
+              <a href={orthoLinks[2]} class={linkClass}>
+                Higiena z aparatem
+                <i data-lucide="arrow-right" class="h-3.5 w-3.5"></i>
+              </a>
             </article>
             <article class="rounded-2xl border border-gray-100 bg-gray-soft/80 p-5">
               <div class="mb-2 flex items-baseline gap-3">
@@ -98,6 +140,10 @@
                 <h3 class="min-w-0 text-xs font-bold uppercase leading-snug tracking-widest">Kontrole i retencja</h3>
               </div>
               <p class="text-sm text-brand-steel/70">Regularne kontrole, finalizacja leczenia i utrzymanie osiągniętego efektu.</p>
+              <a href={orthoLinks[3]} class={linkClass}>
+                Retencja
+                <i data-lucide="arrow-right" class="h-3.5 w-3.5"></i>
+              </a>
             </article>
           </div>
         </div>

@@ -85,11 +85,11 @@ export const MEDICAL_DEVICE_ADVERTISING = {
 
   /** Pełny blok na stronę „Informacje dla pacjentów” */
   fullHtmlParagraphs: [
-    'Treści na tej stronie dotyczące metod leczenia, nazw handlowych systemów (np. Invisalign®), aparatów ortodontycznych, materiałów i urządzeń używanych w gabinecie mają **charakter ogólnoinformacyjny** i służą przybliżeniu zakresu usług. **Nie zastępują** konsultacji stomatologicznej, badania ani dokumentacji medycznej. Kwalifikacja do leczenia, dobór wyrobu medycznego (w rozumieniu ustawy o wyrobach medycznych) oraz plan terapii ustala **wyłącznie lekarz dentysta** po ocenie stanu zdrowia pacjenta.',
+    'Treści na tej stronie dotyczące metod leczenia, nazw handlowych systemów ortodontycznych, aparatów, materiałów i urządzeń (np. skaner Shining 3D) używanych w gabinecie mają **charakter ogólnoinformacyjny** i służą przybliżeniu zakresu usług. **Nie zastępują** konsultacji stomatologicznej, badania ani dokumentacji medycznej. Kwalifikacja do leczenia, dobór wyrobu medycznego (w rozumieniu ustawy o wyrobach medycznych) oraz plan terapii ustala **wyłącznie lekarz dentysta** po ocenie stanu zdrowia pacjenta.',
 
     'Administrator dba, by publikowane informacje **nie wprowadzały w błąd** co do właściwości, działania ani przeznaczenia wyrobów, **nie sugerowały** możliwości zastąpienia konsultacji lub badania u lekarza oraz by były **spójne** z charakterem świadczeń udzielanych w gabinecie — w granicach obowiązujących przepisów, w tym **ustawy z dnia 15 kwietnia 2011 r. o wyrobach medycznych** (tekst jednolity: ISAP / Rządowe Centrum Legislacji).',
 
-    'Zdjęcia „przed / po” (metamorfozy) mają charakter **ilustracyjny**; efekt leczenia zależy od stanu klinicznego, współpracy pacjenta i wielu innych czynników i **nie stanowi gwarancji** identycznego rezultatu u innej osoby.',
+    'Zdjęcia „przed / po” publikowane wyłącznie za zgodą pacjenta mają charakter **ilustracyjny**; efekt leczenia zależy od stanu klinicznego, współpracy pacjenta i wielu innych czynników i **nie stanowi gwarancji** identycznego rezultatu u innej osoby.',
 
     'W sprawach dotyczących charakteru treści marketingowych lub informacyjnych na stronie można kontaktować się z administratorem pod adresem e-mail wskazanym w danych podmiotu udzielającego świadczeń.',
   ] as const,

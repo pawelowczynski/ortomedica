@@ -6,9 +6,7 @@ import Cennik from '../components/Cennik.astro';
 import Hero from '../components/Hero.astro';
 import OfferGrid from '../components/OfferGrid.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
-import Metamorphoses from '../components/Metamorphoses.astro';
 import Team from '../components/Team.astro';
-import Testimonials from '../components/Testimonials.astro';
 import ClinicGallery from '../components/ClinicGallery.astro';
 import LocalSEO from '../components/LocalSEO.astro';
 import FAQSection from '../components/FAQSection.astro';
@@ -31,8 +29,8 @@ const faqSchema = {
 ---
 
 <Layout 
-    title="ORTHOMEDICA Lubin | Stomatologia dziecięca, chirurgia, gnatologia, ortodoncja"
-    description="ORTHOMEDICA w Lubinie: stomatologia dziecięca, ortodoncja, chirurgia i gnatologia u dr n. med. Kornelii Rumin. Od dokładnej diagnostyki po spójny plan leczenia — z myślą o komforcie dziecka i spokoju rodzica. Umów wizytę w dogodnym terminie."
+    title="ORTHOMEDICA Lubin | Ortodoncja, stomatologia dziecięca, RTG w gabinecie"
+    description="ORTHOMEDICA w Lubinie: ortodoncja i stomatologia dziecięca u dr n. med. Kornelii Rumin. RTG i skan 3D (Shining) na miejscu, od konsultacji po spójny plan leczenia. Umów wizytę w dogodnym terminie."
 >
     <!-- Tu zrzucamy specyficzne tagi SEO dla tej strony (Schema.org) -->
     <script slot="head" type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
@@ -42,7 +40,7 @@ const faqSchema = {
         {
           "@type": "MedicalBusiness",
           "name": "ORTHOMEDICA - dr n. med. Kornelia Rumin",
-          "description": "Stomatologia dziecięca, chirurgia, gnatologia i ortodoncja — Lubin.",
+          "description": "Ortodoncja, stomatologia dziecięca, chirurgia i gnatologia — Lubin. RTG i diagnostyka 3D w gabinecie.",
           "image": DEFAULT_OG_IMAGE_URL,
           "address": {
             "@type": "PostalAddress",
@@ -74,9 +72,7 @@ const faqSchema = {
         <Hero />
         <OfferGrid />
         <ProcessSteps />
-        <Metamorphoses />
         <Team />
-        <Testimonials />
         <ClinicGallery />
 
         <Cennik />

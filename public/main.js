@@ -202,7 +202,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (cookieBanner) cookieBanner.classList.remove('hidden-banner');
       }, 1000);
     } else {
-      setupMapObserver();
+      /** Zgoda już zapisana — ładuj mapę od razu (IntersectionObserver bywa zawodny przy pierwszym malowaniu / układzie siatki). */
+      loadGoogleMap();
       initMarketingAnalytics();
     }
   }
@@ -288,6 +289,20 @@ document.addEventListener('DOMContentLoaded', () => {
           const shouldShow = panel.id === `timeline-${target}`;
           panel.classList.toggle('is-active', shouldShow);
           panel.classList.toggle('hidden', !shouldShow);
+        });
+      });
+    });
+  }
+
+  // 7b. FAQ accordion — tylko jedno otwarte <details> naraz
+  const faqRoot = document.getElementById('faq');
+  if (faqRoot) {
+    const faqDetails = faqRoot.querySelectorAll('details');
+    faqDetails.forEach((detail) => {
+      detail.addEventListener('toggle', () => {
+        if (!detail.open) return;
+        faqDetails.forEach((other) => {
+          if (other !== detail) other.open = false;
         });
       });
     });

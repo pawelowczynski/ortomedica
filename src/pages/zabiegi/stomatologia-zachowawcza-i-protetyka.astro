@@ -1,0 +1,102 @@
+---
+import Layout from '../../layouts/layout.astro';
+import Header from '../../components/header.astro';
+import Footer from '../../components/footer.astro';
+
+const canonical = 'https://www.orthomedica.lubin.pl/zabiegi/stomatologia-zachowawcza-i-protetyka';
+---
+
+<Layout
+  title="Stomatologia zachowawcza i protetyka Lubin — ORTHOMEDICA"
+  description="Leczenie zachowawcze zębów stałych, odbudowy, protetyka oraz koordynacja z ortodoncją w jednym gabinecie w Lubinie."
+  canonical={canonical}
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": "Stomatologia zachowawcza i protetyka",
+    "url": canonical,
+    "description": "Stomatologia zachowawcza i protetyka w ORTHOMEDICA — Lubin.",
+    "provider": {
+      "@type": "Dentist",
+      "name": "ORTHOMEDICA — dr n. med. Kornelia Rumin",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ul. Pawia 67",
+        "addressLocality": "Lubin",
+        "postalCode": "59-300",
+        "addressCountry": "PL"
+      },
+      "telephone": "+48694731124"
+    }
+  })} />
+  <Header />
+
+  <main class="pt-28 md:pt-32 pb-20 bg-white">
+    <nav class="text-xs md:text-sm text-gray-400 mb-6 md:mb-8" aria-label="Okruszki nawigacyjne">
+      <div class="container mx-auto px-6">
+        <ol class="flex flex-wrap items-center gap-1 md:gap-2">
+          <li><a href="/" class="hover:text-gold">Strona główna</a></li>
+          <li class="text-gray-300">/</li>
+          <li><span class="text-gray-400">Zabiegi</span></li>
+          <li class="text-gray-300">/</li>
+          <li><span class="text-navy">Stomatologia zachowawcza i protetyka</span></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="py-8 md:py-12">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <h1 class="cinzel text-xs md:text-sm text-gold font-bold tracking-[0.5em] mb-4 uppercase">
+          Dla dorosłych i młodzieży
+        </h1>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl serif mb-6 text-navy">
+          Stomatologia zachowawcza i protetyka w Lubinie
+        </h2>
+        <p class="text-[15px] md:text-base text-gray-600 font-light mb-6 leading-relaxed max-w-3xl">
+          Oprócz ortodoncji zapewniamy <strong class="text-navy font-medium">leczenie zachowawcze</strong> oraz{' '}
+          <strong class="text-navy font-medium">protetykę</strong> — tak, by przygotować uzębienie do aparatu, utrzymać efekt po terapii
+          albo odbudować braki uzębienia w sposób przewidywalny i bezpieczny.
+        </p>
+        <p class="text-[15px] md:text-base text-gray-600 font-light mb-8 leading-relaxed max-w-3xl">
+          Współpracujemy z lekarzami ORTHOMEDICA przy planie wieloetapowym: najpierw zdrowe zęby i dziąsła, potem ewentualna
+          ortodoncja lub odbudowa protetyczna — zgodnie z ustaleniami klinicznymi.
+        </p>
+        <a href="/#kontakt" class="btn-gold inline-flex items-center gap-2 px-8 py-3 rounded-full text-xs font-bold uppercase tracking-[0.2em]">
+          Umów wizytę
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </section>
+
+    <section class="py-10 md:py-14 bg-gray-soft border-y border-gray-100">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-6">Zakres usług</h3>
+        <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+          <div class="bg-white rounded-2xl border border-gray-100 p-6 md:p-8 shadow-sm">
+            <h4 class="cinzel text-lg text-navy mb-4">Stomatologia zachowawcza</h4>
+            <ul class="space-y-3 text-[15px] text-gray-600 font-light list-disc pl-5 marker:text-gold">
+              <li>diagnostyka i leczenie próchnicy,</li>
+              <li>odbudowy kompozytowe i wkłady koronowo-korzeniowe według wskazań,</li>
+              <li>koordynacja z ortodoncją przed i w trakcie leczenia wad zgryzu.</li>
+            </ul>
+          </div>
+          <div class="bg-white rounded-2xl border border-gray-100 p-6 md:p-8 shadow-sm">
+            <h4 class="cinzel text-lg text-navy mb-4">Protetyka</h4>
+            <ul class="space-y-3 text-[15px] text-gray-600 font-light list-disc pl-5 marker:text-gold">
+              <li>korony i mosty — dobór po konsultacji i planie,</li>
+              <li>praca protetyczna po uzgodnieniu z lekarzem prowadzącym,</li>
+              <li>indywidualny harmonogram wizyt.</li>
+            </ul>
+            <p class="mt-6 text-[14px] text-gray-600 font-light">
+              Lekarz m.in.:{' '}
+              <a href="/lek-dent-aleksandra-czerkawska" class="font-semibold text-gold hover:underline">lek. dent. Aleksandra Czerkawska</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

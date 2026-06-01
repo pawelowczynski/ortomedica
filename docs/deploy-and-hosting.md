@@ -18,6 +18,14 @@ Repozytorium GitHub (znane z kontekstu projektu): `pawelowczynski/ortomedica`. K
 
 ---
 
+## 1b. Domeny dodatkowe i podgląd „tej samej” strony
+
+- **Dodatkowe domeny:** skonfiguruj w panelu hostingu lub rejestratora **przekierowanie 301** na kanoniczny adres `https://www.orthomedica.lubin.pl` (zgodny z `site` w `astro.config.mjs`), żeby uniknąć duplikacji treści w indeksie wyszukiwarki.
+- **Stara wersja / inny URL:** jeśli ktoś nadal widzi inną (np. ciemniejszą) wersję strony, sprawdź czy wchodzi na **ten sam URL produkcyjny** co aktualny deploy, wyczyść cache przeglądarki oraz ewentualne **CDN / cache serwera** po wdrożeniu.
+- **Przekierowania w aplikacji:** w `astro.config.mjs` mogą być zdefiniowane stałe przekierowania ścieżek (np. po zmianie slugów podstron); po zmianie **zdeployuj** `dist/` ponownie.
+
+---
+
 ## 2. GitHub
 
 ### 2.1 Gałęzie

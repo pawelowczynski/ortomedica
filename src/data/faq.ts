@@ -14,8 +14,8 @@ export const homePageFaqs: FaqItem[] = [
     a: 'Najczęściej od 18 do 24 miesięcy, ale czas zależy od rodzaju wady zgryzu i systematyczności wizyt kontrolnych.',
   },
   {
-    q: 'Czy Invisalign jest odpowiedni dla dorosłych pacjentów?',
-    a: 'Tak, to częsty wybór dorosłych. Podczas konsultacji oceniamy, czy nakładki będą odpowiednim rozwiązaniem w danym przypadku.',
+    q: 'Czy w gabinecie wykonujecie zdjęcia RTG?',
+    a: 'Tak — RTG wykonujemy na miejscu, w ramach diagnostyki dobranej przez lekarza. Zakres badań obrazowych ustalamy indywidualnie po wywiadzie i badaniu.',
   },
   {
     q: 'Czy leczenie ortodontyczne boli?',
