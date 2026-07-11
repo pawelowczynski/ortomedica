@@ -333,6 +333,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.getElementById('contactForm');
   const formFeedback = document.getElementById('formFeedback');
 
+  const escapeHtml = (value) =>
+    String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+
+  const showFormFeedback = (type, message) => {
+    const icon = type === 'success' ? 'check-circle' : 'alert-circle';
+    const tone =
+      type === 'success'
+        ? ['bg-green-50', 'text-green-600', 'border-green-200']
+        : ['bg-red-50', 'text-red-600', 'border-red-200'];
+
+    formFeedback.innerHTML =
+      "<i data-lucide='" +
+      icon +
+      "' class='inline w-4 h-4 mr-1 mb-0.5'></i> " +
+      escapeHtml(message);
+    formFeedback.classList.remove('hidden');
+    formFeedback.classList.remove('bg-red-50', 'text-red-600', 'border-red-200', 'bg-green-50', 'text-green-600', 'border-green-200');
+    formFeedback.classList.add(...tone);
+    refreshIcons();
+  };
+
   if (contactForm && formFeedback) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -346,11 +371,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (!contactForm.checkValidity()) {
-        formFeedback.innerHTML =
-          "<i data-lucide='alert-circle' class='inline w-4 h-4 mr-1 mb-0.5'></i> Proszę poprawnie wypełnić wymagane pola (np. nr telefonu min. 9 cyfr).";
-        formFeedback.classList.remove('hidden');
-        formFeedback.classList.add('bg-red-50', 'text-red-600', 'border-red-200');
-        refreshIcons();
+        showFormFeedback(
+          'error',
+          'Proszę poprawnie wypełnić wymagane pola (np. nr telefonu min. 9 cyfr).'
+        );
         return;
       }
 
@@ -367,13 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.classList.remove('opacity-70');
       };
 
-      const showErr = (msg) => {
-        formFeedback.innerHTML =
-          "<i data-lucide='alert-circle' class='inline w-4 h-4 mr-1 mb-0.5'></i> " + msg;
-        formFeedback.classList.remove('hidden');
-        formFeedback.classList.add('bg-red-50', 'text-red-600', 'border-red-200');
-        refreshIcons();
-      };
+      const showErr = (msg) => showFormFeedback('error', msg);
 
       (async () => {
         try {
@@ -401,12 +419,10 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
           }
 
-          formFeedback.innerHTML =
-            "<i data-lucide='check-circle' class='inline w-4 h-4 mr-1 mb-0.5'></i> " +
-            (data.message || 'Wiadomość została wysłana! Odezwiemy się niezwłocznie.');
-          formFeedback.classList.remove('hidden');
-          formFeedback.classList.add('bg-green-50', 'text-green-600', 'border-green-200');
-          refreshIcons();
+          showFormFeedback(
+            'success',
+            data.message || 'Wiadomość została wysłana! Odezwiemy się niezwłocznie.'
+          );
           contactForm.reset();
         } catch {
           showErr('Brak połączenia z serwerem. Sprawdź internet lub zadzwoń do rejestracji.');

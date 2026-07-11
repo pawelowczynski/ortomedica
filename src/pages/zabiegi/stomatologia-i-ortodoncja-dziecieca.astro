@@ -2,8 +2,9 @@
 import Layout from '../../layouts/layout.astro';
 import Header from '../../components/header.astro';
 import Footer from '../../components/footer.astro';
+import { canonicalUrl, medicalWebPageJsonLd } from '../../data/schema';
 
-const canonical = 'https://www.orthomedica.lubin.pl/zabiegi/stomatologia-i-ortodoncja-dziecieca';
+const canonical = canonicalUrl('/zabiegi/stomatologia-i-ortodoncja-dziecieca');
 ---
 
 <Layout
@@ -11,25 +12,10 @@ const canonical = 'https://www.orthomedica.lubin.pl/zabiegi/stomatologia-i-ortod
   description="Kompleksowa opieka stomatologiczna i ortodontyczna dla dzieci w Lubinie: profilaktyka, leczenie zachowawcze, wczesna diagnostyka wad zgryzu i spokojna pierwsza wizyta."
   canonical={canonical}
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "MedicalWebPage",
-    "name": "Stomatologia i ortodoncja dziecięca",
-    "url": canonical,
-    "description": "Stomatologia i ortodoncja dziecięca w ORTHOMEDICA — Lubin.",
-    "provider": {
-      "@type": "Dentist",
-      "name": "ORTHOMEDICA — dr n. med. Kornelia Rumin",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "ul. Pawia 67",
-        "addressLocality": "Lubin",
-        "postalCode": "59-300",
-        "addressCountry": "PL"
-      },
-      "telephone": "+48694731124"
-    }
-  })} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(medicalWebPageJsonLd({
+    name: "Stomatologia i ortodoncja dziecięca",
+    url: canonical,
+  }))} />
   <Header />
 
   <main class="pt-28 md:pt-32 pb-20 bg-white">
@@ -47,12 +33,12 @@ const canonical = 'https://www.orthomedica.lubin.pl/zabiegi/stomatologia-i-ortod
 
     <section class="py-8 md:py-12">
       <div class="container mx-auto px-6 max-w-4xl">
-        <h1 class="cinzel text-xs md:text-sm text-gold font-bold tracking-[0.5em] mb-4 uppercase">
+        <p class="cinzel text-xs md:text-sm text-gold font-bold tracking-[0.5em] mb-4 uppercase">
           Dla najmłodszych pacjentów
-        </h1>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl serif mb-6 text-navy">
+        </p>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl serif mb-6 text-navy">
           Stomatologia i ortodoncja dziecięca w Lubinie
-        </h2>
+        </h1>
         <p class="text-[15px] md:text-base text-gray-600 font-light mb-6 leading-relaxed max-w-3xl">
           W ORTHOMEDICA łączymy <strong class="text-navy font-medium">stomatologię zachowawczą</strong> dla dzieci z
           <strong class="text-navy font-medium">wczesną opieką ortodontyczną</strong>. Rodzice otrzymują jeden spójny

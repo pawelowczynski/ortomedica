@@ -14,6 +14,15 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
   exit;
 }
 
+if (PHP_VERSION_ID >= 70300) {
+  session_set_cookie_params([
+    'lifetime' => 0,
+    'path' => '/',
+    'secure' => !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off',
+    'httponly' => true,
+    'samesite' => 'Lax',
+  ]);
+}
 session_start();
 $now = time();
 if (!empty($_SESSION['contact_last']) && ($now - (int) $_SESSION['contact_last']) < 25) {
@@ -48,12 +57,13 @@ $phone = $stripNl($trunc($phone, 40));
 $subjectKey = $stripNl($trunc($subjectKey, 80));
 
 $allowedSubjects = [
+  // Synchronizuj z src/data/contactForm.ts
   'stomatologia-dziecko' => 'Stomatologia dziecięca / pierwsza wizyta',
   'profilaktyka' => 'Profilaktyka / lakowanie / higiena dziecka',
   'chirurgia' => 'Chirurgia stomatologiczna',
   'gnatologia' => 'Gnatologia / ból żuchwy / TMJ',
   'ortodoncja' => 'Ortodoncja dziecko lub młodzież',
-  'invisalign' => 'Invisalign',
+  'rtg-diagnostyka' => 'RTG / diagnostyka obrazowa',
   'inne' => 'Inne zapytanie',
 ];
 
@@ -79,7 +89,7 @@ if ($subjectKey === '' || !isset($allowedSubjects[$subjectKey])) {
 
 $subjectLabel = $allowedSubjects[$subjectKey];
 
-$toRaw = getenv('CONTACT_MAIL_TO') ?: 'rejestracja@orthomedica-lubin.pl,szpadel@gmail.com';
+$toRaw = getenv('CONTACT_MAIL_TO') ?: 'rejestracja@orthomedica-lubin.pl';
 $toRaw = $stripNl($toRaw);
 $toList = array_values(
   array_filter(

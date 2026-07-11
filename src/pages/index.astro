@@ -11,7 +11,7 @@ import ClinicGallery from '../components/ClinicGallery.astro';
 import LocalSEO from '../components/LocalSEO.astro';
 import FAQSection from '../components/FAQSection.astro';
 import ContactSection from '../components/ContactSection.astro';
-import { DEFAULT_OG_IMAGE_URL } from '../data/site';
+import { canonicalUrl, homepageGraphJsonLd } from '../data/schema';
 import { homePageFaqs } from '../data/faq';
 
 const faqSchema = {
@@ -30,41 +30,11 @@ const faqSchema = {
 
 <Layout 
     title="ORTHOMEDICA Lubin | Ortodoncja, stomatologia dziecięca, RTG w gabinecie"
-    description="ORTHOMEDICA w Lubinie: ortodoncja i stomatologia dziecięca u dr n. med. Kornelii Rumin. RTG i skan 3D (Shining) na miejscu, od konsultacji po spójny plan leczenia. Umów wizytę w dogodnym terminie."
+    description="ORTHOMEDICA w Lubinie: ortodoncja i stomatologia dziecięca u dr n. med. Kornelia Rumin. RTG i skan 3D (Shining) na miejscu, od konsultacji po spójny plan leczenia. Umów wizytę w dogodnym terminie."
+    canonical={canonicalUrl('/')}
 >
-    <!-- Tu zrzucamy specyficzne tagi SEO dla tej strony (Schema.org) -->
     <script slot="head" type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-    <script slot="head" type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "MedicalBusiness",
-          "name": "ORTHOMEDICA - dr n. med. Kornelia Rumin",
-          "description": "Ortodoncja, stomatologia dziecięca, chirurgia i gnatologia — Lubin. RTG i diagnostyka 3D w gabinecie.",
-          "image": DEFAULT_OG_IMAGE_URL,
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "ul. Pawia 67",
-            "addressLocality": "Lubin",
-            "postalCode": "59-300",
-            "addressCountry": "PL"
-          },
-          "telephone": "+48694731124",
-          "email": "rejestracja@orthomedica-lubin.pl",
-          "url": "https://www.orthomedica.lubin.pl",
-          "priceRange": "PLN",
-          "openingHoursSpecification": [
-            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "18:00" }
-          ]
-        },
-        {
-          "@type": "Physician",
-          "name": "dr n. med. Kornelia Rumin",
-          "jobTitle": "Lekarz ortodonta",
-          "worksFor": { "@type": "MedicalBusiness", "name": "ORTHOMEDICA" }
-        }
-      ]
-    })} />
+    <script slot="head" type="application/ld+json" set:html={JSON.stringify(homepageGraphJsonLd())} />
 
     <Header />
     

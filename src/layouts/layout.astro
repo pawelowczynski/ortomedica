@@ -1,14 +1,33 @@
 ﻿---
 import '../styles/global.css';
-import { DEFAULT_OG_IMAGE_URL } from '../data/site';
+import { DEFAULT_OG_IMAGE_URL, SITE_ORIGIN } from '../data/site';
 
-const SITE_ORIGIN = 'https://www.orthomedica.lubin.pl';
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  image?: string;
+  robots?: string;
+  ogType?: 'website' | 'article';
+}
+
 const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION;
 /** GA4 / Meta — ladowane dopiero po zgodzie na cookies (main.js), nie tutaj */
 const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? '';
 const fbPixelId = import.meta.env.PUBLIC_FB_PIXEL_ID ?? '';
 
-const { title, description, canonical = `${SITE_ORIGIN}/`, image = DEFAULT_OG_IMAGE_URL } = Astro.props;
+const {
+  title,
+  description,
+  canonical = `${SITE_ORIGIN}/`,
+  image = DEFAULT_OG_IMAGE_URL,
+  robots,
+  ogType = 'website',
+} = Astro.props;
+
+const ogImage = image.startsWith('http')
+  ? image
+  : `${SITE_ORIGIN}${image.startsWith('/') ? image : `/${image}`}`;
 ---
 <!DOCTYPE html>
 <html lang="pl" class="scroll-smooth">
@@ -18,15 +37,17 @@ const { title, description, canonical = `${SITE_ORIGIN}/`, image = DEFAULT_OG_IM
     <title>{title}</title>
     <meta name="description" content={description}>
     <link rel="canonical" href={canonical}>
+    {robots && <meta name="robots" content={robots} />}
     {gscVerification && <meta name="google-site-verification" content={gscVerification} />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website">
+    <meta property="og:type" content={ogType}>
     <meta property="og:url" content={canonical}>
     <meta property="og:title" content={title}>
     <meta property="og:description" content={description}>
-    <meta property="og:image" content={image}>
+    <meta property="og:image" content={ogImage}>
     <meta property="og:locale" content="pl_PL">
     <meta property="og:site_name" content="ORTHOMEDICA">
 
@@ -34,7 +55,7 @@ const { title, description, canonical = `${SITE_ORIGIN}/`, image = DEFAULT_OG_IM
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content={title}>
     <meta name="twitter:description" content={description}>
-    <meta name="twitter:image" content={image}>
+    <meta name="twitter:image" content={ogImage}>
 
     <slot name="head" />
     

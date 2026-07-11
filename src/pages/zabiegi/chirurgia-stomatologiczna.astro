@@ -2,8 +2,9 @@
 import Layout from '../../layouts/layout.astro';
 import Header from '../../components/header.astro';
 import Footer from '../../components/footer.astro';
+import { canonicalUrl, medicalWebPageJsonLd } from '../../data/schema';
 
-const canonical = 'https://www.orthomedica.lubin.pl/zabiegi/chirurgia-stomatologiczna';
+const canonical = canonicalUrl('/zabiegi/chirurgia-stomatologiczna');
 ---
 
 <Layout
@@ -11,24 +12,10 @@ const canonical = 'https://www.orthomedica.lubin.pl/zabiegi/chirurgia-stomatolog
   description="Chirurgia stomatologiczna w ORTHOMEDICA w Lubinie: konsultacja, plan leczenia, zabiegi w bezpiecznych warunkach i opieka pozabiegowa."
   canonical={canonical}
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "MedicalWebPage",
-    "name": "Chirurgia stomatologiczna",
-    "url": canonical,
-    "provider": {
-      "@type": "Dentist",
-      "name": "ORTHOMEDICA — dr n. med. Kornelia Rumin",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "ul. Pawia 67",
-        "addressLocality": "Lubin",
-        "postalCode": "59-300",
-        "addressCountry": "PL"
-      },
-      "telephone": "+48694731124"
-    }
-  })} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(medicalWebPageJsonLd({
+    name: "Chirurgia stomatologiczna",
+    url: canonical,
+  }))} />
 
   <Header />
 
@@ -47,8 +34,8 @@ const canonical = 'https://www.orthomedica.lubin.pl/zabiegi/chirurgia-stomatolog
 
     <section class="py-8 md:py-12">
       <div class="container mx-auto px-6 max-w-4xl">
-        <h1 class="cinzel text-xs md:text-sm text-gold font-bold tracking-[0.5em] mb-4 uppercase">Chirurgia stomatologiczna</h1>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl serif mb-6 text-navy">Bezpieczne leczenie chirurgiczne w ORTHOMEDICA</h2>
+        <p class="cinzel text-xs md:text-sm text-gold font-bold tracking-[0.5em] mb-4 uppercase">Chirurgia stomatologiczna</p>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl serif mb-6 text-navy">Bezpieczne leczenie chirurgiczne w ORTHOMEDICA</h1>
         <p class="text-[15px] md:text-base text-gray-600 font-light mb-6 leading-relaxed max-w-3xl">
           Prowadzimy zabiegi chirurgii stomatologicznej w oparciu o dokładną diagnostykę i jasny plan postępowania.
           Priorytetem jest Twój komfort, bezpieczeństwo oraz pełna informacja przed i po zabiegu.

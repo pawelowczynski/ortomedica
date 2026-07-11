@@ -37,9 +37,6 @@ export const ENTITY = {
   publicBrand: 'ORTHOMEDICA',
   /** Jak w dokumentach prawnych (dopasuj do wpisu CEIDG / umów) */
   legalAdministrator: 'ORTHOMEDICA sp. z o.o.',
-  registeredOfficeStreet: 'ul. Piękna 60AF/1',
-  registeredOfficePostalCode: '50-506',
-  registeredOfficeCity: 'Wrocław-Krzyki',
   clinicStreet: 'ul. Pawia 67',
   clinicPostalCode: '59-300',
   clinicCity: 'Lubin',
@@ -94,10 +91,6 @@ export const MEDICAL_DEVICE_ADVERTISING = {
     'W sprawach dotyczących charakteru treści marketingowych lub informacyjnych na stronie można kontaktować się z administratorem pod adresem e-mail wskazanym w danych podmiotu udzielającego świadczeń.',
   ] as const,
 } as const;
-
-export function formatRegisteredOfficeAddress(): string {
-  return `${ENTITY.registeredOfficeStreet}, ${ENTITY.registeredOfficePostalCode} ${ENTITY.registeredOfficeCity}`;
-}
 
 export function formatClinicAddress(): string {
   return `${ENTITY.clinicStreet}, ${ENTITY.clinicPostalCode} ${ENTITY.clinicCity}`;

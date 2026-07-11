@@ -2,8 +2,9 @@
 import Layout from '../../layouts/layout.astro';
 import Header from '../../components/header.astro';
 import Footer from '../../components/footer.astro';
+import { canonicalUrl, medicalWebPageJsonLd } from '../../data/schema';
 
-const canonical = 'https://www.orthomedica.lubin.pl/zabiegi/ortodoncja';
+const canonical = canonicalUrl('/zabiegi/ortodoncja');
 ---
 
 <Layout
@@ -11,24 +12,10 @@ const canonical = 'https://www.orthomedica.lubin.pl/zabiegi/ortodoncja';
   description="Ortodoncja w Lubinie: konsultacja, RTG i skan 3D w gabinecie, dobór metody leczenia, aparaty stałe i inne rozwiązania. Leczymy dzieci, młodzież i dorosłych."
   canonical={canonical}
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "MedicalWebPage",
-    "name": "Ortodoncja",
-    "url": canonical,
-    "provider": {
-      "@type": "Dentist",
-      "name": "ORTHOMEDICA — dr n. med. Kornelia Rumin",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "ul. Pawia 67",
-        "addressLocality": "Lubin",
-        "postalCode": "59-300",
-        "addressCountry": "PL"
-      },
-      "telephone": "+48694731124"
-    }
-  })} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(medicalWebPageJsonLd({
+    name: "Ortodoncja",
+    url: canonical,
+  }))} />
   <Header />
 
   <main class="pt-28 md:pt-32 pb-20 bg-white">
@@ -46,8 +33,8 @@ const canonical = 'https://www.orthomedica.lubin.pl/zabiegi/ortodoncja';
 
     <section class="py-8 md:py-12">
       <div class="container mx-auto px-6 max-w-4xl">
-        <h1 class="cinzel text-xs md:text-sm text-gold font-bold tracking-[0.5em] mb-4 uppercase">Ortodoncja</h1>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl serif mb-6 text-navy">Ortodoncja w ORTHOMEDICA</h2>
+        <p class="cinzel text-xs md:text-sm text-gold font-bold tracking-[0.5em] mb-4 uppercase">Ortodoncja</p>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl serif mb-6 text-navy">Ortodoncja w ORTHOMEDICA</h1>
         <p class="text-[15px] md:text-base text-gray-600 font-light mb-6 leading-relaxed max-w-3xl">
           Planujemy i prowadzimy leczenie wad zgryzu z wykorzystaniem nowoczesnej diagnostyki i metod dopasowanych do
           wieku oraz oczekiwań pacjenta — od pierwszej konsultacji po retencję.

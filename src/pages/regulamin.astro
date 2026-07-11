@@ -2,7 +2,7 @@
 import Layout from '../layouts/layout.astro';
 import Header from '../components/header.astro';
 import Footer from '../components/footer.astro';
-import { ENTITY, formatRegisteredOfficeAddress, formatClinicAddress } from '../data/site';
+import { ENTITY, formatClinicAddress } from '../data/site';
 ---
 
 <Layout
@@ -21,8 +21,7 @@ import { ENTITY, formatRegisteredOfficeAddress, formatClinicAddress } from '../d
         <p class="text-[15px] text-gray-600 font-light mb-6">
           Niniejszy Regulamin okresla zasady korzystania ze strony internetowej
           <span class="font-semibold text-navy">www.orthomedica.lubin.pl</span>, prowadzonej przez
-          <span class="font-semibold text-navy"> {ENTITY.legalAdministrator}</span>
-          z siedziba przy {formatRegisteredOfficeAddress()}.
+          <span class="font-semibold text-navy"> {ENTITY.legalAdministrator}</span>.
           Swiadczenia zdrowotne sa udzielane w gabinecie pod adresem {formatClinicAddress()}.
         </p>
 

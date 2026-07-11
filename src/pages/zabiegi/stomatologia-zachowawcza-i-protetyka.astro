@@ -2,8 +2,9 @@
 import Layout from '../../layouts/layout.astro';
 import Header from '../../components/header.astro';
 import Footer from '../../components/footer.astro';
+import { canonicalUrl, medicalWebPageJsonLd } from '../../data/schema';
 
-const canonical = 'https://www.orthomedica.lubin.pl/zabiegi/stomatologia-zachowawcza-i-protetyka';
+const canonical = canonicalUrl('/zabiegi/stomatologia-zachowawcza-i-protetyka');
 ---
 
 <Layout
@@ -11,25 +12,10 @@ const canonical = 'https://www.orthomedica.lubin.pl/zabiegi/stomatologia-zachowa
   description="Leczenie zachowawcze zębów stałych, odbudowy, protetyka oraz koordynacja z ortodoncją w jednym gabinecie w Lubinie."
   canonical={canonical}
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "MedicalWebPage",
-    "name": "Stomatologia zachowawcza i protetyka",
-    "url": canonical,
-    "description": "Stomatologia zachowawcza i protetyka w ORTHOMEDICA — Lubin.",
-    "provider": {
-      "@type": "Dentist",
-      "name": "ORTHOMEDICA — dr n. med. Kornelia Rumin",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "ul. Pawia 67",
-        "addressLocality": "Lubin",
-        "postalCode": "59-300",
-        "addressCountry": "PL"
-      },
-      "telephone": "+48694731124"
-    }
-  })} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(medicalWebPageJsonLd({
+    name: "Stomatologia zachowawcza i protetyka",
+    url: canonical,
+  }))} />
   <Header />
 
   <main class="pt-28 md:pt-32 pb-20 bg-white">
@@ -47,12 +33,12 @@ const canonical = 'https://www.orthomedica.lubin.pl/zabiegi/stomatologia-zachowa
 
     <section class="py-8 md:py-12">
       <div class="container mx-auto px-6 max-w-4xl">
-        <h1 class="cinzel text-xs md:text-sm text-gold font-bold tracking-[0.5em] mb-4 uppercase">
+        <p class="cinzel text-xs md:text-sm text-gold font-bold tracking-[0.5em] mb-4 uppercase">
           Dla dorosłych i młodzieży
-        </h1>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl serif mb-6 text-navy">
+        </p>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl serif mb-6 text-navy">
           Stomatologia zachowawcza i protetyka w Lubinie
-        </h2>
+        </h1>
         <p class="text-[15px] md:text-base text-gray-600 font-light mb-6 leading-relaxed max-w-3xl">
           Oprócz ortodoncji zapewniamy <strong class="text-navy font-medium">leczenie zachowawcze</strong> oraz{' '}
           <strong class="text-navy font-medium">protetykę</strong> — tak, by przygotować uzębienie do aparatu, utrzymać efekt po terapii

@@ -7,7 +7,6 @@ import {
   formatNipLine,
   formatRegonLine,
   formatKrsLine,
-  formatRegisteredOfficeAddress,
   formatClinicAddress,
 } from '../data/site';
 ---
@@ -32,7 +31,6 @@ import {
         </p>
         <p class="text-[15px] text-gray-600 font-light mb-6">
           <span class="font-semibold text-navy">{ENTITY.legalAdministrator}</span><br />
-          Siedziba: {formatRegisteredOfficeAddress()}<br />
           Gabinet: {formatClinicAddress()}<br />
           {formatNipLine()}<br />
           {formatRegonLine()}<br />
@@ -43,7 +41,7 @@ import {
 
         <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">1. Administrator danych</h2>
         <p class="text-[15px] text-gray-600 font-light mb-4">
-          Administratorem danych osobowych jest {ENTITY.legalAdministrator} z siedzibą przy {formatRegisteredOfficeAddress()}.
+          Administratorem danych osobowych jest {ENTITY.legalAdministrator}.
           Świadczenia zdrowotne są udzielane w gabinecie pod adresem {formatClinicAddress()}.
           We wszelkich sprawach związanych z przetwarzaniem danych osobowych można kontaktować się za pomocą adresu e-mail
           lub numeru telefonu wskazanych powyżej.

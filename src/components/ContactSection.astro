@@ -1,4 +1,5 @@
 ---
+import { CONTACT_SUBJECTS } from '../data/contactForm';
 import { whatsAppChatHref } from '../data/site';
 
 const waHref = whatsAppChatHref();
@@ -130,13 +131,9 @@ const waHref = whatsAppChatHref();
               <option value="" disabled selected>
                 Wybierz cel wizyty...
               </option>
-              <option value="stomatologia-dziecko">Stomatologia dziecięca / pierwsza wizyta</option>
-              <option value="profilaktyka">Profilaktyka / lakowanie / higiena dziecka</option>
-              <option value="chirurgia">Chirurgia stomatologiczna</option>
-              <option value="gnatologia">Gnatologia / ból żuchwy / TMJ</option>
-              <option value="ortodoncja">Ortodoncja dziecko lub młodzież</option>
-              <option value="rtg-diagnostyka">RTG / diagnostyka obrazowa</option>
-              <option value="inne">Inne zapytanie</option>
+              {CONTACT_SUBJECTS.map((item) => (
+                <option value={item.value}>{item.label}</option>
+              ))}
             </select>
           </div>
 
@@ -150,7 +147,11 @@ const waHref = whatsAppChatHref();
             Wyślij zgłoszenie
           </button>
           <p class="text-[9px] text-gray-400 text-center mt-2">
-            Wysyłając zapytanie akceptujesz politykę prywatności. Zabezpieczono przed spamem.
+            Wysyłając zapytanie akceptujesz{' '}
+            <a href="/polityka-prywatnosci" class="underline hover:text-gray-600">
+              politykę prywatności
+            </a>
+            . Zabezpieczono przed spamem.
           </p>
         </form>
       </div>

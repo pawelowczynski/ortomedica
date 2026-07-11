@@ -4,7 +4,6 @@ import {
   MEDICAL_DISCLOSURE,
   MEDICAL_DEVICE_ADVERTISING,
   whatsAppChatHref,
-  formatRegisteredOfficeAddress,
   formatNipLine,
   formatRegonLine,
   formatKrsLine,
@@ -41,7 +40,6 @@ const waHref = whatsAppChatHref();
                 <p class="mb-2 font-semibold uppercase tracking-wider text-brand-steel/80">Dane i ujawnienia prawne</p>
                 <p class="mb-2">
                     <span>{ENTITY.legalAdministrator}</span><br />
-                    Siedziba: {formatRegisteredOfficeAddress()}<br />
                     {formatNipLine()} · {formatRegonLine()}<br />
                     {formatKrsLine()}<br />
                     {formatRegistryLine()}

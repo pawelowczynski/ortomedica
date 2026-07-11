@@ -6,7 +6,6 @@ import {
   ENTITY,
   MEDICAL_DISCLOSURE,
   MEDICAL_DEVICE_ADVERTISING,
-  formatRegisteredOfficeAddress,
   formatClinicAddress,
   formatNipLine,
   formatRegonLine,
@@ -39,7 +38,6 @@ import {
         <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">Dane podmiotu udzielajacego swiadczen</h2>
         <p class="text-[15px] text-gray-600 font-light mb-6 leading-relaxed">
           <span class="font-semibold text-navy">{ENTITY.legalAdministrator}</span><br />
-          Siedziba: {formatRegisteredOfficeAddress()}<br />
           Miejsce udzielania swiadczen (gabinet): {formatClinicAddress()}<br />
           tel.: <a href="tel:+48694731124" class="text-navy hover:text-gold font-semibold">{PHONE_DISPLAY}</a><br />
           e-mail:
