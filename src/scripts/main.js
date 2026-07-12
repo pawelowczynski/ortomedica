@@ -1,8 +1,63 @@
+import {
+  AlertCircle,
+  ArrowLeft,
+  ArrowRight,
+  ArrowRightLeft,
+  ArrowUp,
+  Calendar,
+  CalendarClock,
+  CheckCircle,
+  ChevronRight,
+  Clock,
+  ExternalLink,
+  Mail,
+  Map,
+  MapPin,
+  Menu,
+  Phone,
+  PhoneCall,
+  Plus,
+  ScanLine,
+  Star,
+  Tag,
+  X,
+  createIcons,
+} from 'lucide';
+
+const iconSet = {
+  AlertCircle,
+  ArrowLeft,
+  ArrowRight,
+  ArrowRightLeft,
+  ArrowUp,
+  Calendar,
+  CalendarClock,
+  CheckCircle,
+  ChevronRight,
+  Clock,
+  ExternalLink,
+  Mail,
+  Map,
+  MapPin,
+  Menu,
+  Phone,
+  PhoneCall,
+  Plus,
+  ScanLine,
+  Star,
+  Tag,
+  X,
+};
+
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Lucide icons
-  if (window.lucide && typeof window.lucide.createIcons === 'function') {
-    window.lucide.createIcons();
+  const mainContent = document.querySelector('main');
+  if (mainContent) {
+    if (!mainContent.id) mainContent.id = 'main-content';
+    mainContent.tabIndex = -1;
   }
+
+  // 1. Lucide icons
+  createIcons({ icons: iconSet });
 
   // 2. Nav scroll behavior
   const nav = document.getElementById('main-nav');
@@ -38,26 +93,30 @@ document.addEventListener('DOMContentLoaded', () => {
   let isMenuOpen = false;
 
   function refreshIcons() {
-    if (window.lucide && typeof window.lucide.createIcons === 'function') {
-      window.lucide.createIcons();
-    }
+    createIcons({ icons: iconSet });
   }
 
-  function setMenuOpen(open) {
+  function setMenuOpen(open, restoreFocus = true) {
     if (!menuBtn || !mobileMenu) return;
     isMenuOpen = open;
     if (open) {
       mobileMenu.classList.add('is-open');
       mobileMenu.setAttribute('aria-hidden', 'false');
+      mobileMenu.inert = false;
       menuBtn.setAttribute('aria-expanded', 'true');
       document.body.classList.add('overflow-hidden');
       menuBtn.innerHTML = '<i data-lucide="x" class="w-8 h-8"></i>';
+      window.setTimeout(() => {
+        mobileMenu.querySelector('.mobile-link')?.focus();
+      }, 50);
     } else {
       mobileMenu.classList.remove('is-open');
       mobileMenu.setAttribute('aria-hidden', 'true');
+      mobileMenu.inert = true;
       menuBtn.setAttribute('aria-expanded', 'false');
       document.body.classList.remove('overflow-hidden');
       menuBtn.innerHTML = '<i data-lucide="menu" class="w-8 h-8"></i>';
+      if (restoreFocus) menuBtn.focus();
     }
     refreshIcons();
   }
@@ -79,11 +138,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     mobileLinks.forEach((link) => {
       link.addEventListener('click', () => {
-        if (isMenuOpen) setMenuOpen(false);
+        if (isMenuOpen) setMenuOpen(false, false);
       });
     });
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && isMenuOpen) setMenuOpen(false);
+      if (e.key === 'Tab' && isMenuOpen) {
+        const focusable = [...mobileMenu.querySelectorAll('a[href], button:not([disabled])')]
+          .filter((element) => element instanceof HTMLElement && element.tabIndex >= 0);
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     });
   }
 
@@ -103,9 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(doctorImg);
   }
 
-  // 5. Cookie banner + map
-  const cookieBanner = document.getElementById('cookie-banner');
-  const acceptBtn = document.getElementById('accept-cookies');
+  // 5. Mapa Google — ładowana wyłącznie po świadomym kliknięciu użytkownika.
   const loadMapBtn = document.getElementById('load-map-btn');
   const mapContainer = document.getElementById('map-container');
 
@@ -118,103 +189,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function setupMapObserver() {
-    if (!mapContainer || !('IntersectionObserver' in window)) return;
-    const mapObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && localStorage.getItem('cookiesAccepted')) {
-          loadGoogleMap();
-          mapObserver.disconnect();
-        }
-      });
-    });
-    mapObserver.observe(mapContainer);
-  }
-
-  /** GA4 + Meta Pixel — tylko po zgodzie (RODO); ID z layout (build-time PUBLIC_*) */
-  function loadScript(src) {
-    return new Promise((resolve, reject) => {
-      const s = document.createElement('script');
-      s.async = true;
-      s.src = src;
-      s.onload = () => resolve();
-      s.onerror = () => reject(new Error('script load failed'));
-      document.head.appendChild(s);
-    });
-  }
-
-  function initMarketingAnalytics() {
-    const cfg = window.__ORTHOMEDICA_ANALYTICS__;
-    if (!cfg) return;
-
-    const gaId = cfg.gaMeasurementId;
-    if (gaId && !window.__orthomedicaGaLoaded) {
-      window.__orthomedicaGaLoaded = true;
-      loadScript(`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaId)}`)
-        .then(() => {
-          window.dataLayer = window.dataLayer || [];
-          function gtag() {
-            window.dataLayer.push(arguments);
-          }
-          window.gtag = gtag;
-          gtag('js', new Date());
-          gtag('config', gaId);
-        })
-        .catch(() => {});
-    }
-
-    const fbId = cfg.fbPixelId;
-    if (fbId && !window.__orthomedicaFbLoaded) {
-      window.__orthomedicaFbLoaded = true;
-      !(function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = '2.0';
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-      if (window.fbq) {
-        window.fbq('init', fbId);
-        window.fbq('track', 'PageView');
-      }
-    }
-  }
-
-  function acceptCookies() {
-    localStorage.setItem('cookiesAccepted', 'true');
-    if (cookieBanner) cookieBanner.classList.add('hidden-banner');
-    loadGoogleMap();
-    initMarketingAnalytics();
-  }
-
-  function checkCookies() {
-    if (!localStorage.getItem('cookiesAccepted')) {
-      setTimeout(() => {
-        if (cookieBanner) cookieBanner.classList.remove('hidden-banner');
-      }, 1000);
-    } else {
-      /** Zgoda już zapisana — ładuj mapę od razu (IntersectionObserver bywa zawodny przy pierwszym malowaniu / układzie siatki). */
-      loadGoogleMap();
-      initMarketingAnalytics();
-    }
-  }
-
-  if (acceptBtn) acceptBtn.addEventListener('click', acceptCookies);
   if (loadMapBtn) {
-    loadMapBtn.addEventListener('click', () => {
-      acceptCookies();
-    });
+    loadMapBtn.addEventListener('click', loadGoogleMap);
   }
-  checkCookies();
 
   // 6. Before/after slider
   const sliders = document.querySelectorAll('.ba-container');
@@ -224,6 +201,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const handle = slider.querySelector('.ba-slider-handle');
     if (!beforeLayer || !handle) return;
 
+    const setSliderPercent = (value) => {
+      const percent = Math.max(0, Math.min(value, 100));
+      beforeLayer.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+      handle.style.left = `${percent}%`;
+      slider.setAttribute('aria-valuenow', String(Math.round(percent)));
+      slider.setAttribute('aria-valuetext', `${Math.round(percent)}% zdjęcia przed leczeniem`);
+    };
+
     const moveSlider = (e) => {
       if (!isDown) return;
       const rect = slider.getBoundingClientRect();
@@ -231,9 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (clientX == null) return;
       let x = clientX - rect.left;
       x = Math.max(0, Math.min(x, rect.width));
-      const percent = (x / rect.width) * 100;
-      beforeLayer.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
-      handle.style.left = `${percent}%`;
+      setSliderPercent((x / rect.width) * 100);
     };
 
     const startSlide = (e) => {
@@ -261,6 +244,15 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       { passive: true }
     );
+    slider.addEventListener('keydown', (event) => {
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      const current = Number(slider.getAttribute('aria-valuenow')) || 50;
+      if (event.key === 'Home') setSliderPercent(0);
+      if (event.key === 'End') setSliderPercent(100);
+      if (event.key === 'ArrowLeft') setSliderPercent(current - 5);
+      if (event.key === 'ArrowRight') setSliderPercent(current + 5);
+    });
   });
 
   // 7. Back to top
@@ -283,6 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
           button.classList.toggle('border', !active);
           button.classList.toggle('border-gray-200', !active);
           button.setAttribute('aria-selected', active ? 'true' : 'false');
+          button.tabIndex = active ? 0 : -1;
         });
 
         processTabContents.forEach((panel) => {
@@ -290,6 +283,19 @@ document.addEventListener('DOMContentLoaded', () => {
           panel.classList.toggle('is-active', shouldShow);
           panel.classList.toggle('hidden', !shouldShow);
         });
+      });
+      btn.addEventListener('keydown', (event) => {
+        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault();
+        const buttons = [...processTabButtons];
+        const currentIndex = buttons.indexOf(btn);
+        let nextIndex = currentIndex;
+        if (event.key === 'ArrowRight') nextIndex = (currentIndex + 1) % buttons.length;
+        if (event.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + buttons.length) % buttons.length;
+        if (event.key === 'Home') nextIndex = 0;
+        if (event.key === 'End') nextIndex = buttons.length - 1;
+        buttons[nextIndex].focus();
+        buttons[nextIndex].click();
       });
     });
   }
@@ -325,7 +331,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateBackToTop, { passive: true });
     window.addEventListener('resize', updateBackToTop, { passive: true });
     backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
     });
   }
 
@@ -375,6 +382,9 @@ document.addEventListener('DOMContentLoaded', () => {
           'error',
           'Proszę poprawnie wypełnić wymagane pola (np. nr telefonu min. 9 cyfr).'
         );
+        contactForm.reportValidity();
+        const firstInvalidField = contactForm.querySelector(':invalid');
+        if (firstInvalidField instanceof HTMLElement) firstInvalidField.focus();
         return;
       }
 
@@ -409,7 +419,7 @@ document.addEventListener('DOMContentLoaded', () => {
             data = text ? JSON.parse(text) : null;
           } catch {
             showErr(
-              'Serwer nie zwrócił poprawnej odpowiedzi (np. brak PHP przy astro dev). Wgraj build na hosting z PHP, aby formularz wysyłał e-maile.'
+              'Formularz jest chwilowo niedostępny. Spróbuj ponownie później albo skontaktuj się telefonicznie.'
             );
             return;
           }
@@ -421,7 +431,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           showFormFeedback(
             'success',
-            data.message || 'Wiadomość została wysłana! Odezwiemy się niezwłocznie.'
+            data.message || 'Wiadomość została wysłana do rejestracji.'
           );
           contactForm.reset();
         } catch {
@@ -433,4 +443,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-

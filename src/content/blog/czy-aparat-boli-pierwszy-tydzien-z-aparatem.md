@@ -1,5 +1,6 @@
 ---
 title: "Czy aparat boli? Pierwszy tydzień po założeniu aparatu stałego"
+seoTitle: "Czy aparat boli? Pierwszy tydzień z aparatem"
 description: "Dowiedz się, jakie dolegliwości po założeniu aparatu są normalne, jak długo trwają i co pomaga złagodzić dyskomfort w pierwszych dniach leczenia."
 date: "2026-04-11"
 author: "dr n. med. Kornelia Rumin"
@@ -7,21 +8,20 @@ tags:
   - "aparat-staly"
   - "ortodoncja"
   - "poradnik"
-heroImage: "https://placehold.co/1200x800/E9F2FF/0A192F?text=Pierwszy+tydzien+z+aparatem"
-canonical: "https://www.orthomedica.lubin.pl/blog/czy-aparat-boli-pierwszy-tydzien-z-aparatem"
+canonical: "https://orthomedica.lubin.pl/blog/czy-aparat-boli-pierwszy-tydzien-z-aparatem"
 ---
 
-Po założeniu aparatu stałego większość pacjentów odczuwa przejściową tkliwość zębów. To naturalna reakcja tkanek na delikatne siły ortodontyczne.
+Po założeniu aparatu stałego może pojawić się przejściowa tkliwość zębów lub podrażnienie błony śluzowej. Nasilenie i czas trwania dolegliwości są indywidualne.
 
 ## Co jest normalne?
 
-W pierwszych 3-7 dniach możesz odczuwać:
+W pierwszych dniach możesz odczuwać:
 
 - nadwrażliwość przy gryzieniu,
 - lekki ból uciskowy,
 - podrażnienie policzka lub warg.
 
-Objawy zwykle stopniowo się zmniejszają.
+Typowe dolegliwości powinny stopniowo się zmniejszać. Jeśli nie ustępują lub się nasilają, skontaktuj się z gabinetem.
 
 ## Jak sobie pomóc?
 
@@ -36,4 +36,4 @@ Najlepiej sprawdzają się:
 
 Jeśli ból jest bardzo silny, pojawiła się ranka, drut kłuje albo zamek się odkleił, warto zadzwonić do gabinetu i umówić szybką kontrolę.
 
-Leczenie ortodontyczne nie musi być trudne. Dobre instrukcje i regularne wizyty pozwalają przejść ten etap spokojnie.
+Podczas wizyty otrzymasz zalecenia dopasowane do zastosowanego aparatu. Nie zmieniaj samodzielnie sposobu używania elementów ortodontycznych.

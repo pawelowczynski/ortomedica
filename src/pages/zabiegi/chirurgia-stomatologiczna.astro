@@ -9,7 +9,7 @@ const canonical = canonicalUrl('/zabiegi/chirurgia-stomatologiczna');
 
 <Layout
   title="Chirurgia stomatologiczna Lubin | ORTHOMEDICA"
-  description="Chirurgia stomatologiczna w ORTHOMEDICA w Lubinie: konsultacja, plan leczenia, zabiegi w bezpiecznych warunkach i opieka pozabiegowa."
+  description="Chirurgia stomatologiczna w Lubinie: konsultacja, kwalifikacja, przygotowanie do zabiegu i zalecenia pozabiegowe w ORTHOMEDICA."
   canonical={canonical}
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(medicalWebPageJsonLd({
@@ -19,7 +19,7 @@ const canonical = canonicalUrl('/zabiegi/chirurgia-stomatologiczna');
 
   <Header />
 
-  <main class="pt-28 md:pt-32 pb-20 bg-white">
+  <main id="main-content" class="pt-28 md:pt-32 pb-20 bg-white">
     <nav class="text-xs md:text-sm text-gray-400 mb-6 md:mb-8" aria-label="Okruszki nawigacyjne">
       <div class="container mx-auto px-6">
         <ol class="flex flex-wrap items-center gap-1 md:gap-2">
@@ -35,10 +35,9 @@ const canonical = canonicalUrl('/zabiegi/chirurgia-stomatologiczna');
     <section class="py-8 md:py-12">
       <div class="container mx-auto px-6 max-w-4xl">
         <p class="cinzel text-xs md:text-sm text-gold font-bold tracking-[0.5em] mb-4 uppercase">Chirurgia stomatologiczna</p>
-        <h1 class="text-3xl md:text-4xl lg:text-5xl serif mb-6 text-navy">Bezpieczne leczenie chirurgiczne w ORTHOMEDICA</h1>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl serif mb-6 text-navy">Chirurgia stomatologiczna w Lubinie</h1>
         <p class="text-[15px] md:text-base text-gray-600 font-light mb-6 leading-relaxed max-w-3xl">
-          Prowadzimy zabiegi chirurgii stomatologicznej w oparciu o dokładną diagnostykę i jasny plan postępowania.
-          Priorytetem jest Twój komfort, bezpieczeństwo oraz pełna informacja przed i po zabiegu.
+          Zaczynamy od konsultacji i kwalifikacji. Lekarz omawia wskazania, potrzebną diagnostykę, przygotowanie, możliwe ryzyka oraz zalecenia po zabiegu.
         </p>
         <a href="/#kontakt" class="btn-gold inline-flex items-center gap-2 px-8 py-3 rounded-full text-xs font-bold uppercase tracking-[0.2em]">
           Umów konsultację
@@ -49,10 +48,10 @@ const canonical = canonicalUrl('/zabiegi/chirurgia-stomatologiczna');
 
     <section class="py-10 md:py-14 bg-gray-soft border-y border-gray-100">
       <div class="container mx-auto px-6 max-w-4xl">
-        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-8">Zakres zabiegów</h3>
+        <h2 class="cinzel text-2xl md:text-3xl text-navy mb-8">Zakres zabiegów</h2>
         <div class="grid md:grid-cols-2 gap-6 md:gap-8">
           <div class="bg-white rounded-2xl border border-gray-100 p-6 md:p-8 shadow-sm">
-            <h4 class="font-semibold text-navy mb-3">Najczęściej wykonywane procedury</h4>
+            <h3 class="font-semibold text-navy mb-3">Najczęściej wykonywane procedury</h3>
             <ul class="space-y-2 text-[15px] text-gray-600 font-light list-disc pl-5 marker:text-gold">
               <li>usunięcia zębów ze wskazań stomatologicznych,</li>
               <li>zabiegi przygotowujące do leczenia ortodontycznego i protetycznego,</li>
@@ -60,10 +59,9 @@ const canonical = canonicalUrl('/zabiegi/chirurgia-stomatologiczna');
             </ul>
           </div>
           <div class="bg-white rounded-2xl border border-gray-100 p-6 md:p-8 shadow-sm">
-            <h4 class="font-semibold text-navy mb-3">Wsparcie po zabiegu</h4>
+            <h3 class="font-semibold text-navy mb-3">Zalecenia po zabiegu</h3>
             <p class="text-[15px] text-gray-600 font-light leading-relaxed">
-              Po leczeniu otrzymasz jasne zalecenia pozabiegowe oraz plan kontroli. Dzięki temu proces gojenia przebiega
-              przewidywalnie, a ewentualne pytania są szybko wyjaśniane.
+              Po leczeniu otrzymasz zalecenia pozabiegowe oraz informację, czy potrzebna jest kontrola. W razie niepokojących objawów skontaktuj się z gabinetem zgodnie z przekazanymi wskazówkami.
             </p>
           </div>
         </div>
@@ -72,7 +70,7 @@ const canonical = canonicalUrl('/zabiegi/chirurgia-stomatologiczna');
 
     <section class="py-10 md:py-14">
       <div class="container mx-auto px-6 max-w-4xl">
-        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-8">Jak wygląda proces leczenia?</h3>
+        <h2 class="cinzel text-2xl md:text-3xl text-navy mb-8">Jak wygląda proces leczenia?</h2>
         <ol class="space-y-6">
           <li class="flex gap-4">
             <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold font-semibold text-sm">1</span>

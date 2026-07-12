@@ -7,14 +7,12 @@ tags:
   - "aparaty-stale"
   - "higiena"
   - "pacjenci-dorosli"
-heroImage: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&q=80&w=1200"
-canonical: "https://www.orthomedica.lubin.pl/blog/aparat-staly-jak-dbac-o-zeby"
+canonical: "https://orthomedica.lubin.pl/blog/aparat-staly-jak-dbac-o-zeby"
 ---
 
-Zdrowa higiena jamy ustnej w trakcie leczenia aparatem stałym ma kluczowe znaczenie dla końcowego efektu leczenia ortodontycznego. 
-Zalegająca płytka bakteryjna wokół zamków może prowadzić do odwapnień szkliwa, próchnicy oraz stanów zapalnych dziąseł.
+Staranna higiena jamy ustnej jest ważna w trakcie leczenia aparatem stałym. Płytka gromadząca się wokół zamków może zwiększać ryzyko odwapnień szkliwa, próchnicy i podrażnień dziąseł.
 
-W tym artykule wyjaśniamy, jak krok po kroku dbać o zęby w trakcie noszenia aparatu stałego – na podstawie doświadczeń klinicznych zespołu ORTHOMEDICA w Lubinie.
+Poniżej znajdziesz ogólne wskazówki. Konkretne akcesoria i technikę czyszczenia warto dobrać podczas indywidualnego instruktażu.
 
 ## Codzienna higiena przy aparacie stałym
 

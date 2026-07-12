@@ -31,10 +31,10 @@ export type DoctorProfile = {
 
 export const drKorneliaRuminProfile: DoctorProfile = {
   slug: 'dr-kornelia-rumin',
-  pageTitle: 'Dr n. med. Kornelia Rumin – Ortodonta w Lubinie | ORTHOMEDICA',
+  pageTitle: 'Kornelia Rumin – ortodonta Lubin | ORTHOMEDICA',
   pageDescription:
     'Profil lekarza: dr n. med. Kornelia Rumin, specjalista ortodonta w gabinecie ORTHOMEDICA w Lubinie. Leczenie wad zgryzu u dzieci i dorosłych.',
-  canonical: 'https://www.orthomedica.lubin.pl/dr-kornelia-rumin',
+  canonical: 'https://orthomedica.lubin.pl/dr-kornelia-rumin',
   displayName: 'Dr n. med. Kornelia Rumin',
   headline: 'Dr n. med. Kornelia Rumin – Ortodonta w Lubinie',
   roleLabel: 'Specjalista ortodonta',
@@ -65,14 +65,14 @@ export const drKorneliaRuminProfile: DoctorProfile = {
 
 export const kamilWojciechowskiProfile: DoctorProfile = {
   slug: 'lek-dent-kamil-wojciechowski',
-  pageTitle: 'Lek. dent. Kamil Wojciechowski – Endodoncja i chirurgia Lubin | ORTHOMEDICA',
+  pageTitle: 'Kamil Wojciechowski – dentysta Lubin | ORTHOMEDICA',
   pageDescription:
     'Profil lek. dent. Kamila Wojciechowskiego, lekarza zajmującego się endodoncją i chirurgią stomatologiczną w ORTHOMEDICA w Lubinie.',
-  canonical: 'https://www.orthomedica.lubin.pl/lek-dent-kamil-wojciechowski',
+  canonical: 'https://orthomedica.lubin.pl/lek-dent-kamil-wojciechowski',
   displayName: 'Lek. dent. Kamil Wojciechowski',
   headline: 'Lek. dent. Kamil Wojciechowski',
   roleLabel: 'Endodoncja i chirurgia stomatologiczna',
-  imageSrc: '/lek-kamil-wojciechowski.png',
+  imageSrc: '/lek-kamil-wojciechowski.webp',
   imageAlt: 'Lek. dent. Kamil Wojciechowski',
   schemaJobTitle: 'Lekarz dentysta — endodoncja i chirurgia stomatologiczna',
   schemaDescription:
@@ -83,14 +83,14 @@ export const kamilWojciechowskiProfile: DoctorProfile = {
 
 export const aleksandraCzerkawskaProfile: DoctorProfile = {
   slug: 'lek-dent-aleksandra-czerkawska',
-  pageTitle: 'Lek. dent. Aleksandra Czerkawska – Stomatologia zachowawcza Lubin | ORTHOMEDICA',
+  pageTitle: 'Aleksandra Czerkawska – dentysta Lubin | ORTHOMEDICA',
   pageDescription:
     'Profil lek. dent. Aleksandry Czerkawskiej, lekarza stomatologa w ORTHOMEDICA w Lubinie. Stomatologia zachowawcza i przygotowanie do leczenia ortodontycznego.',
-  canonical: 'https://www.orthomedica.lubin.pl/lek-dent-aleksandra-czerkawska',
+  canonical: 'https://orthomedica.lubin.pl/lek-dent-aleksandra-czerkawska',
   displayName: 'Lek. dent. Aleksandra Czerkawska',
   headline: 'Lek. dent. Aleksandra Czerkawska',
   roleLabel: 'Stomatologia zachowawcza',
-  imageSrc: '/lek-aleksandra-czerkawska.png',
+  imageSrc: '/lek-aleksandra-czerkawska.webp',
   imageAlt: 'Lek. dent. Aleksandra Czerkawska',
   schemaJobTitle: 'Lekarz dentysta — stomatologia zachowawcza',
   schemaDescription:

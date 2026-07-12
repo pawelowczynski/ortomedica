@@ -6,14 +6,14 @@ export const cennikTabs = [
     featured: true,
     type: 'orthodontics',
     intro:
-      'Kompleksowe leczenie ortodontyczne dla dzieci i dorosłych — od diagnostyki, przez aparaty stałe i nakładkowe, po stabilną retencję.',
+      'Konsultacje i leczenie ortodontyczne dla dzieci, młodzieży i dorosłych — od diagnostyki, przez aparaty lub nakładki, po retencję.',
     subTabs: [
       {
         id: 'ort-diagnostyka',
         label: 'Diagnostyka',
         type: 'cards',
         intro:
-          'Badania diagnostyczne wymagane do zaplanowania leczenia ortodontycznego. RTG panoramiczne i skan 3D to standard przed aparatem stałym lub nakładkami.',
+          'Zakres diagnostyki potrzebnej do zaplanowania leczenia ustala ortodonta. Może on obejmować skan 3D, fotografie i wybrane badania RTG.',
         items: [
           {
             name: 'RTG punktowe',
@@ -40,7 +40,7 @@ export const cennikTabs = [
         label: 'Ortodoncja dziecięca',
         type: 'cards',
         intro:
-          'Pierwsze badanie ortodontyczne zalecamy w wieku 7 lat. Wczesna diagnostyka pozwala uniknąć skomplikowanego leczenia stałego w przyszłości.',
+          'Pierwszą ocenę ortodontyczną często planuje się około 7. roku życia. Wcześniejsza wizyta może być wskazana, jeśli rodzic lub dentysta zauważy nieprawidłowości.',
         items: [
           {
             name: 'Konsultacja dziecięca',
@@ -95,7 +95,7 @@ export const cennikTabs = [
         items: [
           {
             name: 'Metalowy — klasyczny',
-            desc: 'Sprawdzona, skuteczna metoda dla każdego wieku',
+            desc: 'Klasyczny wariant aparatu stałego — dobór po konsultacji',
             price: 'od 3 000 zł',
             unit: 'za łuk',
           },
@@ -113,7 +113,7 @@ export const cennikTabs = [
           },
           {
             name: 'Metalowy — system niskiego tarcia',
-            desc: 'Samoligaturujące zamki, mniej wizyt kontrolnych',
+            desc: 'Samoligaturujące zamki — harmonogram kontroli ustala ortodonta',
             price: 'od 4 000 zł',
             unit: 'za łuk',
           },
@@ -152,16 +152,16 @@ export const cennikTabs = [
           },
           {
             name: 'Invisalign Comprehensive',
-            desc: 'Większość dorosłych przypadków wad zgryzu — najpopularniejszy wybór',
+            desc: 'Rozszerzony wariant leczenia — zakres dobierany po diagnostyce',
             price: 'ok. 14 000 zł',
-            unit: 'typowy przypadek dorosłego',
-            tag: 'Najpopularniejszy',
+            unit: 'zakres zależny od planu leczenia',
+            tag: null,
             note:
               'Zakres 12 000–18 000 zł zależy od stopnia skomplikowania — ustalamy po diagnostyce.',
           },
           {
             name: 'Once Aligner',
-            desc: 'Nakładkowy system alternatywny w konkurencyjnej cenie',
+            desc: 'Alternatywny system nakładkowy — kwalifikacja po diagnostyce',
             price: 'od 8 000 zł',
             unit: 'całe leczenie',
             tag: null,
@@ -175,7 +175,7 @@ export const cennikTabs = [
           },
           {
             name: 'Wizualizacja ClinCheck (plan 3D)',
-            desc: 'Symulacja efektów — wliczona w cenę każdego pakietu Invisalign',
+            desc: 'Wizualizacja planowanych etapów — nie stanowi gwarancji wyniku',
             price: '0 zł',
             unit: 'w pakiecie Invisalign',
             tag: null,
@@ -187,7 +187,7 @@ export const cennikTabs = [
         label: 'Retencja',
         type: 'cards',
         intro:
-          'Retencja to obowiązkowy, ostatni etap leczenia ortodontycznego. Bez niej zęby mają tendencję do powrotu na poprzednie pozycje.',
+          'Retencja pomaga ograniczać zmiany ustawienia zębów po aktywnym leczeniu. Jej rodzaj i czas stosowania ustala ortodonta.',
         items: [
           {
             name: 'Szyna retencyjna (zdejmowana)',
@@ -257,7 +257,7 @@ export const cennikTabs = [
     icon: 'circle-dot',
     type: 'groups',
     intro:
-      'Nowoczesne leczenie kanałowe pod powiększeniem, przygotowujące zęby do dalszego leczenia protetycznego lub ortodontycznego.',
+      'Leczenie kanałowe w zakresie ustalanym po badaniu i diagnostyce, także jako element szerszego planu stomatologicznego.',
     groups: [
       {
         groupName: 'Leczenie kanałowe',
@@ -316,7 +316,7 @@ export const cennikTabs = [
     items: [
       {
         name: 'Scaling + piaskowanie + polerowanie + fluoryzacja',
-        desc: 'Kompleksowe oczyszczenie — zalecane przed aparatem',
+        desc: 'Oczyszczenie zębów — wskazania przed aparatem ocenia lekarz lub higienistka',
         price: 'od 400 zł',
         unit: 'oba łuki',
         tag: 'Rekomendowane przed leczeniem',
@@ -347,7 +347,7 @@ export const cennikTabs = [
       },
       {
         name: 'ICON — infiltracja próchnicy',
-        desc: 'Leczenie wczesnych zmian próchniczych bez wiercenia',
+        desc: 'Infiltracja wybranych wczesnych zmian — po kwalifikacji',
         price: 'od 400 zł',
         unit: 'za ząb',
       },
@@ -365,7 +365,7 @@ export const cennikTabs = [
     icon: 'scan-line',
     type: 'cards',
     intro:
-      'Nowoczesna diagnostyka obrazowa — RTG i tomografia CBCT, które wykorzystujemy do planowania leczenia ortodontycznego, chirurgicznego i zachowawczego.',
+      'RTG i tomografia CBCT wykonywane zgodnie ze wskazaniami do planowania leczenia ortodontycznego, chirurgicznego i zachowawczego.',
     items: [
       {
         name: 'RTG punktowe',
@@ -441,4 +441,3 @@ export const cennikPreview = [
     price: 'od 300 zł',
   },
 ];
-

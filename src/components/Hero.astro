@@ -4,19 +4,19 @@ const trustItems = [
     icon: 'map-pin',
     label: 'Lokalizacja',
     title: 'Lubin',
-    detail: 'ul. Pawia 67 · centrum miasta',
+    detail: 'ul. Pawia 67 · sprawdź trasę na mapie',
   },
   {
     icon: 'scan-line',
     label: 'Technologia',
     title: 'Skan 3D Shining',
-    detail: 'Cyfrowy plan zgryzu na miejscu',
+    detail: 'Cyfrowe odwzorowanie zębów na miejscu',
   },
   {
     icon: 'calendar-clock',
     label: 'Zapisy',
     title: 'Rejestracja',
-    detail: 'Pon–Pt 9:00–18:00 · pierwszy wolny termin',
+    detail: 'Pon–Pt 9:00–18:00 · zapytaj o dostępny termin',
   },
 ];
 ---
@@ -37,18 +37,25 @@ const trustItems = [
       <h1
         class="hero-on-image serif mb-6 max-w-[18ch] text-[2.125rem] font-normal leading-[1.05] tracking-tight text-white sm:mb-7 sm:max-w-[20ch] sm:text-5xl md:mb-8 md:text-[3.25rem] lg:text-[3.75rem] lg:leading-[1.04]"
       >
-        Ortodoncja w&nbsp;Lubinie — plan zgryzu dla dzieci i&nbsp;dorosłych
+        Ortodonta w&nbsp;Lubinie dla dzieci, młodzieży i&nbsp;dorosłych
       </h1>
       <p class="hero-on-image mb-10 max-w-xl text-base font-light leading-snug text-white/92 md:mb-12 md:text-lg md:leading-snug">
-        Stomatologię dziecięcą prowadzimy spokojnie, z czasem na adaptację — w jednym miejscu, bez zbędnego pośpiechu.
+        Konsultacja, diagnostyka i leczenie wad zgryzu w jednym gabinecie. Pomagamy też zadbać o zdrowie zębów dziecka przed rozpoczęciem ortodoncji.
       </p>
-      <div>
+      <div class="flex flex-wrap items-center gap-3">
         <a
           href="#kontakt"
           class="btn-gold hero-on-image group inline-flex items-center justify-center gap-2 rounded-lg px-8 py-4 text-xs font-bold uppercase tracking-[0.18em] shadow-xl md:px-10 md:py-[1.125rem] md:text-sm md:tracking-[0.2em]"
         >
           Umów konsultację
           <i data-lucide="calendar" class="h-4 w-4 transition-transform group-hover:scale-110"></i>
+        </a>
+        <a
+          href="tel:+48694731124"
+          class="hero-on-image inline-flex items-center justify-center gap-2 rounded-lg border border-white/55 bg-white/10 px-8 py-4 text-xs font-bold uppercase tracking-[0.18em] text-white backdrop-blur-sm transition-colors hover:bg-white hover:text-navy md:px-10 md:py-[1.125rem] md:text-sm"
+        >
+          Zadzwoń i zapytaj o termin
+          <i data-lucide="phone" class="h-4 w-4"></i>
         </a>
       </div>
     </div>

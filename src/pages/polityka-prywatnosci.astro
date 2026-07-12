@@ -14,11 +14,11 @@ import {
 <Layout
   title="Polityka prywatności – ORTHOMEDICA Lubin"
   description="Polityka prywatności gabinetu stomatologicznego ORTHOMEDICA w Lubinie – przetwarzanie danych, pliki cookie, analityka i prawa pacjenta."
-  canonical="https://www.orthomedica.lubin.pl/polityka-prywatnosci"
+  canonical="https://orthomedica.lubin.pl/polityka-prywatnosci"
 >
   <Header />
 
-  <main class="pt-28 md:pt-32 pb-20 bg-white">
+  <main id="main-content" class="pt-28 md:pt-32 pb-20 bg-white">
     <section class="py-10 md:py-14">
       <div class="container mx-auto px-6 max-w-4xl">
         <h1 class="cinzel text-2xl md:text-3xl lg:text-4xl text-navy mb-6">
@@ -27,7 +27,7 @@ import {
         <p class="text-[15px] text-gray-600 font-light mb-6">
           Niniejsza Polityka prywatności opisuje zasady przetwarzania danych osobowych pacjentów i użytkowników strony
           internetowej prowadzonej pod adresem
-          <span class="font-semibold text-navy">www.orthomedica.lubin.pl</span> przez:
+          <span class="font-semibold text-navy">orthomedica.lubin.pl</span> przez:
         </p>
         <p class="text-[15px] text-gray-600 font-light mb-6">
           <span class="font-semibold text-navy">{ENTITY.legalAdministrator}</span><br />
@@ -56,9 +56,8 @@ import {
           <li>udzielanie świadczeń zdrowotnych i prowadzenie dokumentacji medycznej zgodnie z przepisami prawa,</li>
           <li>odpowiadanie na zapytania wysyłane przez formularz kontaktowy na stronie,</li>
           <li>realizacja obowiązków księgowych i podatkowych,</li>
-          <li>prowadzenie statystyk i pomiaru skuteczności strony (Google Analytics) oraz działań marketingowych (m.in. piksel Meta) — wyłącznie po jednorazowej zgodzie („Akceptuj wszystko”) obejmującej ten zakres,</li>
-          <li>wyświetlanie mapy lokalizacji gabinetu (Google Maps) — po tej samej zgodzie,</li>
-          <li>zapewnienie bezpieczeństwa i funkcjonowania strony internetowej (logi serwera, pliki cookie niezbędne do działania serwisu).</li>
+          <li>wyświetlanie mapy lokalizacji gabinetu (Google Maps) — wyłącznie po kliknięciu przycisku „Załaduj mapę”,</li>
+          <li>zapewnienie bezpieczeństwa i funkcjonowania strony internetowej, w tym obsługa logów serwera.</li>
         </ul>
 
         <h3 class="cinzel text-lg md:text-xl text-navy mb-2 mt-8">Zdjęcia dokumentacyjne, wizerunek i materiały „przed / po”</h3>
@@ -87,9 +86,7 @@ import {
           </li>
           <li>art. 6 ust. 1 lit. c RODO — w celu wypełnienia obowiązków prawnych ciążących na Administratorze,</li>
           <li>art. 9 ust. 2 lit. h RODO — w zakresie danych szczególnych (dane dotyczące zdrowia) w związku ze świadczeniami medycznymi,</li>
-          <li>
-            art. 6 ust. 1 lit. a RODO — w zakresie plików cookie służących mapie, analityce internetowej i narzędziom marketingowym (Google Analytics, piksel Meta), jeśli użytkownik wyrazi zgodę jednym przyciskiem „Akceptuj wszystko” w banerze; nie ma osobnych przełączników kategorii — akceptacja obejmuje całość opisaną w banerze; zgoda jest dobrowolna i może zostać cofnięta (np. usunięcie plików cookie w przeglądarce),
-          </li>
+          <li>art. 6 ust. 1 lit. a RODO — w zakresie opcjonalnego załadowania osadzonej mapy Google po działaniu użytkownika,</li>
           <li>
             art. 6 ust. 1 lit. f RODO — w celu dochodzenia lub obrony roszczeń, zapewnienia bezpieczeństwa systemów oraz — w ograniczonym zakresie — logów serwera; w zakresie marketingu bezpośredniego możliwy jest sprzeciw zgodnie z art. 21 RODO,
           </li>
@@ -103,21 +100,14 @@ import {
           w niezbędnym zakresie.
         </p>
         <p class="text-[15px] text-gray-600 font-light mb-4">
-          Po wyrażeniu zgody w banerze (jeden wybór — wszystkie wskazane funkcje naraz) dane mogą być przetwarzane także przez następujące podmioty
-          (jako odrębnych administratorów lub podmioty przetwarzające — zgodnie z umowami zawieranymi przez Administratora lub
-          bezpośrednio przez dostawców narzędzi):
+          Po świadomym kliknięciu przycisku „Załaduj mapę” połączenie z usługą Google Maps jest inicjowane przez przeglądarkę użytkownika.
+          Dane mogą być wtedy przetwarzane przez dostawcę mapy zgodnie z jego zasadami.
         </p>
         <ul class="list-disc pl-5 space-y-2 text-[15px] text-gray-600 font-light mb-4">
           <li>
-            <span class="font-semibold text-navy">Google Ireland Limited / Google LLC</span> — mapy osadzone na stronie (Google Maps),
-            analityka strony (Google Analytics 4). Polityki i informacje:{' '}
-            <a href="https://policies.google.com/privacy?hl=pl" class="text-navy hover:text-gold" target="_blank" rel="noopener noreferrer">polityka prywatności Google</a>,{' '}
-            <a href="https://business.safety.google/adscookies/" class="text-navy hover:text-gold" target="_blank" rel="noopener noreferrer">cookies reklamowe Google</a>.
-          </li>
-          <li>
-            <span class="font-semibold text-navy">Meta Platforms Ireland Limited</span> — piksel Facebook (Facebook Pixel) służący
-            mierzeniu konwersji i remarketingowi. Informacje:{' '}
-            <a href="https://www.facebook.com/privacy/policy" class="text-navy hover:text-gold" target="_blank" rel="noopener noreferrer">Polityka prywatności Meta</a>.
+            <span class="font-semibold text-navy">Google Ireland Limited / Google LLC</span> — mapa osadzona na stronie (Google Maps).
+            Informacje:{' '}
+            <a href="https://policies.google.com/privacy?hl=pl" class="text-navy hover:text-gold" target="_blank" rel="noopener noreferrer">polityka prywatności Google</a>.
           </li>
         </ul>
         <p class="text-[15px] text-gray-600 font-light mb-4">
@@ -149,60 +139,30 @@ import {
             <a href="https://uodo.gov.pl" class="text-navy hover:text-gold" target="_blank" rel="noopener noreferrer">uodo.gov.pl</a>.
         </ul>
         <p class="text-[15px] text-gray-600 font-light mb-4">
-          W przypadku przetwarzania danych na podstawie zgody — istnieje prawo do jej wycofania w dowolnym momencie bez wpływu
-          na zgodność z prawem przetwarzania przed jej wycofaniem. Wycofanie zgody na cookies może nastąpić poprzez usunięcie
-          plików cookie w przeglądarce lub zmianę ustawień; może to ograniczyć funkcje strony (np. mapę lub statystyki).
+          W przypadku przetwarzania danych na podstawie zgody istnieje prawo do jej wycofania w dowolnym momencie bez wpływu
+          na zgodność z prawem przetwarzania przed jej wycofaniem.
         </p>
 
-        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">7. Pliki cookie — rodzaje i cele</h2>
+        <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">7. Pliki cookie i treści zewnętrzne</h2>
         <p class="text-[15px] text-gray-600 font-light mb-4">
-          Strona korzysta z plików cookie (małych plików zapisywanych na urządzeniu użytkownika). Wykorzystujemy w szczególności:
-        </p>
-        <ul class="list-disc pl-5 space-y-3 text-[15px] text-gray-600 font-light mb-4">
-          <li>
-            <span class="font-semibold text-navy">Cookie niezbędne / funkcjonalne</span> — umożliwiają podstawowe działanie strony
-            (np. zapamiętanie decyzji o plikach cookie w pamięci przeglądarki użytkownika). Podstawa: zgoda (art. 6 ust. 1 lit. a
-            RODO) w zakresie, w jakim wymaga tego prawo, oraz prawnie uzasadniony interes przy minimalnym zakresie technicznym.
-          </li>
-          <li>
-            <span class="font-semibold text-navy">Cookie związane z treściami zewnętrznymi</span> — po kliknięciu „Akceptuj wszystko” w banerze
-            cookies ładowana jest mapa Google (osadzona treść z domen Google). Może to wiązać się z zapisem plików cookie przez
-            Google. Podstawa: zgoda użytkownika.
-          </li>
-          <li>
-            <span class="font-semibold text-navy">Analityka (Google Analytics 4)</span> — po zgodzie („Akceptuj wszystko”) wykorzystywana jest do zbierania
-            zagregowanych informacji o ruchu na stronie (np. odsłony, źródła wejść). Dane mogą obejmować m.in. skrócony adres IP
-            lub identyfikatory techniczne. Podstawa: zgoda.
-          </li>
-          <li>
-            <span class="font-semibold text-navy">Marketing / piksel Meta (Facebook)</span> — po tej samej zgodzie może być ładowany piksel Meta
-            w celu mierzenia konwersji i remarketingu. Podstawa: zgoda.
-          </li>
-        </ul>
-        <p class="text-[15px] text-gray-600 font-light mb-4">
-          Baner cookies oferuje jeden przycisk: „Akceptuj wszystko” — wyraża on jednocześnie zgodę na wykorzystanie plików cookie
-          w zakresie mapy Google, Google Analytics i piksela Meta (łącznie). Osobnych opcji odrzucenia wybranych kategorii strona nie
-          wyświetla. Do czasu kliknięcia tego przycisku mapa Google oraz skrypty Google Analytics i piksela Meta nie są ładowane
-          (z wyjątkiem samego baneru i niezbędnego działania strony).
-        </p>
-        <p class="text-[15px] text-gray-600 font-light mb-4">
-          Użytkownik może w każdej chwili zmienić ustawienia przeglądarki internetowej i samodzielnie usuwać lub blokować pliki cookie;
-          może to jednak utrudnić korzystanie z niektórych funkcji serwisu.
+          W obecnej wersji strona nie uruchamia narzędzi analitycznych ani marketingowych i nie zapisuje własnych opcjonalnych
+          plików cookie. Mapa Google pozostaje zablokowana do czasu kliknięcia przycisku „Załaduj mapę”. Po jej uruchomieniu Google
+          może zapisywać własne identyfikatory lub pliki cookie zgodnie ze swoją polityką. Użytkownik może korzystać ze strony,
+          formularza, telefonu i WhatsApp bez uruchamiania mapy.
         </p>
 
         <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">8. Profilowanie i zautomatyzowane decyzje</h2>
         <p class="text-[15px] text-gray-600 font-light mb-4">
-          Narzędzia analityczne i marketingowe (Google, Meta) mogą wykorzystywać dane do profilowania lub personalizacji reklam zgodnie
-          z zasadami tych dostawców. Administrator nie podejmuje wobec pacjenta wyłącznie zautomatyzowanych decyzji, które wywoływałyby
-          skutki prawne lub w podobny sposób istotnie na niego wpływały, w rozumieniu art. 22 RODO, w oparciu o same dane ze strony
-          internetowej — z wyłączeniem mechanizmów po stronie Google/Meta, które regulują ich własne polityki.
+          Strona nie korzysta obecnie z narzędzi profilujących ani reklamowych. Administrator nie podejmuje wobec pacjenta wyłącznie
+          zautomatyzowanych decyzji, które wywoływałyby skutki prawne lub w podobny sposób istotnie na niego wpływały, w rozumieniu
+          art. 22 RODO, w oparciu o dane z tej strony internetowej.
         </p>
 
         <h2 class="cinzel text-xl md:text-2xl text-navy mb-3">9. Postanowienia końcowe</h2>
         <p class="text-[15px] text-gray-600 font-light">
           Administrator zastrzega sobie prawo do aktualizacji niniejszej Polityki prywatności w przypadku zmiany obowiązujących
           przepisów, funkcji strony lub sposobu przetwarzania danych. Aktualna wersja dokumentu jest zawsze dostępna pod adresem{' '}
-          <span class="font-semibold text-navy">www.orthomedica.lubin.pl/polityka-prywatnosci</span>.
+          <span class="font-semibold text-navy">orthomedica.lubin.pl/polityka-prywatnosci</span>.
         </p>
         <p class="text-[13px] text-gray-500 font-light mt-6 border-t border-gray-100 pt-6">
           Treść ma charakter informacyjny i nie zastępuje indywidualnej porady prawnej. W razie wątpliwości dotyczących przetwarzania

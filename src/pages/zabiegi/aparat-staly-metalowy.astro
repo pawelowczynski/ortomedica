@@ -5,15 +5,15 @@ import Footer from '../../components/footer.astro';
 ---
 
 <Layout
-  title="Aparat stały metalowy Lubin — klasyczne leczenie ortodontyczne | ORTHOMEDICA"
-  description="Aparat stały metalowy w Lubinie — skuteczne leczenie większości wad zgryzu u dzieci, młodzieży i dorosłych. ORTHOMEDICA, dr n. med. Kornelia Rumin."
-  canonical="https://www.orthomedica.lubin.pl/zabiegi/aparat-staly-metalowy"
+  title="Aparat metalowy Lubin | ORTHOMEDICA"
+  description="Aparat stały metalowy w Lubinie: dla kogo może być odpowiedni, jak wygląda założenie, kontrole i retencja. Umów konsultację ortodontyczną."
+  canonical="https://orthomedica.lubin.pl/zabiegi/aparat-staly-metalowy"
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "MedicalProcedure",
     "name": "Aparat stały metalowy",
-    "url": "https://www.orthomedica.lubin.pl/zabiegi/aparat-staly-metalowy",
+    "url": "https://orthomedica.lubin.pl/zabiegi/aparat-staly-metalowy",
     "bodyLocation": "Zęby",
     "procedureType": "Surgical",
     "provider": {
@@ -31,7 +31,7 @@ import Footer from '../../components/footer.astro';
   })} />
   <Header />
 
-  <main class="pt-28 md:pt-32 pb-20 bg-white">
+  <main id="main-content" class="pt-28 md:pt-32 pb-20 bg-white">
     <nav class="text-xs md:text-sm text-gray-400 mb-6 md:mb-8" aria-label="Okruszki nawigacyjne">
       <div class="container mx-auto px-6">
         <ol class="flex flex-wrap items-center gap-1 md:gap-2">
@@ -55,8 +55,8 @@ import Footer from '../../components/footer.astro';
               Aparat stały metalowy Lubin
             </h1>
             <p class="text-[15px] md:text-base text-gray-600 font-light mb-6 md:mb-8 max-w-xl">
-              Klasyczny aparat stały z metalowymi zamkami to sprawdzona metoda leczenia nawet złożonych wad zgryzu.
-              Stosujemy nowoczesne systemy łuków i zamków, które pozwalają leczyć skutecznie i przewidywalnie.
+              Aparat stały z metalowymi zamkami jest jedną z metod leczenia wad zgryzu u młodzieży i dorosłych.
+              Możliwość zastosowania oraz plan leczenia ortodonta ustala po badaniu i diagnostyce.
             </p>
             <a href="/#kontakt" class="btn-gold inline-flex items-center gap-2 px-8 py-3 rounded-full text-xs font-bold uppercase tracking-[0.2em]">
               Umów konsultację
@@ -67,16 +67,21 @@ import Footer from '../../components/footer.astro';
           <div class="grid gap-4 md:gap-6">
             <div class="rounded-3xl overflow-hidden shadow-lg border border-gray-100">
               <img
-                src="https://images.unsplash.com/photo-1608539735106-0c9f4bdca0ad?auto=format&fit=crop&q=80&w=1200"
+                src="/images/services/aparat-staly-metalowy-2.webp"
+                width="800"
+                height="533"
                 alt="Aparat stały metalowy na zębach"
-                loading="lazy"
+                loading="eager"
+                fetchpriority="high"
                 class="w-full h-64 md:h-80 object-cover"
               />
             </div>
             <div class="grid grid-cols-2 gap-4">
               <div class="rounded-2xl overflow-hidden shadow-md border border-gray-100">
                 <img
-                  src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=800"
+                  src="/images/services/aparat-staly-metalowy-2.webp"
+                  width="800"
+                  height="533"
                   alt="Widok aparatu stałego w gabinecie"
                   loading="lazy"
                   class="w-full h-32 md:h-40 object-cover"
@@ -84,7 +89,9 @@ import Footer from '../../components/footer.astro';
               </div>
               <div class="rounded-2xl overflow-hidden shadow-md border border-gray-100">
                 <img
-                  src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=800"
+                  src="/images/services/aparat-staly-metalowy-3.webp"
+                  width="800"
+                  height="533"
                   alt="Ortodontka przygotowująca aparat stały"
                   loading="lazy"
                   class="w-full h-32 md:h-40 object-cover"
@@ -98,20 +105,17 @@ import Footer from '../../components/footer.astro';
 
     <section class="py-10 md:py-14 bg-gray-soft border-y border-gray-100">
       <div class="container mx-auto px-6 max-w-4xl">
-        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-6">Na czym polega leczenie aparatem stałym?</h3>
+        <h2 class="cinzel text-2xl md:text-3xl text-navy mb-6">Na czym polega leczenie aparatem stałym?</h2>
         <p class="text-[15px] md:text-base text-gray-600 font-light mb-4">
           Aparat stały składa się z zamków przyklejonych do zębów, łuków ortodontycznych oraz elementów dodatkowych,
           takich jak ligatury czy sprężyny. Odpowiednio dobrane siły działają na zęby przez całą dobę, stopniowo
           przesuwając je do docelowej pozycji.
         </p>
         <p class="text-[15px] md:text-base text-gray-600 font-light mb-4">
-          Aparat metalowy jest rozwiązaniem uniwersalnym — pozwala skutecznie leczyć zarówno proste stłoczenia, jak
-          i złożone wady wymagające szerszej kontroli nad ruchem zębów. To najczęściej wybierana forma leczenia u
-          młodzieży, ale sprawdza się również u dorosłych pacjentów.
+          Aparat metalowy umożliwia ortodoncie kontrolowanie położenia poszczególnych zębów. Bywa stosowany przy stłoczeniach i innych wadach zgryzu, jednak zakres możliwej korekty zależy od indywidualnych warunków klinicznych.
         </p>
         <p class="text-[15px] md:text-base text-gray-600 font-light mb-0">
-          Kluczowe dla powodzenia terapii jest regularne zgłaszanie się na wizyty kontrolne co 6–8 tygodni, dbałość
-          o higienę jamy ustnej oraz przestrzeganie zaleceń dotyczących diety i użytkowania aparatu.
+          W trakcie leczenia potrzebne są wizyty kontrolne w terminach wyznaczonych przez ortodontę, staranna higiena jamy ustnej oraz przestrzeganie zaleceń dotyczących aparatu.
         </p>
       </div>
     </section>
@@ -119,7 +123,7 @@ import Footer from '../../components/footer.astro';
     <section class="py-10 md:py-14">
       <div class="container mx-auto px-6 max-w-4xl grid md:grid-cols-[1.3fr,1fr] gap-10 md:gap-12 items-start">
         <div>
-          <h3 class="cinzel text-2xl md:text-3xl text-navy mb-4">Dla kogo jest aparat stały metalowy?</h3>
+          <h2 class="cinzel text-2xl md:text-3xl text-navy mb-4">Dla kogo jest aparat stały metalowy?</h2>
           <ul class="list-disc pl-5 space-y-2 text-[15px] md:text-base text-gray-600 font-light mb-4">
             <li>pacjentów z umiarkowanymi i ciężkimi stłoczeniami zębów,</li>
             <li>osób z wadą zgryzu wymagającą kontroli nachylenia i położenia pojedynczych zębów,</li>
@@ -134,12 +138,12 @@ import Footer from '../../components/footer.astro';
         </div>
 
         <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 md:p-6">
-          <h4 class="cinzel text-lg text-navy mb-4">Leczenie krok po kroku</h4>
+          <h3 class="cinzel text-lg text-navy mb-4">Leczenie krok po kroku</h3>
           <ol class="space-y-3 text-[15px] text-gray-600 font-light">
             <li><span class="font-semibold text-navy">1. Konsultacja</span> — badanie, omówienie oczekiwań, wstępny plan.</li>
             <li><span class="font-semibold text-navy">2. Diagnostyka</span> — skan 3D, zdjęcia RTG, fotografie.</li>
             <li><span class="font-semibold text-navy">3. Założenie aparatu</span> — przyklejenie zamków i założenie łuku.</li>
-            <li><span class="font-semibold text-navy">4. Wizyty kontrolne</span> — co 6–8 tygodni regulacja aparatu.</li>
+            <li><span class="font-semibold text-navy">4. Wizyty kontrolne</span> — regulacja aparatu w terminach ustalonych przez ortodontę.</li>
             <li><span class="font-semibold text-navy">5. Zdjęcie aparatu i retencja</span> — polerowanie zębów, retainery stałe lub szyny.</li>
           </ol>
         </div>
@@ -148,7 +152,7 @@ import Footer from '../../components/footer.astro';
 
     <section class="py-10 md:py-14 bg-gray-50 border-y border-gray-100">
       <div class="container mx-auto px-6 max-w-4xl">
-        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-6">Mini FAQ — aparat stały metalowy</h3>
+        <h2 class="cinzel text-2xl md:text-3xl text-navy mb-6">Mini FAQ — aparat stały metalowy</h2>
         <div class="space-y-4">
           <details class="group bg-white rounded-2xl border border-gray-100 shadow-sm open:border-gold transition-all">
             <summary class="flex items-center justify-between px-5 py-3 cursor-pointer list-none">
@@ -156,8 +160,7 @@ import Footer from '../../components/footer.astro';
               <i data-lucide="plus" class="text-gold w-5 h-5 transition-transform group-open:rotate-45 shrink-0"></i>
             </summary>
             <div class="px-5 pb-4 pt-1 text-[15px] text-gray-600 font-light">
-              Samo przyklejanie zamków jest bezbolesne i nie wymaga znieczulenia. Przez kilka dni po założeniu aparatu
-              możesz odczuwać tkliwość zębów — to naturalna reakcja na działanie sił przesuwających zęby.
+              Przyklejanie zamków zwykle nie wymaga znieczulenia. Po założeniu aparatu może pojawić się przejściowa tkliwość lub podrażnienie. Nasilone albo nietypowe dolegliwości należy skonsultować z gabinetem.
             </div>
           </details>
 
@@ -178,8 +181,7 @@ import Footer from '../../components/footer.astro';
               <i data-lucide="plus" class="text-gold w-5 h-5 transition-transform group-open:rotate-45 shrink-0"></i>
             </summary>
             <div class="px-5 pb-4 pt-1 text-[15px] text-gray-600 font-light">
-              Średni czas leczenia wynosi 18–24 miesiące, ale zależy od rodzaju i nasilenia wady, wieku pacjenta oraz
-              systematyczności wizyt kontrolnych.
+              Czas leczenia zależy od rodzaju i nasilenia wady, reakcji tkanek oraz współpracy pacjenta. Wstępny harmonogram lekarz przedstawia po diagnostyce.
             </div>
           </details>
         </div>
@@ -188,7 +190,7 @@ import Footer from '../../components/footer.astro';
 
     <section class="py-12 md:py-16">
       <div class="container mx-auto px-6 text-center max-w-2xl">
-        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-4">Porozmawiajmy o Twoim leczeniu</h3>
+        <h2 class="cinzel text-2xl md:text-3xl text-navy mb-4">Porozmawiajmy o Twoim leczeniu</h2>
         <p class="text-[15px] md:text-base text-gray-600 font-light mb-6">
           Podczas konsultacji w ORTHOMEDICA przedstawimy Ci różne możliwości leczenia — w tym aparat metalowy,
           ceramiczny i ewentualne leczenie nakładkowe — oraz omówimy przewidywany czas terapii.
@@ -203,4 +205,3 @@ import Footer from '../../components/footer.astro';
 
   <Footer />
 </Layout>
-

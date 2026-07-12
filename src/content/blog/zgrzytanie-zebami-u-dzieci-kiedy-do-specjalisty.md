@@ -7,15 +7,14 @@ tags:
   - "dzieci"
   - "bruksizm"
   - "konsultacja"
-heroImage: "https://placehold.co/1200x800/FFF1E6/0A192F?text=Zgrzytanie+zebami+u+dzieci"
-canonical: "https://www.orthomedica.lubin.pl/blog/zgrzytanie-zebami-u-dzieci-kiedy-do-specjalisty"
+canonical: "https://orthomedica.lubin.pl/blog/zgrzytanie-zebami-u-dzieci-kiedy-do-specjalisty"
 ---
 
 Zgrzytanie zębami, czyli bruksizm, dość często pojawia się u dzieci - szczególnie nocą. W wielu przypadkach ma charakter przejściowy, ale czasem wymaga diagnostyki.
 
-## Na co zwrócić uwagę?
+## Co warto obserwować?
 
-Sygnały alarmowe to:
+Do konsultacji mogą skłaniać:
 
 - częste zgrzytanie i zaciskanie zębów,
 - poranne bóle szczęki lub głowy,
@@ -24,10 +23,10 @@ Sygnały alarmowe to:
 
 ## Skąd bierze się bruksizm?
 
-Przyczyn może być kilka: napięcie emocjonalne, zaburzenia oddychania podczas snu, nieprawidłowe kontakty zębowe lub inne czynniki czynnościowe.
+Zgrzytanie może mieć różne przyczyny i nie należy rozpoznawać ich wyłącznie na podstawie jednego objawu. Lekarz zbiera wywiad, bada jamę ustną i w razie potrzeby kieruje do innego specjalisty.
 
 ## Kiedy umówić wizytę?
 
-Jeśli objawy utrzymują się kilka tygodni, nasilają się albo dziecko zgłasza ból, warto umówić konsultację. Wczesna ocena pozwala zaplanować właściwe postępowanie i zapobiec dalszemu ścieraniu zębów.
+Jeśli objawy się utrzymują, nasilają albo dziecko zgłasza ból, warto umówić konsultację. Pilność oceny zależy od charakteru dolegliwości i wyniku badania.
 
-W ORTHOMEDICA oceniamy nie tylko same zęby, ale też funkcję zgryzu, oddychanie i nawyki dziecka.
+W ORTHOMEDICA podczas konsultacji oceniamy jamę ustną i zgryz oraz pytamy o objawy i nawyki dziecka. Zakres dalszej diagnostyki jest ustalany indywidualnie.

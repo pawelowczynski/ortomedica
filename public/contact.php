@@ -14,6 +14,25 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
   exit;
 }
 
+$requestHost = strtolower((string) ($_SERVER['HTTP_HOST'] ?? ''));
+$requestHost = preg_replace('/:\d+$/', '', $requestHost) ?? '';
+$allowedHosts = ['orthomedica.lubin.pl', 'www.orthomedica.lubin.pl'];
+if (!in_array($requestHost, $allowedHosts, true)) {
+  http_response_code(403);
+  echo json_encode(['ok' => false, 'message' => 'Nieprawidłowe żądanie.'], JSON_UNESCAPED_UNICODE);
+  exit;
+}
+
+$origin = isset($_SERVER['HTTP_ORIGIN']) ? trim((string) $_SERVER['HTTP_ORIGIN']) : '';
+if ($origin !== '') {
+  $originHost = strtolower((string) parse_url($origin, PHP_URL_HOST));
+  if (!in_array($originHost, $allowedHosts, true)) {
+    http_response_code(403);
+    echo json_encode(['ok' => false, 'message' => 'Nieprawidłowe źródło żądania.'], JSON_UNESCAPED_UNICODE);
+    exit;
+  }
+}
+
 if (PHP_VERSION_ID >= 70300) {
   session_set_cookie_params([
     'lifetime' => 0,
@@ -62,7 +81,8 @@ $allowedSubjects = [
   'profilaktyka' => 'Profilaktyka / lakowanie / higiena dziecka',
   'chirurgia' => 'Chirurgia stomatologiczna',
   'gnatologia' => 'Gnatologia / ból żuchwy / TMJ',
-  'ortodoncja' => 'Ortodoncja dziecko lub młodzież',
+  'ortodoncja' => 'Ortodoncja dziecka lub młodzieży',
+  'ortodoncja-dorosli' => 'Ortodoncja dorosłych',
   'rtg-diagnostyka' => 'RTG / diagnostyka obrazowa',
   'inne' => 'Inne zapytanie',
 ];
@@ -83,13 +103,13 @@ if ($digits === '' || strlen($digits) < 9) {
 
 if ($subjectKey === '' || !isset($allowedSubjects[$subjectKey])) {
   http_response_code(400);
-  echo json_encode(['ok' => false, 'message' => 'Wybierz cel wizyty z listy.'], JSON_UNESCAPED_UNICODE);
+  echo json_encode(['ok' => false, 'message' => 'Wybierz temat zapytania z listy.'], JSON_UNESCAPED_UNICODE);
   exit;
 }
 
 $subjectLabel = $allowedSubjects[$subjectKey];
 
-$toRaw = getenv('CONTACT_MAIL_TO') ?: 'rejestracja@orthomedica-lubin.pl';
+$toRaw = getenv('CONTACT_MAIL_TO') ?: 'rejestracja@orthomedica.lubin.pl';
 $toRaw = $stripNl($toRaw);
 $toList = array_values(
   array_filter(
@@ -147,7 +167,7 @@ $sent = @mail($to, '=?UTF-8?B?' . base64_encode($mailSubject) . '?=', $body, imp
 if (!$sent) {
   http_response_code(500);
   echo json_encode(
-    ['ok' => false, 'message' => 'Nie udało się wysłać wiadomości. Zadzwoń lub napisz na rejestracja@orthomedica-lubin.pl'],
+    ['ok' => false, 'message' => 'Nie udało się wysłać wiadomości. Zadzwoń lub napisz na rejestracja@orthomedica.lubin.pl'],
     JSON_UNESCAPED_UNICODE
   );
   exit;
@@ -155,4 +175,4 @@ if (!$sent) {
 
 $_SESSION['contact_last'] = $now;
 
-echo json_encode(['ok' => true, 'message' => 'Wiadomość została wysłana. Odezwiemy się niezwłocznie.'], JSON_UNESCAPED_UNICODE);
+echo json_encode(['ok' => true, 'message' => 'Wiadomość została wysłana do rejestracji.'], JSON_UNESCAPED_UNICODE);

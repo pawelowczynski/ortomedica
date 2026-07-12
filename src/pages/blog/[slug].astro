@@ -3,9 +3,12 @@ import Layout from '../../layouts/layout.astro';
 import Header from '../../components/header.astro';
 import Footer from '../../components/footer.astro';
 import type { MarkdownInstance } from 'astro';
+import { blogPostingJsonLd, breadcrumbJsonLd, canonicalUrl } from '../../data/schema';
+import { SITE_ORIGIN } from '../../data/site';
 
 type BlogFrontmatter = {
   title: string;
+  seoTitle?: string;
   description: string;
   date: string;
   author?: string;
@@ -45,10 +48,7 @@ if (!currentPost) {
 }
 
 const { Content } = await currentPost;
-const { title, description, date, author, tags = [], heroImage, canonical } = currentPost.frontmatter;
-const OLD_SITE_ORIGIN = 'https://www.orthomedica.lubin.pl';
-const NEW_SITE_ORIGIN = 'https://www.orthomedica.lubin.pl';
-
+const { title, seoTitle, description, date, author, tags = [], heroImage, canonical } = currentPost.frontmatter;
 const formattedDate = new Date(date).toLocaleDateString('pl-PL', {
   year: 'numeric',
   month: 'long',
@@ -57,8 +57,13 @@ const formattedDate = new Date(date).toLocaleDateString('pl-PL', {
 
 const relatedPosts = posts
   .filter((post: BlogPost) => post.file !== currentPost.file)
+  .map((post: BlogPost) => ({
+    post,
+    sharedTags: (post.frontmatter.tags ?? []).filter((tag) => tags.includes(tag)).length,
+  }))
+  .sort((a, b) => b.sharedTags - a.sharedTags)
   .slice(0, 3)
-  .map((post: BlogPost) => {
+  .map(({ post }) => {
     const s = post.file.split('/').pop()?.replace('.md', '') ?? '';
     return {
       slug: s,
@@ -66,67 +71,49 @@ const relatedPosts = posts
     };
   });
 
-const url = (canonical ?? `${NEW_SITE_ORIGIN}/blog/${slug}`).replace(OLD_SITE_ORIGIN, NEW_SITE_ORIGIN);
+const primaryService = tags.includes('dzieci') || tags.includes('pierwsza-wizyta')
+  ? { href: '/zabiegi/stomatologia-i-ortodoncja-dziecieca', label: 'Sprawdź opiekę stomatologiczną dla dzieci' }
+  : tags.includes('retencja')
+    ? { href: '/zabiegi/retencja-ortodontyczna', label: 'Sprawdź informacje o retencji' }
+    : tags.includes('skan-3d') || tags.includes('diagnostyka')
+      ? { href: '/zabiegi/skan-3d-shining', label: 'Sprawdź informacje o skanie 3D' }
+      : tags.some((tag) => ['aparat-staly', 'aparaty-stale', 'higiena'].includes(tag))
+        ? { href: '/zabiegi/aparat-staly-metalowy', label: 'Sprawdź informacje o aparacie stałym' }
+        : { href: '/zabiegi/ortodoncja', label: 'Sprawdź zakres konsultacji ortodontycznej' };
 
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'BlogPosting',
-  'headline': title,
-  'description': description,
-  'author': {
-    '@type': 'Person',
-    'name': author,
-  },
-  'datePublished': date,
-  'image': heroImage,
-  'mainEntityOfPage': {
-    '@type': 'WebPage',
-    '@id': url,
-  },
-  'publisher': {
-    '@type': 'Organization',
-    'name': 'ORTHOMEDICA',
-  },
-};
+const url = canonical
+  ? canonical.replace('https://www.orthomedica.lubin.pl', SITE_ORIGIN)
+  : canonicalUrl(`/blog/${slug}`);
 
-const breadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  'itemListElement': [
-    {
-      '@type': 'ListItem',
-      'position': 1,
-      'name': 'Strona główna',
-      'item': `${NEW_SITE_ORIGIN}/`,
-    },
-    {
-      '@type': 'ListItem',
-      'position': 2,
-      'name': 'Blog',
-      'item': `${NEW_SITE_ORIGIN}/blog`,
-    },
-    {
-      '@type': 'ListItem',
-      'position': 3,
-      'name': title,
-      'item': url,
-    },
-  ],
-};
+const schema = blogPostingJsonLd({
+  title,
+  description,
+  url,
+  datePublished: date,
+  author,
+  image: heroImage,
+});
+
+const breadcrumbSchema = breadcrumbJsonLd([
+  { name: 'Strona główna', item: `${SITE_ORIGIN}/` },
+  { name: 'Blog', item: `${SITE_ORIGIN}/blog` },
+  { name: title, item: url },
+]);
 ---
 
 <Layout
-  title={`${title} | Blog ORTHOMEDICA`}
+  title={`${seoTitle ?? title} | ORTHOMEDICA`}
   description={description}
   canonical={url}
   image={heroImage}
+  ogType="article"
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(schema)} />
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
   <Header />
 
-  <main class="pt-28 md:pt-32 pb-20 bg-white">
+  <main id="main-content" class="pt-28 md:pt-32 pb-20 bg-white">
     <section class="py-10 md:py-14">
       <div class="container mx-auto px-6 max-w-4xl">
         <nav class="text-[11px] uppercase tracking-[0.35em] text-gray-400 mb-6 flex flex-wrap gap-2">
@@ -181,6 +168,22 @@ const breadcrumbSchema = {
 
           <div class="prose prose-sm md:prose-base lg:prose-lg max-w-none prose-headings:font-normal prose-headings:serif prose-a:text-gold prose-a:no-underline hover:prose-a:underline prose-strong:text-navy prose-p:text-gray-700 prose-li:text-gray-700">
             <Content />
+          </div>
+
+          <aside class="mt-10 rounded-2xl border border-gold/20 bg-gray-50 p-6" aria-label="Ważna informacja medyczna">
+            <p class="mb-2 text-sm font-semibold text-navy">Materiał edukacyjny</p>
+            <p class="text-sm font-light leading-relaxed text-gray-600">
+              Artykuł nie zastępuje badania ani indywidualnych zaleceń lekarza. Jeśli objawy Cię niepokoją lub nasilają się, skontaktuj się z gabinetem albo odpowiednim specjalistą.
+            </p>
+          </aside>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href={primaryService.href} class="inline-flex items-center gap-2 rounded-full border border-navy px-6 py-3 text-sm font-semibold text-navy transition-colors hover:bg-navy hover:text-white">
+              {primaryService.label}
+            </a>
+            <a href="/#kontakt" class="btn-gold inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold">
+              Zapytaj o konsultację
+            </a>
           </div>
         </article>
 

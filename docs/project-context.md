@@ -2,7 +2,7 @@
 
 ## 1) Project Overview
 
-- Marketing/lead website for a dental/orthodontic clinic in Lubin (`https://www.orthomedica.lubin.pl`).
+- Marketing/lead website for a dental/orthodontic clinic in Lubin (`https://orthomedica.lubin.pl`).
 - Static Astro site with mostly server-rendered pages and one shared client script for UI behaviors.
 - Main project code lives in [`/`](../), documentation is in [`docs/`](./).
 

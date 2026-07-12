@@ -9,12 +9,11 @@ interface Props {
   image?: string;
   robots?: string;
   ogType?: 'website' | 'article';
+  preloadImage?: string;
 }
 
 const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION;
 /** GA4 / Meta — ladowane dopiero po zgodzie na cookies (main.js), nie tutaj */
-const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? '';
-const fbPixelId = import.meta.env.PUBLIC_FB_PIXEL_ID ?? '';
 
 const {
   title,
@@ -23,6 +22,7 @@ const {
   image = DEFAULT_OG_IMAGE_URL,
   robots,
   ogType = 'website',
+  preloadImage,
 } = Astro.props;
 
 const ogImage = image.startsWith('http')
@@ -41,6 +41,7 @@ const ogImage = image.startsWith('http')
     {gscVerification && <meta name="google-site-verification" content={gscVerification} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="manifest" href="/site.webmanifest">
+    {preloadImage && <link rel="preload" as="image" href={preloadImage} fetchpriority="high" />}
 
     <!-- Open Graph -->
     <meta property="og:type" content={ogType}>
@@ -59,21 +60,9 @@ const ogImage = image.startsWith('http')
 
     <slot name="head" />
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    
-    <script is:inline src="https://unpkg.com/lucide@latest"></script>
-    <script is:inline define:vars={{ gaMeasurementId, fbPixelId }}>
-      window.__ORTHOMEDICA_ANALYTICS__ = {
-        gaMeasurementId: gaMeasurementId || '',
-        fbPixelId: fbPixelId || '',
-      };
-    </script>
-
 </head>
 <body class="antialiased pb-24 md:pb-0 relative">
     <slot />
-    <script type="module" src="/main.js"></script>
+    <script src="../scripts/main.js"></script>
 </body>
 </html>

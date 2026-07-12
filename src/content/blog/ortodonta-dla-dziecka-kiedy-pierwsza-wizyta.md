@@ -1,18 +1,16 @@
 ---
 title: "Ortodonta dla dziecka – kiedy na pierwszą wizytę?"
-description: "Sprawdź, w jakim wieku najlepiej zgłosić się z dzieckiem do ortodonty i jakie niepokojące objawy w zgryzie warto skonsultować w gabinecie ORTHOMEDICA w Lubinie."
+description: "Sprawdź, kiedy zaplanować pierwszą ocenę ortodontyczną dziecka i jakie zmiany w zgryzie warto skonsultować w ORTHOMEDICA w Lubinie."
 date: "2026-03-05"
 author: "dr n. med. Kornelia Rumin"
 tags:
   - "dzieci"
   - "profilaktyka"
   - "pierwsza-wizyta"
-heroImage: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&q=80&w=1200"
-canonical: "https://www.orthomedica.lubin.pl/blog/ortodonta-dla-dziecka-kiedy-pierwsza-wizyta"
+canonical: "https://orthomedica.lubin.pl/blog/ortodonta-dla-dziecka-kiedy-pierwsza-wizyta"
 ---
 
-Prawidłowy rozwój zgryzu u dziecka ma ogromne znaczenie dla funkcji żucia, mowy i estetyki uśmiechu w dorosłym życiu. 
-Wielu rodziców zastanawia się, kiedy jest najlepszy moment na pierwszą konsultację ortodontyczną.
+Rozwój zgryzu dziecka zmienia się wraz z wyrzynaniem zębów i wzrostem szczęk. Wielu rodziców zastanawia się, kiedy zaplanować pierwszą konsultację ortodontyczną.
 
 ## Rekomendacje specjalistów
 
@@ -25,5 +23,5 @@ W tym wieku można:
 - zaplanować profilaktykę i ewentualne leczenie,
 - skorygować złe nawyki (np. ssanie kciuka, oddychanie przez usta).
 
-Jeśli masz jakiekolwiek wątpliwości dotyczące zgryzu dziecka, umów wizytę w ORTHOMEDICA – im wcześniej wykryta wada, tym prostsze i krótsze leczenie.
+Jeśli masz wątpliwości dotyczące zgryzu dziecka, umów ocenę w ORTHOMEDICA. Wczesna konsultacja nie zawsze oznacza aparat — ortodonta może zalecić obserwację i kolejną kontrolę w odpowiednim terminie.
 

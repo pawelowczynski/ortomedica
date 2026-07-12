@@ -11,7 +11,16 @@ import { METAMORPHOSIS_FEATURED as item } from '../data/metamorphoses';
 
     <div class="max-w-3xl mx-auto">
       <div class="group overflow-hidden rounded-[2rem] bg-gray-50 border border-gray-100 shadow-sm transition-all flex flex-col hover:shadow-xl">
-        <div class="relative w-full h-64 md:h-80 ba-container cursor-ew-resize select-none overflow-hidden rounded-t-[2rem]">
+        <div
+          class="relative w-full h-64 md:h-80 ba-container cursor-ew-resize select-none overflow-hidden rounded-t-[2rem]"
+          role="slider"
+          tabindex="0"
+          aria-label="Porównanie zdjęcia przed i po leczeniu"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="50"
+          aria-valuetext="50% zdjęcia przed leczeniem"
+        >
           <div class="absolute inset-0 z-10 pointer-events-none">
             <span
               class="ba-label ba-label-po absolute top-4 right-4 rounded-lg border border-brand-gold/40 px-4 py-2 text-xs font-bold uppercase tracking-widest shadow-lg"
@@ -23,6 +32,8 @@ import { METAMORPHOSIS_FEATURED as item } from '../data/metamorphoses';
               alt={item.altAfter}
               loading="lazy"
               decoding="async"
+              width="490"
+              height="282"
               sizes="(min-width: 1024px) 768px, 100vw"
               class="w-full h-full object-cover object-center block"
             />
@@ -38,6 +49,8 @@ import { METAMORPHOSIS_FEATURED as item } from '../data/metamorphoses';
               alt={item.altBefore}
               loading="lazy"
               decoding="async"
+              width="494"
+              height="308"
               sizes="(min-width: 1024px) 768px, 100vw"
               class="w-full h-full object-cover object-center block"
             />

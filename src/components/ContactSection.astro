@@ -1,6 +1,6 @@
 ---
 import { CONTACT_SUBJECTS } from '../data/contactForm';
-import { whatsAppChatHref } from '../data/site';
+import { ENTITY, whatsAppChatHref } from '../data/site';
 
 const waHref = whatsAppChatHref();
 ---
@@ -10,8 +10,9 @@ const waHref = whatsAppChatHref();
     <div class="grid lg:grid-cols-2 gap-10 lg:gap-14">
       <!-- Info i Formularz -->
       <div>
-        <span class="mb-4 block text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Zrób pierwszy krok</span>
-        <h2 class="cinzel text-3xl md:text-4xl mb-6 md:mb-8 text-brand-steel">Umów wizytę — stomatologia dla dzieci</h2>
+        <span class="mb-4 block text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Kontakt i rejestracja</span>
+        <h2 class="cinzel text-3xl md:text-4xl mb-4 text-brand-steel">Zapytaj o konsultację w ORTHOMEDICA</h2>
+        <p class="mb-8 max-w-xl text-[15px] font-light leading-relaxed text-gray-600">Zadzwoń, napisz przez WhatsApp albo wyślij formularz. Rejestracja sprawdzi dostępne terminy i pomoże wybrać właściwy rodzaj wizyty.</p>
 
         <!-- Przyciski akcji -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
@@ -64,18 +65,19 @@ const waHref = whatsAppChatHref();
             <i data-lucide="mail" class="mt-1 shrink-0 text-gold"></i>
             <div>
               <a
-                href="mailto:rejestracja@orthomedica-lubin.pl"
+                href={`mailto:${ENTITY.email}`}
                 class="text-[15px] font-bold text-brand-steel transition-colors hover:text-gold focus-visible:outline-none"
               >
-                rejestracja@orthomedica-lubin.pl
+                {ENTITY.email}
               </a>
             </div>
           </div>
         </div>
 
         <!-- Formularz online -->
-        <h3 class="font-bold text-brand-steel mb-4">Lub wyślij zapytanie online:</h3>
-        <form id="contactForm" class="space-y-5" novalidate>
+        <h3 class="font-bold text-brand-steel mb-2">Lub wyślij zapytanie online</h3>
+        <p class="mb-4 text-sm font-light text-gray-500">Po wysłaniu formularza dane trafią do rejestracji. Formularz nie służy do uzyskania diagnozy ani pomocy w nagłym przypadku.</p>
+        <form id="contactForm" action="/contact.php" method="post" class="space-y-5">
           <!-- Anti-spam Honeypot -->
           <div class="hidden" aria-hidden="true">
             <label for="bot_check">Nie wypełniaj tego pola</label>
@@ -106,7 +108,7 @@ const waHref = whatsAppChatHref();
                 class="block text-[10px] font-bold uppercase tracking-wider text-brand-steel/70 mb-2 pl-2"
                 for="phone"
               >
-                Nr telefonu
+                Numer telefonu
               </label>
               <input
                 type="tel"
@@ -125,11 +127,11 @@ const waHref = whatsAppChatHref();
               class="block text-[10px] font-bold uppercase tracking-wider text-brand-steel/70 mb-2 pl-2"
               for="subject"
             >
-              Cel wizyty
+              Temat zapytania
             </label>
             <select id="subject" name="subject" required class="input-field text-base text-brand-steel font-medium">
               <option value="" disabled selected>
-                Wybierz cel wizyty...
+                Wybierz temat zapytania...
               </option>
               {CONTACT_SUBJECTS.map((item) => (
                 <option value={item.value}>{item.label}</option>
@@ -138,20 +140,26 @@ const waHref = whatsAppChatHref();
           </div>
 
           <!-- Komunikaty zwrotne formularza -->
-          <div id="formFeedback" class="hidden p-4 rounded-xl text-xs font-bold border mt-2 transition-all"></div>
+          <div
+            id="formFeedback"
+            class="hidden p-4 rounded-xl text-xs font-bold border mt-2 transition-all"
+            role="status"
+            aria-live="polite"
+            tabindex="-1"
+          ></div>
 
           <button
             type="submit"
             class="btn-gold mt-2 w-full rounded-xl py-5 text-sm font-bold uppercase tracking-wider shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-gold/40"
           >
-            Wyślij zgłoszenie
+            Wyślij zapytanie
           </button>
           <p class="text-[9px] text-gray-400 text-center mt-2">
-            Wysyłając zapytanie akceptujesz{' '}
+            Wysyłając formularz, potwierdzasz zapoznanie się z{' '}
             <a href="/polityka-prywatnosci" class="underline hover:text-gray-600">
               politykę prywatności
             </a>
-            . Zabezpieczono przed spamem.
+            . Podaj wyłącznie dane potrzebne do kontaktu.
           </p>
         </form>
       </div>
@@ -176,4 +184,3 @@ const waHref = whatsAppChatHref();
     </div>
   </div>
 </section>
-

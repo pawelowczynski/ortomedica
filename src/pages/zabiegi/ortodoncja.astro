@@ -8,8 +8,8 @@ const canonical = canonicalUrl('/zabiegi/ortodoncja');
 ---
 
 <Layout
-  title="Ortodoncja Lubin — leczenie wad zgryzu | ORTHOMEDICA"
-  description="Ortodoncja w Lubinie: konsultacja, RTG i skan 3D w gabinecie, dobór metody leczenia, aparaty stałe i inne rozwiązania. Leczymy dzieci, młodzież i dorosłych."
+  title="Ortodoncja dla dorosłych i młodzieży Lubin | ORTHOMEDICA"
+  description="Ortodoncja w Lubinie dla młodzieży i dorosłych: konsultacja, diagnostyka, dobór aparatu, kontrole i retencja. Sprawdź przebieg leczenia."
   canonical={canonical}
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(medicalWebPageJsonLd({
@@ -18,7 +18,7 @@ const canonical = canonicalUrl('/zabiegi/ortodoncja');
   }))} />
   <Header />
 
-  <main class="pt-28 md:pt-32 pb-20 bg-white">
+  <main id="main-content" class="pt-28 md:pt-32 pb-20 bg-white">
     <nav class="text-xs md:text-sm text-gray-400 mb-6 md:mb-8" aria-label="Okruszki nawigacyjne">
       <div class="container mx-auto px-6">
         <ol class="flex flex-wrap items-center gap-1 md:gap-2">
@@ -34,10 +34,10 @@ const canonical = canonicalUrl('/zabiegi/ortodoncja');
     <section class="py-8 md:py-12">
       <div class="container mx-auto px-6 max-w-4xl">
         <p class="cinzel text-xs md:text-sm text-gold font-bold tracking-[0.5em] mb-4 uppercase">Ortodoncja</p>
-        <h1 class="text-3xl md:text-4xl lg:text-5xl serif mb-6 text-navy">Ortodoncja w ORTHOMEDICA</h1>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl serif mb-6 text-navy">Ortodoncja dla młodzieży i dorosłych w Lubinie</h1>
         <p class="text-[15px] md:text-base text-gray-600 font-light mb-6 leading-relaxed max-w-3xl">
-          Planujemy i prowadzimy leczenie wad zgryzu z wykorzystaniem nowoczesnej diagnostyki i metod dopasowanych do
-          wieku oraz oczekiwań pacjenta — od pierwszej konsultacji po retencję.
+          Jeśli przeszkadza Ci ustawienie zębów lub sposób, w jaki łączą się szczęka i żuchwa, zacznij od konsultacji.
+          Po badaniu lekarz dobiera potrzebną diagnostykę i omawia możliwe metody, etapy oraz orientacyjne koszty leczenia.
         </p>
         <a href="/#kontakt" class="btn-gold inline-flex items-center gap-2 px-8 py-3 rounded-full text-xs font-bold uppercase tracking-[0.2em]">
           Umów konsultację
@@ -48,10 +48,10 @@ const canonical = canonicalUrl('/zabiegi/ortodoncja');
 
     <section class="py-10 md:py-14 bg-gray-soft border-y border-gray-100">
       <div class="container mx-auto px-6 max-w-4xl">
-        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-8">Dla kogo</h3>
+        <h2 class="cinzel text-2xl md:text-3xl text-navy mb-8">Dla kogo</h2>
         <div class="grid md:grid-cols-2 gap-8">
           <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
-            <h4 class="font-semibold text-navy mb-3">Dzieci i młodzież</h4>
+            <h3 class="font-semibold text-navy mb-3">Dzieci i młodzież</h3>
             <p class="text-[15px] text-gray-600 font-light leading-relaxed mb-4">
               Wczesna diagnostyka, obserwacja i leczenie przechwytujące — opisujemy na osobnej podstronie wraz ze
               stomatologią dziecięcą.
@@ -61,9 +61,9 @@ const canonical = canonicalUrl('/zabiegi/ortodoncja');
             </a>
           </div>
           <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
-            <h4 class="font-semibold text-navy mb-3">Młodzież i dorośli</h4>
+            <h3 class="font-semibold text-navy mb-3">Młodzież i dorośli</h3>
             <p class="text-[15px] text-gray-600 font-light leading-relaxed">
-              Pełne leczenie wad zgryzu aparatami stałymi lub innymi metodami wskazanymi klinicznie — po konsultacji, RTG i skanie 3D wybieramy plan dopasowany do Twojej sytuacji.
+              Leczenie wad zgryzu aparatami stałymi lub innymi metodami wskazanymi klinicznie. Zakres diagnostyki i plan są dobierane po badaniu — nie każdy pacjent potrzebuje tych samych badań ani tego samego rodzaju aparatu.
             </p>
           </div>
         </div>
@@ -72,7 +72,7 @@ const canonical = canonicalUrl('/zabiegi/ortodoncja');
 
     <section class="py-10 md:py-14">
       <div class="container mx-auto px-6 max-w-4xl">
-        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-4">Oferta — metody leczenia</h3>
+        <h2 class="cinzel text-2xl md:text-3xl text-navy mb-4">Oferta — metody leczenia</h2>
         <p class="text-[15px] text-gray-600 font-light mb-8 max-w-3xl">
           Poniżej szczegółowe podstrony poszczególnych rozwiązań. Na konsultacji omówimy, które z nich są dla Ciebie
           możliwe.
@@ -121,7 +121,7 @@ const canonical = canonicalUrl('/zabiegi/ortodoncja');
 
     <section class="py-10 md:py-14 bg-gray-50 border-y border-gray-100">
       <div class="container mx-auto px-6 max-w-4xl">
-        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-8">Proces leczenia — krok po kroku</h3>
+        <h2 class="cinzel text-2xl md:text-3xl text-navy mb-8">Proces leczenia — krok po kroku</h2>
         <ol class="space-y-6 list-none counter-reset-none">
           <li class="flex gap-4">
             <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold font-semibold text-sm">1</span>
@@ -144,7 +144,7 @@ const canonical = canonicalUrl('/zabiegi/ortodoncja');
             <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold font-semibold text-sm">3</span>
             <div>
               <p class="font-semibold text-navy mb-1">Plan i omówienie</p>
-              <p class="text-[15px] text-gray-600 font-light">Dobór aparatu lub nakładek, harmonogram wizyt, koszty i etapy.</p>
+              <p class="text-[15px] text-gray-600 font-light">Omówienie dostępnych metod, etapów, wizyt kontrolnych i orientacyjnych kosztów.</p>
             </div>
           </li>
           <li class="flex gap-4">
@@ -167,7 +167,7 @@ const canonical = canonicalUrl('/zabiegi/ortodoncja');
 
     <section class="py-12 md:py-16">
       <div class="container mx-auto px-6 text-center max-w-2xl">
-        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-4">Zacznij od konsultacji</h3>
+        <h2 class="cinzel text-2xl md:text-3xl text-navy mb-4">Zacznij od konsultacji</h2>
         <p class="text-[15px] text-gray-600 font-light mb-6">
           Umów się w ORTHOMEDICA — omówimy Twoją sytuację i możliwe warianty leczenia.
         </p>

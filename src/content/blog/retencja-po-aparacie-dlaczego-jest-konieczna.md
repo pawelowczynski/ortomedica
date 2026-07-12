@@ -1,17 +1,16 @@
 ---
 title: "Retencja po aparacie - dlaczego jest konieczna?"
-description: "Po zdjęciu aparatu leczenie się nie kończy. Sprawdź, czym jest retencja, jak długo trwa i dlaczego decyduje o trwałości efektów ortodontycznych."
+description: "Po zdjęciu aparatu zaczyna się retencja. Sprawdź, jakie ma zadanie, jakie są jej formy i dlaczego plan kontroli ustala ortodonta."
 date: "2026-04-09"
 author: "dr n. med. Kornelia Rumin"
 tags:
   - "retencja"
   - "aparat-staly"
   - "leczenie-wad-zgryzu"
-heroImage: "https://placehold.co/1200x800/FDEBD2/0A192F?text=Retencja+po+aparacie"
-canonical: "https://www.orthomedica.lubin.pl/blog/retencja-po-aparacie-dlaczego-jest-konieczna"
+canonical: "https://orthomedica.lubin.pl/blog/retencja-po-aparacie-dlaczego-jest-konieczna"
 ---
 
-Wielu pacjentów myśli, że po zdjęciu aparatu leczenie ortodontyczne jest zakończone. W praktyce kluczowy etap to retencja, czyli utrwalenie uzyskanego ustawienia zębów.
+Po zdjęciu aparatu zaczyna się etap retencji, którego celem jest ograniczenie niepożądanych zmian ustawienia zębów.
 
 ## Dlaczego zęby wracają?
 
@@ -30,4 +29,4 @@ Dobór metody zależy od rodzaju wady, wieku i nawyków pacjenta.
 
 To kwestia indywidualna, ale zwykle retencja trwa wielomiesięcznie, a często długoterminowo. Regularne kontrole są ważne tak samo jak podczas leczenia aktywnego.
 
-Jeśli zależy Ci na trwałym efekcie prostego uśmiechu, retencja jest nie dodatkiem, ale obowiązkową częścią całej terapii.
+Nie odstawiaj retainera samodzielnie. Rodzaj retencji, czas stosowania i terminy kontroli ustala ortodonta na podstawie przebiegu leczenia.

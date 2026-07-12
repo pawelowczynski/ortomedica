@@ -1,0 +1,32 @@
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Jedyny kanoniczny host: HTTPS bez www.
+  RewriteCond %{HTTPS} !=on [OR]
+  RewriteCond %{HTTP_HOST} !^orthomedica\.lubin\.pl$ [NC]
+  RewriteRule ^ https://orthomedica.lubin.pl%{REQUEST_URI} [R=301,L,NE]
+
+  # Stare adresy zachowują wartość SEO przez prawdziwe przekierowania 301.
+  RewriteRule ^zabiegi/skan-3d-itero/?$ /zabiegi/skan-3d-shining [R=301,L,NE]
+  RewriteRule ^zabiegi/invisalign-lubin/?$ /zabiegi/ortodoncja [R=301,L,NE]
+  RewriteRule ^blog/skan-3d-itero-co-daje-pacjentowi/?$ /blog/skan-3d-shining-co-daje-pacjentowi [R=301,L,NE]
+
+  # Canonicale są bez końcowego ukośnika.
+  RewriteCond %{REQUEST_URI} !^/$
+  RewriteRule ^(.+)/$ /$1 [R=301,L,NE]
+
+  # Astro generuje katalog/index.html; serwujemy go bez zmiany publicznego URL.
+  RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+  RewriteRule ^(.+)$ $1/index.html [L]
+</IfModule>
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Strict-Transport-Security "max-age=31536000"
+</IfModule>

@@ -5,15 +5,15 @@ import Footer from '../../components/footer.astro';
 ---
 
 <Layout
-  title="Retencja ortodontyczna Lubin — utrzymanie efektów leczenia | ORTHOMEDICA"
-  description="Retencja po leczeniu ortodontycznym w Lubinie — retainery stałe i szyny retencyjne. Zadbaj o trwały efekt prostych zębów w ORTHOMEDICA."
-  canonical="https://www.orthomedica.lubin.pl/zabiegi/retencja-ortodontyczna"
+  title="Retencja ortodontyczna Lubin | ORTHOMEDICA"
+  description="Retencja ortodontyczna w Lubinie: szyny i retainery stałe, kontrole oraz zasady użytkowania po zakończeniu aktywnego leczenia."
+  canonical="https://orthomedica.lubin.pl/zabiegi/retencja-ortodontyczna"
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "MedicalProcedure",
     "name": "Retencja ortodontyczna",
-    "url": "https://www.orthomedica.lubin.pl/zabiegi/retencja-ortodontyczna",
+    "url": "https://orthomedica.lubin.pl/zabiegi/retencja-ortodontyczna",
     "bodyLocation": "Zęby",
     "procedureType": "NonSurgical",
     "provider": {
@@ -31,7 +31,7 @@ import Footer from '../../components/footer.astro';
   })} />
   <Header />
 
-  <main class="pt-28 md:pt-32 pb-20 bg-white">
+  <main id="main-content" class="pt-28 md:pt-32 pb-20 bg-white">
     <nav class="text-xs md:text-sm text-gray-400 mb-6 md:mb-8" aria-label="Okruszki nawigacyjne">
       <div class="container mx-auto px-6">
         <ol class="flex flex-wrap items-center gap-1 md:gap-2">
@@ -55,8 +55,7 @@ import Footer from '../../components/footer.astro';
               Retencja po leczeniu ortodontycznym
             </h1>
             <p class="text-[15px] md:text-base text-gray-600 font-light mb-6 md:mb-8 max-w-xl">
-              Retencja to etap, w którym utrwalamy efekt prostych zębów po zdjęciu aparatu lub zakończeniu leczenia
-              nakładkami. Bez niej zęby mają tendencję do częściowego powrotu na dawne pozycje.
+              Retencja pomaga ograniczać zmiany ustawienia zębów po zdjęciu aparatu lub zakończeniu leczenia nakładkami. Rodzaj rozwiązania i czas stosowania lekarz dobiera indywidualnie.
             </p>
             <a href="/#kontakt" class="btn-gold inline-flex items-center gap-2 px-8 py-3 rounded-full text-xs font-bold uppercase tracking-[0.2em]">
               Umów wizytę retencyjną
@@ -67,16 +66,21 @@ import Footer from '../../components/footer.astro';
           <div class="grid gap-4 md:gap-6">
             <div class="rounded-3xl overflow-hidden shadow-lg border border-gray-100">
               <img
-                src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&q=80&w=1200"
+                src="/images/services/retencja-ortodontyczna-1.webp"
+                width="1200"
+                height="900"
                 alt="Retainer po zdjęciu aparatu"
-                loading="lazy"
+                loading="eager"
+                fetchpriority="high"
                 class="w-full h-64 md:h-80 object-cover"
               />
             </div>
             <div class="grid grid-cols-2 gap-4">
               <div class="rounded-2xl overflow-hidden shadow-md border border-gray-100">
                 <img
-                  src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=800"
+                  src="/images/services/retencja-ortodontyczna-2.webp"
+                  width="800"
+                  height="533"
                   alt="Szyna retencyjna na modelu zębów"
                   loading="lazy"
                   class="w-full h-32 md:h-40 object-cover"
@@ -84,7 +88,9 @@ import Footer from '../../components/footer.astro';
               </div>
               <div class="rounded-2xl overflow-hidden shadow-md border border-gray-100">
                 <img
-                  src="https://images.unsplash.com/photo-1629904869392-ae2a682d4d01?auto=format&fit=crop&q=80&w=800"
+                  src="/images/services/retencja-ortodontyczna-3.webp"
+                  width="800"
+                  height="530"
                   alt="Kontrola retencji w gabinecie"
                   loading="lazy"
                   class="w-full h-32 md:h-40 object-cover"
@@ -98,7 +104,7 @@ import Footer from '../../components/footer.astro';
 
     <section class="py-10 md:py-14 bg-gray-soft border-y border-gray-100">
       <div class="container mx-auto px-6 max-w-4xl">
-        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-6">Jakie są formy retencji?</h3>
+        <h2 class="cinzel text-2xl md:text-3xl text-navy mb-6">Jakie są formy retencji?</h2>
         <ul class="list-disc pl-5 space-y-2 text-[15px] md:text-base text-gray-600 font-light mb-4">
           <li>szyny retencyjne (zdejmowane) — przezroczyste nakładki noszone głównie w nocy,</li>
           <li>retainery stałe — cienki drucik przyklejony od wewnętrznej strony zębów przednich,</li>
@@ -114,7 +120,7 @@ import Footer from '../../components/footer.astro';
     <section class="py-10 md:py-14">
       <div class="container mx-auto px-6 max-w-4xl grid md:grid-cols-[1.3fr,1fr] gap-10 md:gap-12 items-start">
         <div>
-          <h3 class="cinzel text-2xl md:text-3xl text-navy mb-4">Jak długo trwa retencja?</h3>
+          <h2 class="cinzel text-2xl md:text-3xl text-navy mb-4">Jak długo trwa retencja?</h2>
         <p class="text-[15px] md:text-base text-gray-600 font-light mb-4">
             Retencja to proces długoterminowy. Na pełną przebudowę kości i tkanek utrzymujących zęby potrzeba
             co najmniej kilkunastu miesięcy, dlatego przez pierwsze 1–2 lata retencja jest szczególnie ważna.
@@ -127,7 +133,7 @@ import Footer from '../../components/footer.astro';
         </div>
 
         <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 md:p-6">
-          <h4 class="cinzel text-lg text-navy mb-4">Jak dbać o retainery?</h4>
+          <h3 class="cinzel text-lg text-navy mb-4">Jak dbać o retainery?</h3>
           <ul class="space-y-2 text-[15px] text-gray-600 font-light">
             <li>czyść szyny miękką szczoteczką i łagodnym środkiem myjącym,</li>
             <li>nie myj ich w gorącej wodzie (ryzyko odkształcenia),</li>
@@ -140,7 +146,7 @@ import Footer from '../../components/footer.astro';
 
     <section class="py-10 md:py-14 bg-gray-50 border-y border-gray-100">
       <div class="container mx-auto px-6 max-w-4xl">
-        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-6">Mini FAQ — retencja</h3>
+        <h2 class="cinzel text-2xl md:text-3xl text-navy mb-6">Mini FAQ — retencja</h2>
         <div class="space-y-4">
           <details class="group bg-white rounded-2xl border border-gray-100 shadow-sm open:border-gold transition-all">
             <summary class="flex items-center justify-between px-5 py-3 cursor-pointer list-none">
@@ -169,7 +175,7 @@ import Footer from '../../components/footer.astro';
 
     <section class="py-12 md:py-16">
       <div class="container mx-auto px-6 text-center max-w-2xl">
-        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-4">Zabezpiecz efekt leczenia</h3>
+        <h2 class="cinzel text-2xl md:text-3xl text-navy mb-4">Umów kontrolę retencji</h2>
         <p class="text-[15px] md:text-base text-gray-600 font-light mb-6">
           Jeśli zakończyłeś leczenie ortodontyczne lub planujesz zdjąć aparat, zaplanuj wizytę retencyjną w
           ORTHOMEDICA. Dobierzemy indywidualnie dopasowaną formę utrzymania efektu.

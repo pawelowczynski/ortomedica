@@ -47,6 +47,19 @@ jobs:
         if: github.event.inputs.mode == 'full_site'
         run: npm run build
 
+      - name: Preflight full site
+        if: github.event.inputs.mode == 'full_site'
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f dist/.htaccess
+          test -f dist/robots.txt
+          test -f dist/sitemap-index.xml
+          if grep -R -E -i 'placehold\.co|\(uzupelnij\)|zdjęcia poniżej mają charakter ilustracyjny' dist; then
+            echo 'Publiczne treści robocze znalezione w buildzie.' >&2
+            exit 1
+          fi
+
       - name: Upload via SSH
         shell: bash
         env:
@@ -71,14 +84,31 @@ jobs:
           PY
           ssh-keyscan -p "$SSH_PORT" "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null || true
           chmod 644 ~/.ssh/known_hosts
-          REMOTE_DIR="domains/orthomedica.lubin.pl/public_html"
+          REMOTE_ROOT="domains/orthomedica.lubin.pl"
+          REMOTE_DIR="$REMOTE_ROOT/public_html"
+          RELEASE_DIR="$REMOTE_ROOT/.release-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          BACKUP_DIR="$REMOTE_ROOT/.previous"
           SSH_BASE=(ssh -i "$KEY_FILE" -p "$SSH_PORT" -o IdentityFile="$KEY_FILE" -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new -o BatchMode=yes -o LogLevel=ERROR "$SSH_USER@$SSH_HOST")
 
-          "${SSH_BASE[@]}" "mkdir -p \"$REMOTE_DIR\""
+          "${SSH_BASE[@]}" "mkdir -p \"$RELEASE_DIR\" && find \"$RELEASE_DIR\" -mindepth 1 -delete"
 
           if [[ "$MODE" == "holding" ]]; then
-            "${SSH_BASE[@]}" "find \"$REMOTE_DIR\" -mindepth 1 -delete"
-            tar -C deploy/cyberfolks-holding -czf - . | "${SSH_BASE[@]}" "tar -xzf - -C \"$REMOTE_DIR\""
+            tar -C deploy/cyberfolks-holding -czf - . | "${SSH_BASE[@]}" "tar -xzf - -C \"$RELEASE_DIR\""
           else
-            tar -C dist -czf - . | "${SSH_BASE[@]}" "tar -xzf - -C \"$REMOTE_DIR\""
+            tar -C dist -czf - . | "${SSH_BASE[@]}" "tar -xzf - -C \"$RELEASE_DIR\""
+          fi
+
+          "${SSH_BASE[@]}" "set -e; rm -rf \"$BACKUP_DIR\"; if [ -d \"$REMOTE_DIR\" ]; then mv \"$REMOTE_DIR\" \"$BACKUP_DIR\"; fi; if ! mv \"$RELEASE_DIR\" \"$REMOTE_DIR\"; then if [ -d \"$BACKUP_DIR\" ]; then mv \"$BACKUP_DIR\" \"$REMOTE_DIR\"; fi; exit 1; fi"
+
+      - name: Smoke test
+        shell: bash
+        env:
+          MODE: ${{ github.event.inputs.mode }}
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --location --max-redirs 3 https://orthomedica.lubin.pl/ > /dev/null
+          if [[ "$MODE" == "full_site" ]]; then
+            curl --fail --silent --show-error https://orthomedica.lubin.pl/robots.txt | grep -q 'Sitemap: https://orthomedica.lubin.pl/sitemap-index.xml'
+            curl --fail --silent --show-error https://orthomedica.lubin.pl/sitemap-index.xml | grep -q '<sitemapindex'
+            curl --fail --silent --show-error https://orthomedica.lubin.pl/zabiegi/ortodoncja > /dev/null
           fi

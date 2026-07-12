@@ -5,15 +5,15 @@ import Footer from '../../components/footer.astro';
 ---
 
 <Layout
-  title="Aparat ruchomy dla dzieci Lubin — leczenie przechwytujące | ORTHOMEDICA"
-  description="Aparaty ruchome dla dzieci w Lubinie — leczenie przechwytujące, które koryguje wady zgryzu we wczesnym wieku. ORTHOMEDICA, ortodoncja dziecięca."
-  canonical="https://www.orthomedica.lubin.pl/zabiegi/aparat-ruchomy"
+  title="Aparat ruchomy dla dzieci Lubin | ORTHOMEDICA"
+  description="Aparat ruchomy dla dzieci w Lubinie: kwalifikacja, zasady noszenia, kontrole i rola rodzica. Dobór aparatu zależy od badania ortodontycznego."
+  canonical="https://orthomedica.lubin.pl/zabiegi/aparat-ruchomy"
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "MedicalProcedure",
     "name": "Aparat ruchomy",
-    "url": "https://www.orthomedica.lubin.pl/zabiegi/aparat-ruchomy",
+    "url": "https://orthomedica.lubin.pl/zabiegi/aparat-ruchomy",
     "bodyLocation": "Zęby",
     "procedureType": "NonSurgical",
     "provider": {
@@ -31,7 +31,7 @@ import Footer from '../../components/footer.astro';
   })} />
   <Header />
 
-  <main class="pt-28 md:pt-32 pb-20 bg-white">
+  <main id="main-content" class="pt-28 md:pt-32 pb-20 bg-white">
     <nav class="text-xs md:text-sm text-gray-400 mb-6 md:mb-8" aria-label="Okruszki nawigacyjne">
       <div class="container mx-auto px-6">
         <ol class="flex flex-wrap items-center gap-1 md:gap-2">
@@ -55,8 +55,7 @@ import Footer from '../../components/footer.astro';
               Aparat ruchomy dla dzieci
             </h1>
             <p class="text-[15px] md:text-base text-gray-600 font-light mb-6 md:mb-8 max-w-xl">
-              Aparaty ruchome stosujemy u dzieci w fazie wzrostu, aby korygować wady zgryzu zanim pojawią się wszystkie
-              zęby stałe. Dzięki temu często udaje się uniknąć bardziej skomplikowanego leczenia w przyszłości.
+              Aparat ruchomy może wspierać leczenie wybranych wad zgryzu w okresie wzrostu. O tym, czy jest odpowiedni dla dziecka, decyduje ortodonta po badaniu i potrzebnej diagnostyce.
             </p>
             <a href="/#kontakt" class="btn-gold inline-flex items-center gap-2 px-8 py-3 rounded-full text-xs font-bold uppercase tracking-[0.2em]">
               Umów wizytę z dzieckiem
@@ -67,16 +66,21 @@ import Footer from '../../components/footer.astro';
           <div class="grid gap-4 md:gap-6">
             <div class="rounded-3xl overflow-hidden shadow-lg border border-gray-100">
               <img
-                src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=1200"
+                src="/images/services/aparat-ruchomy-1.webp"
+                width="1200"
+                height="800"
                 alt="Aparat ruchomy dla dziecka"
-                loading="lazy"
+                loading="eager"
+                fetchpriority="high"
                 class="w-full h-64 md:h-80 object-cover"
               />
             </div>
             <div class="grid grid-cols-2 gap-4">
               <div class="rounded-2xl overflow-hidden shadow-md border border-gray-100">
                 <img
-                  src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=800"
+                  src="/images/services/aparat-ruchomy-2.webp"
+                  width="800"
+                  height="523"
                   alt="Dziecko w gabinecie stomatologicznym"
                   loading="lazy"
                   class="w-full h-32 md:h-40 object-cover"
@@ -84,7 +88,9 @@ import Footer from '../../components/footer.astro';
               </div>
               <div class="rounded-2xl overflow-hidden shadow-md border border-gray-100">
                 <img
-                  src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800"
+                  src="/images/services/aparat-ruchomy-3.webp"
+                  width="800"
+                  height="533"
                   alt="Kolorowy aparat ruchomy"
                   loading="lazy"
                   class="w-full h-32 md:h-40 object-cover"
@@ -98,16 +104,14 @@ import Footer from '../../components/footer.astro';
 
     <section class="py-10 md:py-14 bg-gray-soft border-y border-gray-100">
       <div class="container mx-auto px-6 max-w-4xl">
-        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-6">Na czym polega leczenie aparatem ruchomym?</h3>
+        <h2 class="cinzel text-2xl md:text-3xl text-navy mb-6">Na czym polega leczenie aparatem ruchomym?</h2>
         <p class="text-[15px] md:text-base text-gray-600 font-light mb-4">
           Aparat ruchomy to zdejmowane urządzenie, które dziecko nosi kilka–kilkanaście godzin na dobę, zwykle głównie
           w nocy i część dnia. Działa poprzez delikatne siły oddziałujące na zęby i kości, wspomagając prawidłowy
           rozwój łuków zębowych oraz mięśni.
         </p>
         <p class="text-[15px] md:text-base text-gray-600 font-light mb-0">
-          Leczenie aparatem ruchomym jest szczególnie skuteczne, gdy zostanie rozpoczęte w odpowiednim momencie
-          wzrostu dziecka (zwykle między 7. a 10. rokiem życia). O tym, czy aparat ruchomy jest właściwym wyborem,
-          decyduje ortodonta po badaniu dziecka i analizie dokumentacji.
+          Znaczenie ma moment rozpoczęcia leczenia oraz systematyczne noszenie aparatu zgodnie z zaleceniami. O tym, czy aparat ruchomy jest właściwym wyborem, decyduje ortodonta po badaniu dziecka i analizie potrzebnej dokumentacji.
         </p>
       </div>
     </section>
@@ -115,7 +119,7 @@ import Footer from '../../components/footer.astro';
     <section class="py-10 md:py-14">
       <div class="container mx-auto px-6 max-w-4xl grid md:grid-cols-[1.3fr,1fr] gap-10 md:gap-12 items-start">
         <div>
-          <h3 class="cinzel text-2xl md:text-3xl text-navy mb-4">Dla jakich dzieci aparat ruchomy będzie odpowiedni?</h3>
+          <h2 class="cinzel text-2xl md:text-3xl text-navy mb-4">Dla jakich dzieci aparat ruchomy będzie odpowiedni?</h2>
           <ul class="list-disc pl-5 space-y-2 text-[15px] md:text-base text-gray-600 font-light mb-4">
             <li>dzieci z wąskim łukiem zębowym i brakiem miejsca dla zębów stałych,</li>
             <li>pacjentów z nieprawidłowym położeniem żuchwy (zgryz krzyżowy, tyłozgryz),</li>
@@ -129,7 +133,7 @@ import Footer from '../../components/footer.astro';
         </div>
 
         <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 md:p-6">
-          <h4 class="cinzel text-lg text-navy mb-4">Jak wygląda współpraca z rodzicami?</h4>
+          <h3 class="cinzel text-lg text-navy mb-4">Jak wygląda współpraca z rodzicami?</h3>
           <ul class="space-y-2 text-[15px] text-gray-600 font-light">
             <li>podczas pierwszej wizyty dokładnie tłumaczymy zasady działania aparatu,</li>
             <li>rodzice otrzymują jasne wskazówki dotyczące ilości godzin noszenia,</li>
@@ -142,7 +146,7 @@ import Footer from '../../components/footer.astro';
 
     <section class="py-10 md:py-14 bg-gray-50 border-y border-gray-100">
       <div class="container mx-auto px-6 max-w-4xl">
-        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-6">Mini FAQ — aparat ruchomy</h3>
+        <h2 class="cinzel text-2xl md:text-3xl text-navy mb-6">Mini FAQ — aparat ruchomy</h2>
         <div class="space-y-4">
           <details class="group bg-white rounded-2xl border border-gray-100 shadow-sm open:border-gold transition-all">
             <summary class="flex items-center justify-between px-5 py-3 cursor-pointer list-none">
@@ -182,7 +186,7 @@ import Footer from '../../components/footer.astro';
 
     <section class="py-12 md:py-16">
       <div class="container mx-auto px-6 text-center max-w-2xl">
-        <h3 class="cinzel text-2xl md:text-3xl text-navy mb-4">Sprawdź, czy to dobry moment na leczenie</h3>
+        <h2 class="cinzel text-2xl md:text-3xl text-navy mb-4">Sprawdź, czy to dobry moment na leczenie</h2>
         <p class="text-[15px] md:text-base text-gray-600 font-light mb-6">
           Podczas wizyty w ORTHOMEDICA ocenimy rozwój zgryzu Twojego dziecka i zaproponujemy odpowiednią ścieżkę
           leczenia — z aparatem ruchomym lub inną metodą.

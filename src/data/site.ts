@@ -1,5 +1,5 @@
 /** Dane witryny i ujawnień prawnych podmiotu */
-export const SITE_ORIGIN = 'https://www.orthomedica.lubin.pl';
+export const SITE_ORIGIN = 'https://orthomedica.lubin.pl';
 
 /** Wizytówka Google (opinie, trasa) — link zewnętrzny */
 export const GOOGLE_BUSINESS_REVIEWS_URL =
@@ -40,7 +40,7 @@ export const ENTITY = {
   clinicStreet: 'ul. Pawia 67',
   clinicPostalCode: '59-300',
   clinicCity: 'Lubin',
-  email: 'rejestracja@orthomedica-lubin.pl',
+  email: 'rejestracja@orthomedica.lubin.pl',
   nip: '8992930722',
   regon: '522554361',
   /** Numer KRS spółki (Krajowy Rejestr Sądowy) — osobno od wpisu w rejestrze medycznym */

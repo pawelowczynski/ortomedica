@@ -1,3 +1,10 @@
+<a
+  href="#main-content"
+  class="fixed left-4 top-3 z-[200] -translate-y-24 rounded-lg bg-white px-4 py-3 text-sm font-bold text-brand-steel shadow-xl transition-transform focus:translate-y-0"
+>
+  Przejdź do treści
+</a>
+
 <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-5 text-white" id="main-nav">
     <div class="nav-bar-shell relative z-[60]">
         <div class="container mx-auto px-6">
@@ -36,7 +43,7 @@
         </div>
     </div>
 
-    <div id="mobile-menu" class="mobile-menu-root md:hidden" aria-hidden="true">
+    <div id="mobile-menu" class="mobile-menu-root md:hidden" aria-hidden="true" inert>
         <button type="button" id="mobile-menu-backdrop" class="mobile-menu-backdrop" tabindex="-1" aria-label="Zamknij menu"></button>
         <nav class="mobile-menu-panel" aria-label="Nawigacja mobilna">
             <a href="/#oferta" class="mobile-link cinzel text-2xl transition-colors">Oferta</a>

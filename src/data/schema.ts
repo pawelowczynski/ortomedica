@@ -41,6 +41,20 @@ export function organizationJsonLd() {
     geo: geoCoordinates,
     hasMap: GOOGLE_BUSINESS_REVIEWS_URL,
     sameAs: [GOOGLE_BUSINESS_REVIEWS_URL],
+    areaServed: [
+      { '@type': 'City', name: 'Lubin' },
+      { '@type': 'City', name: 'Polkowice' },
+      { '@type': 'City', name: 'Legnica' },
+      { '@type': 'City', name: 'Głogów' },
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: PHONE_E164,
+      email: ENTITY.email,
+      contactType: 'rejestracja',
+      areaServed: 'PL',
+      availableLanguage: ['pl'],
+    },
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
@@ -151,7 +165,7 @@ export function blogPostingJsonLd(opts: {
       url: SITE_ORIGIN,
       logo: {
         '@type': 'ImageObject',
-        url: `${SITE_ORIGIN}/logo.png`,
+        url: `${SITE_ORIGIN}/logo.webp`,
       },
     },
   };
