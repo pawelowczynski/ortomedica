@@ -63,9 +63,9 @@ export const MEDICAL_DISCLOSURE = {
   nfzNote:
     'Świadczenia są udzielane odpłatnie na zasadach komercyjnych. Gabinet nie zawarł umowy o udzielanie świadczeń opieki zdrowotnej z Narodowym Funduszem Zdrowia w zakresie prezentowanym na tej stronie.',
 
-  /** art. 23a — zmień, jeśli faktycznie stosujecie monitoring */
+  /** Art. 23a ustawy o działalności leczniczej — monitoring obejmuje całą placówkę. */
   cctvNote:
-    'W miejscu udzielania świadczeń zdrowotnych nie jest prowadzony monitoring wizyjny. W razie wprowadzenia monitoringu pacjenci zostaną poinformowani na stronie internetowej oraz w gabinecie.',
+    'W całej placówce prowadzony jest monitoring wizyjny w celu zapewnienia bezpieczeństwa pacjentów, osób przebywających w placówce i pracowników, ochrony mienia oraz dokumentacji. Obszar objęty monitoringiem jest oznaczony. Nagrania zawierające dane osobowe przetwarzamy wyłącznie w tych celach i przechowujemy nie dłużej niż 3 miesiące od dnia nagrania, chyba że odrębne przepisy stanowią inaczej.',
 
   patientRightsUrl: 'https://www.gov.pl/web/zdrowie/prawa-pacjenta',
   patientOmbudsmanUrl: 'https://www.rpp.gov.pl/',
