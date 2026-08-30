@@ -22,3 +22,9 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# local Codex and generated review artifacts
+.codex-remote-attachments/
+.imagegen-references/
+output/
+tmp/

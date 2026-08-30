@@ -69,21 +69,21 @@ const trustItems = [
             <div
               class:list={[
                 'flex min-w-0 gap-3 sm:gap-4',
-                index > 0 && 'sm:border-l sm:border-white/20 sm:pl-6 md:pl-8',
+                index > 0 && 'sm:border-l sm:border-navy/15 sm:pl-6 md:pl-8',
               ]}
             >
               <span
-                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/20 bg-white/10 text-gold"
+                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-navy/15 bg-white/65 text-gold"
                 aria-hidden="true"
               >
                 <i data-lucide={item.icon} class="h-[1.125rem] w-[1.125rem]"></i>
               </span>
               <div class="min-w-0">
-                <p class="hero-on-image mb-0.5 text-[10px] font-bold uppercase tracking-[0.2em] text-white/75">
+                <p class="mb-0.5 text-[10px] font-bold uppercase tracking-[0.2em] text-navy/60">
                   {item.label}
                 </p>
-                <p class="hero-on-image text-lg font-bold leading-tight text-white md:text-xl">{item.title}</p>
-                <p class="hero-on-image mt-1 text-[13px] leading-snug text-white/85 md:text-sm">{item.detail}</p>
+                <p class="text-lg font-bold leading-tight text-navy md:text-xl">{item.title}</p>
+                <p class="mt-1 text-[13px] leading-snug text-navy/75 md:text-sm">{item.detail}</p>
               </div>
             </div>
           ))
