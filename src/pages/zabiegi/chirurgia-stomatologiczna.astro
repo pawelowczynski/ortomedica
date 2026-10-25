@@ -2,7 +2,8 @@
 import Layout from '../../layouts/layout.astro';
 import Header from '../../components/header.astro';
 import Footer from '../../components/footer.astro';
-import { canonicalUrl, medicalWebPageJsonLd } from '../../data/schema';
+import ServiceSupport from '../../components/ServiceSupport.astro';
+import { canonicalUrl } from '../../data/schema';
 
 const canonical = canonicalUrl('/zabiegi/chirurgia-stomatologiczna');
 ---
@@ -12,10 +13,6 @@ const canonical = canonicalUrl('/zabiegi/chirurgia-stomatologiczna');
   description="Chirurgia stomatologiczna w Lubinie: konsultacja, kwalifikacja, przygotowanie do zabiegu i zalecenia pozabiegowe w ORTHOMEDICA."
   canonical={canonical}
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(medicalWebPageJsonLd({
-    name: "Chirurgia stomatologiczna",
-    url: canonical,
-  }))} />
 
   <Header />
 
@@ -103,6 +100,7 @@ const canonical = canonicalUrl('/zabiegi/chirurgia-stomatologiczna');
         </ol>
       </div>
     </section>
+    <ServiceSupport slug="chirurgia-stomatologiczna" />
   </main>
 
   <Footer />

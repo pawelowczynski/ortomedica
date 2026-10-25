@@ -2,7 +2,8 @@
 import Layout from '../../layouts/layout.astro';
 import Header from '../../components/header.astro';
 import Footer from '../../components/footer.astro';
-import { canonicalUrl, medicalWebPageJsonLd } from '../../data/schema';
+import ServiceSupport from '../../components/ServiceSupport.astro';
+import { canonicalUrl } from '../../data/schema';
 
 const canonical = canonicalUrl('/zabiegi/przygotowanie-do-aparatu');
 ---
@@ -12,10 +13,6 @@ const canonical = canonicalUrl('/zabiegi/przygotowanie-do-aparatu');
   description="Co przed założeniem aparatu: higiena jamy ustnej, ewentualne ćwiczenia, skan 3D i zdjęcia rentgenowskie. ORTHOMEDICA Lubin."
   canonical={canonical}
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(medicalWebPageJsonLd({
-    name: "Przygotowanie do aparatu",
-    url: canonical,
-  }))} />
   <Header />
 
   <main id="main-content" class="pt-28 md:pt-32 pb-20 bg-white">
@@ -125,6 +122,7 @@ const canonical = canonicalUrl('/zabiegi/przygotowanie-do-aparatu');
         </a>
       </div>
     </section>
+    <ServiceSupport slug="przygotowanie-do-aparatu" />
   </main>
 
   <Footer />

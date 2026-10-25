@@ -1,7 +1,6 @@
 import {
   DEFAULT_OG_IMAGE_URL,
   ENTITY,
-  GOOGLE_BUSINESS_REVIEWS_URL,
   PHONE_E164,
   SITE_ORIGIN,
 } from './site';
@@ -17,44 +16,17 @@ const postalAddress = {
   addressCountry: 'PL',
 };
 
-const geoCoordinates = {
-  '@type': 'GeoCoordinates' as const,
-  latitude: 51.3884494,
-  longitude: 16.2096637,
-};
-
-/** Główna encja gabinetu — Dentist + MedicalBusiness z @id */
+/** Główna encja gabinetu — wyłącznie potwierdzone dane placówki. */
 export function organizationJsonLd() {
   return {
-    '@type': ['Dentist', 'MedicalBusiness'],
+    '@type': 'Dentist',
     '@id': ORGANIZATION_ID,
-    name: `${ENTITY.publicBrand} — dr n. med. Kornelia Rumin`,
-    alternateName: ENTITY.publicBrand,
-    description:
-      'Ortodoncja, stomatologia dziecięca, chirurgia stomatologiczna i gnatologia w Lubinie. RTG i skan 3D Shining w gabinecie.',
-    image: DEFAULT_OG_IMAGE_URL,
-    url: SITE_ORIGIN,
+    name: ENTITY.publicBrand,
+    url: `${SITE_ORIGIN}/`,
     telephone: PHONE_E164,
     email: ENTITY.email,
-    priceRange: 'PLN',
     address: postalAddress,
-    geo: geoCoordinates,
-    hasMap: GOOGLE_BUSINESS_REVIEWS_URL,
-    sameAs: [GOOGLE_BUSINESS_REVIEWS_URL],
-    areaServed: [
-      { '@type': 'City', name: 'Lubin' },
-      { '@type': 'City', name: 'Polkowice' },
-      { '@type': 'City', name: 'Legnica' },
-      { '@type': 'City', name: 'Głogów' },
-    ],
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: PHONE_E164,
-      email: ENTITY.email,
-      contactType: 'rejestracja',
-      areaServed: 'PL',
-      availableLanguage: ['pl'],
-    },
+    image: `${SITE_ORIGIN}/images/orthomedica-pawia-67.webp`,
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
@@ -63,7 +35,6 @@ export function organizationJsonLd() {
         closes: '18:00',
       },
     ],
-    medicalSpecialty: ['Orthodontics', 'Pediatric Dentistry', 'Oral Surgery'],
   };
 }
 
@@ -80,13 +51,12 @@ export function websiteJsonLd() {
 
 export function leadPhysicianJsonLd() {
   return {
-    '@type': 'Physician',
-    '@id': `${SITE_ORIGIN}/dr-kornelia-rumin#physician`,
+    '@type': 'Person',
+    '@id': `${SITE_ORIGIN}/dr-kornelia-rumin#person`,
     name: 'dr n. med. Kornelia Rumin',
     jobTitle: 'Lekarz ortodonta',
     url: `${SITE_ORIGIN}/dr-kornelia-rumin`,
     worksFor: { '@id': ORGANIZATION_ID },
-    medicalSpecialty: 'Orthodontics',
   };
 }
 
@@ -135,6 +105,7 @@ export function blogPostingJsonLd(opts: {
   description: string;
   url: string;
   datePublished: string;
+  dateModified?: string;
   author?: string;
   image?: string;
 }) {
@@ -150,13 +121,20 @@ export function blogPostingJsonLd(opts: {
     '@type': 'BlogPosting',
     headline: opts.title,
     description: opts.description,
-    author: {
-      '@type': 'Person',
-      name: opts.author ?? 'dr n. med. Kornelia Rumin',
-      url: `${SITE_ORIGIN}/dr-kornelia-rumin`,
-    },
+    author: opts.dateModified
+      ? { '@type': 'Organization', '@id': ORGANIZATION_ID, name: ENTITY.publicBrand, url: SITE_ORIGIN + '/' }
+      : {
+          '@type': 'Person',
+          '@id': `${SITE_ORIGIN}/dr-kornelia-rumin#person`,
+          name: opts.author ?? 'dr n. med. Kornelia Rumin',
+          url: `${SITE_ORIGIN}/dr-kornelia-rumin`,
+        },
+    ...(opts.dateModified && opts.author ? {
+      contributor: { '@type': 'Person', '@id': `${SITE_ORIGIN}/dr-kornelia-rumin#person`,
+        name: opts.author, url: `${SITE_ORIGIN}/dr-kornelia-rumin` },
+    } : {}),
     datePublished: opts.datePublished,
-    dateModified: opts.datePublished,
+    dateModified: opts.dateModified ?? opts.datePublished,
     image: imageUrl,
     mainEntityOfPage: { '@type': 'WebPage', '@id': opts.url },
     publisher: {
@@ -193,4 +171,24 @@ export function canonicalUrl(path: string): string {
   }
   const normalized = path.startsWith('/') ? path : `/${path}`;
   return `${SITE_ORIGIN}${normalized.replace(/\/+$/, '')}`;
+}
+
+/** One connected graph per service page; business and clinician are distinct entities. */
+export function serviceGraphJsonLd(name: string, url: string, description: string) {
+  const serviceId = `${url}#service`;
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationJsonLd(),
+      websiteJsonLd(),
+      { '@type': 'MedicalWebPage', '@id': url, url, name, description,
+        inLanguage: 'pl-PL', isPartOf: { '@id': WEBSITE_ID }, mainEntity: { '@id': serviceId } },
+      { '@type': 'Service', '@id': serviceId, name, url, description,
+        provider: { '@id': ORGANIZATION_ID }, areaServed: { '@type': 'City', name: 'Lubin' } },
+      { '@type': 'BreadcrumbList', itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Strona główna', item: `${SITE_ORIGIN}/` },
+        { '@type': 'ListItem', position: 2, name, item: url },
+      ] },
+    ],
+  };
 }

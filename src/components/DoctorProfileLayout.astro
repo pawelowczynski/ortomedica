@@ -3,7 +3,9 @@ import Layout from '../layouts/layout.astro';
 import Header from '../components/header.astro';
 import Footer from '../components/footer.astro';
 import { SITE_ORIGIN } from '../data/site';
+import { organizationJsonLd, ORGANIZATION_ID, breadcrumbJsonLd } from '../data/schema';
 import type { DoctorProfile } from '../data/teamProfiles';
+import { doctorImage } from '../data/images';
 
 interface Props {
   profile: DoctorProfile;
@@ -11,28 +13,24 @@ interface Props {
 
 const { profile } = Astro.props;
 
-const absoluteImage = new URL(profile.imageSrc, SITE_ORIGIN).href;
+const responsiveImage = doctorImage(profile.slug);
+const absoluteImage = new URL(responsiveImage.src, SITE_ORIGIN).href;
 
+const personId = `${profile.canonical}#person`;
 const physicianJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Dentist',
-  name: profile.displayName,
-  description: profile.schemaDescription,
-  url: profile.canonical,
-  image: absoluteImage,
-  jobTitle: profile.schemaJobTitle,
-  worksFor: {
-    '@type': 'MedicalBusiness',
-    name: 'ORTHOMEDICA',
-    url: SITE_ORIGIN,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'ul. Pawia 67',
-      addressLocality: 'Lubin',
-      postalCode: '59-300',
-      addressCountry: 'PL',
-    },
-  },
+  '@graph': [
+    organizationJsonLd(),
+    { '@type': 'ProfilePage', '@id': profile.canonical, url: profile.canonical,
+      name: profile.displayName, mainEntity: { '@id': personId } },
+    { '@type': 'Person', '@id': personId, name: profile.displayName,
+      description: profile.schemaDescription, url: profile.canonical, image: absoluteImage,
+      jobTitle: profile.schemaJobTitle, worksFor: { '@id': ORGANIZATION_ID } },
+    breadcrumbJsonLd([
+      { name: 'Strona główna', item: SITE_ORIGIN + '/' },
+      { name: profile.displayName, item: profile.canonical },
+    ]),
+  ],
 };
 
 const hasHighlights = profile.qualificationHighlights.length > 0;
@@ -64,7 +62,9 @@ const hasAdditional = profile.additionalTraining.length > 0;
             <div class="absolute -top-6 -left-6 md:-top-10 md:-left-10 w-40 h-40 md:w-56 md:h-56 bg-gold/10 rounded-full -z-0"></div>
             <div class="absolute -bottom-6 -right-6 w-28 h-28 border-2 border-gold/30 rounded-full -z-0"></div>
             <img
-              src={profile.imageSrc}
+              src={responsiveImage.src}
+              srcset={responsiveImage.srcset}
+              sizes="(min-width: 1024px) 45vw, calc(100vw - 48px)"
               alt={profile.imageAlt}
               loading="eager"
               fetchpriority="high"

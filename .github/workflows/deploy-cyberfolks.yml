@@ -52,6 +52,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          node scripts/check-seo.mjs
           test -f dist/.htaccess
           test -f dist/robots.txt
           test -f dist/sitemap-index.xml

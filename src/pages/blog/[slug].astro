@@ -11,6 +11,7 @@ type BlogFrontmatter = {
   seoTitle?: string;
   description: string;
   date: string;
+  updated?: string;
   author?: string;
   tags?: string[];
   heroImage?: string;
@@ -48,7 +49,7 @@ if (!currentPost) {
 }
 
 const { Content } = await currentPost;
-const { title, seoTitle, description, date, author, tags = [], heroImage, canonical } = currentPost.frontmatter;
+const { title, seoTitle, description, date, updated, author, tags = [], heroImage, canonical } = currentPost.frontmatter;
 const formattedDate = new Date(date).toLocaleDateString('pl-PL', {
   year: 'numeric',
   month: 'long',
@@ -71,7 +72,9 @@ const relatedPosts = posts
     };
   });
 
-const primaryService = tags.includes('dzieci') || tags.includes('pierwsza-wizyta')
+const primaryService = slug === 'ortodonta-dla-dziecka-kiedy-pierwsza-wizyta'
+  ? { href: '/zabiegi/ortodoncja-dziecieca', label: 'Sprawdź ortodoncję dziecięcą w Lubinie' }
+  : tags.includes('dzieci') || tags.includes('pierwsza-wizyta')
   ? { href: '/zabiegi/stomatologia-i-ortodoncja-dziecieca', label: 'Sprawdź opiekę stomatologiczną dla dzieci' }
   : tags.includes('retencja')
     ? { href: '/zabiegi/retencja-ortodontyczna', label: 'Sprawdź informacje o retencji' }
@@ -90,6 +93,7 @@ const schema = blogPostingJsonLd({
   description,
   url,
   datePublished: date,
+  dateModified: updated,
   author,
   image: heroImage,
 });
@@ -133,11 +137,12 @@ const breadcrumbSchema = breadcrumbJsonLd([
               {title}
             </h1>
             <div class="flex flex-wrap items-center gap-3 text-[12px] text-gray-500 mb-6">
-              <span>{formattedDate}</span>
+              <time datetime={date}>{formattedDate}</time>
+              {updated && <span>Aktualizacja redakcyjna: <time datetime={updated}>{new Date(updated).toLocaleDateString('pl-PL')}</time></span>}
               {author && (
                 <>
                   <span class="w-1 h-1 rounded-full bg-gray-300" />
-                  <span>{author}</span>
+                  <span>Autor tekstu źródłowego: <a href="/dr-kornelia-rumin" class="text-navy underline">{author}</a></span>
                 </>
               )}
               {tags.length > 0 && (
@@ -166,10 +171,11 @@ const breadcrumbSchema = breadcrumbJsonLd([
             )}
           </header>
 
-          <div class="prose prose-sm md:prose-base lg:prose-lg max-w-none prose-headings:font-normal prose-headings:serif prose-a:text-gold prose-a:no-underline hover:prose-a:underline prose-strong:text-navy prose-p:text-gray-700 prose-li:text-gray-700">
+          <div class="article-body prose prose-sm md:prose-base lg:prose-lg max-w-none prose-headings:font-normal prose-headings:serif prose-a:text-gold prose-a:no-underline hover:prose-a:underline prose-strong:text-navy prose-p:text-gray-700 prose-li:text-gray-700">
             <Content />
           </div>
 
+          {updated && <p class="mt-8 text-sm leading-relaxed text-gray-700">Rozbudowa i aktualizacja: redakcja ORTHOMEDICA. Informacje o autorze tekstu źródłowego podano powyżej.</p>}
           <aside class="mt-10 rounded-2xl border border-gold/20 bg-gray-50 p-6" aria-label="Ważna informacja medyczna">
             <p class="mb-2 text-sm font-semibold text-navy">Materiał edukacyjny</p>
             <p class="text-sm font-light leading-relaxed text-gray-600">

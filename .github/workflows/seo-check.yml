@@ -1,0 +1,28 @@
+name: SEO checks
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  seo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run test:analytics
+      - run: npm run build
+      - run: npm run check:seo
+      - name: Build staging
+        run: npm run build -- --outDir ./tmp/seo-staging
+        env:
+          VERCEL: '1'
+      - name: Check staging exclusion
+        run: node scripts/check-seo.mjs --dir=tmp/seo-staging --staging
+

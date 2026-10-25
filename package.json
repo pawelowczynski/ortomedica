@@ -9,8 +9,13 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "check:seo": "node scripts/check-seo.mjs",
+    "test:analytics": "node --test tests/analytics.test.mjs",
     "astro": "astro",
     "fetch-reviews": "node --env-file=.env ./scripts/fetch-google-reviews.mjs"
+  },
+  "devDependencies": {
+    "parse5": "^7.3.0"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",

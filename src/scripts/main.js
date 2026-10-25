@@ -121,6 +121,10 @@ document.addEventListener('DOMContentLoaded', () => {
     refreshIcons();
   }
 
+  window.addEventListener('resize', () => {
+    if (window.matchMedia('(min-width: 1280px)').matches && isMenuOpen) setMenuOpen(false, false);
+  }, { passive: true });
+
   function toggleMenu() {
     if (!menuBtn || !mobileMenu) return;
     setMenuOpen(!isMenuOpen);
@@ -433,6 +437,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'success',
             data.message || 'Wiadomość została wysłana do rejestracji.'
           );
+          document.dispatchEvent(new Event('orthomedica:contact-success'));
           contactForm.reset();
         } catch {
           showErr('Brak połączenia z serwerem. Sprawdź internet lub zadzwoń do rejestracji.');

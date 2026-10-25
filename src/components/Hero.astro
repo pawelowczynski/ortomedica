@@ -1,93 +1,81 @@
 ---
+import { HERO_IMAGE, HERO_SRCSET, HERO_SIZES } from '../data/images';
 const trustItems = [
   {
-    icon: 'map-pin',
-    label: 'Lokalizacja',
-    title: 'Lubin',
-    detail: 'ul. Pawia 67 · sprawdź trasę na mapie',
+    icon: 'check-circle',
+    title: 'Specjalista ortodonta',
+    detail: 'dr n. med. Kornelia Rumin',
   },
   {
     icon: 'scan-line',
-    label: 'Technologia',
-    title: 'Skan 3D Shining',
-    detail: 'Cyfrowe odwzorowanie zębów na miejscu',
+    title: 'Skan 3D i RTG na miejscu',
+    detail: 'Diagnostyka w jednym gabinecie',
   },
   {
     icon: 'calendar-clock',
-    label: 'Zapisy',
-    title: 'Rejestracja',
-    detail: 'Pon–Pt 9:00–18:00 · zapytaj o dostępny termin',
+    title: 'Konsultacja z diagnostyką od 400 zł',
+    detail: 'Pon.–pt. 9:00–18:00 · ul. Pawia 67',
   },
 ];
 ---
 
-<section
-  id="home"
-  class="hero-bg relative flex min-h-[85vh] flex-col overflow-hidden md:min-h-[90vh]"
->
-  <div
-    class="container relative z-10 mx-auto flex flex-1 flex-col justify-center px-6 pb-10 pt-[23rem] sm:px-8 sm:pb-12 sm:pt-[26rem] md:px-6 md:pb-14 md:pt-[28rem] lg:py-36"
-  >
-    <div class="max-w-xl py-6 sm:py-10 md:py-14 lg:max-w-[44%] lg:py-16">
-      <p
-        class="hero-on-image mb-5 text-[10px] font-bold uppercase tracking-[0.35em] text-navy/75 md:mb-6 md:text-xs md:tracking-[0.4em]"
-      >
-        ortodoncja · stomatologia dziecięca · Lubin
+<section id="home" class="clinic-hero" aria-labelledby="hero-heading">
+  <div class="container hero-layout mx-auto px-6 sm:px-8">
+    <div class="hero-copy">
+      <p class="hero-eyebrow">Dzieci · młodzież · dorośli · skan 3D i RTG na miejscu</p>
+      <h1 id="hero-heading" class="serif">Ortodonta w Lubinie: aparaty i leczenie wad zgryzu</h1>
+      <p class="hero-lead">
+        Konsultacje prowadzi <a href="/dr-kornelia-rumin">dr n. med. Kornelia Rumin</a>, specjalista ortodonta. Diagnostyka na miejscu, ul. Pawia 67.
       </p>
-      <h1
-        class="hero-on-image serif mb-6 max-w-[18ch] text-[2.125rem] font-normal leading-[1.05] tracking-tight text-navy sm:mb-7 sm:max-w-[20ch] sm:text-5xl md:mb-8 md:text-[3.25rem] lg:text-[3.25rem] lg:leading-[1.04]"
-      >
-        Ortodonta w&nbsp;Lubinie dla dzieci, młodzieży i&nbsp;dorosłych
-      </h1>
-      <p class="hero-on-image mb-10 max-w-xl text-base font-light leading-snug text-navy/85 md:mb-12 md:text-lg md:leading-snug">
-        Konsultacja, diagnostyka i leczenie wad zgryzu w jednym gabinecie. Pomagamy też zadbać o zdrowie zębów dziecka przed rozpoczęciem ortodoncji.
-      </p>
-      <div class="flex flex-wrap items-center gap-3">
-        <a
-          href="#kontakt"
-          class="btn-gold group inline-flex items-center justify-center gap-2 rounded-lg px-8 py-4 text-xs font-bold uppercase tracking-[0.18em] shadow-xl md:px-10 md:py-[1.125rem] md:text-sm md:tracking-[0.2em]"
-        >
-          Umów konsultację
-          <i data-lucide="calendar" class="h-4 w-4 transition-transform group-hover:scale-110"></i>
+      <nav class="hero-services" aria-label="Zakres leczenia">
+        <a href="/zabiegi/ortodoncja">aparaty i wady zgryzu</a>
+        <span aria-hidden="true">·</span>
+        <a href="/zabiegi/ortodoncja-dziecieca">ortodoncja dziecięca</a>
+        <span aria-hidden="true">·</span>
+        <a href="/zabiegi/stomatologia-i-ortodoncja-dziecieca">stomatologia dziecięca</a>
+      </nav>
+      <div class="hero-actions">
+        <a href="#kontakt" class="hero-cta hero-cta-primary">
+          <i data-lucide="calendar" class="h-4 w-4 shrink-0" aria-hidden="true"></i>
+          <span>Umów konsultację ortodontyczną</span>
         </a>
-        <a
-          href="tel:+48694731124"
-          class="hero-on-image inline-flex items-center justify-center gap-2 rounded-lg border border-navy/30 bg-white/65 px-8 py-4 text-xs font-bold uppercase tracking-[0.18em] text-navy backdrop-blur-sm transition-colors hover:bg-navy hover:text-white md:px-10 md:py-[1.125rem] md:text-sm"
-        >
-          Zadzwoń i zapytaj o termin
-          <i data-lucide="phone" class="h-4 w-4"></i>
+        <a href="tel:+48694731124" class="hero-cta hero-cta-secondary">
+          <i data-lucide="phone" class="h-4 w-4 shrink-0" aria-hidden="true"></i>
+          <span>Zadzwoń: +48 694 731 124</span>
         </a>
       </div>
     </div>
+    <div class="hero-photo">
+      <!-- TODO: Podmienić tymczasowe zdjęcie konsultacji na dostarczony plik pod tą samą ścieżką; zachować proporcje 4:3 i rozmiar poniżej 200 KB. -->
+      <img
+        src={HERO_IMAGE}
+        srcset={HERO_SRCSET}
+        sizes={HERO_SIZES}
+        alt="Konsultacja ortodontyczna dziecka w gabinecie ORTHOMEDICA w Lubinie"
+        width="1200"
+        height="900"
+        fetchpriority="high"
+        loading="eager"
+      />
+    </div>
   </div>
-
-  <div class="hero-trust-bar relative z-10 mt-auto w-full shrink-0">
+  <div class="hero-trust-bar">
     <div class="container mx-auto px-6 py-6 sm:px-8 md:py-8">
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-4 md:gap-8">
-        {
-          trustItems.map((item, index) => (
-            <div
-              class:list={[
-                'flex min-w-0 gap-3 sm:gap-4',
-                index > 0 && 'sm:border-l sm:border-navy/15 sm:pl-6 md:pl-8',
-              ]}
-            >
-              <span
-                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-navy/15 bg-white/65 text-gold"
-                aria-hidden="true"
-              >
-                <i data-lucide={item.icon} class="h-[1.125rem] w-[1.125rem]"></i>
-              </span>
-              <div class="min-w-0">
-                <p class="mb-0.5 text-[10px] font-bold uppercase tracking-[0.2em] text-navy/60">
-                  {item.label}
-                </p>
-                <p class="text-lg font-bold leading-tight text-navy md:text-xl">{item.title}</p>
-                <p class="mt-1 text-[13px] leading-snug text-navy/75 md:text-sm">{item.detail}</p>
-              </div>
+        {trustItems.map((item, index) => (
+          <div class:list={[
+            'flex min-w-0 gap-3 sm:gap-4',
+            index > 0 && 'sm:border-l sm:border-navy/15 sm:pl-6 md:pl-8',
+          ]}>
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-navy/15 bg-white/65 text-gold" aria-hidden="true">
+              <i data-lucide={item.icon} class="h-[1.125rem] w-[1.125rem]"></i>
+            </span>
+            <div class="min-w-0">
+              <p class="text-lg font-bold leading-tight text-navy md:text-xl">{item.title}</p>
+              <p class="hero-trust-detail mt-1 text-[13px] leading-snug md:text-sm">{item.detail}</p>
             </div>
-          ))
-        }
+          </div>
+        ))}
       </div>
     </div>
   </div>

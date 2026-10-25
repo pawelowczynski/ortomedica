@@ -10,7 +10,10 @@ export default defineConfig({
     '/zabiegi/invisalign-lubin': '/zabiegi/ortodoncja',
     '/blog/skan-3d-itero-co-daje-pacjentowi': '/blog/skan-3d-shining-co-daje-pacjentowi',
   },
-  integrations: [sitemap()],
+  integrations: [sitemap({ serialize(item) {
+    if (item.url === 'https://orthomedica.lubin.pl') item.url += '/';
+    return item;
+  } })],
   vite: {
     plugins: [tailwindcss()]
   }

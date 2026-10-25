@@ -1,0 +1,38 @@
+---
+import { relatedServices, serviceSections } from '../data/services';
+const { slug } = Astro.props;
+const sections = serviceSections[slug] ?? [];
+const links = relatedServices(slug);
+const doctor = slug === 'chirurgia-stomatologiczna'
+  ? { href: '/lek-dent-kamil-wojciechowski', name: 'lek. dent. Kamil Wojciechowski' }
+  : slug === 'stomatologia-zachowawcza-i-protetyka'
+    ? { href: '/lek-dent-aleksandra-czerkawska', name: 'lek. dent. Aleksandra Czerkawska' }
+    : { href: '/dr-kornelia-rumin', name: 'dr n. med. Kornelia Rumin' };
+---
+{sections.map(section => (
+  <section class="py-8 md:py-10">
+    <div class="container mx-auto max-w-4xl px-6">
+      <h2 class="serif mb-5 text-2xl text-navy md:text-3xl">{section.title}</h2>
+      {section.paragraphs.map(text => <p class="mb-4 text-base leading-relaxed text-gray-700">{text}</p>)}
+    </div>
+  </section>
+))}
+<aside class="border-t border-gray-200 bg-gray-50 py-10" aria-label="Powiązane informacje i rejestracja">
+  <div class="container mx-auto max-w-4xl px-6">
+    <h2 class="serif mb-5 text-2xl text-navy">Powiązane informacje</h2>
+    <ul class="grid gap-3 sm:grid-cols-2">
+      {links.map(link => <li><a class="inline-flex min-h-11 items-center text-navy underline underline-offset-4" href={`/zabiegi/${link.slug}`}>{link.name}</a></li>)}
+    </ul>
+    {slug === 'ortodoncja' && <p class="mt-6 text-navy"><a class="underline underline-offset-4" href="/metamorfozy/korekta-glebokiego-zgryzu-i-stloczen">Opis leczenia głębokiego zgryzu i stłoczeń</a></p>}
+    <p class="mt-6 leading-relaxed text-navy">
+      Poznaj profil lekarza: <a href={doctor.href} class="underline underline-offset-4">{doctor.name}</a>.
+      {' '}Sprawdź <a href="/cennik" class="underline underline-offset-4">cennik konsultacji i leczenia</a>.
+    </p>
+    <p class="mt-3 text-sm leading-relaxed text-gray-700">ORTHOMEDICA · ul. Pawia 67, 59-300 Lubin · pon.–pt. 9:00–18:00</p>
+    <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+      <a href="/#kontakt" class="hero-cta hero-cta-primary">Zapytaj o konsultację</a>
+      <a href="tel:+48694731124" class="hero-cta hero-cta-secondary">Zadzwoń: +48 694 731 124</a>
+    </div>
+  </div>
+</aside>
+

@@ -2,7 +2,8 @@
 import Layout from '../../layouts/layout.astro';
 import Header from '../../components/header.astro';
 import Footer from '../../components/footer.astro';
-import { canonicalUrl, medicalWebPageJsonLd } from '../../data/schema';
+import ServiceSupport from '../../components/ServiceSupport.astro';
+import { canonicalUrl } from '../../data/schema';
 
 const canonical = canonicalUrl('/zabiegi/ortodoncja');
 ---
@@ -12,10 +13,6 @@ const canonical = canonicalUrl('/zabiegi/ortodoncja');
   description="Ortodoncja w Lubinie dla młodzieży i dorosłych: konsultacja, diagnostyka, dobór aparatu, kontrole i retencja. Sprawdź przebieg leczenia."
   canonical={canonical}
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(medicalWebPageJsonLd({
-    name: "Ortodoncja",
-    url: canonical,
-  }))} />
   <Header />
 
   <main id="main-content" class="pt-28 md:pt-32 pb-20 bg-white">
@@ -177,6 +174,7 @@ const canonical = canonicalUrl('/zabiegi/ortodoncja');
         </a>
       </div>
     </section>
+    <ServiceSupport slug="ortodoncja" />
   </main>
 
   <Footer />

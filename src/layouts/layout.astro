@@ -1,6 +1,8 @@
 ﻿---
 import '../styles/global.css';
 import { DEFAULT_OG_IMAGE_URL, SITE_ORIGIN } from '../data/site';
+import { serviceGraphJsonLd } from '../data/schema';
+import AnalyticsConsent from '../components/AnalyticsConsent.astro';
 
 interface Props {
   title: string;
@@ -10,6 +12,8 @@ interface Props {
   robots?: string;
   ogType?: 'website' | 'article';
   preloadImage?: string;
+  preloadImageSrcset?: string;
+  preloadImageSizes?: string;
 }
 
 const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION;
@@ -23,7 +27,19 @@ const {
   robots,
   ogType = 'website',
   preloadImage,
+  preloadImageSrcset,
+  preloadImageSizes,
 } = Astro.props;
+
+// Vercel hosts staging builds; production keeps the canonical domain indexable.
+const isStaging =
+  process.env.VERCEL === '1' ||
+  (process.env.VERCEL_URL ?? '').endsWith('.vercel.app') ||
+  Astro.url.hostname.endsWith('.vercel.app');
+const robotsDirective = isStaging ? 'noindex, nofollow' : robots;
+const serviceSchema = new URL(canonical).pathname.startsWith('/zabiegi/')
+  ? serviceGraphJsonLd(title.split(/\s[|—]\s/)[0], canonical, description)
+  : null;
 
 const ogImage = image.startsWith('http')
   ? image
@@ -37,11 +53,11 @@ const ogImage = image.startsWith('http')
     <title>{title}</title>
     <meta name="description" content={description}>
     <link rel="canonical" href={canonical}>
-    {robots && <meta name="robots" content={robots} />}
+    {robotsDirective && <meta name="robots" content={robotsDirective} />}
     {gscVerification && <meta name="google-site-verification" content={gscVerification} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="manifest" href="/site.webmanifest">
-    {preloadImage && <link rel="preload" as="image" href={preloadImage} fetchpriority="high" />}
+    {preloadImage && <link rel="preload" as="image" href={preloadImage} imagesrcset={preloadImageSrcset} imagesizes={preloadImageSizes} fetchpriority="high" />}
 
     <!-- Open Graph -->
     <meta property="og:type" content={ogType}>
@@ -58,11 +74,13 @@ const ogImage = image.startsWith('http')
     <meta name="twitter:description" content={description}>
     <meta name="twitter:image" content={ogImage}>
 
+    {serviceSchema && <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />}
     <slot name="head" />
     
 </head>
 <body class="antialiased pb-24 md:pb-0 relative">
     <slot />
+    <AnalyticsConsent />
     <script src="../scripts/main.js"></script>
 </body>
 </html>

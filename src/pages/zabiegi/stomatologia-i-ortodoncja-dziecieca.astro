@@ -2,7 +2,8 @@
 import Layout from '../../layouts/layout.astro';
 import Header from '../../components/header.astro';
 import Footer from '../../components/footer.astro';
-import { canonicalUrl, medicalWebPageJsonLd } from '../../data/schema';
+import ServiceSupport from '../../components/ServiceSupport.astro';
+import { canonicalUrl } from '../../data/schema';
 
 const canonical = canonicalUrl('/zabiegi/stomatologia-i-ortodoncja-dziecieca');
 ---
@@ -12,10 +13,6 @@ const canonical = canonicalUrl('/zabiegi/stomatologia-i-ortodoncja-dziecieca');
   description="Stomatologia dziecięca w Lubinie: wizyta adaptacyjna, profilaktyka, leczenie zachowawcze i ocena zgryzu. Zapytaj o wizytę dla dziecka."
   canonical={canonical}
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(medicalWebPageJsonLd({
-    name: "Stomatologia i ortodoncja dziecięca",
-    url: canonical,
-  }))} />
   <Header />
 
   <main id="main-content" class="pt-28 md:pt-32 pb-20 bg-white">
@@ -146,6 +143,7 @@ const canonical = canonicalUrl('/zabiegi/stomatologia-i-ortodoncja-dziecieca');
         </a>
       </div>
     </section>
+    <ServiceSupport slug="stomatologia-i-ortodoncja-dziecieca" />
   </main>
 
   <Footer />

@@ -12,6 +12,7 @@ import FAQSection from '../components/FAQSection.astro';
 import ContactSection from '../components/ContactSection.astro';
 import { canonicalUrl, homepageGraphJsonLd } from '../data/schema';
 import { homePageFaqs } from '../data/faq';
+import { HERO_IMAGE, HERO_SRCSET, HERO_SIZES } from '../data/images';
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -31,8 +32,15 @@ const faqSchema = {
     title="Ortodonta Lubin i stomatologia dziecięca | ORTHOMEDICA"
     description="ORTHOMEDICA Lubin: ortodoncja dzieci i dorosłych, stomatologia dziecięca, RTG i skan 3D na miejscu. Umów konsultację z dr n. med. Kornelią Rumin."
     canonical={canonicalUrl('/')}
-    preloadImage="/images/orthomedica-clinic-hero.webp"
+    preloadImage={HERO_IMAGE}
+    preloadImageSrcset={HERO_SRCSET}
+    preloadImageSizes={HERO_SIZES}
 >
+    <!-- Load above-the-fold typefaces early to prevent font-swap layout shifts. -->
+    <link slot="head" rel="preload" as="font" href="/fonts/montserrat-latin.woff2" type="font/woff2" crossorigin="anonymous" />
+    <link slot="head" rel="preload" as="font" href="/fonts/montserrat-latin-ext.woff2" type="font/woff2" crossorigin="anonymous" />
+    <link slot="head" rel="preload" as="font" href="/fonts/playfair-normal-latin.woff2" type="font/woff2" crossorigin="anonymous" />
+    <link slot="head" rel="preload" as="font" href="/fonts/playfair-normal-latin-ext.woff2" type="font/woff2" crossorigin="anonymous" />
     <script slot="head" type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
     <script slot="head" type="application/ld+json" set:html={JSON.stringify(homepageGraphJsonLd())} />
 

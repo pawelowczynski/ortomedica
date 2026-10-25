@@ -2,7 +2,8 @@
 import Layout from '../../layouts/layout.astro';
 import Header from '../../components/header.astro';
 import Footer from '../../components/footer.astro';
-import { canonicalUrl, medicalWebPageJsonLd } from '../../data/schema';
+import ServiceSupport from '../../components/ServiceSupport.astro';
+import { canonicalUrl } from '../../data/schema';
 
 const canonical = canonicalUrl('/zabiegi/skan-3d-shining');
 ---
@@ -12,10 +13,6 @@ const canonical = canonicalUrl('/zabiegi/skan-3d-shining');
   description="Skan 3D Shining w Lubinie: cyfrowe odwzorowanie zębów bez masy wyciskowej, przebieg badania i zastosowanie w planowaniu leczenia."
   canonical={canonical}
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(medicalWebPageJsonLd({
-    name: "Skan 3D Shining",
-    url: canonical,
-  }))} />
   <Header />
 
   <main id="main-content" class="pt-28 md:pt-32 pb-20 bg-white">
@@ -172,6 +169,7 @@ const canonical = canonicalUrl('/zabiegi/skan-3d-shining');
         </a>
       </div>
     </section>
+    <ServiceSupport slug="skan-3d-shining" />
   </main>
 
   <Footer />

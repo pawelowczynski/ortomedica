@@ -1,0 +1,27 @@
+---
+const measurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? '';
+const isStaging = process.env.VERCEL === '1' || (process.env.VERCEL_URL ?? '').endsWith('.vercel.app');
+const enabled = /^G-[A-Z0-9]+$/.test(measurementId) && !isStaging;
+---
+{enabled && (
+  <div id="analytics-settings" data-measurement-id={measurementId}>
+    <section id="analytics-consent" hidden role="region" aria-label="Zgoda na statystyki"
+      class="fixed inset-x-4 bottom-24 z-[90] rounded-2xl border border-gray-200 bg-white p-5 text-navy shadow-xl md:bottom-4 md:left-auto md:max-w-lg">
+      <h2 class="mb-2 text-base font-bold">Statystyki strony</h2>
+      <p class="text-sm leading-relaxed">Za Twoją zgodą Google Analytics pomoże nam policzyć kliknięcia kontaktowe i wysłane zapytania. Do statystyk nie przekazujemy imienia, telefonu ani treści formularza.</p>
+      <a href="/polityka-prywatnosci" class="my-2 inline-flex min-h-11 items-center text-sm underline">Polityka prywatności</a>
+      <div class="flex flex-col gap-3 sm:flex-row">
+        <button type="button" data-consent="granted" class="hero-cta hero-cta-primary">Akceptuję statystyki</button>
+        <button type="button" data-consent="denied" class="hero-cta hero-cta-secondary">Tylko niezbędne</button>
+      </div>
+    </section>
+    <div class="bg-gray-50 px-6 pb-4 text-center">
+      <button type="button" id="analytics-preferences" class="min-h-11 text-sm text-navy underline">Ustawienia statystyk</button>
+    </div>
+  </div>
+)}
+<script>
+  import { initAnalytics } from '../scripts/analytics.js';
+  initAnalytics();
+</script>
+

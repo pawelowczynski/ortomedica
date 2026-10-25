@@ -2,6 +2,7 @@
 import Layout from '../../layouts/layout.astro';
 import Header from '../../components/header.astro';
 import Footer from '../../components/footer.astro';
+import ServiceSupport from '../../components/ServiceSupport.astro';
 ---
 
 <Layout
@@ -9,26 +10,6 @@ import Footer from '../../components/footer.astro';
   description="Aparat ruchomy dla dzieci w Lubinie: kwalifikacja, zasady noszenia, kontrole i rola rodzica. Dobór aparatu zależy od badania ortodontycznego."
   canonical="https://orthomedica.lubin.pl/zabiegi/aparat-ruchomy"
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "MedicalProcedure",
-    "name": "Aparat ruchomy",
-    "url": "https://orthomedica.lubin.pl/zabiegi/aparat-ruchomy",
-    "bodyLocation": "Zęby",
-    "procedureType": "NonSurgical",
-    "provider": {
-      "@type": "Dentist",
-      "name": "ORTHOMEDICA — dr n. med. Kornelia Rumin",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "ul. Pawia 67",
-        "addressLocality": "Lubin",
-        "postalCode": "59-300",
-        "addressCountry": "PL"
-      },
-      "telephone": "+48694731124"
-    }
-  })} />
   <Header />
 
   <main id="main-content" class="pt-28 md:pt-32 pb-20 bg-white">
@@ -197,6 +178,7 @@ import Footer from '../../components/footer.astro';
         </a>
       </div>
     </section>
+    <ServiceSupport slug="aparat-ruchomy" />
   </main>
 
   <Footer />
