@@ -4,7 +4,7 @@ export const HERO_SRCSET = [
   '/images/hero/ortodonta-lubin-konsultacja-skan-3d-800.webp 800w',
   HERO_IMAGE + ' 1200w',
 ].join(', ');
-export const HERO_SIZES = '(min-width: 1536px) 651px, (min-width: 1280px) 528px, (min-width: 1024px) 412px, calc(100vw - 48px)';
+export const HERO_SIZES = '(min-width: 1024px) 66vw, 100vw';
 
 export function doctorImage(slug: string) {
   const key = slug.replace(/^dr-/, '').replace(/^lek-dent-/, '');
